@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="theme-color" content="#080808">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="description" content="OneHeavy — The World's Heaviest Music Hub. Global metal news and local concert discovery in one place.">
+<title>OneHeavy — The World's Heavy Metal Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Barlow+Condensed:wght@300;400;600;700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --black:#080808;--deep:#0f0f0f;--card:#141414;--card2:#1c1c1c;
+  --red:#c8102e;--red-hot:#ff1a3a;--gold:#d4a017;--white:#f0ece4;
+  --grey:#888;--lgrey:#555;--border:rgba(200,16,46,0.22);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9998;opacity:0.3}
+
+/* TICKER */
+.ticker{background:var(--red);overflow:hidden;padding:7px 0}
+.ticker-track{display:flex;gap:48px;white-space:nowrap;animation:ticker 35s linear infinite}
+.ticker-track span{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#fff;flex-shrink:0}
+.ticker-track span::before{content:'⚡ '}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* NAV */
+nav{background:rgba(8,8,8,0.97);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:0 16px;height:60px;max-width:1320px;margin:0 auto}
+.logo{display:flex;align-items:baseline}
+.logo-one{font-family:'Black Han Sans',sans-serif;font-size:28px;color:var(--white)}
+.logo-heavy{font-family:'Black Han Sans',sans-serif;font-size:28px;color:var(--red)}
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;z-index:101}
+.nav-toggle span{display:block;width:24px;height:2px;background:var(--white);transition:all .3s ease;transform-origin:center}
+.nav-toggle.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.nav-toggle.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.nav-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.nav-links{display:flex;align-items:center;gap:24px;list-style:none}
+.nav-links a{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);transition:color .2s}
+.nav-links a:hover{color:var(--white)}
+.nav-links a.active{color:var(--red)}
+.nav-cta{background:var(--red)!important;color:#fff!important;padding:8px 16px!important;font-weight:700!important}
+.mobile-menu{display:none;position:fixed;inset:0;background:rgba(8,8,8,0.98);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:80px 24px 40px}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:32px;letter-spacing:.08em;text-transform:uppercase;color:var(--grey);padding:10px 0;width:100%;text-align:center;border-bottom:1px solid rgba(255,255,255,.05)}
+.mobile-menu a.mobile-cta{background:var(--red);color:#fff;margin-top:16px;padding:16px;border-bottom:none;font-size:22px}
+
+/* HERO */
+.hero{max-width:1320px;margin:0 auto;padding:0 16px;display:grid;grid-template-columns:1fr 380px;gap:0;min-height:480px;position:relative}
+.hero::after{content:'';position:absolute;right:calc(380px + 16px);top:0;bottom:0;width:1px;background:var(--border)}
+.hero-main{padding:48px 40px 48px 0;display:flex;flex-direction:column;justify-content:flex-end;position:relative}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 25% 60%,rgba(200,16,46,.1) 0%,transparent 60%);pointer-events:none}
+.hero-content{position:relative;z-index:1}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:16px}
+.hero-tag::before{content:'';width:24px;height:2px;background:var(--red)}
+.hero h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(36px,5vw,68px);line-height:.95;text-transform:uppercase;letter-spacing:-1px;margin-bottom:18px}
+.hero h1 em{font-style:normal;color:var(--red);display:block}
+.hero-meta{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:16px;font-size:12px;color:var(--grey);font-family:'Barlow Condensed',sans-serif}
+.genre-badge{background:var(--red);color:#fff;padding:3px 10px;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
+.hero p{font-size:15px;line-height:1.65;color:rgba(240,236,228,.65);margin-bottom:24px}
+.hero-read{display:inline-flex;align-items:center;gap:10px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--white);border-bottom:2px solid var(--red);padding-bottom:4px;transition:color .2s,gap .2s}
+.hero-read::after{content:'→'}
+.hero-sidebar{padding:32px 0 32px 28px;border-left:1px solid var(--border);display:flex;flex-direction:column}
+.sidebar-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--grey);margin-bottom:16px}
+.side-item{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.05);cursor:pointer}
+.side-item:last-child{border-bottom:none}
+.si-meta{display:flex;gap:8px;align-items:center;margin-bottom:5px}
+.si-genre{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--red)}
+.si-time{font-family:'Barlow Condensed',sans-serif;font-size:10px;color:var(--lgrey)}
+.side-item h4{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;line-height:1.2}
+
+/* WORLD FEED */
+.world-feed{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden}
+.wf-inner{max-width:1320px;margin:0 auto;display:flex;align-items:stretch}
+.wf-label{background:var(--red);padding:12px 16px;font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#fff;white-space:nowrap;display:flex;align-items:center;flex-shrink:0}
+.wf-scroll{overflow:hidden;flex:1;padding:12px 16px}
+.wf-items{display:flex;gap:36px;white-space:nowrap;animation:ticker 45s linear infinite}
+.wf-item{font-family:'Barlow Condensed',sans-serif;font-size:13px;color:rgba(240,236,228,.6);flex-shrink:0}
+.wf-item strong{color:var(--white);margin-right:6px}
+.wf-item em{color:var(--red);margin:0 5px;font-style:normal}
+
+/* AD */
+.ad-wrap{max-width:1320px;margin:0 auto;padding:14px 16px}
+.ad-slot{background:var(--card);border:1px dashed rgba(255,255,255,.08);height:80px;display:flex;align-items:center;justify-content:center;gap:12px}
+.ad-slot span{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--lgrey)}
+.ad-tag{background:rgba(255,255,255,.05);padding:3px 8px;font-size:9px;color:var(--grey);letter-spacing:.18em}
+
+/* SECTION HEADER */
+.sec-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+.sec-header h2{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:24px;text-transform:uppercase;letter-spacing:.04em}
+.sec-header h2 span{color:var(--red)}
+.see-all{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);white-space:nowrap}
+
+/* MAIN */
+.main-wrap{max-width:1320px;margin:0 auto;padding:40px 16px;display:grid;grid-template-columns:1fr 320px;gap:40px}
+
+/* NEWS */
+.news-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:40px}
+.news-card{background:var(--card);padding:20px;position:relative;overflow:hidden;cursor:pointer;transition:background .2s}
+.news-card::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--red);transition:width .3s}
+.news-card:hover{background:var(--card2)}
+.news-card:hover::after{width:100%}
+.nc-meta{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.nc-genre{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;background:var(--red);color:#fff;padding:3px 8px}
+.nc-country{font-family:'Barlow Condensed',sans-serif;font-size:10px;color:var(--grey)}
+.nc-time{font-family:'Barlow Condensed',sans-serif;font-size:10px;color:var(--lgrey);margin-left:auto}
+.news-card h3{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;line-height:1.15;text-transform:uppercase;margin-bottom:8px}
+.news-card p{font-size:13px;line-height:1.6;color:rgba(240,236,228,.5)}
+.nc-source{display:flex;align-items:center;gap:6px;margin-top:12px;font-family:'Barlow Condensed',sans-serif;font-size:10px;color:var(--lgrey);letter-spacing:.08em;text-transform:uppercase}
+.nc-source::before{content:'';width:10px;height:1px;background:var(--lgrey)}
+.news-card.featured{grid-column:span 2;background:var(--card2);border-left:3px solid var(--red);padding:24px}
+.news-card.featured h3{font-size:26px}
+
+/* SIDEBAR */
+.sidebar{display:flex;flex-direction:column;gap:24px}
+.widget{background:var(--card);padding:20px}
+.widget-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:16px}
+.widget-title span{color:var(--red)}
+.premium-widget{background:linear-gradient(135deg,#1a0005,var(--card));border:1px solid var(--border);padding:24px;text-align:center;position:relative;overflow:hidden}
+.premium-widget::before{content:'';position:absolute;top:-30px;right:-30px;width:100px;height:100px;background:radial-gradient(circle,rgba(200,16,46,.3),transparent 70%)}
+.pw-icon{font-size:28px;margin-bottom:10px}
+.pw-price{font-family:'Black Han Sans',sans-serif;font-size:44px;color:var(--white);line-height:1;margin-bottom:2px}
+.pw-price sup{font-size:18px;color:var(--red);vertical-align:top;margin-top:8px;display:inline-block}
+.pw-period{font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--grey);letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
+.pw-features{list-style:none;margin-bottom:18px}
+.pw-features li{font-family:'Barlow Condensed',sans-serif;font-size:13px;color:rgba(240,236,228,.7);padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;align-items:center;gap:8px}
+.pw-features li::before{content:'✓';color:var(--red);font-weight:900}
+.btn-premium{display:block;width:100%;background:var(--red);color:#fff;border:none;padding:14px;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:14px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:background .2s;-webkit-appearance:none}
+.btn-premium:hover{background:var(--red-hot)}
+.pw-sub{font-size:10px;color:var(--lgrey);margin-top:8px;font-family:'Barlow Condensed',sans-serif}
+.trend-item{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.05);cursor:pointer}
+.trend-item:last-child{border-bottom:none;padding-bottom:0}
+.trend-num{font-family:'Black Han Sans',sans-serif;font-size:26px;color:rgba(200,16,46,.2);line-height:1;min-width:28px}
+.trend-text h5{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;line-height:1.2;margin-bottom:2px;transition:color .2s}
+.trend-item:hover .trend-text h5{color:var(--red)}
+.trend-text span{font-family:'Barlow Condensed',sans-serif;font-size:10px;color:var(--lgrey);text-transform:uppercase;letter-spacing:.06em}
+
+/* CONCERTS */
+.concerts-section{background:var(--deep);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:48px 0}
+.concerts-inner{max-width:1320px;margin:0 auto;padding:0 16px}
+.city-tabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:24px}
+.city-tab{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:8px 14px;background:transparent;border:1px solid rgba(255,255,255,.1);color:var(--grey);cursor:pointer;transition:all .2s;-webkit-appearance:none}
+.city-tab:hover{border-color:var(--red);color:var(--white)}
+.city-tab.active{background:var(--red);border-color:var(--red);color:#fff}
+.concerts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.concert-card{background:var(--card);padding:20px;position:relative;overflow:hidden;cursor:pointer;transition:background .2s}
+.concert-card:hover{background:var(--card2)}
+.cc-genre-tag{position:absolute;top:12px;right:12px;font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);border:1px solid var(--red);padding:3px 7px}
+.cc-date{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.cc-day{font-family:'Black Han Sans',sans-serif;font-size:38px;color:var(--red);line-height:1}
+.cc-monthyear{display:flex;flex-direction:column}
+.cc-month{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;color:var(--white);letter-spacing:.08em;text-transform:uppercase}
+.cc-year{font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--grey)}
+.cc-artist{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;text-transform:uppercase;margin-bottom:4px;line-height:1.1}
+.cc-support{font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--grey);margin-bottom:10px}
+.cc-venue{font-family:'Barlow Condensed',sans-serif;font-size:11px;color:rgba(240,236,228,.45)}
+.cc-venue::before{content:'📍 ';font-size:10px}
+.cc-tickets{display:inline-block;margin-top:14px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--white);background:rgba(200,16,46,.12);border:1px solid var(--border);padding:6px 12px;transition:background .2s}
+.concert-card:hover .cc-tickets{background:var(--red);border-color:var(--red)}
+
+/* GENRE */
+.genre-section{max-width:1320px;margin:0 auto;padding:40px 16px}
+.genre-pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:20px}
+.genre-pill{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:9px 16px;background:var(--card);color:var(--grey);cursor:pointer;transition:all .2s;border-bottom:2px solid transparent;user-select:none}
+.genre-pill:hover{color:var(--white);border-color:var(--red)}
+.genre-pill.active{color:var(--white);background:var(--card2);border-color:var(--red)}
+
+/* FOOTER */
+footer{background:var(--deep);border-top:1px solid var(--border);padding:40px 0 20px}
+.footer-inner{max-width:1320px;margin:0 auto;padding:0 16px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:20px}
+.footer-brand p{font-size:13px;line-height:1.7;color:var(--grey);margin-top:12px;max-width:260px}
+.footer-col h5{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);margin-bottom:14px}
+.footer-col a{display:block;font-size:13px;color:rgba(240,236,228,.45);padding:3px 0;transition:color .2s}
+.footer-col a:hover{color:var(--white)}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.footer-bottom p{font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--lgrey);letter-spacing:.06em}
+.footer-bottom span{color:var(--red)}
+
+/* ═══════════════════════════════════
+   AI CHAT WIDGET
+═══════════════════════════════════ */
+.ai-fab{
+  position:fixed;bottom:28px;right:24px;z-index:999;
+  width:60px;height:60px;
+  background:var(--red);border:none;border-radius:50%;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 24px rgba(200,16,46,.5);
+  transition:transform .2s,background .2s;
+  -webkit-appearance:none;
+}
+.ai-fab:hover{transform:scale(1.1);background:var(--red-hot)}
+.ai-fab svg{width:28px;height:28px;fill:#fff}
+.ai-fab .fab-badge{
+  position:absolute;top:-2px;right:-2px;
+  width:18px;height:18px;background:#fff;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:10px;color:var(--red);font-weight:900;
+  font-family:'Barlow Condensed',sans-serif;
+}
+
+.ai-panel{
+  position:fixed;bottom:100px;right:24px;z-index:998;
+  width:360px;max-width:calc(100vw - 32px);
+  background:var(--deep);border:1px solid var(--border);
+  display:none;flex-direction:column;
+  box-shadow:0 8px 48px rgba(0,0,0,.8);
+  animation:slideUp .25s ease both;
+  max-height:520px;
+}
+.ai-panel.open{display:flex}
+@keyframes slideUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+.ai-header{
+  background:var(--red);padding:14px 16px;
+  display:flex;align-items:center;gap:10px;flex-shrink:0;
+}
+.ai-header-icon{font-size:20px}
+.ai-header-text h4{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:16px;letter-spacing:.06em;text-transform:uppercase;color:#fff}
+.ai-header-text p{font-family:'Barlow Condensed',sans-serif;font-size:10px;color:rgba(255,255,255,.7);letter-spacing:.1em;text-transform:uppercase}
+.ai-close{margin-left:auto;background:none;border:none;color:#fff;cursor:pointer;font-size:20px;padding:4px;line-height:1;opacity:.8}
+.ai-close:hover{opacity:1}
+
+.ai-messages{
+  flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;
+  min-height:200px;
+  scrollbar-width:thin;scrollbar-color:var(--red) var(--card);
+}
+.ai-messages::-webkit-scrollbar{width:4px}
+.ai-messages::-webkit-scrollbar-track{background:var(--card)}
+.ai-messages::-webkit-scrollbar-thumb{background:var(--red);border-radius:2px}
+
+.msg{display:flex;flex-direction:column;gap:4px;max-width:85%}
+.msg.user{align-self:flex-end;align-items:flex-end}
+.msg.bot {align-self:flex-start;align-items:flex-start}
+.msg-bubble{
+  padding:10px 14px;font-size:13px;line-height:1.55;
+  font-family:'Barlow',sans-serif;
+}
+.msg.user .msg-bubble{background:var(--red);color:#fff;border-radius:14px 14px 2px 14px}
+.msg.bot  .msg-bubble{background:var(--card2);color:var(--white);border-radius:14px 14px 14px 2px;border:1px solid rgba(255,255,255,.06)}
+.msg-time{font-family:'Barlow Condensed',sans-serif;font-size:9px;color:var(--lgrey);letter-spacing:.06em}
+
+.ai-typing{display:flex;gap:5px;align-items:center;padding:10px 14px;background:var(--card2);border-radius:14px 14px 14px 2px;width:fit-content;border:1px solid rgba(255,255,255,.06)}
+.ai-typing span{width:6px;height:6px;background:var(--grey);border-radius:50%;animation:dot .9s ease-in-out infinite}
+.ai-typing span:nth-child(2){animation-delay:.15s}
+.ai-typing span:nth-child(3){animation-delay:.30s}
+@keyframes dot{0%,60%,100%{transform:scale(1);opacity:.4}30%{transform:scale(1.3);opacity:1}}
+
+.ai-suggestions{padding:0 16px 10px;display:flex;flex-wrap:wrap;gap:6px;flex-shrink:0}
+.ai-sug{
+  font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:600;
+  letter-spacing:.06em;color:var(--grey);
+  background:var(--card);border:1px solid rgba(255,255,255,.08);
+  padding:5px 10px;cursor:pointer;transition:all .2s;white-space:nowrap;
+}
+.ai-sug:hover{color:var(--white);border-color:var(--red);background:var(--card2)}
+
+.ai-input-row{
+  display:flex;gap:0;border-top:1px solid rgba(255,255,255,.08);flex-shrink:0;
+}
+.ai-input{
+  flex:1;background:var(--card);border:none;
+  padding:14px 16px;color:var(--white);
+  font-family:'Barlow',sans-serif;font-size:14px;
+  outline:none;
+}
+.ai-input::placeholder{color:var(--lgrey)}
+.ai-send{
+  background:var(--red);border:none;color:#fff;
+  padding:14px 18px;cursor:pointer;font-size:18px;
+  transition:background .2s;-webkit-appearance:none;flex-shrink:0;
+}
+.ai-send:hover{background:var(--red-hot)}
+.ai-send:disabled{background:var(--lgrey);cursor:not-allowed}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{animation:fadeUp .6s ease both}
+.d1{animation-delay:.1s}.d2{animation-delay:.2s}.d3{animation-delay:.3s}
+
+/* ═══════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════ */
+@media(max-width:1024px){
+  .hero{grid-template-columns:1fr}
+  .hero::after{display:none}
+  .hero-main{padding:36px 0 32px}
+  .hero-sidebar{display:none}
+  .main-wrap{grid-template-columns:1fr}
+  .sidebar{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .concerts-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:28px}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .nav-toggle{display:flex}
+  .hero{padding:0 14px}
+  .hero-main{padding:28px 0}
+  .hero h1{font-size:clamp(32px,9vw,52px)}
+  .main-wrap{padding:28px 14px;grid-template-columns:1fr}
+  .news-grid{grid-template-columns:1fr}
+  .news-card.featured{grid-column:span 1}
+  .sidebar{grid-template-columns:1fr}
+  .concerts-section{padding:32px 0}
+  .concerts-inner{padding:0 14px}
+  .concerts-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:20px}
+  .footer-brand{grid-column:span 2}
+  .ai-panel{bottom:90px;right:16px;left:16px;width:auto}
+  .ai-fab{bottom:20px;right:16px}
+}
+@media(max-width:480px){
+  .logo-one,.logo-heavy{font-size:24px}
+  .hero h1{font-size:34px}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-brand{grid-column:span 1}
+  .news-card p{display:none}
+}
+@supports(padding:env(safe-area-inset-bottom)){
+  footer{padding-bottom:calc(20px + env(safe-area-inset-bottom))}
+  .ai-fab{bottom:calc(24px + env(safe-area-inset-bottom))}
+  .ai-panel{bottom:calc(100px + env(safe-area-inset-bottom))}
+}
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span>Metallica announce 2026 world tour</span>
+    <span>Gojira drop surprise EP "Burning Shore"</span>
+    <span>Slipknot drummer Jay Weinberg returns to live shows</span>
+    <span>Amon Amarth announce Australian leg</span>
+    <span>Tool release remastered back catalogue</span>
+    <span>Ghost reveal "Phantomime II" album details</span>
+    <span>Trivium hit 1 billion streams on Spotify</span>
+    <span>Metallica announce 2026 world tour</span>
+    <span>Gojira drop surprise EP "Burning Shore"</span>
+    <span>Slipknot drummer Jay Weinberg returns to live shows</span>
+    <span>Amon Amarth announce Australian leg</span>
+    <span>Tool release remastered back catalogue</span>
+    <span>Ghost reveal "Phantomime II" album details</span>
+    <span>Trivium hit 1 billion streams on Spotify</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo"><span class="logo-one">One</span><span class="logo-heavy">Heavy</span></a>
+    <ul class="nav-links">
+      <li><a href="#" class="active">News</a></li>
+      <li><a href="#concerts">Concerts</a></li>
+      <li><a href="#">Reviews</a></li>
+      <li><a href="#">Interviews</a></li>
+      <li><a href="#">Bands</a></li>
+      <li><a href="#">Genres</a></li>
+      <li><a href="#" class="nav-cta">Premium — $5/mo</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#" onclick="closeMenu()">News</a>
+  <a href="#concerts" onclick="closeMenu()">Concerts</a>
+  <a href="#" onclick="closeMenu()">Reviews</a>
+  <a href="#" onclick="closeMenu()">Interviews</a>
+  <a href="#" onclick="closeMenu()">Bands</a>
+  <a href="#" onclick="closeMenu()">Genres</a>
+  <a href="#" class="mobile-cta" onclick="closeMenu()">🤘 Go Premium — $5/mo</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-main">
+    <div class="hero-bg"></div>
+    <div class="hero-content fade-up">
+      <div class="hero-tag">Breaking News</div>
+      <h1>Metallica's <em>M72 World Tour</em> Breaks All Records</h1>
+      <div class="hero-meta">
+        <span class="genre-badge">Thrash Metal</span>
+        <span>🇺🇸 United States</span>
+        <span>2 hours ago</span>
+      </div>
+      <p>The legendary San Francisco four-piece have confirmed their M72 World Tour has become the highest-grossing heavy metal tour in recorded history, smashing their own previous record with over 2.3 million tickets sold across 88 cities worldwide.</p>
+      <a href="#" class="hero-read">Read Full Story</a>
+    </div>
+  </div>
+  <aside class="hero-sidebar">
+    <div class="sidebar-label">Latest Updates</div>
+    <div class="side-item"><div class="si-meta"><span class="si-genre">Death Metal</span><span class="si-time">14 mins ago</span></div><h4>Bloodbath Unveil Track List for "Survival of the Sickest II"</h4></div>
+    <div class="side-item"><div class="si-meta"><span class="si-genre">Prog Metal</span><span class="si-time">1 hr ago</span></div><h4>Tool's Danny Carey Joins Prog Supergroup for One-Night Event</h4></div>
+    <div class="side-item"><div class="si-meta"><span class="si-genre">Black Metal</span><span class="si-time">2 hrs ago</span></div><h4>Mayhem Mark 40th Anniversary of "De Mysteriis" with Live Ritual</h4></div>
+    <div class="side-item"><div class="si-meta"><span class="si-genre">Nu-Metal</span><span class="si-time">3 hrs ago</span></div><h4>Korn's Jonathan Davis Speaks on 30 Years of "Blind"</h4></div>
+    <div class="side-item"><div class="si-meta"><span class="si-genre">Doom</span><span class="si-time">4 hrs ago</span></div><h4>Paradise Lost Record New LP at Abbey Road with Full Orchestra</h4></div>
+  </aside>
+</section>
+
+<!-- WORLD FEED -->
+<div class="world-feed">
+  <div class="wf-inner">
+    <div class="wf-label">🌍 World Feed</div>
+    <div class="wf-scroll">
+      <div class="wf-items">
+        <div class="wf-item"><strong>Germany</strong>Wacken 2026 lineup drops<em>·</em></div>
+        <div class="wf-item"><strong>Japan</strong>Babymetal tease new era<em>·</em></div>
+        <div class="wf-item"><strong>Sweden</strong>Opeth solo debut confirmed<em>·</em></div>
+        <div class="wf-item"><strong>UK</strong>Download 2026 headliners revealed<em>·</em></div>
+        <div class="wf-item"><strong>Brazil</strong>Sepultura tribute night sells out<em>·</em></div>
+        <div class="wf-item"><strong>Australia</strong>Full Metal Cruise Pacific announced<em>·</em></div>
+        <div class="wf-item"><strong>Finland</strong>Nightwish complete new album<em>·</em></div>
+        <div class="wf-item"><strong>Germany</strong>Wacken 2026 lineup drops<em>·</em></div>
+        <div class="wf-item"><strong>Japan</strong>Babymetal tease new era<em>·</em></div>
+        <div class="wf-item"><strong>Sweden</strong>Opeth solo debut confirmed<em>·</em></div>
+        <div class="wf-item"><strong>UK</strong>Download 2026 headliners revealed<em>·</em></div>
+        <div class="wf-item"><strong>Brazil</strong>Sepultura tribute night sells out<em>·</em></div>
+        <div class="wf-item"><strong>Australia</strong>Full Metal Cruise Pacific announced<em>·</em></div>
+        <div class="wf-item"><strong>Finland</strong>Nightwish complete new album<em>·</em></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AD -->
+<div class="ad-wrap">
+  <div class="ad-slot"><span class="ad-tag">AD</span><span>[ Music-Relevant Banner Ad ]</span></div>
+</div>
+
+<!-- MAIN -->
+<main class="main-wrap">
+  <section>
+    <div class="sec-header">
+      <h2>Latest <span>News</span></h2>
+      <a href="#" class="see-all">All News →</a>
+    </div>
+    <div class="news-grid">
+      <article class="news-card featured fade-up d1">
+        <div class="nc-meta"><span class="nc-genre">Exclusive</span><span class="nc-country">🇬🇧 UK</span><span class="nc-time">6 hrs ago</span></div>
+        <h3>Iron Maiden Reveal 18th Studio Album: "Empire of the Stars"</h3>
+        <p>Bruce Dickinson sits down with OneHeavy in an exclusive interview discussing the band's most ambitious recording project to date — a double concept album spanning human space exploration history.</p>
+        <div class="nc-source">via Iron Maiden Official</div>
+      </article>
+      <article class="news-card fade-up d2">
+        <div class="nc-meta"><span class="nc-genre">Groove Metal</span><span class="nc-country">🇺🇸 USA</span><span class="nc-time">8 hrs ago</span></div>
+        <h3>Pantera's Reunion Run Extends with 40 New Dates</h3>
+        <p>Philip Anselmo and Rex Brown confirm the tribute run continues across North America and Europe.</p>
+        <div class="nc-source">Metal Injection</div>
+      </article>
+      <article class="news-card fade-up d2">
+        <div class="nc-meta"><span class="nc-genre">Death Metal</span><span class="nc-country">🇸🇪 Sweden</span><span class="nc-time">10 hrs ago</span></div>
+        <h3>Opeth's "Last Will and Testament" Tops Lists in 47 Countries</h3>
+        <p>The Swedish prog-death legends' 14th album is hailed as a genre-defining masterpiece.</p>
+        <div class="nc-source">Kerrang!</div>
+      </article>
+      <article class="news-card fade-up d3">
+        <div class="nc-meta"><span class="nc-genre">Metalcore</span><span class="nc-country">🇦🇺 Australia</span><span class="nc-time">12 hrs ago</span></div>
+        <h3>Parkway Drive to Headline Wacken Open Air 2026</h3>
+        <p>The Byron Bay heavyweights become only the second Australian band to headline the world's biggest metal festival.</p>
+        <div class="nc-source">Heavy Mag</div>
+      </article>
+      <article class="news-card fade-up d3">
+        <div class="nc-meta"><span class="nc-genre">Symphonic</span><span class="nc-country">🇫🇮 Finland</span><span class="nc-time">15 hrs ago</span></div>
+        <h3>Nightwish Complete 10th Studio Album — World Tour to Follow</h3>
+        <p>Floor Jansen confirms the new record is "the most cinematic thing we've ever done."</p>
+        <div class="nc-source">Nuclear Blast</div>
+      </article>
+    </div>
+  </section>
+
+  <aside class="sidebar">
+    <div class="premium-widget fade-up d1">
+      <div class="pw-icon">🤘</div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--grey);margin-bottom:6px">Go Ad-Free &amp; Unlock</div>
+      <div class="pw-price"><sup>$</sup>5</div>
+      <div class="pw-period">per month · cancel anytime</div>
+      <ul class="pw-features">
+        <li>Zero advertisements</li>
+        <li>Concert alerts for your city</li>
+        <li>Exclusive interviews &amp; reviews</li>
+        <li>Early access — breaking news</li>
+        <li>Premium features coming soon</li>
+      </ul>
+      <button class="btn-premium">Start Free Trial</button>
+      <div class="pw-sub">No credit card required for trial</div>
+    </div>
+    <div class="widget fade-up d2">
+      <div class="widget-title">🔥 Trending <span>Today</span></div>
+      <div class="trend-item"><div class="trend-num">01</div><div class="trend-text"><h5>Metallica M72 Tour Revenue Disclosed</h5><span>Thrash · 48.2k views</span></div></div>
+      <div class="trend-item"><div class="trend-num">02</div><div class="trend-text"><h5>Iron Maiden Album Details Revealed</h5><span>Heavy Metal · 31.8k views</span></div></div>
+      <div class="trend-item"><div class="trend-num">03</div><div class="trend-text"><h5>Wacken 2026 Full Lineup Breakdown</h5><span>Various · 27.1k views</span></div></div>
+      <div class="trend-item"><div class="trend-num">04</div><div class="trend-text"><h5>Gojira's Surprise EP Reviewed</h5><span>Prog Metal · 19.4k views</span></div></div>
+      <div class="trend-item"><div class="trend-num">05</div><div class="trend-text"><h5>Parkway Drive Wacken Confirmed</h5><span>Metalcore · 14.6k views</span></div></div>
+    </div>
+  </aside>
+</main>
+
+<!-- CONCERTS -->
+<section class="concerts-section" id="concerts">
+  <div class="concerts-inner">
+    <div class="sec-header"><h2>Concerts <span>Near You</span></h2><a href="#" class="see-all">All Shows →</a></div>
+    <div class="city-tabs">
+      <button class="city-tab active" onclick="selectCity(this)">🇬🇧 London</button>
+      <button class="city-tab" onclick="selectCity(this)">🇺🇸 New York</button>
+      <button class="city-tab" onclick="selectCity(this)">🇩🇪 Berlin</button>
+      <button class="city-tab" onclick="selectCity(this)">🇦🇺 Sydney</button>
+      <button class="city-tab" onclick="selectCity(this)">🇨🇦 Toronto</button>
+      <button class="city-tab" onclick="selectCity(this)">🇯🇵 Tokyo</button>
+      <button class="city-tab" onclick="selectCity(this)">🇧🇷 São Paulo</button>
+    </div>
+    <div class="concerts-grid">
+      <article class="concert-card"><span class="cc-genre-tag">Thrash</span><div class="cc-date"><div class="cc-day">08</div><div class="cc-monthyear"><span class="cc-month">March</span><span class="cc-year">2026</span></div></div><div class="cc-artist">Metallica</div><div class="cc-support">with Mammoth WVH</div><div class="cc-venue">O2 Arena, London</div><span class="cc-tickets">Buy Tickets →</span></article>
+      <article class="concert-card"><span class="cc-genre-tag">Death Metal</span><div class="cc-date"><div class="cc-day">15</div><div class="cc-monthyear"><span class="cc-month">March</span><span class="cc-year">2026</span></div></div><div class="cc-artist">Cannibal Corpse</div><div class="cc-support">with Nile + Obituary</div><div class="cc-venue">Roundhouse, London</div><span class="cc-tickets">Buy Tickets →</span></article>
+      <article class="concert-card"><span class="cc-genre-tag">Prog Metal</span><div class="cc-date"><div class="cc-day">22</div><div class="cc-monthyear"><span class="cc-month">March</span><span class="cc-year">2026</span></div></div><div class="cc-artist">Tool</div><div class="cc-support">with Killing Joke</div><div class="cc-venue">Alexandra Palace</div><span class="cc-tickets">Buy Tickets →</span></article>
+      <article class="concert-card"><span class="cc-genre-tag">Symphonic</span><div class="cc-date"><div class="cc-day">04</div><div class="cc-monthyear"><span class="cc-month">April</span><span class="cc-year">2026</span></div></div><div class="cc-artist">Nightwish</div><div class="cc-support">with Within Temptation</div><div class="cc-venue">Wembley Arena</div><span class="cc-tickets">Buy Tickets →</span></article>
+      <article class="concert-card"><span class="cc-genre-tag">Black Metal</span><div class="cc-date"><div class="cc-day">11</div><div class="cc-monthyear"><span class="cc-month">April</span><span class="cc-year">2026</span></div></div><div class="cc-artist">Mayhem</div><div class="cc-support">with Immortal + Marduk</div><div class="cc-venue">Electric Ballroom</div><span class="cc-tickets">Buy Tickets →</span></article>
+      <article class="concert-card"><span class="cc-genre-tag">Groove Metal</span><div class="cc-date"><div class="cc-day">18</div><div class="cc-monthyear"><span class="cc-month">April</span><span class="cc-year">2026</span></div></div><div class="cc-artist">Pantera</div><div class="cc-support">with Hatebreed</div><div class="cc-venue">O2 Arena, London</div><span class="cc-tickets">Buy Tickets →</span></article>
+    </div>
+  </div>
+</section>
+
+<!-- GENRES -->
+<section class="genre-section">
+  <div class="sec-header"><h2>Browse by <span>Genre</span></h2></div>
+  <div class="genre-pills">
+    <span class="genre-pill active">All</span>
+    <span class="genre-pill">Thrash Metal</span><span class="genre-pill">Death Metal</span>
+    <span class="genre-pill">Black Metal</span><span class="genre-pill">Doom Metal</span>
+    <span class="genre-pill">Power Metal</span><span class="genre-pill">Progressive Metal</span>
+    <span class="genre-pill">Symphonic Metal</span><span class="genre-pill">Groove Metal</span>
+    <span class="genre-pill">Nu-Metal</span><span class="genre-pill">Metalcore</span>
+    <span class="genre-pill">Deathcore</span><span class="genre-pill">Folk Metal</span>
+    <span class="genre-pill">Viking Metal</span><span class="genre-pill">Alternative Metal</span>
+    <span class="genre-pill">Industrial Metal</span><span class="genre-pill">Post-Metal</span>
+    <span class="genre-pill">Djent</span><span class="genre-pill">Stoner Metal</span>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo"><span class="logo-one">One</span><span class="logo-heavy">Heavy</span></a>
+        <p>The world's heaviest news hub. All metal, all alternative, all in one place. Updated 24/7 by our global network of writers and curators.</p>
+      </div>
+      <div class="footer-col"><h5>Navigate</h5><a href="#">News</a><a href="#">Concerts</a><a href="#">Reviews</a><a href="#">Interviews</a><a href="#">Bands A–Z</a></div>
+      <div class="footer-col"><h5>Genres</h5><a href="#">Thrash Metal</a><a href="#">Death Metal</a><a href="#">Black Metal</a><a href="#">Prog Metal</a><a href="#">All Genres</a></div>
+      <div class="footer-col"><h5>Account</h5><a href="#">Premium — $5/mo</a><a href="#">Sign In</a><a href="#">Newsletter</a><a href="#">Advertise</a><a href="#">Contact</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 <span>OneHeavy</span> — oneheavy.net — All rights reserved.</p>
+      <p>Privacy Policy · Terms of Use</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════
+     AI METAL ASSISTANT WIDGET
+═══════════════════════════════════ -->
+<button class="ai-fab" id="aiFab" aria-label="Open Metal AI Assistant">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+  <div class="fab-badge">AI</div>
+</button>
+
+<div class="ai-panel" id="aiPanel">
+  <div class="ai-header">
+    <div class="ai-header-icon">🤘</div>
+    <div class="ai-header-text">
+      <h4>OneHeavy AI</h4>
+      <p>Your Metal Music Assistant</p>
+    </div>
+    <button class="ai-close" id="aiClose" aria-label="Close">✕</button>
+  </div>
+  <div class="ai-messages" id="aiMessages">
+    <div class="msg bot">
+      <div class="msg-bubble">Welcome to OneHeavy! 🤘 I'm your personal metal music assistant. Ask me anything — band recommendations, album info, concert tips, genre guides, or local scene advice. What's heavy on your mind?</div>
+      <div class="msg-time">Metal AI · Online</div>
+    </div>
+  </div>
+  <div class="ai-suggestions" id="aiSuggestions">
+    <button class="ai-sug" onclick="quickAsk('Best thrash metal albums of all time?')">Best thrash albums</button>
+    <button class="ai-sug" onclick="quickAsk('What metal bands should I see live in 2026?')">Must-see live bands</button>
+    <button class="ai-sug" onclick="quickAsk('Explain the difference between death metal and black metal')">Death vs Black metal</button>
+    <button class="ai-sug" onclick="quickAsk('Recommend me a local metal scene to explore')">Local scene tips</button>
+  </div>
+  <div class="ai-input-row">
+    <input class="ai-input" id="aiInput" type="text" placeholder="Ask anything about metal..." maxlength="300" autocomplete="off">
+    <button class="ai-send" id="aiSend" aria-label="Send">➤</button>
+  </div>
+</div>
+
+<script>
+// ── MOBILE MENU ───────────────────────
+const toggle = document.getElementById('navToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+toggle.addEventListener('click', () => {
+  const isOpen = mobileMenu.classList.toggle('open');
+  toggle.classList.toggle('open', isOpen);
+  toggle.setAttribute('aria-expanded', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+});
+function closeMenu() {
+  mobileMenu.classList.remove('open');
+  toggle.classList.remove('open');
+  toggle.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+mobileMenu.addEventListener('click', e => { if (e.target === mobileMenu) closeMenu(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeMenu(); closeAI(); } });
+
+// ── CITY TABS ─────────────────────────
+function selectCity(el) {
+  document.querySelectorAll('.city-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// ── GENRE PILLS ───────────────────────
+document.querySelectorAll('.genre-pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    document.querySelectorAll('.genre-pill').forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+  });
+});
+
+// ── AI CHAT ───────────────────────────
+const aiFab    = document.getElementById('aiFab');
+const aiPanel  = document.getElementById('aiPanel');
+const aiClose  = document.getElementById('aiClose');
+const aiInput  = document.getElementById('aiInput');
+const aiSend   = document.getElementById('aiSend');
+const aiMsgs   = document.getElementById('aiMessages');
+const aiSuggs  = document.getElementById('aiSuggestions');
+
+let chatHistory = [];
+
+aiFab.addEventListener('click', () => {
+  aiPanel.classList.toggle('open');
+  if (aiPanel.classList.contains('open')) {
+    setTimeout(() => aiInput.focus(), 300);
+  }
+});
+aiClose.addEventListener('click', closeAI);
+function closeAI() { aiPanel.classList.remove('open'); }
+
+function now() {
+  return new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+}
+
+function addMessage(text, role) {
+  const div = document.createElement('div');
+  div.className = `msg ${role}`;
+  div.innerHTML = `<div class="msg-bubble">${text}</div><div class="msg-time">${role === 'user' ? 'You' : 'Metal AI'} · ${now()}</div>`;
+  aiMsgs.appendChild(div);
+  aiMsgs.scrollTop = aiMsgs.scrollHeight;
+  return div;
+}
+
+function showTyping() {
+  const div = document.createElement('div');
+  div.className = 'msg bot';
+  div.id = 'typing';
+  div.innerHTML = '<div class="ai-typing"><span></span><span></span><span></span></div>';
+  aiMsgs.appendChild(div);
+  aiMsgs.scrollTop = aiMsgs.scrollHeight;
+}
+
+function removeTyping() {
+  const t = document.getElementById('typing');
+  if (t) t.remove();
+}
+
+async function sendMessage(text) {
+  if (!text.trim()) return;
+
+  // Hide suggestions after first message
+  aiSuggs.style.display = 'none';
+
+  addMessage(text, 'user');
+  chatHistory.push({ role: 'user', content: text });
+
+  aiInput.value = '';
+  aiSend.disabled = true;
+  showTyping();
+
+  try {
+    const res = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ messages: chatHistory })
+    });
+
+    const data = await res.json();
+    removeTyping();
+
+    if (data.reply) {
+      // Simple markdown-lite: bold **text**
+      const formatted = data.reply
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\n/g, '<br>');
+      addMessage(formatted, 'bot');
+      chatHistory.push({ role: 'assistant', content: data.reply });
+    } else {
+      addMessage("Something went wrong on my end. Try again! 🤘", 'bot');
+    }
+  } catch (err) {
+    removeTyping();
+    addMessage("Can't reach the AI right now. Make sure the API key is set in Vercel environment variables. 🤘", 'bot');
+  }
+
+  aiSend.disabled = false;
+  aiInput.focus();
+}
+
+function quickAsk(text) {
+  aiInput.value = text;
+  sendMessage(text);
+}
+
+aiSend.addEventListener('click', () => sendMessage(aiInput.value));
+aiInput.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    sendMessage(aiInput.value);
+  }
+});
+</script>
+</body>
+</html>
