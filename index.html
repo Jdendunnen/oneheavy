@@ -734,6 +734,62 @@ aiInput.addEventListener('keydown', e => {
     sendMessage(aiInput.value);
   }
 });
-</script>
+<// ── LIVE NEWS FEED ────────────────────────────
+async function loadLiveNews() {
+  try {
+    const res  = await fetch('/api/news');
+    const data = await res.json();
+
+    if (!data.items || data.items.length === 0) return;
+
+    // Update ticker
+    const ticker = document.querySelector('.ticker-track');
+    if (ticker) {
+      const tickerHTML = [...data.items.slice(0, 8), ...data.items.slice(0, 8)]
+        .map(item => `<span>${item.title}</span>`)
+        .join('');
+      ticker.innerHTML = tickerHTML;
+    }
+
+    // Update news grid
+    const grid = document.querySelector('.news-grid');
+    if (grid) {
+      grid.innerHTML = data.items.slice(0, 5).map((item, i) => `
+        <article class="news-card ${i === 0 ? 'featured' : ''} fade-up">
+          <div class="nc-meta">
+            <span class="nc-genre">Metal News</span>
+            <span class="nc-country">${item.source}</span>
+            <span class="nc-time">${timeAgo(item.published)}</span>
+          </div>
+          <h3>${item.title}</h3>
+          <p>${item.description || ''}</p>
+          <div class="nc-source">${item.source}</div>
+          <a href="${item.url}" target="_blank" rel="noopener"
+             style="display:inline-block;margin-top:10px;font-family:'Barlow Condensed',sans-serif;
+                    font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+                    color:var(--red);border-bottom:1px solid var(--red);padding-bottom:2px;">
+            Read Full Story →
+          </a>
+        </article>
+      `).join('');
+    }
+
+  } catch (err) {
+    console.log('News feed error:', err);
+  }
+}
+
+function timeAgo(dateStr) {
+  const diff = Date.now() - new Date(dateStr).getTime();
+  const mins  = Math.floor(diff / 60000);
+  const hours = Math.floor(diff / 3600000);
+  const days  = Math.floor(diff / 86400000);
+  if (mins  < 60)  return `${mins} mins ago`;
+  if (hours < 24)  return `${hours} hrs ago`;
+  return `${days} days ago`;
+}
+
+// Load news when page opens
+loadLiveNews()>
 </body>
 </html>
