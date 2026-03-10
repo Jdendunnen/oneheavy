@@ -1,708 +1,625 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-<meta name="theme-color" content="#080808">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="description" content="OneHeavy — The World's Heaviest Music Hub. Global metal news and local concert discovery in one place.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="OneHeavy — The World's Heaviest Music Hub. Global metal news and local concert discovery.">
+<meta name="theme-color" content="#08080e">
 <title>OneHeavy — The World's Heavy Metal Hub</title>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6161974684049416"
-     crossorigin="anonymous"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Barlow+Condensed:wght@300;400;600;700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 :root{
-  --black:#080808;--deep:#0f0f0f;--card:#141414;--card2:#1c1c1c;
-  --red:#c8102e;--red-hot:#ff1a3a;--gold:#d4a017;--white:#f0ece4;
-  --grey:#888;--lgrey:#555;--border:rgba(200,16,46,0.22);
+  --ink:#08080e;--card:#0f0f1a;--lift:#161624;
+  --red:#c8102e;--red2:#e01030;
+  --w:#f0ecf4;--g:#58587a;--border:rgba(255,255,255,.07);
+  --D:'Bebas Neue',impact,sans-serif;
+  --C:'Oswald',sans-serif;
+  --S:'Source Serif 4',Georgia,serif;
 }
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--black);color:var(--white);font-family:'Barlow',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
-a{color:inherit;text-decoration:none}
-img{max-width:100%;height:auto;display:block}
+html{background:var(--ink);scroll-behavior:smooth}
+body{background:var(--ink);color:var(--w);font-family:var(--S);overflow-x:hidden;min-height:100vh}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;font-family:inherit;border:none;background:none}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.022;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")}
 
 /* TICKER */
-.ticker{background:var(--red);overflow:hidden;padding:7px 0;position:relative;z-index:200}
-.ticker-track{display:flex;gap:48px;white-space:nowrap;animation:ticker 40s linear infinite}
-.ticker-track span{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#fff;flex-shrink:0}
-.ticker-track span::before{content:'⚡ '}
-@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ticker{background:var(--red);height:33px;display:flex;align-items:center;overflow:hidden;position:relative;z-index:200}
+.t-tag{background:var(--ink);color:var(--red);padding:0 14px;height:100%;display:flex;align-items:center;flex-shrink:0;font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;border-right:2px solid var(--red);white-space:nowrap}
+.t-scroll{overflow:hidden;flex:1}
+.t-track{display:flex;white-space:nowrap;animation:roll 65s linear infinite}
+.t-track:hover{animation-play-state:paused}
+.t-item{display:inline-flex;align-items:center;padding:0 22px;height:33px;font-family:var(--C);font-size:11px;font-weight:500;letter-spacing:.04em;color:#fff;border-right:1px solid rgba(255,255,255,.14);cursor:default}
+@keyframes roll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* NAV */
-nav{background:rgba(8,8,8,0.97);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:0 16px;height:60px;max-width:1320px;margin:0 auto}
-.logo{display:flex;align-items:baseline}
-.logo-one{font-family:'Black Han Sans',sans-serif;font-size:28px;color:var(--white)}
-.logo-heavy{font-family:'Black Han Sans',sans-serif;font-size:28px;color:var(--red)}
-.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;z-index:101}
-.nav-toggle span{display:block;width:24px;height:2px;background:var(--white);transition:all .3s;transform-origin:center}
-.nav-toggle.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
-.nav-toggle.open span:nth-child(2){opacity:0;transform:scaleX(0)}
-.nav-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-.nav-links{display:flex;align-items:center;gap:24px;list-style:none}
-.nav-links a{font-family:'Barlow Condensed',sans-serif;font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--grey);transition:color .2s}
-.nav-links a:hover{color:var(--white)}
-.nav-links a.active{color:var(--red)}
-.nav-cta{background:var(--red)!important;color:#fff!important;padding:8px 16px!important;font-weight:700!important;transition:background .2s!important}
-.nav-cta:hover{background:var(--red-hot)!important}
-.mobile-menu{display:none;position:fixed;inset:0;background:rgba(8,8,8,0.98);z-index:99;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:80px 24px 40px}
-.mobile-menu.open{display:flex}
-.mobile-menu a{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:32px;letter-spacing:.08em;text-transform:uppercase;color:var(--grey);padding:10px 0;width:100%;text-align:center;border-bottom:1px solid rgba(255,255,255,.05)}
-.mobile-menu a.mobile-cta{background:var(--red);color:#fff;margin-top:16px;padding:16px;border-bottom:none;font-size:22px}
+nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(200,16,46,.16)}
+.nav-wrap{max-width:1360px;margin:0 auto;padding:0 24px;height:56px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:28px}
+.logo{display:flex;align-items:center;flex-shrink:0}
+.logo-box{background:var(--red);font-family:var(--D);font-size:22px;padding:4px 10px 2px;color:#fff;line-height:1}
+.logo-txt{font-family:var(--D);font-size:22px;letter-spacing:.04em;color:var(--w)}
+.nav-links{display:flex;align-items:center;gap:0;list-style:none}
+.nav-links a{font-family:var(--C);font-size:11px;font-weight:500;letter-spacing:.11em;text-transform:uppercase;color:var(--g);padding:8px 11px;transition:color .2s;white-space:nowrap}
+.nav-links a:hover,.nav-links a.active{color:var(--w)}
+.nav-links a.active{border-bottom:2px solid var(--red);padding-bottom:6px}
+.nav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.btn-prem{background:var(--red);color:#fff;font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:9px 18px;transition:background .2s;white-space:nowrap}
+.btn-prem:hover{background:var(--red2)}
+.ham{display:none;flex-direction:column;gap:5px;padding:8px}
+.ham span{display:block;width:22px;height:2px;background:var(--w);transition:all .28s}
+.ham.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.ham.open span:nth-child(2){opacity:0}
+.ham.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mob-nav{display:none;position:fixed;inset:0;background:rgba(8,8,14,.99);z-index:290;flex-direction:column;justify-content:center;padding:80px 32px 40px;gap:0}
+.mob-nav.open{display:flex}
+.mob-nav a{font-family:var(--D);font-size:clamp(36px,7vw,56px);color:var(--g);padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04);transition:color .2s}
+.mob-nav a:hover{color:var(--red)}
+.mob-cta{margin-top:22px!important;background:var(--red)!important;color:#fff!important;padding:15px 28px!important;font-family:var(--C)!important;font-size:14px!important;font-weight:700!important;letter-spacing:.12em!important;text-transform:uppercase!important;text-align:center!important;border-bottom:none!important}
+
+/* DATE LINE */
+.dateline{border-top:2px solid var(--w);border-bottom:1px solid var(--border)}
+.dl-inner{max-width:1360px;margin:0 auto;padding:8px 24px;display:flex;justify-content:space-between;align-items:center}
+.dl-date{font-family:var(--C);font-size:10px;color:var(--g);letter-spacing:.1em;text-transform:uppercase}
+.dl-live{font-family:var(--C);font-size:10px;font-weight:700;color:var(--red);letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:6px}
+.live-dot{width:6px;height:6px;background:var(--red);border-radius:50%;animation:blink 2s ease infinite;flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.15}}
 
 /* HERO */
-.hero{max-width:1320px;margin:0 auto;padding:0 16px;display:grid;grid-template-columns:1fr 380px;gap:0;min-height:480px;position:relative}
-.hero::after{content:'';position:absolute;right:calc(380px + 16px);top:0;bottom:0;width:1px;background:var(--border)}
-.hero-main{padding:48px 40px 48px 0;display:flex;flex-direction:column;justify-content:flex-end;position:relative}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 25% 60%,rgba(200,16,46,.1) 0%,transparent 60%);pointer-events:none}
-.hero-content{position:relative;z-index:1}
-.hero-tag{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:16px}
-.hero-tag::before{content:'';width:24px;height:2px;background:var(--red)}
-.hero h1{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(36px,5vw,68px);line-height:.95;text-transform:uppercase;letter-spacing:-1px;margin-bottom:18px}
-.hero h1 em{font-style:normal;color:var(--red);display:block}
-.hero-meta{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:16px;font-size:12px;color:var(--grey);font-family:'Barlow Condensed',sans-serif}
-.genre-badge{background:var(--red);color:#fff;padding:3px 10px;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
-.hero p{font-size:15px;line-height:1.65;color:rgba(240,236,228,.65);margin-bottom:24px}
-.hero-read{display:inline-flex;align-items:center;gap:10px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--white);border-bottom:2px solid var(--red);padding-bottom:4px;transition:color .2s,gap .2s}
-.hero-read::after{content:'→'}
-.hero-read:hover{color:var(--red);gap:16px}
-.hero-sidebar{padding:32px 0 32px 28px;border-left:1px solid var(--border);display:flex;flex-direction:column}
-.sidebar-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--grey);margin-bottom:16px}
-.side-item{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.05);cursor:pointer}
-.side-item:last-child{border-bottom:none}
-.si-meta{display:flex;gap:8px;align-items:center;margin-bottom:5px}
-.si-genre{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--red)}
-.si-time{font-family:'Barlow Condensed',sans-serif;font-size:10px;color:var(--lgrey)}
-.side-item h4{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:15px;line-height:1.2}
+.hero{max-width:1360px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr 1px 310px;min-height:490px}
+.hero-rule{background:linear-gradient(to bottom,transparent 5%,rgba(200,16,46,.22) 30%,rgba(200,16,46,.22) 70%,transparent 95%)}
+.hero-main{padding:34px 38px 34px 0;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
+.hero-watermark{position:absolute;top:-8px;left:-8px;font-family:var(--D);font-size:clamp(100px,14vw,190px);color:rgba(200,16,46,.04);line-height:1;pointer-events:none;letter-spacing:-3px;white-space:nowrap;z-index:0;user-select:none}
+.hero-body{position:relative;z-index:1}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--red);margin-bottom:12px}
+.hero-eyebrow::after{content:'';width:26px;height:1px;background:var(--red)}
+.hero h1{font-family:var(--D);font-size:clamp(40px,5.5vw,76px);line-height:.92;letter-spacing:.02em;text-transform:uppercase;margin-bottom:13px}
+.hero-byline{display:flex;align-items:center;gap:10px;font-family:var(--C);font-size:10px;color:var(--g);letter-spacing:.07em;text-transform:uppercase;margin-bottom:12px}
+.hdot{width:3px;height:3px;background:var(--red);border-radius:50%;flex-shrink:0}
+.hero-desc{font-size:14px;font-style:italic;font-weight:300;color:rgba(240,236,244,.5);line-height:1.75;max-width:550px;margin-bottom:20px}
+.btn-story{display:inline-flex;align-items:center;gap:10px;font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--w);border-bottom:1px solid var(--red);padding-bottom:4px;transition:gap .2s,color .2s}
+.btn-story::after{content:'???';color:var(--red)}
+.btn-story:hover{gap:16px;color:var(--red)}
+.hero-aside{padding:26px 0 26px 26px;display:flex;flex-direction:column}
+.aside-hd{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--g);padding-bottom:10px;border-bottom:1px solid var(--border)}
+.aside-item{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.04);cursor:pointer;transition:padding-left .18s}
+.aside-item:hover{padding-left:6px}
+.aside-item:last-child{border-bottom:none}
+.ai-src{font-family:var(--C);font-size:8px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:var(--red);margin-bottom:3px}
+.ai-title{font-family:var(--C);font-weight:600;font-size:13px;line-height:1.2;color:var(--w);margin-bottom:3px}
+.ai-time{font-family:var(--C);font-size:9px;color:var(--g)}
 
-/* WORLD FEED */
-.world-feed{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden}
-.wf-inner{max-width:1320px;margin:0 auto;display:flex;align-items:stretch}
-.wf-label{background:var(--red);padding:12px 16px;font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#fff;white-space:nowrap;display:flex;align-items:center;flex-shrink:0}
-.wf-scroll{overflow:hidden;flex:1;padding:12px 16px}
-.wf-items{display:flex;gap:36px;white-space:nowrap;animation:ticker 45s linear infinite}
-.wf-item{font-family:'Barlow Condensed',sans-serif;font-size:13px;color:rgba(240,236,228,.6);flex-shrink:0}
-.wf-item strong{color:var(--white);margin-right:6px}
-.wf-item em{color:var(--red);margin:0 5px;font-style:normal}
+/* WORLD BAND */
+.world{background:var(--lift);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.world-inner{max-width:1360px;margin:0 auto;display:flex;overflow:hidden}
+.world-label{background:rgba(200,16,46,.1);border-right:1px solid rgba(200,16,46,.2);padding:10px 16px;font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:5px;flex-shrink:0}
+.world-scroll{overflow:hidden;flex:1}
+.world-track{display:flex;padding:10px 0;animation:roll 65s linear infinite;white-space:nowrap}
+.w-item{display:inline-flex;align-items:center;gap:7px;padding:0 18px;border-right:1px solid rgba(255,255,255,.05);font-family:var(--C);font-size:11px;color:rgba(240,236,244,.38)}
+.w-item strong{color:var(--w);font-weight:600}
+.w-item em{color:var(--red);font-style:normal;margin:0 3px}
 
-/* AD BANNER */
-.ad-wrap{max-width:1320px;margin:0 auto;padding:14px 16px}
-.ad-slot{background:var(--card);border:1px dashed rgba(255,255,255,.08);height:90px;display:flex;align-items:center;justify-content:center;gap:12px}
-.ad-slot span{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--lgrey)}
-.ad-tag{background:rgba(255,255,255,.05);padding:3px 8px;font-size:9px;color:var(--grey);letter-spacing:.18em}
+/* LEADERBOARD */
+.ad-belt{max-width:1360px;margin:0 auto;padding:12px 24px}
+.ad-728{background:var(--lift);border:1px dashed rgba(255,255,255,.06);height:90px;display:flex;align-items:center;justify-content:center;gap:14px}
+.ad-tag{font-family:var(--C);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.07);padding:2px 7px}
+.ad-dim{font-family:var(--C);font-size:11px;color:rgba(255,255,255,.13)}
 
-/* SECTION HEADER */
-.sec-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid var(--border)}
-.sec-header h2{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:24px;text-transform:uppercase;letter-spacing:.04em}
-.sec-header h2 span{color:var(--red)}
-.see-all{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);white-space:nowrap}
+/* CONTENT WRAP */
+.content{max-width:1360px;margin:0 auto;padding:30px 24px 60px;display:grid;grid-template-columns:1fr 285px;gap:44px}
 
-/* MAIN LAYOUT */
-.main-wrap{max-width:1320px;margin:0 auto;padding:40px 16px;display:grid;grid-template-columns:1fr 320px;gap:40px}
+/* SECTION HEAD */
+.sh{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;padding-bottom:9px;border-bottom:1px solid var(--border);position:relative}
+.sh::after{content:'';position:absolute;bottom:-1px;left:0;width:40px;height:1px;background:var(--red)}
+.sh h2{font-family:var(--D);font-size:19px;letter-spacing:.05em;text-transform:uppercase}
+.sh h2 em{color:var(--red);font-style:normal}
+.sh a{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);border-bottom:1px solid rgba(200,16,46,.22);padding-bottom:1px}
 
-/* NEWS GRID */
-.news-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:40px}
-.news-card{background:var(--card);padding:20px;position:relative;overflow:hidden;cursor:pointer;transition:background .2s}
-.news-card::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--red);transition:width .3s}
-.news-card:hover{background:var(--card2)}
-.news-card:hover::after{width:100%}
-.nc-meta{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:10px}
-.nc-genre{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;background:var(--red);color:#fff;padding:3px 8px}
-.nc-country{font-family:'Barlow Condensed',sans-serif;font-size:10px;color:var(--grey)}
-.nc-time{font-family:'Barlow Condensed',sans-serif;font-size:10px;color:var(--lgrey);margin-left:auto}
-.news-card h3{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:18px;line-height:1.15;text-transform:uppercase;margin-bottom:8px}
-.news-card p{font-size:13px;line-height:1.6;color:rgba(240,236,228,.5)}
-.nc-source{display:flex;align-items:center;gap:6px;margin-top:12px;font-family:'Barlow Condensed',sans-serif;font-size:10px;color:var(--lgrey);letter-spacing:.08em;text-transform:uppercase}
-.nc-source::before{content:'';width:10px;height:1px;background:var(--lgrey)}
-.news-card.featured{grid-column:span 2;background:var(--card2);border-left:3px solid var(--red);padding:24px}
-.news-card.featured h3{font-size:26px}
-.news-card .read-more{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);border-bottom:1px solid var(--red);padding-bottom:2px}
+/* FILTERS */
+.filters{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:14px}
+.fb{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 11px;background:transparent;border:1px solid rgba(255,255,255,.08);color:var(--g);transition:all .18s}
+.fb:hover{border-color:rgba(200,16,46,.32);color:var(--w)}
+.fb.on{background:var(--red);border-color:var(--red);color:#fff}
 
-/* NEWS LOADING STATE */
-.news-loading{grid-column:span 2;text-align:center;padding:40px}
-.news-loading p{font-family:'Barlow Condensed',sans-serif;font-size:14px;color:var(--grey);letter-spacing:.1em;text-transform:uppercase}
-.spinner{width:32px;height:32px;border:3px solid rgba(200,16,46,.2);border-top-color:var(--red);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 16px}
+/* NEWS GRID — clean, no chatbot */
+.ng{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.04);margin-bottom:28px}
+.nc{background:var(--ink);padding:17px;cursor:pointer;transition:background .18s;position:relative;overflow:hidden;display:block}
+.nc::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--red);transition:width .3s}
+.nc:hover{background:var(--card)}.nc:hover::after{width:100%}
+.nc-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;gap:7px}
+.nc-src{font-family:var(--C);font-size:8px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;background:var(--red);color:#fff;padding:2px 7px;flex-shrink:0}
+.nc-age{font-family:var(--C);font-size:9px;color:var(--g);flex-shrink:0;white-space:nowrap}
+.nc h3{font-family:var(--C);font-weight:700;font-size:15px;line-height:1.2;text-transform:uppercase;letter-spacing:.02em;color:var(--w);margin-bottom:7px}
+.nc:hover h3{color:var(--red)}
+.nc p{font-size:12px;line-height:1.58;color:rgba(240,236,244,.36);font-weight:300;font-style:italic}
+.nc-foot{font-family:var(--C);font-size:9px;color:var(--g);margin-top:9px;text-transform:uppercase;letter-spacing:.04em;display:flex;align-items:center;gap:5px}
+.nc-foot::before{content:'';width:9px;height:1px;background:var(--g)}
+.nc.feature{grid-column:span 2;display:grid;grid-template-columns:260px 1fr}
+.nc.feature .nc-thumb{background:linear-gradient(135deg,rgba(200,16,46,.14),rgba(80,0,0,.06));border-right:1px solid rgba(255,255,255,.04);display:flex;flex-direction:column;justify-content:flex-end;padding:16px;position:relative;overflow:hidden}
+.nc.feature .nc-thumb::before{content:'🤘';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:68px;opacity:.07}
+.nc.feature .nc-thumb-src{font-family:var(--C);font-size:8px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+.nc.feature .nc-body{padding:17px}
+.nc.feature h3{font-size:21px}
+.loading{grid-column:span 2;padding:44px;text-align:center}
+.spin{width:26px;height:26px;border:2px solid rgba(200,16,46,.14);border-top-color:var(--red);border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 10px}
 @keyframes spin{to{transform:rotate(360deg)}}
-
-/* SOURCE TABS */
-.source-tabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:20px}
-.source-tab{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;background:transparent;border:1px solid rgba(255,255,255,.1);color:var(--grey);cursor:pointer;transition:all .2s;-webkit-appearance:none}
-.source-tab:hover{border-color:var(--red);color:var(--white)}
-.source-tab.active{background:var(--red);border-color:var(--red);color:#fff}
+.loading p{font-family:var(--C);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--g)}
 
 /* SIDEBAR */
-.sidebar{display:flex;flex-direction:column;gap:24px}
-.widget{background:var(--card);padding:20px}
-.widget-title{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:16px}
-.widget-title span{color:var(--red)}
-.premium-widget{background:linear-gradient(135deg,#1a0005,var(--card));border:1px solid var(--border);padding:24px;text-align:center;position:relative;overflow:hidden}
-.premium-widget::before{content:'';position:absolute;top:-30px;right:-30px;width:100px;height:100px;background:radial-gradient(circle,rgba(200,16,46,.3),transparent 70%)}
-.pw-icon{font-size:28px;margin-bottom:10px}
-.pw-price{font-family:'Black Han Sans',sans-serif;font-size:44px;color:var(--white);line-height:1;margin-bottom:2px}
-.pw-price sup{font-size:18px;color:var(--red);vertical-align:top;margin-top:8px;display:inline-block}
-.pw-period{font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--grey);letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
-.pw-features{list-style:none;margin-bottom:18px}
-.pw-features li{font-family:'Barlow Condensed',sans-serif;font-size:13px;color:rgba(240,236,228,.7);padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;align-items:center;gap:8px}
-.pw-features li::before{content:'✓';color:var(--red);font-weight:900}
-.btn-premium{display:block;width:100%;background:var(--red);color:#fff;border:none;padding:14px;font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:14px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:background .2s;-webkit-appearance:none}
-.btn-premium:hover{background:var(--red-hot)}
-.pw-sub{font-size:10px;color:var(--lgrey);margin-top:8px;font-family:'Barlow Condensed',sans-serif}
-.trend-item{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.05);cursor:pointer}
-.trend-item:last-child{border-bottom:none;padding-bottom:0}
-.trend-num{font-family:'Black Han Sans',sans-serif;font-size:26px;color:rgba(200,16,46,.2);line-height:1;min-width:28px}
-.trend-text h5{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:14px;line-height:1.2;margin-bottom:2px;transition:color .2s}
-.trend-item:hover .trend-text h5{color:var(--red)}
-.trend-text span{font-family:'Barlow Condensed',sans-serif;font-size:10px;color:var(--lgrey);text-transform:uppercase;letter-spacing:.06em}
-.ad-slot-side{background:var(--card);border:1px dashed rgba(255,255,255,.08);height:250px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
-.ad-slot-side span{font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--lgrey);letter-spacing:.12em;text-transform:uppercase}
+.sidebar{display:flex;flex-direction:column;gap:22px}
+.prem-card{background:linear-gradient(150deg,rgba(110,0,0,.22),var(--card));border:1px solid rgba(200,16,46,.2);padding:22px;text-align:center;position:relative;overflow:hidden}
+.prem-card::before{content:'';position:absolute;top:-45px;right:-45px;width:130px;height:130px;background:radial-gradient(circle,rgba(200,16,46,.18),transparent 70%);pointer-events:none}
+.pc-tag{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--g);margin-bottom:4px}
+.pc-price{font-family:var(--D);font-size:66px;line-height:1;color:var(--w)}
+.pc-price sup{font-size:22px;color:var(--red);vertical-align:top;margin-top:13px;display:inline-block}
+.pc-period{font-family:var(--C);font-size:10px;color:var(--g);letter-spacing:.18em;text-transform:uppercase;margin-bottom:15px}
+.pc-list{list-style:none;margin-bottom:16px;text-align:left}
+.pc-list li{font-family:var(--C);font-size:12px;color:rgba(240,236,244,.58);padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;align-items:center;gap:7px;font-weight:400}
+.pc-list li::before{content:'???';color:var(--red);font-size:8px;flex-shrink:0}
+.pc-btn{display:block;width:100%;background:var(--red);color:#fff;font-family:var(--C);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:13px;transition:background .18s}
+.pc-btn:hover{background:var(--red2)}
+.pc-note{font-family:var(--C);font-size:9px;color:var(--g);margin-top:6px}
+.widget{background:var(--card);padding:18px}
+.wh{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--g);padding-bottom:9px;border-bottom:1px solid var(--border);margin-bottom:13px;display:flex;align-items:center;gap:5px}
+.wh em{color:var(--red);font-style:normal}
+.tr-item{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04);cursor:pointer}
+.tr-item:last-child{border-bottom:none;padding-bottom:0}
+.tr-n{font-family:var(--D);font-size:26px;color:rgba(200,16,46,.14);line-height:1;min-width:27px;flex-shrink:0}
+.tr-info h5{font-family:var(--C);font-weight:600;font-size:12px;line-height:1.2;color:var(--w);margin-bottom:2px;transition:color .18s}
+.tr-item:hover .tr-info h5{color:var(--red)}
+.tr-info small{font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.04em;text-transform:uppercase}
+.ad-side{background:var(--card);border:1px dashed rgba(255,255,255,.06);height:250px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
+.sub-widget{background:var(--card);padding:18px}
+.sub-widget p{font-size:13px;font-style:italic;font-weight:300;color:var(--g);line-height:1.65;margin-bottom:13px}
+.sub-btn{display:block;width:100%;background:transparent;color:var(--red);border:1px solid rgba(200,16,46,.3);font-family:var(--C);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:11px;transition:all .18s}
+.sub-btn:hover{background:var(--red);color:#fff;border-color:var(--red)}
 
 /* CONCERTS */
-.concerts-section{background:var(--deep);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:48px 0}
-.concerts-inner{max-width:1320px;margin:0 auto;padding:0 16px}
-.city-tabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:24px}
-.city-tab{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:8px 14px;background:transparent;border:1px solid rgba(255,255,255,.1);color:var(--grey);cursor:pointer;transition:all .2s;-webkit-appearance:none}
-.city-tab:hover{border-color:var(--red);color:var(--white)}
-.city-tab.active{background:var(--red);border-color:var(--red);color:#fff}
-.concerts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
-.concert-card{background:var(--card);padding:20px;position:relative;overflow:hidden;cursor:pointer;transition:background .2s}
-.concert-card:hover{background:var(--card2)}
-.cc-genre-tag{position:absolute;top:12px;right:12px;font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);border:1px solid var(--red);padding:3px 7px}
-.cc-date{display:flex;align-items:center;gap:8px;margin-bottom:12px}
-.cc-day{font-family:'Black Han Sans',sans-serif;font-size:38px;color:var(--red);line-height:1}
-.cc-monthyear{display:flex;flex-direction:column}
-.cc-month{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;color:var(--white);letter-spacing:.08em;text-transform:uppercase}
-.cc-year{font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--grey)}
-.cc-artist{font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:20px;text-transform:uppercase;margin-bottom:4px;line-height:1.1}
-.cc-support{font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--grey);margin-bottom:10px}
-.cc-venue{font-family:'Barlow Condensed',sans-serif;font-size:11px;color:rgba(240,236,228,.45)}
-.cc-venue::before{content:'📍 ';font-size:10px}
-.cc-tickets{display:inline-block;margin-top:14px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--white);background:rgba(200,16,46,.12);border:1px solid var(--border);padding:6px 12px;transition:background .2s}
-.concert-card:hover .cc-tickets{background:var(--red);border-color:var(--red)}
+.concerts{background:var(--lift);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:42px 0}
+.c-inner{max-width:1360px;margin:0 auto;padding:0 24px}
+.city-tabs{display:flex;flex-wrap:wrap;gap:2px;border-bottom:1px solid var(--border);margin-bottom:18px}
+.ct{font-family:var(--C);font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:9px 13px;border:none;border-bottom:2px solid transparent;background:transparent;color:var(--g);transition:all .18s;margin-bottom:-1px}
+.ct:hover{color:var(--w)}.ct.on{color:var(--w);border-bottom-color:var(--red)}
+.shows{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.04)}
+.show{background:var(--ink);padding:17px;cursor:pointer;transition:background .18s;position:relative}
+.show:hover{background:var(--card)}
+.show-genre{position:absolute;top:11px;right:11px;font-family:var(--C);font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);border:1px solid rgba(200,16,46,.22);padding:2px 6px}
+.show-date{display:flex;align-items:baseline;gap:5px;margin-bottom:11px}
+.show-day{font-family:var(--D);font-size:46px;color:var(--red);line-height:1}
+.show-md{display:flex;flex-direction:column}
+.show-mo{font-family:var(--C);font-weight:700;font-size:11px;color:var(--w);letter-spacing:.1em;text-transform:uppercase}
+.show-yr{font-family:var(--C);font-size:9px;color:var(--g)}
+.show-artist{font-family:var(--D);font-size:19px;text-transform:uppercase;letter-spacing:.02em;line-height:1;margin-bottom:3px}
+.show-support{font-family:var(--C);font-size:10px;color:var(--g);margin-bottom:8px}
+.show-venue{font-family:var(--C);font-size:10px;color:rgba(240,236,244,.32);display:flex;align-items:center;gap:4px}
+.show-venue::before{content:'????';font-size:8px}
+.show-tix{display:inline-flex;align-items:center;gap:5px;margin-top:11px;font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--w);border:1px solid rgba(255,255,255,.09);padding:5px 10px;transition:all .18s}
+.show:hover .show-tix{background:var(--red);border-color:var(--red)}
+.show-tix::after{content:'???';color:var(--red);transition:color .18s}
+.show:hover .show-tix::after{color:#fff}
 
-/* LOCAL SCENE TABS */
-.local-section{background:var(--black);padding:48px 0;border-bottom:1px solid var(--border)}
-.local-inner{max-width:1320px;margin:0 auto;padding:0 16px}
-.local-tabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:24px}
-.local-tab{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:8px 16px;background:transparent;border:1px solid rgba(255,255,255,.1);color:var(--grey);cursor:pointer;transition:all .2s;-webkit-appearance:none}
-.local-tab:hover{border-color:var(--red);color:var(--white)}
-.local-tab.active{background:var(--red);border-color:var(--red);color:#fff}
-.local-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
-.local-card{background:var(--card);padding:20px;cursor:pointer;transition:background .2s;border-left:3px solid transparent}
-.local-card:hover{background:var(--card2);border-left-color:var(--red)}
-.lc-source{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:8px;display:flex;align-items:center;gap:6px}
-.lc-source::before{content:'📍'}
-.local-card h4{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:16px;line-height:1.2;text-transform:uppercase;margin-bottom:8px}
-.local-card p{font-size:12px;line-height:1.55;color:rgba(240,236,228,.5)}
-.lc-time{font-family:'Barlow Condensed',sans-serif;font-size:10px;color:var(--lgrey);margin-top:10px}
+/* LOCAL */
+.local{padding:42px 0;border-bottom:1px solid var(--border)}
+.l-inner{max-width:1360px;margin:0 auto;padding:0 24px}
+.city-pills{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:18px}
+.cp{font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:7px 13px;border:1px solid rgba(255,255,255,.08);color:var(--g);transition:all .18s}
+.cp:hover{border-color:rgba(200,16,46,.28);color:var(--w)}.cp.on{background:var(--red);border-color:var(--red);color:#fff}
+.local-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.04)}
+.lc{background:var(--ink);padding:17px;cursor:pointer;transition:all .18s;border-left:3px solid transparent}
+.lc:hover{background:var(--card);border-left-color:var(--red)}
+.lc-tag{font-family:var(--C);font-size:8px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:7px}
+.lc h4{font-family:var(--C);font-weight:700;font-size:14px;text-transform:uppercase;line-height:1.2;margin-bottom:6px}
+.lc p{font-size:12px;line-height:1.55;color:rgba(240,236,244,.36);font-weight:300;font-style:italic}
+.lc-time{font-family:var(--C);font-size:9px;color:var(--g);margin-top:9px}
 
-/* GENRE */
-.genre-section{max-width:1320px;margin:0 auto;padding:40px 16px}
-.genre-pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:20px}
-.genre-pill{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:9px 16px;background:var(--card);color:var(--grey);cursor:pointer;transition:all .2s;border-bottom:2px solid transparent;user-select:none}
-.genre-pill:hover{color:var(--white);border-color:var(--red)}
-.genre-pill.active{color:var(--white);background:var(--card2);border-color:var(--red)}
+/* GENRES */
+.genres{background:var(--lift);border-top:1px solid var(--border);padding:26px 0}
+.g-inner{max-width:1360px;margin:0 auto;padding:0 24px}
+.gpills{display:flex;flex-wrap:wrap;gap:4px;margin-top:13px}
+.gp{font-family:var(--C);font-size:10px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:7px 13px;background:var(--card);color:var(--g);cursor:pointer;transition:all .18s;border-bottom:2px solid transparent}
+.gp:hover{color:var(--w);border-color:rgba(200,16,46,.28)}.gp.on{background:var(--lift);color:var(--w);border-color:var(--red)}
 
 /* FOOTER */
-footer{background:var(--deep);border-top:1px solid var(--border);padding:40px 0 20px}
-.footer-inner{max-width:1320px;margin:0 auto;padding:0 16px}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:20px}
-.footer-brand p{font-size:13px;line-height:1.7;color:var(--grey);margin-top:12px;max-width:260px}
-.footer-col h5{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);margin-bottom:14px}
-.footer-col a{display:block;font-size:13px;color:rgba(240,236,228,.45);padding:3px 0;transition:color .2s}
-.footer-col a:hover{color:var(--white)}
-.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
-.footer-bottom p{font-family:'Barlow Condensed',sans-serif;font-size:11px;color:var(--lgrey);letter-spacing:.06em}
-.footer-bottom span{color:var(--red)}
-
-/* ANIMATIONS */
-@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-.fade-up{animation:fadeUp .6s ease both}
-.d1{animation-delay:.1s}.d2{animation-delay:.2s}.d3{animation-delay:.3s}
+footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 20px}
+.f-inner{max-width:1360px;margin:0 auto;padding:0 24px}
+.f-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:38px;padding-bottom:32px;border-bottom:1px solid var(--border);margin-bottom:18px}
+.f-brand .logo{margin-bottom:11px}
+.f-brand p{font-size:13px;font-style:italic;font-weight:300;color:var(--g);line-height:1.68;max-width:255px}
+.f-col h5{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--g);margin-bottom:13px;padding-bottom:7px;border-bottom:1px solid var(--border)}
+.f-col a{display:block;font-family:var(--C);font-size:12px;color:rgba(240,236,244,.26);padding:3px 0;transition:color .18s}
+.f-col a:hover{color:var(--w)}
+.f-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.f-bottom p{font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.1em;text-transform:uppercase}
+.f-bottom em{color:var(--red);font-style:normal}
 
 /* RESPONSIVE */
-@media(max-width:1024px){
-  .hero{grid-template-columns:1fr}.hero::after{display:none}.hero-main{padding:36px 0 32px}.hero-sidebar{display:none}
-  .main-wrap{grid-template-columns:1fr}.sidebar{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .concerts-grid{grid-template-columns:1fr 1fr}.local-grid{grid-template-columns:1fr 1fr}
-  .footer-grid{grid-template-columns:1fr 1fr;gap:28px}
+@media(max-width:1100px){
+  .hero{grid-template-columns:1fr}.hero-rule,.hero-aside{display:none}.hero-main{padding:30px 0}
+  .content{grid-template-columns:1fr}.sidebar{display:grid;grid-template-columns:1fr 1fr}
+  .shows{grid-template-columns:1fr 1fr}.local-grid{grid-template-columns:1fr 1fr}
+  .f-grid{grid-template-columns:1fr 1fr;gap:22px}
 }
 @media(max-width:768px){
-  .nav-links{display:none}.nav-toggle{display:flex}
-  .hero{padding:0 14px}.hero-main{padding:28px 0}.hero h1{font-size:clamp(32px,9vw,52px)}
-  .main-wrap{padding:28px 14px;grid-template-columns:1fr}
-  .news-grid{grid-template-columns:1fr}.news-card.featured{grid-column:span 1}.news-card.featured h3{font-size:22px}
-  .sidebar{grid-template-columns:1fr}
-  .concerts-section{padding:32px 0}.concerts-inner{padding:0 14px}.concerts-grid{grid-template-columns:1fr}
-  .local-section{padding:32px 0}.local-inner{padding:0 14px}.local-grid{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr 1fr;gap:20px}.footer-brand{grid-column:span 2}
-  .footer-bottom{flex-direction:column;align-items:flex-start}
+  .nav-links,.btn-prem{display:none}.ham{display:flex}
+  .hero,.c-inner,.l-inner,.g-inner,.f-inner,.ad-belt,.dl-inner,.world-inner,.content{padding-left:16px;padding-right:16px}
+  .ng{grid-template-columns:1fr}.nc.feature{grid-column:span 1;display:block}.nc.feature .nc-thumb{display:none}
+  .shows{grid-template-columns:1fr}.local-grid{grid-template-columns:1fr}.sidebar{grid-template-columns:1fr}
+  .f-grid{grid-template-columns:1fr 1fr;gap:18px}
 }
 @media(max-width:480px){
-  .logo-one,.logo-heavy{font-size:24px}.hero h1{font-size:34px}
-  .news-card p{display:none}.footer-grid{grid-template-columns:1fr}.footer-brand{grid-column:span 1}
-}
-@supports(padding:env(safe-area-inset-bottom)){
-  footer{padding-bottom:calc(20px + env(safe-area-inset-bottom))}
-  nav{padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)}
+  .hero h1{font-size:36px}.hero-watermark{display:none}
+  .f-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
 <!-- TICKER -->
-<div class="ticker" id="tickerBar">
-  <div class="ticker-track" id="tickerTrack">
-    <span>Loading latest metal news...</span>
-    <span>OneHeavy.net — All Metal. One Place.</span>
-    <span>Loading latest metal news...</span>
-    <span>OneHeavy.net — All Metal. One Place.</span>
+<div class="ticker">
+  <div class="t-tag">&#x26A1; Breaking</div>
+  <div class="t-scroll">
+    <div class="t-track" id="tickerTrack">
+      <span class="t-item">Loading live metal news from 6 sources&#8230;</span>
+      <span class="t-item">OneHeavy &#8212; The World&#39;s Heaviest Music Hub</span>
+      <span class="t-item">Global metal news updated every 5 minutes</span>
+      <span class="t-item">Loading live metal news from 6 sources&#8230;</span>
+      <span class="t-item">OneHeavy &#8212; The World&#39;s Heaviest Music Hub</span>
+      <span class="t-item">Global metal news updated every 5 minutes</span>
+    </div>
   </div>
 </div>
 
 <!-- NAV -->
 <nav>
-  <div class="nav-inner">
-    <a href="#" class="logo"><span class="logo-one">One</span><span class="logo-heavy">Heavy</span></a>
+  <div class="nav-wrap">
+    <a href="/" class="logo"><div class="logo-box">One</div><div class="logo-txt">Heavy</div></a>
     <ul class="nav-links">
-      <li><a href="#" class="active">News</a></li>
+      <li><a href="/" class="active">News</a></li>
       <li><a href="#concerts">Concerts</a></li>
       <li><a href="#local">Local Scene</a></li>
       <li><a href="#">Reviews</a></li>
+      <li><a href="#">Interviews</a></li>
       <li><a href="#">Bands</a></li>
       <li><a href="#">Genres</a></li>
-      <li><a href="#" class="nav-cta">Premium — $5/mo</a></li>
     </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav-right">
+      <button class="btn-prem">&#x1F918; Premium &mdash; $5/mo</button>
+      <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
   </div>
 </nav>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#" onclick="closeMenu()">News</a>
-  <a href="#concerts" onclick="closeMenu()">Concerts</a>
-  <a href="#local" onclick="closeMenu()">Local Scene</a>
-  <a href="#" onclick="closeMenu()">Reviews</a>
-  <a href="#" onclick="closeMenu()">Bands</a>
-  <a href="#" onclick="closeMenu()">Genres</a>
-  <a href="#" class="mobile-cta" onclick="closeMenu()">🤘 Go Premium — $5/mo</a>
+<!-- MOBILE NAV -->
+<div class="mob-nav" id="mobNav">
+  <a href="/" onclick="closeMob()">News</a>
+  <a href="#concerts" onclick="closeMob()">Concerts</a>
+  <a href="#local" onclick="closeMob()">Local Scene</a>
+  <a href="#" onclick="closeMob()">Reviews</a>
+  <a href="#" onclick="closeMob()">Bands</a>
+  <a href="#" onclick="closeMob()">Genres</a>
+  <a href="/premium" class="mob-cta" onclick="closeMob()">&#x1F918; Premium &mdash; $5/mo</a>
 </div>
 
-<!-- HERO (populated by JS) -->
-<section class="hero" id="heroSection">
+<!-- DATE LINE -->
+<div class="dateline">
+  <div class="dl-inner">
+    <span class="dl-date" id="dlDate">Loading&#8230;</span>
+    <span class="dl-live"><span class="live-dot"></span>Live &mdash; Updated Every 5 Minutes</span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
   <div class="hero-main">
-    <div class="hero-bg"></div>
-    <div class="hero-content fade-up" id="heroContent">
-      <div class="hero-tag">Loading...</div>
-      <h1>The World's <em>Heaviest</em> News Hub</h1>
-      <div class="hero-meta"><span class="genre-badge">Metal News</span><span>Live Updates</span></div>
-      <p>OneHeavy.net — bringing you the latest from the global metal scene, 24 hours a day. From underground gems to arena legends.</p>
-      <a href="#" class="hero-read">Latest News</a>
+    <div class="hero-watermark">METAL</div>
+    <div class="hero-body" id="heroBody">
+      <div class="hero-eyebrow">Breaking News</div>
+      <h1>Live Metal News<br>Loading Now</h1>
+      <div class="hero-byline"><span>OneHeavy</span><span class="hdot"></span><span>Just now</span></div>
+      <p class="hero-desc">Fetching the latest metal news from Blabbermouth, Loudwire, Kerrang, Metal Injection, Revolver and Heavy Mag AU. Top story loads automatically.</p>
+      <span class="btn-story">Loading&#8230;</span>
     </div>
   </div>
-  <aside class="hero-sidebar" id="heroSidebar">
-    <div class="sidebar-label">Latest Updates</div>
-    <div id="sidebarItems">
-      <div class="side-item"><div class="si-meta"><span class="si-genre">Loading</span></div><h4>Fetching latest news...</h4></div>
+  <div class="hero-rule"></div>
+  <aside class="hero-aside">
+    <div class="aside-hd">Latest Updates</div>
+    <div id="heroStack">
+      <div class="aside-item"><div class="ai-src">Loading</div><div class="ai-title">Fetching live stories&#8230;</div><div class="ai-time">Just now</div></div>
     </div>
   </aside>
 </section>
 
-<!-- WORLD FEED -->
-<div class="world-feed">
-  <div class="wf-inner">
-    <div class="wf-label">🌍 World Feed</div>
-    <div class="wf-scroll">
-      <div class="wf-items">
-        <div class="wf-item"><strong>Germany</strong>Wacken 2026 lineup drops<em>·</em></div>
-        <div class="wf-item"><strong>Japan</strong>Babymetal tease new era<em>·</em></div>
-        <div class="wf-item"><strong>Sweden</strong>Opeth solo debut confirmed<em>·</em></div>
-        <div class="wf-item"><strong>UK</strong>Download 2026 headliners revealed<em>·</em></div>
-        <div class="wf-item"><strong>Brazil</strong>Sepultura tribute night sells out<em>·</em></div>
-        <div class="wf-item"><strong>Australia</strong>Full Metal Cruise Pacific announced<em>·</em></div>
-        <div class="wf-item"><strong>Finland</strong>Nightwish complete new album<em>·</em></div>
-        <div class="wf-item"><strong>Germany</strong>Wacken 2026 lineup drops<em>·</em></div>
-        <div class="wf-item"><strong>Japan</strong>Babymetal tease new era<em>·</em></div>
-        <div class="wf-item"><strong>Sweden</strong>Opeth solo debut confirmed<em>·</em></div>
-        <div class="wf-item"><strong>UK</strong>Download 2026 headliners revealed<em>·</em></div>
-        <div class="wf-item"><strong>Brazil</strong>Sepultura tribute night sells out<em>·</em></div>
-        <div class="wf-item"><strong>Australia</strong>Full Metal Cruise Pacific announced<em>·</em></div>
-        <div class="wf-item"><strong>Finland</strong>Nightwish complete new album<em>·</em></div>
+<!-- WORLD BAND -->
+<div class="world">
+  <div class="world-inner">
+    <div class="world-label">&#x1F30D; World</div>
+    <div class="world-scroll">
+      <div class="world-track">
+        <span class="w-item"><strong>Germany</strong><em>&middot;</em>Wacken 2026 lineup drops</span>
+        <span class="w-item"><strong>Japan</strong><em>&middot;</em>Babymetal new era teased</span>
+        <span class="w-item"><strong>Sweden</strong><em>&middot;</em>Opeth solo debut confirmed</span>
+        <span class="w-item"><strong>UK</strong><em>&middot;</em>Download 2026 headliners announced</span>
+        <span class="w-item"><strong>Brazil</strong><em>&middot;</em>Sepultura tribute night sells out</span>
+        <span class="w-item"><strong>Australia</strong><em>&middot;</em>Full Metal Cruise Pacific announced</span>
+        <span class="w-item"><strong>Finland</strong><em>&middot;</em>Nightwish complete new album</span>
+        <span class="w-item"><strong>Norway</strong><em>&middot;</em>Enslaved announce 2026 world tour</span>
+        <span class="w-item"><strong>Germany</strong><em>&middot;</em>Wacken 2026 lineup drops</span>
+        <span class="w-item"><strong>Japan</strong><em>&middot;</em>Babymetal new era teased</span>
+        <span class="w-item"><strong>Sweden</strong><em>&middot;</em>Opeth solo debut confirmed</span>
+        <span class="w-item"><strong>UK</strong><em>&middot;</em>Download 2026 headliners announced</span>
+        <span class="w-item"><strong>Brazil</strong><em>&middot;</em>Sepultura tribute night sells out</span>
+        <span class="w-item"><strong>Australia</strong><em>&middot;</em>Full Metal Cruise Pacific announced</span>
+        <span class="w-item"><strong>Finland</strong><em>&middot;</em>Nightwish complete new album</span>
+        <span class="w-item"><strong>Norway</strong><em>&middot;</em>Enslaved announce 2026 world tour</span>
       </div>
     </div>
   </div>
 </div>
 
-<!-- AD BANNER (Google AdSense slot) -->
-<div class="ad-wrap">
-  <!-- Replace with AdSense code once approved -->
-  <div class="ad-slot"><span class="ad-tag">AD</span><span>[ 728×90 Music Advertisement ]</span></div>
+<!-- LEADERBOARD AD -->
+<div class="ad-belt">
+  <div class="ad-728">
+    <span class="ad-tag">Advertisement</span>
+    <span class="ad-dim">[ 728 &times; 90 &mdash; Google AdSense ]</span>
+  </div>
 </div>
 
 <!-- MAIN CONTENT -->
-<main class="main-wrap">
-
-  <!-- NEWS SECTION -->
-  <section>
-    <div class="sec-header">
-      <h2>Latest <span>News</span></h2>
-      <a href="#" class="see-all">All News →</a>
+<div class="content">
+  <main>
+    <div class="sh"><h2>Latest <em>News</em></h2><a href="#">All Stories &rarr;</a></div>
+    <div class="filters">
+      <button class="fb on" onclick="filterBy('all',this)">All Sources</button>
+      <button class="fb" onclick="filterBy('blabbermouth',this)">Blabbermouth</button>
+      <button class="fb" onclick="filterBy('loudwire',this)">Loudwire</button>
+      <button class="fb" onclick="filterBy('kerrang',this)">Kerrang</button>
+      <button class="fb" onclick="filterBy('metalinjection',this)">Metal Injection</button>
+      <button class="fb" onclick="filterBy('revolvermag',this)">Revolver</button>
+      <button class="fb" onclick="filterBy('heavymag',this)">Heavy Mag AU</button>
     </div>
-
-    <!-- Source filter tabs -->
-    <div class="source-tabs" id="sourceTabs">
-      <button class="source-tab active" onclick="filterNews('all', this)">All Sources</button>
-      <button class="source-tab" onclick="filterNews('blabbermouth.net', this)">Blabbermouth</button>
-      <button class="source-tab" onclick="filterNews('loudwire.com', this)">Loudwire</button>
-      <button class="source-tab" onclick="filterNews('kerrang.com', this)">Kerrang</button>
-      <button class="source-tab" onclick="filterNews('metalinjection.net', this)">Metal Injection</button>
-      <button class="source-tab" onclick="filterNews('revolvermag.com', this)">Revolver</button>
-      <button class="source-tab" onclick="filterNews('heavymag.com.au', this)">Heavy Mag</button>
+    <div class="ng" id="newsGrid">
+      <div class="loading"><div class="spin"></div><p>Fetching live metal news from 6 sources&#8230;</p></div>
     </div>
+  </main>
 
-    <!-- News cards injected here by JS -->
-    <div class="news-grid" id="newsGrid">
-      <div class="news-loading">
-        <div class="spinner"></div>
-        <p>Loading live metal news...</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SIDEBAR -->
   <aside class="sidebar">
-    <div class="premium-widget fade-up d1">
-      <div class="pw-icon">🤘</div>
-      <div style="font-family:'Barlow Condensed',sans-serif;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--grey);margin-bottom:6px">Go Ad-Free &amp; Unlock</div>
-      <div class="pw-price"><sup>$</sup>5</div>
-      <div class="pw-period">per month · cancel anytime</div>
-      <ul class="pw-features">
-        <li>Zero advertisements</li>
+    <div class="prem-card">
+      <div class="pc-tag">OneHeavy Premium</div>
+      <div class="pc-price"><sup>$</sup>5</div>
+      <div class="pc-period">per month &middot; cancel anytime</div>
+      <ul class="pc-list">
+        <li>Ad-free experience</li>
         <li>Concert alerts for your city</li>
         <li>Exclusive interviews &amp; reviews</li>
-        <li>Early access — breaking news</li>
-        <li>Premium features coming soon</li>
+        <li>Breaking news 30 min early</li>
+        <li>Local scene priority feed</li>
       </ul>
-      <button class="btn-premium">Start Free Trial</button>
-      <div class="pw-sub">No credit card required for trial</div>
+      <button class="pc-btn">Start Free Trial &#x1F918;</button>
+      <div class="pc-note">No credit card required for trial</div>
     </div>
-
-    <!-- Google AdSense 300x250 -->
-    <div class="ad-slot-side">
-      <span class="ad-tag">AD</span>
-      <span>[ 300×250 Music Ad ]</span>
+    <div class="ad-side">
+      <span class="ad-tag">Advertisement</span>
+      <span style="font-family:var(--C);font-size:10px;color:rgba(255,255,255,.11)">[ 300 &times; 250 ]</span>
     </div>
-
-    <div class="widget fade-up d2">
-      <div class="widget-title">🔥 Trending <span>Today</span></div>
-      <div id="trendingList">
-        <div class="trend-item"><div class="trend-num">01</div><div class="trend-text"><h5>Loading trending stories...</h5><span>Metal News</span></div></div>
+    <div class="widget">
+      <div class="wh">&#x1F525; Trending <em>Today</em></div>
+      <div id="trendList">
+        <div class="tr-item"><div class="tr-n">01</div><div class="tr-info"><h5>Loading stories&#8230;</h5><small>Metal News</small></div></div>
       </div>
+    </div>
+    <div class="sub-widget">
+      <div class="wh">&#x1F4CD; <em>Submit</em> Your Event</div>
+      <p>Local bands and promoters &mdash; get your shows listed for the whole metal community, completely free.</p>
+      <button class="sub-btn">Submit Now &rarr;</button>
     </div>
   </aside>
-</main>
+</div>
 
 <!-- CONCERTS -->
-<section class="concerts-section" id="concerts">
-  <div class="concerts-inner">
-    <div class="sec-header"><h2>Concerts <span>Near You</span></h2><a href="#" class="see-all">All Shows →</a></div>
+<section class="concerts" id="concerts">
+  <div class="c-inner">
+    <div class="sh"><h2>Shows <em>Near You</em></h2><a href="#">All Shows &rarr;</a></div>
     <div class="city-tabs">
-      <button class="city-tab active" onclick="selectCity(this)">🇬🇧 London</button>
-      <button class="city-tab" onclick="selectCity(this)">🇺🇸 New York</button>
-      <button class="city-tab" onclick="selectCity(this)">🇩🇪 Berlin</button>
-      <button class="city-tab" onclick="selectCity(this)">🇦🇺 Sydney</button>
-      <button class="city-tab" onclick="selectCity(this)">🇦🇺 Melbourne</button>
-      <button class="city-tab" onclick="selectCity(this)">🇨🇦 Toronto</button>
-      <button class="city-tab" onclick="selectCity(this)">🇯🇵 Tokyo</button>
-      <button class="city-tab" onclick="selectCity(this)">🇧🇷 São Paulo</button>
+      <button class="ct on" onclick="setTab(this,'.ct')">&#x1F1EC;&#x1F1E7; London</button>
+      <button class="ct" onclick="setTab(this,'.ct')">&#x1F1FA;&#x1F1F8; New York</button>
+      <button class="ct" onclick="setTab(this,'.ct')">&#x1F1E9;&#x1F1EA; Berlin</button>
+      <button class="ct" onclick="setTab(this,'.ct')">&#x1F1E6;&#x1F1FA; Melbourne</button>
+      <button class="ct" onclick="setTab(this,'.ct')">&#x1F1E6;&#x1F1FA; Sydney</button>
+      <button class="ct" onclick="setTab(this,'.ct')">&#x1F1E8;&#x1F1E6; Toronto</button>
+      <button class="ct" onclick="setTab(this,'.ct')">&#x1F1EF;&#x1F1F5; Tokyo</button>
+      <button class="ct" onclick="setTab(this,'.ct')">&#x1F1E7;&#x1F1F7; S&atilde;o Paulo</button>
     </div>
-    <div class="concerts-grid">
-      <article class="concert-card"><span class="cc-genre-tag">Thrash</span><div class="cc-date"><div class="cc-day">08</div><div class="cc-monthyear"><span class="cc-month">March</span><span class="cc-year">2026</span></div></div><div class="cc-artist">Metallica</div><div class="cc-support">with Mammoth WVH</div><div class="cc-venue">O2 Arena, London</div><span class="cc-tickets">Buy Tickets →</span></article>
-      <article class="concert-card"><span class="cc-genre-tag">Death Metal</span><div class="cc-date"><div class="cc-day">15</div><div class="cc-monthyear"><span class="cc-month">March</span><span class="cc-year">2026</span></div></div><div class="cc-artist">Cannibal Corpse</div><div class="cc-support">with Nile + Obituary</div><div class="cc-venue">Roundhouse, London</div><span class="cc-tickets">Buy Tickets →</span></article>
-      <article class="concert-card"><span class="cc-genre-tag">Prog Metal</span><div class="cc-date"><div class="cc-day">22</div><div class="cc-monthyear"><span class="cc-month">March</span><span class="cc-year">2026</span></div></div><div class="cc-artist">Tool</div><div class="cc-support">with Killing Joke</div><div class="cc-venue">Alexandra Palace</div><span class="cc-tickets">Buy Tickets →</span></article>
-      <article class="concert-card"><span class="cc-genre-tag">Symphonic</span><div class="cc-date"><div class="cc-day">04</div><div class="cc-monthyear"><span class="cc-month">April</span><span class="cc-year">2026</span></div></div><div class="cc-artist">Nightwish</div><div class="cc-support">with Within Temptation</div><div class="cc-venue">Wembley Arena</div><span class="cc-tickets">Buy Tickets →</span></article>
-      <article class="concert-card"><span class="cc-genre-tag">Black Metal</span><div class="cc-date"><div class="cc-day">11</div><div class="cc-monthyear"><span class="cc-month">April</span><span class="cc-year">2026</span></div></div><div class="cc-artist">Mayhem</div><div class="cc-support">with Immortal + Marduk</div><div class="cc-venue">Electric Ballroom</div><span class="cc-tickets">Buy Tickets →</span></article>
-      <article class="concert-card"><span class="cc-genre-tag">Groove Metal</span><div class="cc-date"><div class="cc-day">18</div><div class="cc-monthyear"><span class="cc-month">April</span><span class="cc-year">2026</span></div></div><div class="cc-artist">Pantera</div><div class="cc-support">with Hatebreed</div><div class="cc-venue">O2 Arena, London</div><span class="cc-tickets">Buy Tickets →</span></article>
+    <div class="shows">
+      <div class="show"><span class="show-genre">Thrash</span><div class="show-date"><div class="show-day">08</div><div class="show-md"><span class="show-mo">March</span><span class="show-yr">2026</span></div></div><div class="show-artist">Metallica</div><div class="show-support">with Mammoth WVH</div><div class="show-venue">O2 Arena, London</div><span class="show-tix">Tickets</span></div>
+      <div class="show"><span class="show-genre">Death</span><div class="show-date"><div class="show-day">15</div><div class="show-md"><span class="show-mo">March</span><span class="show-yr">2026</span></div></div><div class="show-artist">Cannibal Corpse</div><div class="show-support">with Nile + Obituary</div><div class="show-venue">Roundhouse, London</div><span class="show-tix">Tickets</span></div>
+      <div class="show"><span class="show-genre">Prog</span><div class="show-date"><div class="show-day">22</div><div class="show-md"><span class="show-mo">March</span><span class="show-yr">2026</span></div></div><div class="show-artist">Tool</div><div class="show-support">with Killing Joke</div><div class="show-venue">Alexandra Palace</div><span class="show-tix">Tickets</span></div>
+      <div class="show"><span class="show-genre">Black</span><div class="show-date"><div class="show-day">11</div><div class="show-md"><span class="show-mo">April</span><span class="show-yr">2026</span></div></div><div class="show-artist">Mayhem</div><div class="show-support">with Immortal + Marduk</div><div class="show-venue">Electric Ballroom</div><span class="show-tix">Tickets</span></div>
     </div>
   </div>
 </section>
 
-<!-- LOCAL SCENE TABS -->
-<section class="local-section" id="local">
-  <div class="local-inner">
-    <div class="sec-header">
-      <h2>Local <span>Scene</span></h2>
-      <a href="#" class="see-all">Submit Event →</a>
+<!-- LOCAL SCENE -->
+<section class="local" id="local">
+  <div class="l-inner">
+    <div class="sh"><h2>Local <em>Scene</em></h2><a href="#">Submit Event &rarr;</a></div>
+    <div class="city-pills">
+      <button class="cp on" onclick="setTab(this,'.cp')">&#x1F1E6;&#x1F1FA; Melbourne</button>
+      <button class="cp" onclick="setTab(this,'.cp')">&#x1F1E6;&#x1F1FA; Sydney</button>
+      <button class="cp" onclick="setTab(this,'.cp')">&#x1F1E6;&#x1F1FA; Brisbane</button>
+      <button class="cp" onclick="setTab(this,'.cp')">&#x1F1EC;&#x1F1E7; London</button>
+      <button class="cp" onclick="setTab(this,'.cp')">&#x1F1FA;&#x1F1F8; New York</button>
+      <button class="cp" onclick="setTab(this,'.cp')">&#x1F1E9;&#x1F1EA; Berlin</button>
+      <button class="cp" onclick="setTab(this,'.cp')">&#x1F1E8;&#x1F1E6; Toronto</button>
+      <button class="cp" onclick="setTab(this,'.cp')">+ Add City</button>
     </div>
-    <div class="local-tabs">
-      <button class="local-tab active" onclick="selectLocal(this, 'melbourne')">🇦🇺 Melbourne</button>
-      <button class="local-tab" onclick="selectLocal(this, 'sydney')">🇦🇺 Sydney</button>
-      <button class="local-tab" onclick="selectLocal(this, 'brisbane')">🇦🇺 Brisbane</button>
-      <button class="local-tab" onclick="selectLocal(this, 'london')">🇬🇧 London</button>
-      <button class="local-tab" onclick="selectLocal(this, 'newyork')">🇺🇸 New York</button>
-      <button class="local-tab" onclick="selectLocal(this, 'berlin')">🇩🇪 Berlin</button>
-      <button class="local-tab" onclick="selectLocal(this, 'toronto')">🇨🇦 Toronto</button>
-      <button class="local-tab" onclick="selectLocal(this, 'submit')">+ Add Your City</button>
-    </div>
-    <div class="local-grid" id="localGrid">
-      <div class="local-card">
-        <div class="lc-source">Melbourne Metal Scene</div>
-        <h4>Submit Your Local Events Here</h4>
-        <p>Know of a local metal show, band announcement or scene news? Submit it to OneHeavy and we'll feature it for free.</p>
-        <div class="lc-time">Local listings coming soon</div>
-      </div>
-      <div class="local-card">
-        <div class="lc-source">Local Promoters Welcome</div>
-        <h4>Free Concert Listings for Every Venue</h4>
-        <p>OneHeavy lists every local metal show at no cost to promoters. Contact us to get your events featured.</p>
-        <div class="lc-time">contact@oneheavy.net</div>
-      </div>
-      <div class="local-card">
-        <div class="lc-source">Local Bands</div>
-        <h4>Get Your Band on OneHeavy</h4>
-        <p>Local and unsigned bands — claim your free profile page and get your shows in front of metal fans in your city.</p>
-        <div class="lc-time">Free for all bands</div>
-      </div>
+    <div class="local-grid">
+      <div class="lc"><div class="lc-tag">&#x1F4CD; Melbourne Metal Scene</div><h4>Submit Your Local Events</h4><p>Know of a local metal show, band news or scene update? Submit it free and we&#39;ll feature it for the whole community.</p><div class="lc-time">Listings added daily</div></div>
+      <div class="lc"><div class="lc-tag">&#x1F4CD; Promoters Welcome</div><h4>Free Listings for Every Venue</h4><p>OneHeavy lists every local metal show at zero cost. Get your events in front of thousands of dedicated metal fans.</p><div class="lc-time"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="492a26273d282a3d0926272c212c283f3067272c3d">[email&#160;protected]</a></div></div>
+      <div class="lc"><div class="lc-tag">&#x1F4CD; Local &amp; Unsigned Bands</div><h4>Get Your Band on OneHeavy</h4><p>Claim your free band profile, list your shows, build your local following. We support the underground that drives this community.</p><div class="lc-time">Always free for bands</div></div>
     </div>
   </div>
 </section>
 
-<!-- GENRE BROWSER -->
-<section class="genre-section">
-  <div class="sec-header"><h2>Browse by <span>Genre</span></h2></div>
-  <div class="genre-pills">
-    <span class="genre-pill active">All</span>
-    <span class="genre-pill">Thrash Metal</span><span class="genre-pill">Death Metal</span>
-    <span class="genre-pill">Black Metal</span><span class="genre-pill">Doom Metal</span>
-    <span class="genre-pill">Power Metal</span><span class="genre-pill">Progressive Metal</span>
-    <span class="genre-pill">Symphonic Metal</span><span class="genre-pill">Groove Metal</span>
-    <span class="genre-pill">Nu-Metal</span><span class="genre-pill">Metalcore</span>
-    <span class="genre-pill">Deathcore</span><span class="genre-pill">Folk Metal</span>
-    <span class="genre-pill">Viking Metal</span><span class="genre-pill">Alternative Metal</span>
-    <span class="genre-pill">Industrial Metal</span><span class="genre-pill">Post-Metal</span>
-    <span class="genre-pill">Djent</span><span class="genre-pill">Stoner Metal</span>
+<!-- GENRES -->
+<div class="genres">
+  <div class="g-inner">
+    <div class="sh" style="border-bottom:none"><h2>Browse by <em>Genre</em></h2></div>
+    <div class="gpills">
+      <span class="gp on" onclick="setGenre(this)">All Metal</span>
+      <span class="gp" onclick="setGenre(this)">Thrash</span><span class="gp" onclick="setGenre(this)">Death</span>
+      <span class="gp" onclick="setGenre(this)">Black</span><span class="gp" onclick="setGenre(this)">Doom</span>
+      <span class="gp" onclick="setGenre(this)">Power</span><span class="gp" onclick="setGenre(this)">Progressive</span>
+      <span class="gp" onclick="setGenre(this)">Symphonic</span><span class="gp" onclick="setGenre(this)">Groove</span>
+      <span class="gp" onclick="setGenre(this)">Nu-Metal</span><span class="gp" onclick="setGenre(this)">Metalcore</span>
+      <span class="gp" onclick="setGenre(this)">Deathcore</span><span class="gp" onclick="setGenre(this)">Folk</span>
+      <span class="gp" onclick="setGenre(this)">Viking</span><span class="gp" onclick="setGenre(this)">Industrial</span>
+      <span class="gp" onclick="setGenre(this)">Post-Metal</span><span class="gp" onclick="setGenre(this)">Djent</span>
+      <span class="gp" onclick="setGenre(this)">Stoner</span>
+    </div>
   </div>
-</section>
+</div>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="#" class="logo"><span class="logo-one">One</span><span class="logo-heavy">Heavy</span></a>
-        <p>The world's heaviest news hub. All metal, all alternative, all in one place. Updated 24/7 from the global metal scene.</p>
+  <div class="f-inner">
+    <div class="f-grid">
+      <div class="f-brand">
+        <a href="/" class="logo"><div class="logo-box">One</div><div class="logo-txt">Heavy</div></a>
+        <p>The world&#39;s heaviest music hub. All metal, all genres, all scenes &mdash; in one place. Updated every 5 minutes.</p>
       </div>
-      <div class="footer-col"><h5>Navigate</h5><a href="#">News</a><a href="#">Concerts</a><a href="#local">Local Scene</a><a href="#">Reviews</a><a href="#">Bands A–Z</a></div>
-      <div class="footer-col"><h5>Genres</h5><a href="#">Thrash Metal</a><a href="#">Death Metal</a><a href="#">Black Metal</a><a href="#">Prog Metal</a><a href="#">All Genres</a></div>
-      <div class="footer-col"><h5>OneHeavy</h5><a href="#">Premium — $5/mo</a><a href="#">Submit News</a><a href="#">List Your Show</a><a href="#">Advertise</a><a href="#">Contact</a></div>
+      <div class="f-col">
+        <h5>Navigate</h5>
+        <a href="/">News</a><a href="#concerts">Concerts</a><a href="#local">Local Scene</a>
+        <a href="#">Reviews</a><a href="#">Interviews</a><a href="#">Bands A&ndash;Z</a>
+      </div>
+      <div class="f-col">
+        <h5>Genres</h5>
+        <a href="#">Thrash Metal</a><a href="#">Death Metal</a><a href="#">Black Metal</a>
+        <a href="#">Prog Metal</a><a href="#">Doom Metal</a><a href="#">All Genres &rarr;</a>
+      </div>
+      <div class="f-col">
+        <h5>OneHeavy</h5>
+        <a href="/premium">Premium &mdash; $5/mo</a><a href="#">Submit News</a>
+        <a href="#">List Your Show</a><a href="#">Advertise</a><a href="#">Contact</a>
+      </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2026 <span>OneHeavy</span> — oneheavy.net — All rights reserved.</p>
-      <p>Privacy Policy · Terms of Use</p>
+    <div class="f-bottom">
+      <p>&copy; 2026 <em>OneHeavy</em> &middot; oneheavy.net</p>
+      <p>Privacy &middot; Terms &middot; <em>Keep It Heavy &#x1F918;</em></p>
     </div>
   </div>
 </footer>
 
-<script>
-// ═══════════════════════════════════════
-//  MOBILE MENU
-// ═══════════════════════════════════════
-const toggle = document.getElementById('navToggle');
-const mobileMenu = document.getElementById('mobileMenu');
-toggle.addEventListener('click', () => {
-  const isOpen = mobileMenu.classList.toggle('open');
-  toggle.classList.toggle('open', isOpen);
-  toggle.setAttribute('aria-expanded', isOpen);
-  document.body.style.overflow = isOpen ? 'hidden' : '';
-});
-function closeMenu() {
-  mobileMenu.classList.remove('open');
-  toggle.classList.remove('open');
-  toggle.setAttribute('aria-expanded','false');
-  document.body.style.overflow = '';
-}
-document.addEventListener('keydown', e => { if(e.key==='Escape') closeMenu(); });
-
-// ═══════════════════════════════════════
-//  CITY & LOCAL TABS
-// ═══════════════════════════════════════
-function selectCity(el) {
-  document.querySelectorAll('.city-tab').forEach(t => t.classList.remove('active'));
-  el.classList.add('active');
-}
-function selectLocal(el, city) {
-  document.querySelectorAll('.local-tab').forEach(t => t.classList.remove('active'));
-  el.classList.add('active');
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const clean = s => (s||'').replace(/<[^>]+>/g,'').replace(/&amp;/g,'&').replace(/&#8217;/g,"'").replace(/&#8220;/g,'"').replace(/&#8221;/g,'"').replace(/&quot;/g,'"').replace(/&nbsp;/g,' ').trim();
+function ago(d){
+  const s=Math.floor((Date.now()-new Date(d))/1000);
+  if(s<60)return'Just now';
+  if(s<3600)return Math.floor(s/60)+'m ago';
+  if(s<86400)return Math.floor(s/3600)+'h ago';
+  return Math.floor(s/86400)+'d ago';
 }
 
-// ═══════════════════════════════════════
-//  GENRE PILLS
-// ═══════════════════════════════════════
-document.querySelectorAll('.genre-pill').forEach(pill => {
-  pill.addEventListener('click', () => {
-    document.querySelectorAll('.genre-pill').forEach(p => p.classList.remove('active'));
-    pill.classList.add('active');
-  });
-});
-
-// ═══════════════════════════════════════
-//  TIME AGO HELPER
-// ═══════════════════════════════════════
-function timeAgo(dateStr) {
-  const diff = Date.now() - new Date(dateStr).getTime();
-  const mins  = Math.floor(diff / 60000);
-  const hours = Math.floor(diff / 3600000);
-  const days  = Math.floor(diff / 86400000);
-  if (mins  < 60)  return mins  + ' mins ago';
-  if (hours < 24)  return hours + ' hrs ago';
-  return days + ' days ago';
-}
-
-function cleanText(html) {
-  return (html || '').replace(/<[^>]+>/g,'').replace(/&amp;/g,'&').replace(/&quot;/g,'"').replace(/&#8217;/g,"'").replace(/&#8216;/g,"'").trim();
-}
-
-function sourceName(url) {
-  try {
-    return new URL(url).hostname.replace('www.','');
-  } catch(e) { return url; }
-}
-
-// ═══════════════════════════════════════
-//  LIVE RSS NEWS FEED
-// ═══════════════════════════════════════
-let allNewsItems = [];
-let currentFilter = 'all';
-
-const RSS_FEEDS = [
-  { url: 'https://www.blabbermouth.net/feed/',  label: 'Blabbermouth', flag: '🇺🇸' },
-  { url: 'https://loudwire.com/feed/',          label: 'Loudwire',     flag: '🇺🇸' },
-  { url: 'https://www.kerrang.com/feed',        label: 'Kerrang',      flag: '🇬🇧' },
-  { url: 'https://metalinjection.net/feed',     label: 'Metal Injection', flag: '🇺🇸' },
-  { url: 'https://www.revolvermag.com/feed',    label: 'Revolver',     flag: '🇺🇸' },
-  { url: 'https://heavymag.com.au/feed',        label: 'Heavy Mag',    flag: '🇦🇺' },
+const FEEDS=[
+  {url:'https://www.blabbermouth.net/feed/', key:'blabbermouth',  label:'Blabbermouth',    flag:'&#x1F1FA;&#x1F1F8;'},
+  {url:'https://loudwire.com/feed/',          key:'loudwire',      label:'Loudwire',        flag:'&#x1F1FA;&#x1F1F8;'},
+  {url:'https://www.kerrang.com/feed',        key:'kerrang',       label:'Kerrang',         flag:'&#x1F1EC;&#x1F1E7;'},
+  {url:'https://metalinjection.net/feed',     key:'metalinjection',label:'Metal Injection', flag:'&#x1F1FA;&#x1F1F8;'},
+  {url:'https://www.revolvermag.com/feed',    key:'revolvermag',   label:'Revolver',        flag:'&#x1F1FA;&#x1F1F8;'},
+  {url:'https://heavymag.com.au/feed',        key:'heavymag',      label:'Heavy Mag AU',    flag:'&#x1F1E6;&#x1F1FA;'},
 ];
+let ALL=[],FILTER='all';
 
-const RSS2JSON = 'https://api.rss2json.com/v1/api.json?rss_url=';
-
-async function fetchFeed(feed) {
-  try {
-    const r = await fetch(RSS2JSON + encodeURIComponent(feed.url) + '&count=8', { signal: AbortSignal.timeout(8000) });
-    const data = await r.json();
-    return (data.items || []).map(item => ({
-      title:     cleanText(item.title),
-      desc:      cleanText(item.description).slice(0, 180),
-      url:       item.link,
-      image:     item.thumbnail || item.enclosure?.link || null,
-      source:    feed.label,
-      sourceUrl: sourceName(item.link),
-      flag:      feed.flag,
-      published: item.pubDate,
+async function fetchFeed(f){
+  try{
+    const r=await fetch(`/api/rss?url=${encodeURIComponent(f.url)}`,{signal:AbortSignal.timeout(10000)});
+    const d=await r.json();
+    return(d.items||[]).map(i=>({
+      title:clean(i.title),desc:clean(i.description||'').slice(0,200),
+      url:i.link,source:f.label,key:f.key,flag:f.flag,pub:i.pubDate,ms:new Date(i.pubDate).getTime()
     }));
-  } catch(e) {
-    console.log('Feed error:', feed.label, e.message);
-    return [];
-  }
+  }catch(e){return[];}
 }
 
-function renderNews(items) {
-  const grid = document.getElementById('newsGrid');
-  if (!items || items.length === 0) {
-    grid.innerHTML = '<div class="news-loading"><p>Could not load news right now. Check back soon.</p></div>';
-    return;
-  }
-  grid.innerHTML = items.slice(0, 6).map((item, i) => `
-    <article class="news-card ${i === 0 ? 'featured' : ''} fade-up" onclick="window.open('${item.url}','_blank')">
-      <div class="nc-meta">
-        <span class="nc-genre">${item.source}</span>
-        <span class="nc-country">${item.flag}</span>
-        <span class="nc-time">${timeAgo(item.published)}</span>
-      </div>
-      <h3>${item.title}</h3>
-      ${i === 0 || i < 3 ? `<p>${item.desc}</p>` : ''}
-      <div class="nc-source">${item.sourceUrl}</div>
-      <span class="read-more">Read Full Story →</span>
-    </article>
+async function loadAll(){
+  document.getElementById('newsGrid').innerHTML='<div class="loading"><div class="spin"></div><p>Fetching live metal news&#8230;</p></div>';
+  const res=await Promise.allSettled(FEEDS.map(fetchFeed));
+  ALL=res.flatMap(r=>r.status==='fulfilled'?r.value:[]).sort((a,b)=>b.ms-a.ms);
+  const show=FILTER==='all'?ALL:ALL.filter(i=>i.key===FILTER);
+  renderGrid(show);renderHero(ALL);renderTicker(ALL);renderTrend(ALL);
+}
+
+function renderGrid(items){
+  const g=document.getElementById('newsGrid');
+  if(!items.length){g.innerHTML='<div class="loading"><p>No stories loaded &mdash; refresh shortly</p></div>';return;}
+  g.innerHTML=items.slice(0,7).map((it,i)=>`
+    <a class="nc${i===0?' feature':''}" href="${it.url}" target="_blank" rel="noopener noreferrer">
+      ${i===0?`<div class="nc-thumb"><div class="nc-thumb-src">${it.flag} ${it.source}</div></div><div class="nc-body">`:''}
+      <div class="nc-top"><span class="nc-src">${it.source}</span><span class="nc-age">${ago(it.pub)}</span></div>
+      <h3>${it.title}</h3>
+      ${i<3?`<p>${it.desc}</p>`:''}
+      <div class="nc-foot">${it.source} &middot; ${it.flag}</div>
+      ${i===0?'</div>':''}
+    </a>
   `).join('');
 }
 
-function filterNews(source, btn) {
-  document.querySelectorAll('.source-tab').forEach(t => t.classList.remove('active'));
-  btn.classList.add('active');
-  currentFilter = source;
-  const filtered = source === 'all' ? allNewsItems : allNewsItems.filter(i => i.sourceUrl.includes(source));
-  renderNews(filtered);
-}
-
-function updateTicker(items) {
-  const track = document.getElementById('tickerTrack');
-  const headlines = [...items.slice(0, 10), ...items.slice(0, 10)];
-  track.innerHTML = headlines.map(i => `<span>${i.title}</span>`).join('');
-}
-
-function updateHero(items) {
-  if (!items.length) return;
-  const top = items[0];
-  document.getElementById('heroContent').innerHTML = `
-    <div class="hero-tag">Breaking News</div>
-    <h1>${top.title.split(':')[0] || top.title}</h1>
-    <div class="hero-meta">
-      <span class="genre-badge">Metal News</span>
-      <span>${top.flag} ${top.source}</span>
-      <span>${timeAgo(top.published)}</span>
-    </div>
-    <p>${top.desc}</p>
-    <a href="${top.url}" target="_blank" rel="noopener" class="hero-read">Read Full Story</a>
+function renderHero(items){
+  if(!items.length)return;
+  const t=items[0];
+  document.getElementById('heroBody').innerHTML=`
+    <div class="hero-eyebrow">Breaking News</div>
+    <h1>${t.title}</h1>
+    <div class="hero-byline"><span>${t.flag} ${t.source}</span><span class="hdot"></span><span>${ago(t.pub)}</span></div>
+    <p class="hero-desc">${t.desc}</p>
+    <a href="${t.url}" target="_blank" rel="noopener noreferrer" class="btn-story">Read Full Story</a>
   `;
-
-  const sideItems = items.slice(1, 6).map(item => `
-    <div class="side-item" onclick="window.open('${item.url}','_blank')">
-      <div class="si-meta">
-        <span class="si-genre">${item.source}</span>
-        <span class="si-time">${timeAgo(item.published)}</span>
-      </div>
-      <h4>${item.title}</h4>
-    </div>
-  `).join('');
-  document.getElementById('sidebarItems').innerHTML = sideItems;
-}
-
-function updateTrending(items) {
-  document.getElementById('trendingList').innerHTML = items.slice(0, 5).map((item, i) => `
-    <div class="trend-item" onclick="window.open('${item.url}','_blank')">
-      <div class="trend-num">0${i+1}</div>
-      <div class="trend-text">
-        <h5>${item.title}</h5>
-        <span>${item.source} · ${timeAgo(item.published)}</span>
-      </div>
+  document.getElementById('heroStack').innerHTML=items.slice(1,5).map(it=>`
+    <div class="aside-item" onclick="window.open('${it.url}','_blank')">
+      <div class="ai-src">${it.source}</div>
+      <div class="ai-title">${it.title}</div>
+      <div class="ai-time">${ago(it.pub)}</div>
     </div>
   `).join('');
 }
 
-async function loadAllNews() {
-  document.getElementById('newsGrid').innerHTML = '<div class="news-loading"><div class="spinner"></div><p>Loading live metal news...</p></div>';
-  const results = await Promise.allSettled(RSS_FEEDS.map(fetchFeed));
-  allNewsItems = results
-    .flatMap(r => r.status === 'fulfilled' ? r.value : [])
-    .sort((a,b) => new Date(b.published) - new Date(a.published));
-
-  if (allNewsItems.length > 0) {
-    renderNews(allNewsItems);
-    updateTicker(allNewsItems);
-    updateHero(allNewsItems);
-    updateTrending(allNewsItems);
-  } else {
-    document.getElementById('newsGrid').innerHTML = '<div class="news-loading"><p>News feeds loading — please refresh in a moment.</p></div>';
-  }
+function renderTicker(items){
+  const arr=[...items.slice(0,10),...items.slice(0,10)];
+  document.getElementById('tickerTrack').innerHTML=arr.map(i=>`<span class="t-item">${i.title}</span>`).join('');
 }
 
-// Load news on page open, refresh every 5 minutes
-loadAllNews();
-setInterval(loadAllNews, 300000);
-</script>
-</body>
-</html>
+function renderTrend(items){
+  document.getElementById('trendList').innerHTML=items.slice(0,5).map((it,i)=>`
+    <div class="tr-item" onclick="window.open('${it.url}','_blank')">
+      <div class="tr-n">0${i+1}</div>
+      <div class="tr-info"><h5>${it.title}</h5><small>${it.source} &middot; ${ago(it.pub)}</small></div>
+    </div>
+  `).join('');
+}
+
+function filterBy(key,btn){
+  FILTER=key;
+  document.querySelectorAll('.fb').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  renderGrid(key==='all'?ALL:ALL.filter(i=>i.key===key));
+}
+
+function setTab(el,selector){
+  document.querySelectorAll(selector).forEach(t=>t.classList.remove('on'));
+  el.classList.add('on');
+}
+function setGenre(el){
+  document.querySelectorAll('.gp').forEach(t=>t.classList.remove('on'));
+  el.classList.add('on');
+}
+
+const ham=document.getElementById('ham');
+const mobNav=document.getElementById('mobNav');
+ham.addEventListener('click',()=>{
+  const o=mobNav.classList.toggle('open');
+  ham.classList.toggle('open',o);
+  document.body.style.overflow=o?'hidden':'';
+});
+function closeMob(){mobNav.classList.remove('open');ham.classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escap
