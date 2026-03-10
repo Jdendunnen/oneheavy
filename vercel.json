@@ -1,11 +1,1 @@
-{
-  "functions": {
-    "api/rss.js": {
-      "memory": 256,
-      "maxDuration": 15
-    }
-  },
-  "routes": [
-    { "src": "/api/rss", "dest": "/api/rss.js" }
-  ]
-}
+{}
