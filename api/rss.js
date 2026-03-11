@@ -1,12 +1,12 @@
 // OneHeavy RSS Proxy — Vercel Serverless Function
-// Fetches RSS feeds server-side — no rss2json, no API keys, no limits
+// CommonJS format — required for Vercel Node.js functions
 // Usage: /api/rss?url=https://www.blabbermouth.net/feed/
 
-export default async function handler(req, res) {
-  // CORS — allow the site to call this function
+module.exports = async function handler(req, res) {
+
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET');
-  res.setHeader('Cache-Control', 's-maxage=300, stale-while-revalidate=600'); // cache 5 mins
+  res.setHeader('Cache-Control', 's-maxage=300, stale-while-revalidate=600');
 
   const { url } = req.query;
 
@@ -35,20 +35,15 @@ export default async function handler(req, res) {
   } catch (err) {
     return res.status(500).json({ error: err.message });
   }
-}
+};
 
-// ── RSS XML PARSER ─────────────────────────────────────────────────────────
-// Parses RSS 2.0 and Atom feeds without any dependencies
 function parseRSS(xml) {
   const items = [];
-
-  // Match all <item> or <entry> blocks
   const itemPattern = /<item[\s>]([\s\S]*?)<\/item>|<entry[\s>]([\s\S]*?)<\/entry>/gi;
   let match;
 
   while ((match = itemPattern.exec(xml)) !== null) {
     const block = match[1] || match[2];
-
     const title   = extract(block, 'title');
     const link    = extractLink(block);
     const desc    = extractDesc(block);
@@ -56,34 +51,28 @@ function parseRSS(xml) {
 
     if (title && link) {
       items.push({
-        title:   cleanText(title),
+        title:       cleanText(title),
         link,
         description: cleanText(desc).slice(0, 280),
-        pubDate: pubDate || new Date().toISOString(),
+        pubDate:     pubDate || new Date().toISOString(),
       });
     }
-
-    if (items.length >= 12) break; // max 12 per source
+    if (items.length >= 12) break;
   }
-
   return items;
 }
 
 function extract(block, tag) {
-  // Handle CDATA and plain text
   const re = new RegExp(`<${tag}[^>]*>(?:<!\\[CDATA\\[([\\s\\S]*?)\\]\\]>|([\\s\\S]*?))<\\/${tag}>`, 'i');
   const m = re.exec(block);
   return m ? (m[1] || m[2] || '') : '';
 }
 
 function extractLink(block) {
-  // Try <link>url</link> first
   let m = /<link>([^<]+)<\/link>/i.exec(block);
   if (m) return m[1].trim();
-  // Try <link href="url" .../>  (Atom)
   m = /<link[^>]+href=["']([^"']+)["']/i.exec(block);
   if (m) return m[1].trim();
-  // Try <guid>url</guid>
   m = /<guid[^>]*>([^<]+)<\/guid>/i.exec(block);
   if (m && m[1].startsWith('http')) return m[1].trim();
   return '';
@@ -91,30 +80,30 @@ function extractLink(block) {
 
 function extractDesc(block) {
   return extract(block, 'description') ||
-         extract(block, 'summary') ||
-         extract(block, 'content') || '';
+         extract(block, 'summary')     ||
+         extract(block, 'content')     || '';
 }
 
 function extractDate(block) {
-  const raw = extract(block, 'pubDate') ||
+  const raw = extract(block, 'pubDate')   ||
               extract(block, 'published') ||
-              extract(block, 'updated') || '';
+              extract(block, 'updated')   || '';
   if (!raw) return '';
-  try { return new Date(raw).toISOString(); } catch { return ''; }
+  try { return new Date(raw).toISOString(); } catch(e) { return ''; }
 }
 
 function cleanText(s) {
   return (s || '')
-    .replace(/<[^>]+>/g, '')        // strip HTML tags
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
+    .replace(/<[^>]+>/g, '')
+    .replace(/&amp;/g,   '&')
+    .replace(/&lt;/g,    '<')
+    .replace(/&gt;/g,    '>')
+    .replace(/&quot;/g,  '"')
     .replace(/&#8217;/g, "'")
     .replace(/&#8220;/g, '"')
     .replace(/&#8221;/g, '"')
-    .replace(/&#038;/g, '&')
-    .replace(/&nbsp;/g, ' ')
-    .replace(/\s+/g, ' ')
+    .replace(/&#038;/g,  '&')
+    .replace(/&nbsp;/g,  ' ')
+    .replace(/\s+/g,     ' ')
     .trim();
 }
