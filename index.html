@@ -533,7 +533,7 @@ let ALL=[],FILTER='all';
 
 async function fetchFeed(f){
   try{
-    const r=await fetch(`/api/rss?url=${encodeURIComponent(f.url)}`,{signal:AbortSignal.timeout(10000)});
+    const r=await fetch(`/api/rss?url=${encodeURIComponent(f.url)}`);
     const d=await r.json();
     return(d.items||[]).map(i=>({
       title:clean(i.title),desc:clean(i.description||'').slice(0,200),
