@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +6,7 @@
 <meta name="description" content="OneHeavy — The World's Heaviest Music Hub. Global metal news and local concert discovery.">
 <meta name="theme-color" content="#08080e">
 <title>OneHeavy — The World's Heavy Metal Hub</title>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6161974684049416" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
@@ -24,8 +24,6 @@ a{text-decoration:none;color:inherit}
 button{cursor:pointer;font-family:inherit;border:none;background:none}
 body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.022;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")}
-
-/* TICKER */
 .ticker{background:var(--red);height:33px;display:flex;align-items:center;overflow:hidden;position:relative;z-index:200}
 .t-tag{background:var(--ink);color:var(--red);padding:0 14px;height:100%;display:flex;align-items:center;flex-shrink:0;font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;border-right:2px solid var(--red);white-space:nowrap}
 .t-scroll{overflow:hidden;flex:1}
@@ -33,8 +31,6 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;op
 .t-track:hover{animation-play-state:paused}
 .t-item{display:inline-flex;align-items:center;padding:0 22px;height:33px;font-family:var(--C);font-size:11px;font-weight:500;letter-spacing:.04em;color:#fff;border-right:1px solid rgba(255,255,255,.14);cursor:default}
 @keyframes roll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-
-/* NAV */
 nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(200,16,46,.16)}
 .nav-wrap{max-width:1360px;margin:0 auto;padding:0 24px;height:56px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:28px}
 .logo{display:flex;align-items:center;flex-shrink:0}
@@ -57,16 +53,12 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .mob-nav a{font-family:var(--D);font-size:clamp(36px,7vw,56px);color:var(--g);padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04);transition:color .2s}
 .mob-nav a:hover{color:var(--red)}
 .mob-cta{margin-top:22px!important;background:var(--red)!important;color:#fff!important;padding:15px 28px!important;font-family:var(--C)!important;font-size:14px!important;font-weight:700!important;letter-spacing:.12em!important;text-transform:uppercase!important;text-align:center!important;border-bottom:none!important}
-
-/* DATE LINE */
 .dateline{border-top:2px solid var(--w);border-bottom:1px solid var(--border)}
 .dl-inner{max-width:1360px;margin:0 auto;padding:8px 24px;display:flex;justify-content:space-between;align-items:center}
 .dl-date{font-family:var(--C);font-size:10px;color:var(--g);letter-spacing:.1em;text-transform:uppercase}
 .dl-live{font-family:var(--C);font-size:10px;font-weight:700;color:var(--red);letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:6px}
 .live-dot{width:6px;height:6px;background:var(--red);border-radius:50%;animation:blink 2s ease infinite;flex-shrink:0}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.15}}
-
-/* HERO */
 .hero{max-width:1360px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr 1px 310px;min-height:490px}
 .hero-rule{background:linear-gradient(to bottom,transparent 5%,rgba(200,16,46,.22) 30%,rgba(200,16,46,.22) 70%,transparent 95%)}
 .hero-main{padding:34px 38px 34px 0;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
@@ -79,7 +71,7 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .hdot{width:3px;height:3px;background:var(--red);border-radius:50%;flex-shrink:0}
 .hero-desc{font-size:14px;font-style:italic;font-weight:300;color:rgba(240,236,244,.5);line-height:1.75;max-width:550px;margin-bottom:20px}
 .btn-story{display:inline-flex;align-items:center;gap:10px;font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--w);border-bottom:1px solid var(--red);padding-bottom:4px;transition:gap .2s,color .2s}
-.btn-story::after{content:'???';color:var(--red)}
+.btn-story::after{content:'\2192';color:var(--red)}
 .btn-story:hover{gap:16px;color:var(--red)}
 .hero-aside{padding:26px 0 26px 26px;display:flex;flex-direction:column}
 .aside-hd{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--g);padding-bottom:10px;border-bottom:1px solid var(--border)}
@@ -89,8 +81,6 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .ai-src{font-family:var(--C);font-size:8px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:var(--red);margin-bottom:3px}
 .ai-title{font-family:var(--C);font-weight:600;font-size:13px;line-height:1.2;color:var(--w);margin-bottom:3px}
 .ai-time{font-family:var(--C);font-size:9px;color:var(--g)}
-
-/* WORLD BAND */
 .world{background:var(--lift);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .world-inner{max-width:1360px;margin:0 auto;display:flex;overflow:hidden}
 .world-label{background:rgba(200,16,46,.1);border-right:1px solid rgba(200,16,46,.2);padding:10px 16px;font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:5px;flex-shrink:0}
@@ -99,30 +89,20 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .w-item{display:inline-flex;align-items:center;gap:7px;padding:0 18px;border-right:1px solid rgba(255,255,255,.05);font-family:var(--C);font-size:11px;color:rgba(240,236,244,.38)}
 .w-item strong{color:var(--w);font-weight:600}
 .w-item em{color:var(--red);font-style:normal;margin:0 3px}
-
-/* LEADERBOARD */
 .ad-belt{max-width:1360px;margin:0 auto;padding:12px 24px}
 .ad-728{background:var(--lift);border:1px dashed rgba(255,255,255,.06);height:90px;display:flex;align-items:center;justify-content:center;gap:14px}
 .ad-tag{font-family:var(--C);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.07);padding:2px 7px}
 .ad-dim{font-family:var(--C);font-size:11px;color:rgba(255,255,255,.13)}
-
-/* CONTENT WRAP */
 .content{max-width:1360px;margin:0 auto;padding:30px 24px 60px;display:grid;grid-template-columns:1fr 285px;gap:44px}
-
-/* SECTION HEAD */
 .sh{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;padding-bottom:9px;border-bottom:1px solid var(--border);position:relative}
 .sh::after{content:'';position:absolute;bottom:-1px;left:0;width:40px;height:1px;background:var(--red)}
 .sh h2{font-family:var(--D);font-size:19px;letter-spacing:.05em;text-transform:uppercase}
 .sh h2 em{color:var(--red);font-style:normal}
 .sh a{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);border-bottom:1px solid rgba(200,16,46,.22);padding-bottom:1px}
-
-/* FILTERS */
 .filters{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:14px}
 .fb{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 11px;background:transparent;border:1px solid rgba(255,255,255,.08);color:var(--g);transition:all .18s}
 .fb:hover{border-color:rgba(200,16,46,.32);color:var(--w)}
 .fb.on{background:var(--red);border-color:var(--red);color:#fff}
-
-/* NEWS GRID — clean, no chatbot */
 .ng{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.04);margin-bottom:28px}
 .nc{background:var(--ink);padding:17px;cursor:pointer;transition:background .18s;position:relative;overflow:hidden;display:block}
 .nc::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--red);transition:width .3s}
@@ -145,8 +125,6 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .spin{width:26px;height:26px;border:2px solid rgba(200,16,46,.14);border-top-color:var(--red);border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 10px}
 @keyframes spin{to{transform:rotate(360deg)}}
 .loading p{font-family:var(--C);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--g)}
-
-/* SIDEBAR */
 .sidebar{display:flex;flex-direction:column;gap:22px}
 .prem-card{background:linear-gradient(150deg,rgba(110,0,0,.22),var(--card));border:1px solid rgba(200,16,46,.2);padding:22px;text-align:center;position:relative;overflow:hidden}
 .prem-card::before{content:'';position:absolute;top:-45px;right:-45px;width:130px;height:130px;background:radial-gradient(circle,rgba(200,16,46,.18),transparent 70%);pointer-events:none}
@@ -156,7 +134,7 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .pc-period{font-family:var(--C);font-size:10px;color:var(--g);letter-spacing:.18em;text-transform:uppercase;margin-bottom:15px}
 .pc-list{list-style:none;margin-bottom:16px;text-align:left}
 .pc-list li{font-family:var(--C);font-size:12px;color:rgba(240,236,244,.58);padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;align-items:center;gap:7px;font-weight:400}
-.pc-list li::before{content:'???';color:var(--red);font-size:8px;flex-shrink:0}
+.pc-list li::before{content:'✓';color:var(--red);font-size:8px;flex-shrink:0}
 .pc-btn{display:block;width:100%;background:var(--red);color:#fff;font-family:var(--C);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:13px;transition:background .18s}
 .pc-btn:hover{background:var(--red2)}
 .pc-note{font-family:var(--C);font-size:9px;color:var(--g);margin-top:6px}
@@ -174,8 +152,6 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .sub-widget p{font-size:13px;font-style:italic;font-weight:300;color:var(--g);line-height:1.65;margin-bottom:13px}
 .sub-btn{display:block;width:100%;background:transparent;color:var(--red);border:1px solid rgba(200,16,46,.3);font-family:var(--C);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:11px;transition:all .18s}
 .sub-btn:hover{background:var(--red);color:#fff;border-color:var(--red)}
-
-/* CONCERTS */
 .concerts{background:var(--lift);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:42px 0}
 .c-inner{max-width:1360px;margin:0 auto;padding:0 24px}
 .city-tabs{display:flex;flex-wrap:wrap;gap:2px;border-bottom:1px solid var(--border);margin-bottom:18px}
@@ -192,14 +168,9 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .show-yr{font-family:var(--C);font-size:9px;color:var(--g)}
 .show-artist{font-family:var(--D);font-size:19px;text-transform:uppercase;letter-spacing:.02em;line-height:1;margin-bottom:3px}
 .show-support{font-family:var(--C);font-size:10px;color:var(--g);margin-bottom:8px}
-.show-venue{font-family:var(--C);font-size:10px;color:rgba(240,236,244,.32);display:flex;align-items:center;gap:4px}
-.show-venue::before{content:'????';font-size:8px}
+.show-venue{font-family:var(--C);font-size:10px;color:rgba(240,236,244,.32)}
 .show-tix{display:inline-flex;align-items:center;gap:5px;margin-top:11px;font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--w);border:1px solid rgba(255,255,255,.09);padding:5px 10px;transition:all .18s}
 .show:hover .show-tix{background:var(--red);border-color:var(--red)}
-.show-tix::after{content:'???';color:var(--red);transition:color .18s}
-.show:hover .show-tix::after{color:#fff}
-
-/* LOCAL */
 .local{padding:42px 0;border-bottom:1px solid var(--border)}
 .l-inner{max-width:1360px;margin:0 auto;padding:0 24px}
 .city-pills{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:18px}
@@ -212,15 +183,11 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .lc h4{font-family:var(--C);font-weight:700;font-size:14px;text-transform:uppercase;line-height:1.2;margin-bottom:6px}
 .lc p{font-size:12px;line-height:1.55;color:rgba(240,236,244,.36);font-weight:300;font-style:italic}
 .lc-time{font-family:var(--C);font-size:9px;color:var(--g);margin-top:9px}
-
-/* GENRES */
 .genres{background:var(--lift);border-top:1px solid var(--border);padding:26px 0}
 .g-inner{max-width:1360px;margin:0 auto;padding:0 24px}
 .gpills{display:flex;flex-wrap:wrap;gap:4px;margin-top:13px}
 .gp{font-family:var(--C);font-size:10px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:7px 13px;background:var(--card);color:var(--g);cursor:pointer;transition:all .18s;border-bottom:2px solid transparent}
 .gp:hover{color:var(--w);border-color:rgba(200,16,46,.28)}.gp.on{background:var(--lift);color:var(--w);border-color:var(--red)}
-
-/* FOOTER */
 footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 20px}
 .f-inner{max-width:1360px;margin:0 auto;padding:0 24px}
 .f-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:38px;padding-bottom:32px;border-bottom:1px solid var(--border);margin-bottom:18px}
@@ -232,8 +199,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 .f-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
 .f-bottom p{font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.1em;text-transform:uppercase}
 .f-bottom em{color:var(--red);font-style:normal}
-
-/* RESPONSIVE */
 @media(max-width:1100px){
   .hero{grid-template-columns:1fr}.hero-rule,.hero-aside{display:none}.hero-main{padding:30px 0}
   .content{grid-template-columns:1fr}.sidebar{display:grid;grid-template-columns:1fr 1fr}
@@ -255,22 +220,20 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 </head>
 <body>
 
-<!-- TICKER -->
 <div class="ticker">
   <div class="t-tag">&#x26A1; Breaking</div>
   <div class="t-scroll">
     <div class="t-track" id="tickerTrack">
       <span class="t-item">Loading live metal news from 6 sources&#8230;</span>
-      <span class="t-item">OneHeavy &#8212; The World&#39;s Heaviest Music Hub</span>
+      <span class="t-item">OneHeavy &mdash; The World's Heaviest Music Hub</span>
       <span class="t-item">Global metal news updated every 5 minutes</span>
       <span class="t-item">Loading live metal news from 6 sources&#8230;</span>
-      <span class="t-item">OneHeavy &#8212; The World&#39;s Heaviest Music Hub</span>
+      <span class="t-item">OneHeavy &mdash; The World's Heaviest Music Hub</span>
       <span class="t-item">Global metal news updated every 5 minutes</span>
     </div>
   </div>
 </div>
 
-<!-- NAV -->
 <nav>
   <div class="nav-wrap">
     <a href="/" class="logo"><div class="logo-box">One</div><div class="logo-txt">Heavy</div></a>
@@ -290,7 +253,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </div>
 </nav>
 
-<!-- MOBILE NAV -->
 <div class="mob-nav" id="mobNav">
   <a href="/" onclick="closeMob()">News</a>
   <a href="#concerts" onclick="closeMob()">Concerts</a>
@@ -301,7 +263,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   <a href="/premium" class="mob-cta" onclick="closeMob()">&#x1F918; Premium &mdash; $5/mo</a>
 </div>
 
-<!-- DATE LINE -->
 <div class="dateline">
   <div class="dl-inner">
     <span class="dl-date" id="dlDate">Loading&#8230;</span>
@@ -309,7 +270,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </div>
 </div>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-main">
     <div class="hero-watermark">METAL</div>
@@ -317,7 +277,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
       <div class="hero-eyebrow">Breaking News</div>
       <h1>Live Metal News<br>Loading Now</h1>
       <div class="hero-byline"><span>OneHeavy</span><span class="hdot"></span><span>Just now</span></div>
-      <p class="hero-desc">Fetching the latest metal news from Blabbermouth, Loudwire, Kerrang, Metal Injection, Revolver and Heavy Mag AU. Top story loads automatically.</p>
+      <p class="hero-desc">Fetching the latest metal news from Blabbermouth, Loudwire, Kerrang, Metal Injection, Revolver and Heavy Mag AU.</p>
       <span class="btn-story">Loading&#8230;</span>
     </div>
   </div>
@@ -330,7 +290,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </aside>
 </section>
 
-<!-- WORLD BAND -->
 <div class="world">
   <div class="world-inner">
     <div class="world-label">&#x1F30D; World</div>
@@ -357,7 +316,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </div>
 </div>
 
-<!-- LEADERBOARD AD -->
 <div class="ad-belt">
   <div class="ad-728">
     <span class="ad-tag">Advertisement</span>
@@ -365,7 +323,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </div>
 </div>
 
-<!-- MAIN CONTENT -->
 <div class="content">
   <main>
     <div class="sh"><h2>Latest <em>News</em></h2><a href="#">All Stories &rarr;</a></div>
@@ -416,7 +373,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </aside>
 </div>
 
-<!-- CONCERTS -->
 <section class="concerts" id="concerts">
   <div class="c-inner">
     <div class="sh"><h2>Shows <em>Near You</em></h2><a href="#">All Shows &rarr;</a></div>
@@ -439,7 +395,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </div>
 </section>
 
-<!-- LOCAL SCENE -->
 <section class="local" id="local">
   <div class="l-inner">
     <div class="sh"><h2>Local <em>Scene</em></h2><a href="#">Submit Event &rarr;</a></div>
@@ -454,14 +409,13 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
       <button class="cp" onclick="setTab(this,'.cp')">+ Add City</button>
     </div>
     <div class="local-grid">
-      <div class="lc"><div class="lc-tag">&#x1F4CD; Melbourne Metal Scene</div><h4>Submit Your Local Events</h4><p>Know of a local metal show, band news or scene update? Submit it free and we&#39;ll feature it for the whole community.</p><div class="lc-time">Listings added daily</div></div>
-      <div class="lc"><div class="lc-tag">&#x1F4CD; Promoters Welcome</div><h4>Free Listings for Every Venue</h4><p>OneHeavy lists every local metal show at zero cost. Get your events in front of thousands of dedicated metal fans.</p><div class="lc-time"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="492a26273d282a3d0926272c212c283f3067272c3d">[email&#160;protected]</a></div></div>
-      <div class="lc"><div class="lc-tag">&#x1F4CD; Local &amp; Unsigned Bands</div><h4>Get Your Band on OneHeavy</h4><p>Claim your free band profile, list your shows, build your local following. We support the underground that drives this community.</p><div class="lc-time">Always free for bands</div></div>
+      <div class="lc"><div class="lc-tag">&#x1F4CD; Melbourne Metal Scene</div><h4>Submit Your Local Events</h4><p>Know of a local metal show, band news or scene update? Submit it free and we'll feature it for the whole community.</p><div class="lc-time">Listings added daily</div></div>
+      <div class="lc"><div class="lc-tag">&#x1F4CD; Promoters Welcome</div><h4>Free Listings for Every Venue</h4><p>OneHeavy lists every local metal show at zero cost. Get your events in front of thousands of dedicated metal fans.</p><div class="lc-time">contact@oneheavy.net</div></div>
+      <div class="lc"><div class="lc-tag">&#x1F4CD; Local &amp; Unsigned Bands</div><h4>Get Your Band on OneHeavy</h4><p>Claim your free band profile, list your shows, build your local following. We support the underground.</p><div class="lc-time">Always free for bands</div></div>
     </div>
   </div>
 </section>
 
-<!-- GENRES -->
 <div class="genres">
   <div class="g-inner">
     <div class="sh" style="border-bottom:none"><h2>Browse by <em>Genre</em></h2></div>
@@ -480,13 +434,12 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <div class="f-inner">
     <div class="f-grid">
       <div class="f-brand">
         <a href="/" class="logo"><div class="logo-box">One</div><div class="logo-txt">Heavy</div></a>
-        <p>The world&#39;s heaviest music hub. All metal, all genres, all scenes &mdash; in one place. Updated every 5 minutes.</p>
+        <p>The world's heaviest music hub. All metal, all genres, all scenes &mdash; in one place. Updated every 5 minutes.</p>
       </div>
       <div class="f-col">
         <h5>Navigate</h5>
@@ -510,8 +463,10 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
     </div>
   </div>
 </footer>
-  
+
+<script>
 const clean = s => (s||'').replace(/<[^>]+>/g,'').replace(/&amp;/g,'&').replace(/&#8217;/g,"'").replace(/&#8220;/g,'"').replace(/&#8221;/g,'"').replace(/&quot;/g,'"').replace(/&nbsp;/g,' ').trim();
+
 function ago(d){
   const s=Math.floor((Date.now()-new Date(d))/1000);
   if(s<60)return'Just now';
@@ -530,9 +485,11 @@ const FEEDS=[
 ];
 let ALL=[],FILTER='all';
 
+document.getElementById('dlDate').textContent=new Date().toLocaleDateString('en-AU',{weekday:'long',year:'numeric',month:'long',day:'numeric'}).toUpperCase();
+
 async function fetchFeed(f){
   try{
-    const r=await fetch(`/api/rss?url=${encodeURIComponent(f.url)}`);
+    const r=await fetch('/api/rss?url='+encodeURIComponent(f.url));
     const d=await r.json();
     return(d.items||[]).map(i=>({
       title:clean(i.title),desc:clean(i.description||'').slice(0,200),
@@ -608,7 +565,7 @@ function setTab(el,selector){
   document.querySelectorAll(selector).forEach(t=>t.classList.remove('on'));
   el.classList.add('on');
 }
-    loadAll();
+
 function setGenre(el){
   document.querySelectorAll('.gp').forEach(t=>t.classList.remove('on'));
   el.classList.add('on');
@@ -622,4 +579,9 @@ ham.addEventListener('click',()=>{
   document.body.style.overflow=o?'hidden':'';
 });
 function closeMob(){mobNav.classList.remove('open');ham.classList.remove('open');document.body.style.overflow='';}
-document.addEventListener('keydown',e=>{if(e.key==='Escap
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMob();});
+
+loadAll();
+</script>
+</body>
+</html>
