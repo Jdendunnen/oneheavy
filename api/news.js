@@ -11,25 +11,24 @@ export default async function handler(req, res) {
   ];
 
   try {
-    const results = await Promise.all(
-      feeds.map(async (url) => {
-        const r = await fetch(
-          `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}&count=10`
-        );
-        return r.json();
-      })
+    const baseUrl = process.env.SITE_URL || 'https://oneheavy.net';
+
+    const results = await Promise.allSettled(
+      feeds.map(url =>
+        fetch(`${baseUrl}/api/rss?url=${encodeURIComponent(url)}`)
+          .then(r => r.json())
+      )
     );
 
     const items = results
-      .flatMap(r => r.items || [])
+      .flatMap(r => r.status === 'fulfilled' ? (r.value.items || []) : [])
       .sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate))
       .slice(0, 30)
       .map(item => ({
         title:       item.title,
-        description: item.description?.replace(/<[^>]+>/g, '').slice(0, 200),
+        description: item.description,
         url:         item.link,
-        image:       item.thumbnail || item.enclosure?.link || null,
-        source:      new URL(item.link).hostname.replace('www.', ''),
+        source:      (() => { try { return new URL(item.link).hostname.replace('www.', ''); } catch(e) { return ''; } })(),
         published:   item.pubDate
       }));
 
