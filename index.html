@@ -492,7 +492,7 @@ async function fetchFeed(f){
     const r=await fetch('/api/rss?url='+encodeURIComponent(f.url));
     const d=await r.json();
     return(d.items||[]).map(i=>({
-      title:clean(i.title),desc:clean(i.description||'').slice(0,200),
+      title:clean(i.title),desc:clean(i.description||'').slice(0,340),
       url:i.link,source:f.label,key:f.key,flag:f.flag,pub:i.pubDate,ms:new Date(i.pubDate).getTime()
     }));
   }catch(e){return[];}
@@ -509,7 +509,7 @@ async function loadAll(){
 function renderGrid(items){
   const g=document.getElementById('newsGrid');
   if(!items.length){g.innerHTML='<div class="loading"><p>No stories loaded &mdash; refresh shortly</p></div>';return;}
-  g.innerHTML=items.slice(0,7).map((it,i)=>`
+  g.innerHTML=items.slice(0,12).map((it,i)=>`
     <a class="nc${i===0?' feature':''}" href="${it.url}" target="_blank" rel="noopener noreferrer">
       ${i===0?`<div class="nc-thumb"><div class="nc-thumb-src">${it.flag} ${it.source}</div></div><div class="nc-body">`:''}
       <div class="nc-top"><span class="nc-src">${it.source}</span><span class="nc-age">${ago(it.pub)}</span></div>
