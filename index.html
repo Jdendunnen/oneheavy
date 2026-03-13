@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<!-- Google tag (gtag.js) -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="OneHeavy — The World's Heaviest Music Hub. Global metal news and local concert discovery.">
+<meta name="theme-color" content="#08080e">
+<title>OneHeavy — The World's Heavy Metal Hub</title>
+<!-- Google tag (gtag.js) - Replace G-XXXXXXXXXX with your real GA4 ID -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -10,10 +14,6 @@
   gtag('js', new Date());
   gtag('config', 'G-B7PYV615C2');
 </script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="OneHeavy — The World's Heaviest Music Hub. Global metal news and local concert discovery.">
-<meta name="theme-color" content="#08080e">
-<title>OneHeavy — The World's Heavy Metal Hub</title>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6161974684049416" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 <style>
@@ -418,7 +418,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
     </div>
     <div class="local-grid">
       <div class="lc"><div class="lc-tag">&#x1F4CD; Melbourne Metal Scene</div><h4>Submit Your Local Events</h4><p>Know of a local metal show, band news or scene update? Submit it free and we'll feature it for the whole community.</p><div class="lc-time">Listings added daily</div></div>
-      <div class="lc"><div class="lc-tag">&#x1F4CD; Promoters Welcome</div><h4>Free Listings for Every Venue</h4><p>OneHeavy lists every local metal show at zero cost. Get your events in front of thousands of dedicated metal fans.</p><div class="lc-time"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0a6965647e6b697e4a65646f626f6b7c7324646f7e">[email&#160;protected]</a></div></div>
+      <div class="lc"><div class="lc-tag">&#x1F4CD; Promoters Welcome</div><h4>Free Listings for Every Venue</h4><p>OneHeavy lists every local metal show at zero cost. Get your events in front of thousands of dedicated metal fans.</p><div class="lc-time">contact@oneheavy.net</div></div>
       <div class="lc"><div class="lc-tag">&#x1F4CD; Local &amp; Unsigned Bands</div><h4>Get Your Band on OneHeavy</h4><p>Claim your free band profile, list your shows, build your local following. We support the underground.</p><div class="lc-time">Always free for bands</div></div>
     </div>
   </div>
@@ -472,7 +472,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 const clean = s => (s||'').replace(/<[^>]+>/g,'').replace(/&amp;/g,'&').replace(/&#8217;/g,"'").replace(/&#8220;/g,'"').replace(/&#8221;/g,'"').replace(/&quot;/g,'"').replace(/&nbsp;/g,' ').trim();
 
 function ago(d){
@@ -585,3 +585,12 @@ ham.addEventListener('click',()=>{
   const o=mobNav.classList.toggle('open');
   ham.classList.toggle('open',o);
   document.body.style.overflow=o?'hidden':'';
+});
+
+function closeMob(){mobNav.classList.remove('open');ham.classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMob();});
+
+loadAll();
+</script>
+</body>
+</html>
