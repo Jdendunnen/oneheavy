@@ -6,7 +6,6 @@
 <meta name="description" content="OneHeavy — The World's Heaviest Music Hub. Global metal news and local concert discovery. Free forever.">
 <meta name="theme-color" content="#08080e">
 <title>OneHeavy — The World's Heavy Metal Hub</title>
-<!-- Google tag (gtag.js) - Replace G-XXXXXXXXXX with your real GA4 ID -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -30,8 +29,12 @@ html{background:var(--ink);scroll-behavior:smooth}
 body{background:var(--ink);color:var(--w);font-family:var(--S);overflow-x:hidden;min-height:100vh}
 a{text-decoration:none;color:inherit}
 button{cursor:pointer;font-family:inherit;border:none;background:none}
-body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.022;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.022;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")}
+.announce{background:#0d0d1a;border-bottom:1px solid rgba(200,16,46,.2);padding:0 24px;height:36px;display:flex;align-items:center;justify-content:center;position:relative}
+.announce-text{font-family:var(--C);font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(240,236,244,.7);text-align:center}
+.announce-text em{color:var(--red);font-style:normal;font-weight:700}
+.announce-close{position:absolute;right:16px;background:none;border:none;color:var(--g);cursor:pointer;font-size:18px;line-height:1;padding:4px 8px;transition:color .2s}
+.announce-close:hover{color:var(--w)}
 .ticker{background:var(--red);height:33px;display:flex;align-items:center;overflow:hidden;position:relative;z-index:200}
 .t-tag{background:var(--ink);color:var(--red);padding:0 14px;height:100%;display:flex;align-items:center;flex-shrink:0;font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;border-right:2px solid var(--red);white-space:nowrap}
 .t-scroll{overflow:hidden;flex:1}
@@ -214,6 +217,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 }
 @media(max-width:768px){
   .nav-links,.btn-free{display:none}.ham{display:flex}
+  .announce-text{font-size:9px;letter-spacing:.06em}
   .hero,.c-inner,.l-inner,.g-inner,.f-inner,.ad-belt,.dl-inner,.world-inner,.content{padding-left:16px;padding-right:16px}
   .ng{grid-template-columns:1fr}.nc.feature{grid-column:span 1;display:block}.nc.feature .nc-thumb{display:none}
   .shows{grid-template-columns:1fr}.local-grid{grid-template-columns:1fr}.sidebar{grid-template-columns:1fr}
@@ -222,11 +226,20 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 @media(max-width:480px){
   .hero h1{font-size:36px}.hero-watermark{display:none}
   .f-grid{grid-template-columns:1fr}
+  .announce{height:auto;padding:8px 40px 8px 16px}
+  .announce-text{font-size:9px;letter-spacing:.04em}
 }
 </style>
 </head>
 <body>
 
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce" id="announceBar">
+  <p class="announce-text">&#x1F918; <em>OneHeavy is 100% free</em> &mdash; all the world's metal news in one place &mdash; no login &middot; no paywall &middot; no BS</p>
+  <button class="announce-close" onclick="document.getElementById('announceBar').style.display='none'" aria-label="Dismiss">&times;</button>
+</div>
+
+<!-- TICKER -->
 <div class="ticker">
   <div class="t-tag">&#x26A1; Breaking</div>
   <div class="t-scroll">
@@ -241,6 +254,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </div>
 </div>
 
+<!-- NAV -->
 <nav>
   <div class="nav-wrap">
     <a href="/" class="logo"><div class="logo-box">One</div><div class="logo-txt">Heavy</div></a>
@@ -260,6 +274,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </div>
 </nav>
 
+<!-- MOBILE NAV -->
 <div class="mob-nav" id="mobNav">
   <a href="/" onclick="closeMob()">News</a>
   <a href="#concerts" onclick="closeMob()">Concerts</a>
@@ -270,6 +285,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   <a href="/" class="mob-cta" onclick="closeMob()">&#x1F918; OneHeavy &mdash; Free Forever</a>
 </div>
 
+<!-- DATE LINE -->
 <div class="dateline">
   <div class="dl-inner">
     <span class="dl-date" id="dlDate">Loading&#8230;</span>
@@ -277,6 +293,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </div>
 </div>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-main">
     <div class="hero-watermark">METAL</div>
@@ -297,6 +314,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </aside>
 </section>
 
+<!-- WORLD BAND -->
 <div class="world">
   <div class="world-inner">
     <div class="world-label">&#x1F30D; World</div>
@@ -323,6 +341,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </div>
 </div>
 
+<!-- LEADERBOARD AD -->
 <div class="ad-belt">
   <div class="ad-728">
     <span class="ad-tag">Advertisement</span>
@@ -330,6 +349,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </div>
 </div>
 
+<!-- MAIN CONTENT -->
 <div class="content">
   <main>
     <div class="sh"><h2>Latest <em>News</em></h2><a href="#">All Stories &rarr;</a></div>
@@ -380,6 +400,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </aside>
 </div>
 
+<!-- CONCERTS -->
 <section class="concerts" id="concerts">
   <div class="c-inner">
     <div class="sh"><h2>Shows <em>Near You</em></h2><a href="#">All Shows &rarr;</a></div>
@@ -402,6 +423,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </div>
 </section>
 
+<!-- LOCAL SCENE -->
 <section class="local" id="local">
   <div class="l-inner">
     <div class="sh"><h2>Local <em>Scene</em></h2><a href="#">Submit Event &rarr;</a></div>
@@ -423,6 +445,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </div>
 </section>
 
+<!-- GENRES -->
 <div class="genres">
   <div class="g-inner">
     <div class="sh" style="border-bottom:none"><h2>Browse by <em>Genre</em></h2></div>
@@ -441,6 +464,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </div>
 </div>
 
+<!-- FOOTER -->
 <footer>
   <div class="f-inner">
     <div class="f-grid">
