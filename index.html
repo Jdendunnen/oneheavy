@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="OneHeavy — The World's Heaviest Music Hub. Global metal news and local concert discovery.">
+<meta name="description" content="OneHeavy — The World's Heaviest Music Hub. Global metal news and local concert discovery. Free forever.">
 <meta name="theme-color" content="#08080e">
 <title>OneHeavy — The World's Heavy Metal Hub</title>
 <!-- Google tag (gtag.js) - Replace G-XXXXXXXXXX with your real GA4 ID -->
@@ -12,7 +12,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-B7PYV615C2');
+  gtag('config', 'G-XXXXXXXXXX');
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6161974684049416" crossorigin="anonymous"></script>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
@@ -49,8 +49,8 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .nav-links a:hover,.nav-links a.active{color:var(--w)}
 .nav-links a.active{border-bottom:2px solid var(--red);padding-bottom:6px}
 .nav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
-.btn-prem{background:var(--red);color:#fff;font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:9px 18px;transition:background .2s;white-space:nowrap}
-.btn-prem:hover{background:var(--red2)}
+.btn-free{background:var(--red);color:#fff;font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:9px 18px;transition:background .2s;white-space:nowrap;border:none;cursor:pointer}
+.btn-free:hover{background:var(--red2)}
 .ham{display:none;flex-direction:column;gap:5px;padding:8px}
 .ham span{display:block;width:22px;height:2px;background:var(--w);transition:all .28s}
 .ham.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
@@ -134,18 +134,17 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 @keyframes spin{to{transform:rotate(360deg)}}
 .loading p{font-family:var(--C);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--g)}
 .sidebar{display:flex;flex-direction:column;gap:22px}
-.prem-card{background:linear-gradient(150deg,rgba(110,0,0,.22),var(--card));border:1px solid rgba(200,16,46,.2);padding:22px;text-align:center;position:relative;overflow:hidden}
-.prem-card::before{content:'';position:absolute;top:-45px;right:-45px;width:130px;height:130px;background:radial-gradient(circle,rgba(200,16,46,.18),transparent 70%);pointer-events:none}
-.pc-tag{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--g);margin-bottom:4px}
-.pc-price{font-family:var(--D);font-size:66px;line-height:1;color:var(--w)}
-.pc-price sup{font-size:22px;color:var(--red);vertical-align:top;margin-top:13px;display:inline-block}
-.pc-period{font-family:var(--C);font-size:10px;color:var(--g);letter-spacing:.18em;text-transform:uppercase;margin-bottom:15px}
-.pc-list{list-style:none;margin-bottom:16px;text-align:left}
-.pc-list li{font-family:var(--C);font-size:12px;color:rgba(240,236,244,.58);padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;align-items:center;gap:7px;font-weight:400}
-.pc-list li::before{content:'✓';color:var(--red);font-size:8px;flex-shrink:0}
-.pc-btn{display:block;width:100%;background:var(--red);color:#fff;font-family:var(--C);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:13px;transition:background .18s}
-.pc-btn:hover{background:var(--red2)}
-.pc-note{font-family:var(--C);font-size:9px;color:var(--g);margin-top:6px}
+.community-card{background:linear-gradient(150deg,rgba(110,0,0,.22),var(--card));border:1px solid rgba(200,16,46,.2);padding:22px;text-align:center;position:relative;overflow:hidden}
+.community-card::before{content:'';position:absolute;top:-45px;right:-45px;width:130px;height:130px;background:radial-gradient(circle,rgba(200,16,46,.18),transparent 70%);pointer-events:none}
+.cc-tag{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--g);margin-bottom:8px}
+.cc-icon{font-size:52px;line-height:1;margin-bottom:8px}
+.cc-period{font-family:var(--C);font-size:10px;color:var(--g);letter-spacing:.18em;text-transform:uppercase;margin-bottom:15px}
+.cc-list{list-style:none;margin-bottom:16px;text-align:left}
+.cc-list li{font-family:var(--C);font-size:12px;color:rgba(240,236,244,.58);padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;align-items:center;gap:7px;font-weight:400}
+.cc-list li::before{content:'✓';color:var(--red);font-size:8px;flex-shrink:0}
+.cc-btn{display:block;width:100%;background:var(--red);color:#fff;font-family:var(--C);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:13px;transition:background .18s;text-align:center}
+.cc-btn:hover{background:var(--red2)}
+.cc-note{font-family:var(--C);font-size:9px;color:var(--g);margin-top:6px}
 .widget{background:var(--card);padding:18px}
 .wh{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--g);padding-bottom:9px;border-bottom:1px solid var(--border);margin-bottom:13px;display:flex;align-items:center;gap:5px}
 .wh em{color:var(--red);font-style:normal}
@@ -214,7 +213,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   .f-grid{grid-template-columns:1fr 1fr;gap:22px}
 }
 @media(max-width:768px){
-  .nav-links,.btn-prem{display:none}.ham{display:flex}
+  .nav-links,.btn-free{display:none}.ham{display:flex}
   .hero,.c-inner,.l-inner,.g-inner,.f-inner,.ad-belt,.dl-inner,.world-inner,.content{padding-left:16px;padding-right:16px}
   .ng{grid-template-columns:1fr}.nc.feature{grid-column:span 1;display:block}.nc.feature .nc-thumb{display:none}
   .shows{grid-template-columns:1fr}.local-grid{grid-template-columns:1fr}.sidebar{grid-template-columns:1fr}
@@ -233,10 +232,10 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   <div class="t-scroll">
     <div class="t-track" id="tickerTrack">
       <span class="t-item">Loading live metal news from 6 sources&#8230;</span>
-      <span class="t-item">OneHeavy &mdash; The World's Heaviest Music Hub</span>
+      <span class="t-item">OneHeavy &mdash; Free For Every Metal Fan</span>
       <span class="t-item">Global metal news updated every 5 minutes</span>
       <span class="t-item">Loading live metal news from 6 sources&#8230;</span>
-      <span class="t-item">OneHeavy &mdash; The World's Heaviest Music Hub</span>
+      <span class="t-item">OneHeavy &mdash; Free For Every Metal Fan</span>
       <span class="t-item">Global metal news updated every 5 minutes</span>
     </div>
   </div>
@@ -255,7 +254,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
       <li><a href="#">Genres</a></li>
     </ul>
     <div class="nav-right">
-      <button class="btn-prem">&#x1F918; Premium &mdash; $5/mo</button>
+      <button class="btn-free">&#x1F918; Free For Everyone</button>
       <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -268,7 +267,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   <a href="#" onclick="closeMob()">Reviews</a>
   <a href="#" onclick="closeMob()">Bands</a>
   <a href="#" onclick="closeMob()">Genres</a>
-  <a href="/premium" class="mob-cta" onclick="closeMob()">&#x1F918; Premium &mdash; $5/mo</a>
+  <a href="/" class="mob-cta" onclick="closeMob()">&#x1F918; OneHeavy &mdash; Free Forever</a>
 </div>
 
 <div class="dateline">
@@ -349,19 +348,19 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </main>
 
   <aside class="sidebar">
-    <div class="prem-card">
-      <div class="pc-tag">OneHeavy Premium</div>
-      <div class="pc-price"><sup>$</sup>5</div>
-      <div class="pc-period">per month &middot; cancel anytime</div>
-      <ul class="pc-list">
-        <li>Ad-free experience</li>
-        <li>Concert alerts for your city</li>
-        <li>Exclusive interviews &amp; reviews</li>
-        <li>Breaking news 30 min early</li>
-        <li>Local scene priority feed</li>
+    <div class="community-card">
+      <div class="cc-tag">OneHeavy Community</div>
+      <div class="cc-icon">&#x1F918;</div>
+      <div class="cc-period">Free Forever &middot; No Login Needed</div>
+      <ul class="cc-list">
+        <li>All metal news in one place</li>
+        <li>6 sources updated every 5 mins</li>
+        <li>Concert listings worldwide</li>
+        <li>Local scene discovery</li>
+        <li>100% free, always</li>
       </ul>
-      <button class="pc-btn">Start Free Trial &#x1F918;</button>
-      <div class="pc-note">No credit card required for trial</div>
+      <a href="/" class="cc-btn">Explore OneHeavy &#x1F918;</a>
+      <div class="cc-note">Share with every metal fan you know</div>
     </div>
     <div class="ad-side">
       <span class="ad-tag">Advertisement</span>
@@ -395,10 +394,10 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
       <button class="ct" onclick="setTab(this,'.ct')">&#x1F1E7;&#x1F1F7; S&atilde;o Paulo</button>
     </div>
     <div class="shows">
-      <div class="show"><span class="show-genre">Thrash</span><div class="show-date"><div class="show-day">08</div><div class="show-md"><span class="show-mo">March</span><span class="show-yr">2026</span></div></div><div class="show-artist">Metallica</div><div class="show-support">with Mammoth WVH</div><div class="show-venue">O2 Arena, London</div><span class="show-tix">Tickets</span></div>
-      <div class="show"><span class="show-genre">Death</span><div class="show-date"><div class="show-day">15</div><div class="show-md"><span class="show-mo">March</span><span class="show-yr">2026</span></div></div><div class="show-artist">Cannibal Corpse</div><div class="show-support">with Nile + Obituary</div><div class="show-venue">Roundhouse, London</div><span class="show-tix">Tickets</span></div>
-      <div class="show"><span class="show-genre">Prog</span><div class="show-date"><div class="show-day">22</div><div class="show-md"><span class="show-mo">March</span><span class="show-yr">2026</span></div></div><div class="show-artist">Tool</div><div class="show-support">with Killing Joke</div><div class="show-venue">Alexandra Palace</div><span class="show-tix">Tickets</span></div>
-      <div class="show"><span class="show-genre">Black</span><div class="show-date"><div class="show-day">11</div><div class="show-md"><span class="show-mo">April</span><span class="show-yr">2026</span></div></div><div class="show-artist">Mayhem</div><div class="show-support">with Immortal + Marduk</div><div class="show-venue">Electric Ballroom</div><span class="show-tix">Tickets</span></div>
+      <div class="show"><span class="show-genre">Thrash</span><div class="show-date"><div class="show-day">18</div><div class="show-md"><span class="show-mo">April</span><span class="show-yr">2026</span></div></div><div class="show-artist">Metallica</div><div class="show-support">with Mammoth WVH</div><div class="show-venue">O2 Arena, London</div><span class="show-tix">Tickets</span></div>
+      <div class="show"><span class="show-genre">Death</span><div class="show-date"><div class="show-day">25</div><div class="show-md"><span class="show-mo">April</span><span class="show-yr">2026</span></div></div><div class="show-artist">Cannibal Corpse</div><div class="show-support">with Nile + Obituary</div><div class="show-venue">Roundhouse, London</div><span class="show-tix">Tickets</span></div>
+      <div class="show"><span class="show-genre">Prog</span><div class="show-date"><div class="show-day">02</div><div class="show-md"><span class="show-mo">May</span><span class="show-yr">2026</span></div></div><div class="show-artist">Tool</div><div class="show-support">with Killing Joke</div><div class="show-venue">Alexandra Palace</div><span class="show-tix">Tickets</span></div>
+      <div class="show"><span class="show-genre">Black</span><div class="show-date"><div class="show-day">14</div><div class="show-md"><span class="show-mo">May</span><span class="show-yr">2026</span></div></div><div class="show-artist">Mayhem</div><div class="show-support">with Immortal + Marduk</div><div class="show-venue">Electric Ballroom</div><span class="show-tix">Tickets</span></div>
     </div>
   </div>
 </section>
@@ -447,7 +446,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
     <div class="f-grid">
       <div class="f-brand">
         <a href="/" class="logo"><div class="logo-box">One</div><div class="logo-txt">Heavy</div></a>
-        <p>The world's heaviest music hub. All metal, all genres, all scenes &mdash; in one place. Updated every 5 minutes.</p>
+        <p>The world's heaviest music hub. All metal, all genres, all scenes &mdash; in one place. Free forever. Updated every 5 minutes.</p>
       </div>
       <div class="f-col">
         <h5>Navigate</h5>
@@ -461,12 +460,12 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
       </div>
       <div class="f-col">
         <h5>OneHeavy</h5>
-        <a href="/premium">Premium &mdash; $5/mo</a><a href="#">Submit News</a>
+        <a href="#">Submit News</a>
         <a href="#">List Your Show</a><a href="#">Advertise</a><a href="#">Contact</a>
       </div>
     </div>
     <div class="f-bottom">
-      <p>&copy; 2026 <em>OneHeavy</em> &middot; oneheavy.net</p>
+      <p>&copy; 2026 <em>OneHeavy</em> &middot; oneheavy.net &middot; Free For Every Metal Fan</p>
       <p>Privacy &middot; Terms &middot; <em>Keep It Heavy &#x1F918;</em></p>
     </div>
   </div>
