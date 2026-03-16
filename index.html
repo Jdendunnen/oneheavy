@@ -122,14 +122,18 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .btn-story{display:inline-flex;align-items:center;gap:10px;font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--w);border-bottom:1px solid var(--red);padding-bottom:4px;transition:gap .2s,color .2s}
 .btn-story::after{content:'\2192';color:var(--red)}
 .btn-story:hover{gap:16px;color:var(--red)}
+/* HERO ASIDE — PROMOTERS */
 .hero-aside{padding:26px 0 26px 26px;display:flex;flex-direction:column}
-.aside-hd{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--g);padding-bottom:10px;border-bottom:1px solid var(--border)}
-.aside-item{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.04);cursor:pointer;transition:padding-left .18s}
-.aside-item:hover{padding-left:6px}
-.aside-item:last-child{border-bottom:none}
-.ai-src{font-family:var(--C);font-size:8px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:var(--red);margin-bottom:3px}
-.ai-title{font-family:var(--C);font-weight:600;font-size:13px;line-height:1.2;color:var(--w);margin-bottom:3px}
-.ai-time{font-family:var(--C);font-size:9px;color:var(--g)}
+.aside-hd{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--g);padding-bottom:10px;border-bottom:1px solid var(--border);margin-bottom:4px}
+.aside-promo{display:flex;align-items:center;justify-content:space-between;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.04);text-decoration:none;transition:padding-left .18s}
+.aside-promo:last-child{border-bottom:none}
+.aside-promo:hover{padding-left:6px}
+.ap-name{font-family:var(--C);font-weight:600;font-size:13px;color:var(--w);transition:color .18s;line-height:1.2}
+.aside-promo:hover .ap-name{color:var(--red)}
+.ap-type{font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.04em}
+.ap-arrow{color:var(--red);font-size:11px;opacity:0;transition:opacity .18s;flex-shrink:0;margin-left:6px}
+.aside-promo:hover .ap-arrow{opacity:1}
+/* WORLD */
 .world{background:var(--lift);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .world-inner{max-width:1360px;margin:0 auto;display:flex;overflow:hidden}
 .world-label{background:rgba(200,16,46,.1);border-right:1px solid rgba(200,16,46,.2);padding:10px 16px;font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:5px;flex-shrink:0}
@@ -189,25 +193,6 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .lsw-submit{display:block;width:100%;background:var(--red);color:#fff;font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:10px;border:none;cursor:pointer;transition:background .18s;text-align:center}
 .lsw-submit:hover{background:var(--red2)}
 .lsw-note{font-family:var(--C);font-size:9px;color:var(--g);text-align:center;margin-top:6px;letter-spacing:.04em}
-/* PROMOTERS WIDGET */
-.promo-widget{background:var(--card);border:1px solid rgba(200,16,46,.15);overflow:hidden}
-.promo-head{background:linear-gradient(135deg,rgba(200,16,46,.18),rgba(8,8,14,.8));padding:14px 16px}
-.promo-head-title{font-family:var(--D);font-size:18px;letter-spacing:.06em;text-transform:uppercase}
-.promo-head-title span{color:var(--red)}
-.promo-head-sub{font-family:var(--C);font-size:9px;color:rgba(240,236,244,.4);letter-spacing:.06em;margin-top:2px}
-.promo-list{padding:8px 0}
-.promo-item{display:flex;align-items:center;justify-content:space-between;padding:9px 16px;border-bottom:1px solid rgba(255,255,255,.04);transition:background .18s;cursor:pointer;text-decoration:none}
-.promo-item:last-child{border-bottom:none}
-.promo-item:hover{background:rgba(200,16,46,.08)}
-.promo-item-left{display:flex;flex-direction:column;gap:2px}
-.promo-name{font-family:var(--C);font-size:12px;font-weight:600;color:var(--w);letter-spacing:.04em;transition:color .18s}
-.promo-item:hover .promo-name{color:var(--red)}
-.promo-type{font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.06em;text-transform:uppercase}
-.promo-arrow{color:var(--red);font-size:12px;flex-shrink:0;opacity:0;transition:opacity .18s}
-.promo-item:hover .promo-arrow{opacity:1}
-.promo-footer{padding:10px 16px;border-top:1px solid rgba(255,255,255,.04);text-align:center}
-.promo-footer p{font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.06em;line-height:1.6}
-.promo-footer a{color:var(--red)}
 .community-card{background:linear-gradient(150deg,rgba(110,0,0,.22),var(--card));border:1px solid rgba(200,16,46,.2);padding:22px;text-align:center;position:relative;overflow:hidden}
 .community-card::before{content:'';position:absolute;top:-45px;right:-45px;width:130px;height:130px;background:radial-gradient(circle,rgba(200,16,46,.18),transparent 70%);pointer-events:none}
 .cc-tag{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--g);margin-bottom:8px}
@@ -432,10 +417,28 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </div>
   <div class="hero-rule"></div>
   <aside class="hero-aside">
-    <div class="aside-hd">Latest Updates</div>
-    <div id="heroStack">
-      <div class="aside-item"><div class="ai-src">Loading</div><div class="ai-title">Fetching live stories&#8230;</div><div class="ai-time">Just now</div></div>
-    </div>
+    <div class="aside-hd">&#x1F1E6;&#x1F1FA; Aus Promoters</div>
+    <a class="aside-promo" href="https://hardlineentertainment.com.au" target="_blank" rel="noopener noreferrer">
+      <span class="ap-name">Hardline Entertainment</span><span class="ap-arrow">&#x2192;</span>
+    </a>
+    <a class="aside-promo" href="https://www.destroyalllines.com" target="_blank" rel="noopener noreferrer">
+      <span class="ap-name">Destroy All Lines</span><span class="ap-arrow">&#x2192;</span>
+    </a>
+    <a class="aside-promo" href="https://www.livenation.com.au" target="_blank" rel="noopener noreferrer">
+      <span class="ap-name">Live Nation Australia</span><span class="ap-arrow">&#x2192;</span>
+    </a>
+    <a class="aside-promo" href="https://www.frontiertouring.com" target="_blank" rel="noopener noreferrer">
+      <span class="ap-name">Frontier Touring</span><span class="ap-arrow">&#x2192;</span>
+    </a>
+    <a class="aside-promo" href="https://www.handsometours.com" target="_blank" rel="noopener noreferrer">
+      <span class="ap-name">Handsome Tours</span><span class="ap-arrow">&#x2192;</span>
+    </a>
+    <a class="aside-promo" href="https://www.metropolistouring.com.au" target="_blank" rel="noopener noreferrer">
+      <span class="ap-name">Metropolis Touring</span><span class="ap-arrow">&#x2192;</span>
+    </a>
+    <a class="aside-promo" href="https://www.secretsounds.com.au" target="_blank" rel="noopener noreferrer">
+      <span class="ap-name">Secret Sounds</span><span class="ap-arrow">&#x2192;</span>
+    </a>
   </aside>
 </section>
 
@@ -485,9 +488,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
       <div class="loading"><div class="spin"></div><p>Fetching live metal news from 6 sources&#8230;</p></div>
     </div>
   </main>
-
   <aside class="sidebar">
-
     <div class="local-shows-widget">
       <div class="lsw-head">
         <div class="lsw-title">Local <span>Shows</span></div>
@@ -502,69 +503,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
         </div>
       </div>
     </div>
-
-    <!-- AUSTRALIAN PROMOTERS WIDGET -->
-    <div class="promo-widget">
-      <div class="promo-head">
-        <div class="promo-head-title">&#x1F1E6;&#x1F1FA; <span>Aus</span> Promoters</div>
-        <div class="promo-head-sub">Find tickets for Australian metal tours</div>
-      </div>
-      <div class="promo-list">
-        <a class="promo-item" href="https://hardlineentertainment.com.au" target="_blank" rel="noopener noreferrer">
-          <div class="promo-item-left">
-            <div class="promo-name">Hardline Entertainment</div>
-            <div class="promo-type">Metal &middot; Hard Rock &middot; Punk</div>
-          </div>
-          <div class="promo-arrow">&#x2192;</div>
-        </a>
-        <a class="promo-item" href="https://www.destroyalllines.com" target="_blank" rel="noopener noreferrer">
-          <div class="promo-item-left">
-            <div class="promo-name">Destroy All Lines</div>
-            <div class="promo-type">Metal &middot; Alternative &middot; Indie</div>
-          </div>
-          <div class="promo-arrow">&#x2192;</div>
-        </a>
-        <a class="promo-item" href="https://www.livenation.com.au" target="_blank" rel="noopener noreferrer">
-          <div class="promo-item-left">
-            <div class="promo-name">Live Nation Australia</div>
-            <div class="promo-type">Major Tours &middot; Arena Shows</div>
-          </div>
-          <div class="promo-arrow">&#x2192;</div>
-        </a>
-        <a class="promo-item" href="https://www.frontiertouring.com" target="_blank" rel="noopener noreferrer">
-          <div class="promo-item-left">
-            <div class="promo-name">Frontier Touring</div>
-            <div class="promo-type">Rock &middot; Metal &middot; Alternative</div>
-          </div>
-          <div class="promo-arrow">&#x2192;</div>
-        </a>
-        <a class="promo-item" href="https://www.handsometours.com" target="_blank" rel="noopener noreferrer">
-          <div class="promo-item-left">
-            <div class="promo-name">Handsome Tours</div>
-            <div class="promo-type">Independent &middot; Underground</div>
-          </div>
-          <div class="promo-arrow">&#x2192;</div>
-        </a>
-        <a class="promo-item" href="https://www.metropolistouring.com.au" target="_blank" rel="noopener noreferrer">
-          <div class="promo-item-left">
-            <div class="promo-name">Metropolis Touring</div>
-            <div class="promo-type">Rock &middot; Metal &middot; Electronic</div>
-          </div>
-          <div class="promo-arrow">&#x2192;</div>
-        </a>
-        <a class="promo-item" href="https://www.secretsounds.com.au" target="_blank" rel="noopener noreferrer">
-          <div class="promo-item-left">
-            <div class="promo-name">Secret Sounds</div>
-            <div class="promo-type">Rock &middot; Alternative &middot; Festivals</div>
-          </div>
-          <div class="promo-arrow">&#x2192;</div>
-        </a>
-      </div>
-      <div class="promo-footer">
-        <p>Want your company listed? <a href="mailto:josefdendunnen@gmail.com">Get in touch</a></p>
-      </div>
-    </div>
-
     <div class="community-card">
       <div class="cc-tag">OneHeavy Community</div>
       <div class="cc-icon">&#x1F918;</div>
@@ -579,19 +517,16 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
       <a href="/" class="cc-btn">Explore OneHeavy &#x1F918;</a>
       <div class="cc-note">Share with every metal fan you know</div>
     </div>
-
     <div class="ad-side">
       <span class="ad-tag">Advertisement</span>
       <span style="font-family:var(--C);font-size:10px;color:rgba(255,255,255,.11)">[ 300 &times; 250 ]</span>
     </div>
-
     <div class="widget">
       <div class="wh">&#x1F525; Trending <em>Today</em></div>
       <div id="trendList">
         <div class="tr-item"><div class="tr-n">01</div><div class="tr-info"><h5>Loading stories&#8230;</h5><small>Metal News</small></div></div>
       </div>
     </div>
-
   </aside>
 </div>
 
@@ -631,7 +566,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
       <button class="cp" onclick="setTab(this,'.cp')">+ Add City</button>
     </div>
     <div class="local-grid">
-      <div class="lc"><div class="lc-tag">&#x1F4CD; Bands &amp; Promoters</div><h4>Submit Your Show Free</h4><p>Get your metal show in front of thousands of fans. Click Submit Event above &mdash; listed within 24 hours, completely free.</p><div class="lc-time"><button onclick="openSubmit()" style="background:none;border:none;color:var(--red);font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;padding:0">Submit Now &rarr;</button></div></div>
+      <div class="lc"><div class="lc-tag">&#x1F4CD; Bands &amp; Promoters</div><h4>Submit Your Show Free</h4><p>Get your metal show in front of thousands of fans. Completely free, listed within 24 hours.</p><div class="lc-time"><button onclick="openSubmit()" style="background:none;border:none;color:var(--red);font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;padding:0">Submit Now &rarr;</button></div></div>
       <div class="lc"><div class="lc-tag">&#x1F4CD; Promoters Welcome</div><h4>Free Listings for Every Venue</h4><p>OneHeavy lists every local metal show at zero cost. Get your events in front of thousands of dedicated metal fans.</p><div class="lc-time">josefdendunnen@gmail.com</div></div>
       <div class="lc"><div class="lc-tag">&#x1F4CD; Local &amp; Unsigned Bands</div><h4>Get Your Band on OneHeavy</h4><p>Claim your free band profile, list your shows, build your local following. We support the underground.</p><div class="lc-time">Always free for bands</div></div>
     </div>
@@ -753,13 +688,6 @@ function renderHero(items){
     <p class="hero-desc">${t.desc}</p>
     <a href="${t.url}" target="_blank" rel="noopener noreferrer" class="btn-story">Read Full Story</a>
   `;
-  document.getElementById('heroStack').innerHTML=items.slice(1,5).map(it=>`
-    <div class="aside-item" onclick="window.open('${it.url}','_blank')">
-      <div class="ai-src">${it.source}</div>
-      <div class="ai-title">${it.title}</div>
-      <div class="ai-time">${ago(it.pub)}</div>
-    </div>
-  `).join('');
 }
 function renderTrend(items){
   document.getElementById('trendList').innerHTML=items.slice(0,5).map((it,i)=>`
