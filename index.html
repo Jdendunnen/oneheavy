@@ -30,7 +30,6 @@ body{background:var(--ink);color:var(--w);font-family:var(--S);overflow-x:hidden
 a{text-decoration:none;color:inherit}
 button{cursor:pointer;font-family:inherit;border:none;background:none}
 body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.022;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")}
-/* NAV */
 nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(200,16,46,.16)}
 .nav-wrap{max-width:1360px;margin:0 auto;padding:0 24px;height:56px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:28px}
 .logo{display:flex;align-items:center;flex-shrink:0}
@@ -55,7 +54,6 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .mob-nav a{font-family:var(--D);font-size:clamp(36px,7vw,56px);color:var(--g);padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04);transition:color .2s}
 .mob-nav a:hover{color:var(--red)}
 .mob-cta{margin-top:22px!important;background:var(--red)!important;color:#fff!important;padding:15px 28px!important;font-family:var(--C)!important;font-size:14px!important;font-weight:700!important;letter-spacing:.12em!important;text-transform:uppercase!important;text-align:center!important;border-bottom:none!important}
-/* SUBMIT BANNER */
 .submit-banner{background:linear-gradient(135deg,rgba(200,16,46,.15),rgba(8,8,14,.95));border-bottom:1px solid rgba(200,16,46,.2);padding:14px 24px}
 .submit-banner-inner{max-width:1360px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .submit-banner-left{display:flex;align-items:center;gap:14px}
@@ -65,7 +63,6 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .submit-banner-text p{font-family:var(--C);font-size:10px;color:var(--g);letter-spacing:.06em}
 .submit-banner-btn{background:var(--red);color:#fff;font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:10px 22px;border:none;cursor:pointer;transition:background .2s;white-space:nowrap;flex-shrink:0}
 .submit-banner-btn:hover{background:var(--red2)}
-/* MODALS */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:1000;align-items:center;justify-content:center;padding:24px}
 .modal-overlay.open{display:flex}
 .modal{background:var(--card);border:1px solid rgba(200,16,46,.25);max-width:480px;width:100%;padding:36px;position:relative}
@@ -102,18 +99,15 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .form-submit{width:100%;background:var(--red);color:#fff;font-family:var(--C);font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:14px;border:none;cursor:pointer;transition:background .2s;margin-top:8px}
 .form-submit:hover{background:var(--red2)}
-/* UNDER DEVELOPMENT TOAST */
 .dev-toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--card);border:1px solid rgba(200,16,46,.3);border-left:3px solid var(--red);padding:14px 28px;font-family:var(--C);font-size:11px;letter-spacing:.08em;color:var(--w);z-index:2000;transition:transform .35s cubic-bezier(.34,1.56,.64,1);white-space:nowrap;display:flex;align-items:center;gap:10px}
 .dev-toast.show{transform:translateX(-50%) translateY(0)}
 .dev-toast strong{color:var(--red);font-weight:700}
-/* DATELINE */
 .dateline{border-top:2px solid var(--w);border-bottom:1px solid var(--border)}
 .dl-inner{max-width:1360px;margin:0 auto;padding:8px 24px;display:flex;justify-content:space-between;align-items:center}
 .dl-date{font-family:var(--C);font-size:10px;color:var(--g);letter-spacing:.1em;text-transform:uppercase}
 .dl-live{font-family:var(--C);font-size:10px;font-weight:700;color:var(--red);letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:6px}
 .live-dot{width:6px;height:6px;background:var(--red);border-radius:50%;animation:blink 2s ease infinite;flex-shrink:0}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.15}}
-/* HERO */
 .hero{max-width:1360px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr 1px 310px;min-height:490px}
 .hero-rule{background:linear-gradient(to bottom,transparent 5%,rgba(200,16,46,.22) 30%,rgba(200,16,46,.22) 70%,transparent 95%)}
 .hero-main{padding:34px 38px 34px 0;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
@@ -136,7 +130,6 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .ai-src{font-family:var(--C);font-size:8px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:var(--red);margin-bottom:3px}
 .ai-title{font-family:var(--C);font-weight:600;font-size:13px;line-height:1.2;color:var(--w);margin-bottom:3px}
 .ai-time{font-family:var(--C);font-size:9px;color:var(--g)}
-/* WORLD */
 .world{background:var(--lift);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .world-inner{max-width:1360px;margin:0 auto;display:flex;overflow:hidden}
 .world-label{background:rgba(200,16,46,.1);border-right:1px solid rgba(200,16,46,.2);padding:10px 16px;font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:5px;flex-shrink:0}
@@ -146,12 +139,10 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .w-item{display:inline-flex;align-items:center;gap:7px;padding:0 18px;border-right:1px solid rgba(255,255,255,.05);font-family:var(--C);font-size:11px;color:rgba(240,236,244,.38)}
 .w-item strong{color:var(--w);font-weight:600}
 .w-item em{color:var(--red);font-style:normal;margin:0 3px}
-/* ADS */
 .ad-belt{max-width:1360px;margin:0 auto;padding:12px 24px}
 .ad-728{background:var(--lift);border:1px dashed rgba(255,255,255,.06);height:90px;display:flex;align-items:center;justify-content:center;gap:14px}
 .ad-tag{font-family:var(--C);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.07);padding:2px 7px}
 .ad-dim{font-family:var(--C);font-size:11px;color:rgba(255,255,255,.13)}
-/* CONTENT */
 .content{max-width:1360px;margin:0 auto;padding:30px 24px 60px;display:grid;grid-template-columns:1fr 285px;gap:44px}
 .sh{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;padding-bottom:9px;border-bottom:1px solid var(--border);position:relative}
 .sh::after{content:'';position:absolute;bottom:-1px;left:0;width:40px;height:1px;background:var(--red)}
@@ -162,7 +153,6 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .fb{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 11px;background:transparent;border:1px solid rgba(255,255,255,.08);color:var(--g);transition:all .18s}
 .fb:hover{border-color:rgba(200,16,46,.32);color:var(--w)}
 .fb.on{background:var(--red);border-color:var(--red);color:#fff}
-/* NEWS GRID */
 .ng{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.04);margin-bottom:28px}
 .nc{background:var(--ink);padding:17px;cursor:pointer;transition:background .18s;position:relative;overflow:hidden;display:block}
 .nc::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--red);transition:width .3s}
@@ -185,7 +175,6 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .spin{width:26px;height:26px;border:2px solid rgba(200,16,46,.14);border-top-color:var(--red);border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 10px}
 @keyframes spin{to{transform:rotate(360deg)}}
 .loading p{font-family:var(--C);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--g)}
-/* SIDEBAR */
 .sidebar{display:flex;flex-direction:column;gap:22px}
 .local-shows-widget{background:var(--card);border:1px solid rgba(200,16,46,.15);overflow:hidden}
 .lsw-head{background:linear-gradient(135deg,rgba(200,16,46,.18),rgba(8,8,14,.8));padding:14px 16px;display:flex;align-items:center;justify-content:space-between}
@@ -200,6 +189,25 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .lsw-submit{display:block;width:100%;background:var(--red);color:#fff;font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:10px;border:none;cursor:pointer;transition:background .18s;text-align:center}
 .lsw-submit:hover{background:var(--red2)}
 .lsw-note{font-family:var(--C);font-size:9px;color:var(--g);text-align:center;margin-top:6px;letter-spacing:.04em}
+/* PROMOTERS WIDGET */
+.promo-widget{background:var(--card);border:1px solid rgba(200,16,46,.15);overflow:hidden}
+.promo-head{background:linear-gradient(135deg,rgba(200,16,46,.18),rgba(8,8,14,.8));padding:14px 16px}
+.promo-head-title{font-family:var(--D);font-size:18px;letter-spacing:.06em;text-transform:uppercase}
+.promo-head-title span{color:var(--red)}
+.promo-head-sub{font-family:var(--C);font-size:9px;color:rgba(240,236,244,.4);letter-spacing:.06em;margin-top:2px}
+.promo-list{padding:8px 0}
+.promo-item{display:flex;align-items:center;justify-content:space-between;padding:9px 16px;border-bottom:1px solid rgba(255,255,255,.04);transition:background .18s;cursor:pointer;text-decoration:none}
+.promo-item:last-child{border-bottom:none}
+.promo-item:hover{background:rgba(200,16,46,.08)}
+.promo-item-left{display:flex;flex-direction:column;gap:2px}
+.promo-name{font-family:var(--C);font-size:12px;font-weight:600;color:var(--w);letter-spacing:.04em;transition:color .18s}
+.promo-item:hover .promo-name{color:var(--red)}
+.promo-type{font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.06em;text-transform:uppercase}
+.promo-arrow{color:var(--red);font-size:12px;flex-shrink:0;opacity:0;transition:opacity .18s}
+.promo-item:hover .promo-arrow{opacity:1}
+.promo-footer{padding:10px 16px;border-top:1px solid rgba(255,255,255,.04);text-align:center}
+.promo-footer p{font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.06em;line-height:1.6}
+.promo-footer a{color:var(--red)}
 .community-card{background:linear-gradient(150deg,rgba(110,0,0,.22),var(--card));border:1px solid rgba(200,16,46,.2);padding:22px;text-align:center;position:relative;overflow:hidden}
 .community-card::before{content:'';position:absolute;top:-45px;right:-45px;width:130px;height:130px;background:radial-gradient(circle,rgba(200,16,46,.18),transparent 70%);pointer-events:none}
 .cc-tag{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--g);margin-bottom:8px}
@@ -221,7 +229,6 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .tr-item:hover .tr-info h5{color:var(--red)}
 .tr-info small{font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.04em;text-transform:uppercase}
 .ad-side{background:var(--card);border:1px dashed rgba(255,255,255,.06);height:250px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
-/* CONCERTS */
 .concerts{background:var(--lift);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:42px 0}
 .c-inner{max-width:1360px;margin:0 auto;padding:0 24px}
 .city-tabs{display:flex;flex-wrap:wrap;gap:2px;border-bottom:1px solid var(--border);margin-bottom:18px}
@@ -241,7 +248,6 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .show-venue{font-family:var(--C);font-size:10px;color:rgba(240,236,244,.32)}
 .show-tix{display:inline-flex;align-items:center;gap:5px;margin-top:11px;font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--w);border:1px solid rgba(255,255,255,.09);padding:5px 10px;transition:all .18s;cursor:pointer}
 .show:hover .show-tix{background:var(--red);border-color:var(--red)}
-/* LOCAL */
 .local{padding:42px 0;border-bottom:1px solid var(--border)}
 .l-inner{max-width:1360px;margin:0 auto;padding:0 24px}
 .city-pills{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:18px}
@@ -254,13 +260,11 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .lc h4{font-family:var(--C);font-weight:700;font-size:14px;text-transform:uppercase;line-height:1.2;margin-bottom:6px}
 .lc p{font-size:12px;line-height:1.55;color:rgba(240,236,244,.62);font-weight:300;font-style:italic}
 .lc-time{font-family:var(--C);font-size:9px;color:var(--g);margin-top:9px}
-/* GENRES */
 .genres{background:var(--lift);border-top:1px solid var(--border);padding:26px 0}
 .g-inner{max-width:1360px;margin:0 auto;padding:0 24px}
 .gpills{display:flex;flex-wrap:wrap;gap:4px;margin-top:13px}
 .gp{font-family:var(--C);font-size:10px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:7px 13px;background:var(--card);color:var(--g);cursor:pointer;transition:all .18s;border-bottom:2px solid transparent}
 .gp:hover{color:var(--w);border-color:rgba(200,16,46,.28)}.gp.on{background:var(--lift);color:var(--w);border-color:var(--red)}
-/* FOOTER */
 footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 20px}
 .f-inner{max-width:1360px;margin:0 auto;padding:0 24px}
 .f-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:38px;padding-bottom:32px;border-bottom:1px solid var(--border);margin-bottom:18px}
@@ -272,7 +276,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 .f-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
 .f-bottom p{font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.1em;text-transform:uppercase}
 .f-bottom em{color:var(--red);font-style:normal}
-/* RESPONSIVE */
 @media(max-width:1100px){
   .hero{grid-template-columns:1fr}.hero-rule,.hero-aside{display:none}.hero-main{padding:30px 0}
   .content{grid-template-columns:1fr}.sidebar{display:grid;grid-template-columns:1fr 1fr}
@@ -305,7 +308,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-wrap">
     <a href="/" class="logo"><div class="logo-box">One</div><div class="logo-txt">Heavy</div></a>
@@ -326,7 +328,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </div>
 </nav>
 
-<!-- MOBILE NAV -->
 <div class="mob-nav" id="mobNav">
   <a href="/" onclick="closeMob()">News</a>
   <a href="#concerts" onclick="closeMob()">Concerts</a>
@@ -339,7 +340,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   <a href="/" class="mob-cta" onclick="closeMob()">&#x1F918; OneHeavy &mdash; Free Forever</a>
 </div>
 
-<!-- NEWSLETTER MODAL -->
 <div class="modal-overlay" id="newsletterModal" onclick="closeNewsletter(event)">
   <div class="modal">
     <button class="modal-close" onclick="closeNewsletter()">&times;</button>
@@ -367,7 +367,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </div>
 </div>
 
-<!-- SUBMIT EVENT MODAL -->
 <div class="modal-overlay" id="submitModal" onclick="closeSubmit(event)">
   <div class="submit-modal">
     <button class="modal-close" onclick="closeSubmit()">&times;</button>
@@ -388,7 +387,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
       <div class="form-row"><label>Additional Info (optional)</label><textarea id="showInfo" placeholder="Support acts, genre, doors time, ticket price..."></textarea></div>
       <div class="form-row"><label>Your Email *</label><input type="email" id="submitterEmail" placeholder="your@email.com"></div>
       <button class="form-submit" onclick="submitShow()">Submit Your Show &rarr;</button>
-      <p class="modal-note" style="margin-top:10px;text-align:center">&#x1F512; Submissions reviewed within 24 hours &middot; contact@oneheavy.net</p>
+      <p class="modal-note" style="margin-top:10px;text-align:center">&#x1F512; Submissions reviewed within 24 hours &middot; josefdendunnen@gmail.com</p>
     </div>
     <div class="modal-success" id="submitSuccess" style="display:none">
       <div class="success-icon">&#x1F918;</div>
@@ -398,12 +397,8 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </div>
 </div>
 
-<!-- UNDER DEVELOPMENT TOAST -->
-<div class="dev-toast" id="devToast">
-  &#x1F6A7; <strong>Coming Soon</strong> &mdash; This feature is currently under development
-</div>
+<div class="dev-toast" id="devToast">&#x1F6A7; <strong>Coming Soon</strong> &mdash; This feature is currently under development</div>
 
-<!-- SUBMIT BANNER -->
 <div class="submit-banner">
   <div class="submit-banner-inner">
     <div class="submit-banner-left">
@@ -417,7 +412,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </div>
 </div>
 
-<!-- DATE LINE -->
 <div class="dateline">
   <div class="dl-inner">
     <span class="dl-date" id="dlDate">Loading&#8230;</span>
@@ -425,7 +419,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </div>
 </div>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-main">
     <div class="hero-watermark">METAL</div>
@@ -446,7 +439,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </aside>
 </section>
 
-<!-- WORLD BAND -->
 <div class="world">
   <div class="world-inner">
     <div class="world-label">&#x1F30D; World</div>
@@ -473,12 +465,10 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </div>
 </div>
 
-<!-- AD -->
 <div class="ad-belt">
   <div class="ad-728"><span class="ad-tag">Advertisement</span><span class="ad-dim">[ 728 &times; 90 &mdash; Google AdSense ]</span></div>
 </div>
 
-<!-- MAIN CONTENT -->
 <div class="content">
   <main>
     <div class="sh"><h2>Latest <em>News</em></h2><a href="#" onclick="event.preventDefault();showDev()">All Stories &rarr;</a></div>
@@ -495,7 +485,9 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
       <div class="loading"><div class="spin"></div><p>Fetching live metal news from 6 sources&#8230;</p></div>
     </div>
   </main>
+
   <aside class="sidebar">
+
     <div class="local-shows-widget">
       <div class="lsw-head">
         <div class="lsw-title">Local <span>Shows</span></div>
@@ -506,10 +498,73 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
           <div class="lsw-empty-icon">&#x1F3B8;</div>
           <p>Be the first to list your show here.<br>Free for all bands &amp; promoters.<br>Listed within 24 hours.</p>
           <button class="lsw-submit" onclick="openSubmit()">Submit Your Show &rarr;</button>
-          <div class="lsw-note">contact@oneheavy.net</div>
+          <div class="lsw-note">josefdendunnen@gmail.com</div>
         </div>
       </div>
     </div>
+
+    <!-- AUSTRALIAN PROMOTERS WIDGET -->
+    <div class="promo-widget">
+      <div class="promo-head">
+        <div class="promo-head-title">&#x1F1E6;&#x1F1FA; <span>Aus</span> Promoters</div>
+        <div class="promo-head-sub">Find tickets for Australian metal tours</div>
+      </div>
+      <div class="promo-list">
+        <a class="promo-item" href="https://hardlineentertainment.com.au" target="_blank" rel="noopener noreferrer">
+          <div class="promo-item-left">
+            <div class="promo-name">Hardline Entertainment</div>
+            <div class="promo-type">Metal &middot; Hard Rock &middot; Punk</div>
+          </div>
+          <div class="promo-arrow">&#x2192;</div>
+        </a>
+        <a class="promo-item" href="https://www.destroyalllines.com" target="_blank" rel="noopener noreferrer">
+          <div class="promo-item-left">
+            <div class="promo-name">Destroy All Lines</div>
+            <div class="promo-type">Metal &middot; Alternative &middot; Indie</div>
+          </div>
+          <div class="promo-arrow">&#x2192;</div>
+        </a>
+        <a class="promo-item" href="https://www.livenation.com.au" target="_blank" rel="noopener noreferrer">
+          <div class="promo-item-left">
+            <div class="promo-name">Live Nation Australia</div>
+            <div class="promo-type">Major Tours &middot; Arena Shows</div>
+          </div>
+          <div class="promo-arrow">&#x2192;</div>
+        </a>
+        <a class="promo-item" href="https://www.frontiertouring.com" target="_blank" rel="noopener noreferrer">
+          <div class="promo-item-left">
+            <div class="promo-name">Frontier Touring</div>
+            <div class="promo-type">Rock &middot; Metal &middot; Alternative</div>
+          </div>
+          <div class="promo-arrow">&#x2192;</div>
+        </a>
+        <a class="promo-item" href="https://www.handsometours.com" target="_blank" rel="noopener noreferrer">
+          <div class="promo-item-left">
+            <div class="promo-name">Handsome Tours</div>
+            <div class="promo-type">Independent &middot; Underground</div>
+          </div>
+          <div class="promo-arrow">&#x2192;</div>
+        </a>
+        <a class="promo-item" href="https://www.metropolistouring.com.au" target="_blank" rel="noopener noreferrer">
+          <div class="promo-item-left">
+            <div class="promo-name">Metropolis Touring</div>
+            <div class="promo-type">Rock &middot; Metal &middot; Electronic</div>
+          </div>
+          <div class="promo-arrow">&#x2192;</div>
+        </a>
+        <a class="promo-item" href="https://www.secretsounds.com.au" target="_blank" rel="noopener noreferrer">
+          <div class="promo-item-left">
+            <div class="promo-name">Secret Sounds</div>
+            <div class="promo-type">Rock &middot; Alternative &middot; Festivals</div>
+          </div>
+          <div class="promo-arrow">&#x2192;</div>
+        </a>
+      </div>
+      <div class="promo-footer">
+        <p>Want your company listed? <a href="mailto:josefdendunnen@gmail.com">Get in touch</a></p>
+      </div>
+    </div>
+
     <div class="community-card">
       <div class="cc-tag">OneHeavy Community</div>
       <div class="cc-icon">&#x1F918;</div>
@@ -524,20 +579,22 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
       <a href="/" class="cc-btn">Explore OneHeavy &#x1F918;</a>
       <div class="cc-note">Share with every metal fan you know</div>
     </div>
+
     <div class="ad-side">
       <span class="ad-tag">Advertisement</span>
       <span style="font-family:var(--C);font-size:10px;color:rgba(255,255,255,.11)">[ 300 &times; 250 ]</span>
     </div>
+
     <div class="widget">
       <div class="wh">&#x1F525; Trending <em>Today</em></div>
       <div id="trendList">
         <div class="tr-item"><div class="tr-n">01</div><div class="tr-info"><h5>Loading stories&#8230;</h5><small>Metal News</small></div></div>
       </div>
     </div>
+
   </aside>
 </div>
 
-<!-- CONCERTS -->
 <section class="concerts" id="concerts">
   <div class="c-inner">
     <div class="sh"><h2>Shows <em>Near You</em></h2><a href="#" onclick="event.preventDefault();showDev()">All Shows &rarr;</a></div>
@@ -560,7 +617,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </div>
 </section>
 
-<!-- LOCAL SCENE -->
 <section class="local" id="local">
   <div class="l-inner">
     <div class="sh"><h2>Local <em>Scene</em></h2><a href="#" onclick="openSubmit()">Submit Event &rarr;</a></div>
@@ -576,13 +632,12 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
     </div>
     <div class="local-grid">
       <div class="lc"><div class="lc-tag">&#x1F4CD; Bands &amp; Promoters</div><h4>Submit Your Show Free</h4><p>Get your metal show in front of thousands of fans. Click Submit Event above &mdash; listed within 24 hours, completely free.</p><div class="lc-time"><button onclick="openSubmit()" style="background:none;border:none;color:var(--red);font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;padding:0">Submit Now &rarr;</button></div></div>
-      <div class="lc"><div class="lc-tag">&#x1F4CD; Promoters Welcome</div><h4>Free Listings for Every Venue</h4><p>OneHeavy lists every local metal show at zero cost. Get your events in front of thousands of dedicated metal fans.</p><div class="lc-time">contact@oneheavy.net</div></div>
+      <div class="lc"><div class="lc-tag">&#x1F4CD; Promoters Welcome</div><h4>Free Listings for Every Venue</h4><p>OneHeavy lists every local metal show at zero cost. Get your events in front of thousands of dedicated metal fans.</p><div class="lc-time">josefdendunnen@gmail.com</div></div>
       <div class="lc"><div class="lc-tag">&#x1F4CD; Local &amp; Unsigned Bands</div><h4>Get Your Band on OneHeavy</h4><p>Claim your free band profile, list your shows, build your local following. We support the underground.</p><div class="lc-time">Always free for bands</div></div>
     </div>
   </div>
 </section>
 
-<!-- GENRES -->
 <div class="genres">
   <div class="g-inner">
     <div class="sh" style="border-bottom:none"><h2>Browse by <em>Genre</em></h2></div>
@@ -601,7 +656,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <div class="f-inner">
     <div class="f-grid">
@@ -629,7 +683,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
         <a href="#" onclick="openNewsletter()">Weekly Digest &rarr;</a>
         <a href="#" onclick="openSubmit()">Submit Your Show &rarr;</a>
         <a href="#" onclick="event.preventDefault();showDev()">Advertise</a>
-        <a href="mailto:contact@oneheavy.net">Contact Us</a>
+        <a href="mailto:josefdendunnen@gmail.com">Contact Us</a>
       </div>
     </div>
     <div class="f-bottom">
@@ -774,7 +828,7 @@ function submitShow(){
   if(!band||!city||!venue||!date||!email){alert('Please fill in all required fields.');return;}
   const subject=encodeURIComponent('OneHeavy Show Submission: '+band+' @ '+venue);
   const body=encodeURIComponent('BAND/ARTIST: '+band+'\nPROMOTER: '+promoter+'\nDATE: '+date+'\nVENUE: '+venue+'\nCITY: '+city+'\nTICKETS: '+(tickets||'N/A')+'\nINFO: '+(info||'N/A')+'\nSUBMITTER EMAIL: '+email);
-  window.location.href='mailto:contact@oneheavy.net?subject='+subject+'&body='+body;
+  window.location.href='mailto:josefdendunnen@gmail.com?subject='+subject+'&body='+body;
   document.getElementById('submitForm').style.display='none';
   document.getElementById('submitSuccess').style.display='block';
 }
