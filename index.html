@@ -30,23 +30,6 @@ body{background:var(--ink);color:var(--w);font-family:var(--S);overflow-x:hidden
 a{text-decoration:none;color:inherit}
 button{cursor:pointer;font-family:inherit;border:none;background:none}
 body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.022;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")}
-
-/* ANNOUNCEMENT BAR */
-.announce{background:#0d0d1a;border-bottom:1px solid rgba(200,16,46,.2);padding:0 24px;height:36px;display:flex;align-items:center;justify-content:center;position:relative}
-.announce-text{font-family:var(--C);font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(240,236,244,.7);text-align:center}
-.announce-text em{color:var(--red);font-style:normal;font-weight:700}
-.announce-close{position:absolute;right:16px;background:none;border:none;color:var(--g);cursor:pointer;font-size:18px;line-height:1;padding:4px 8px;transition:color .2s}
-.announce-close:hover{color:var(--w)}
-
-/* TICKER */
-.ticker{background:var(--red);height:33px;display:flex;align-items:center;overflow:hidden;position:relative;z-index:200}
-.t-tag{background:var(--ink);color:var(--red);padding:0 14px;height:100%;display:flex;align-items:center;flex-shrink:0;font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;border-right:2px solid var(--red);white-space:nowrap}
-.t-scroll{overflow:hidden;flex:1}
-.t-track{display:flex;white-space:nowrap;animation:roll 65s linear infinite}
-.t-track:hover{animation-play-state:paused}
-.t-item{display:inline-flex;align-items:center;padding:0 22px;height:33px;font-family:var(--C);font-size:11px;font-weight:500;letter-spacing:.04em;color:#fff;border-right:1px solid rgba(255,255,255,.14);cursor:default}
-@keyframes roll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-
 /* NAV */
 nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(200,16,46,.16)}
 .nav-wrap{max-width:1360px;margin:0 auto;padding:0 24px;height:56px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:28px}
@@ -58,10 +41,9 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .nav-links a:hover,.nav-links a.active{color:var(--w)}
 .nav-links a.active{border-bottom:2px solid var(--red);padding-bottom:6px}
 .nav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
-.btn-free{background:var(--red);color:#fff;font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:9px 18px;transition:background .2s;white-space:nowrap;border:none;cursor:pointer}
-.btn-free:hover{background:var(--red2)}
-.btn-newsletter{background:transparent;color:var(--w);font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:8px 14px;border:1px solid rgba(255,255,255,.15);transition:all .2s;white-space:nowrap;cursor:pointer;display:flex;align-items:center;gap:6px}
-.btn-newsletter:hover{border-color:var(--red);color:var(--red)}
+.btn-free-tag{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);border:1px solid rgba(200,16,46,.22);padding:6px 12px;white-space:nowrap}
+.btn-newsletter{background:var(--red);color:#fff;font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:8px 16px;border:none;cursor:pointer;transition:background .2s;white-space:nowrap;display:flex;align-items:center;gap:6px}
+.btn-newsletter:hover{background:var(--red2)}
 .btn-newsletter::before{content:'✉';font-size:11px}
 .ham{display:none;flex-direction:column;gap:5px;padding:8px}
 .ham span{display:block;width:22px;height:2px;background:var(--w);transition:all .28s}
@@ -73,8 +55,7 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .mob-nav a{font-family:var(--D);font-size:clamp(36px,7vw,56px);color:var(--g);padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04);transition:color .2s}
 .mob-nav a:hover{color:var(--red)}
 .mob-cta{margin-top:22px!important;background:var(--red)!important;color:#fff!important;padding:15px 28px!important;font-family:var(--C)!important;font-size:14px!important;font-weight:700!important;letter-spacing:.12em!important;text-transform:uppercase!important;text-align:center!important;border-bottom:none!important}
-
-/* SUBMIT EVENT BANNER */
+/* SUBMIT BANNER */
 .submit-banner{background:linear-gradient(135deg,rgba(200,16,46,.15),rgba(8,8,14,.95));border-bottom:1px solid rgba(200,16,46,.2);padding:14px 24px}
 .submit-banner-inner{max-width:1360px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .submit-banner-left{display:flex;align-items:center;gap:14px}
@@ -84,8 +65,7 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .submit-banner-text p{font-family:var(--C);font-size:10px;color:var(--g);letter-spacing:.06em}
 .submit-banner-btn{background:var(--red);color:#fff;font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:10px 22px;border:none;cursor:pointer;transition:background .2s;white-space:nowrap;flex-shrink:0}
 .submit-banner-btn:hover{background:var(--red2)}
-
-/* NEWSLETTER MODAL */
+/* MODALS */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:1000;align-items:center;justify-content:center;padding:24px}
 .modal-overlay.open{display:flex}
 .modal{background:var(--card);border:1px solid rgba(200,16,46,.25);max-width:480px;width:100%;padding:36px;position:relative}
@@ -111,28 +91,24 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .modal-success h3{font-family:var(--D);font-size:28px;letter-spacing:.04em;text-transform:uppercase;color:var(--w);margin-bottom:8px}
 .modal-success h3 span{color:var(--red)}
 .modal-success p{font-family:var(--C);font-size:11px;color:var(--g);letter-spacing:.06em;line-height:1.7}
-
-/* SUBMIT EVENT MODAL */
 .submit-modal{background:var(--card);border:1px solid rgba(200,16,46,.25);max-width:560px;width:100%;padding:36px;position:relative;max-height:90vh;overflow-y:auto}
 .submit-modal::before{content:'';position:absolute;top:-1px;left:0;right:0;height:2px;background:var(--red)}
 .form-row{margin-bottom:14px}
 .form-row label{display:block;font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--g);margin-bottom:6px}
-.form-row input,.form-row textarea,.form-row select{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:var(--w);font-family:var(--C);font-size:12px;padding:10px 14px;outline:none;letter-spacing:.04em;transition:border-color .2s;-webkit-appearance:none}
+.form-row input,.form-row textarea{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:var(--w);font-family:var(--C);font-size:12px;padding:10px 14px;outline:none;letter-spacing:.04em;transition:border-color .2s}
 .form-row input:focus,.form-row textarea:focus{border-color:rgba(200,16,46,.5)}
 .form-row input::placeholder,.form-row textarea::placeholder{color:var(--g)}
 .form-row textarea{resize:vertical;min-height:80px}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .form-submit{width:100%;background:var(--red);color:#fff;font-family:var(--C);font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:14px;border:none;cursor:pointer;transition:background .2s;margin-top:8px}
 .form-submit:hover{background:var(--red2)}
-
-/* DATE LINE */
+/* DATELINE */
 .dateline{border-top:2px solid var(--w);border-bottom:1px solid var(--border)}
 .dl-inner{max-width:1360px;margin:0 auto;padding:8px 24px;display:flex;justify-content:space-between;align-items:center}
 .dl-date{font-family:var(--C);font-size:10px;color:var(--g);letter-spacing:.1em;text-transform:uppercase}
 .dl-live{font-family:var(--C);font-size:10px;font-weight:700;color:var(--red);letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:6px}
 .live-dot{width:6px;height:6px;background:var(--red);border-radius:50%;animation:blink 2s ease infinite;flex-shrink:0}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.15}}
-
 /* HERO */
 .hero{max-width:1360px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr 1px 310px;min-height:490px}
 .hero-rule{background:linear-gradient(to bottom,transparent 5%,rgba(200,16,46,.22) 30%,rgba(200,16,46,.22) 70%,transparent 95%)}
@@ -156,8 +132,7 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .ai-src{font-family:var(--C);font-size:8px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:var(--red);margin-bottom:3px}
 .ai-title{font-family:var(--C);font-weight:600;font-size:13px;line-height:1.2;color:var(--w);margin-bottom:3px}
 .ai-time{font-family:var(--C);font-size:9px;color:var(--g)}
-
-/* WORLD BAND */
+/* WORLD */
 .world{background:var(--lift);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .world-inner{max-width:1360px;margin:0 auto;display:flex;overflow:hidden}
 .world-label{background:rgba(200,16,46,.1);border-right:1px solid rgba(200,16,46,.2);padding:10px 16px;font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:5px;flex-shrink:0}
@@ -166,13 +141,11 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .w-item{display:inline-flex;align-items:center;gap:7px;padding:0 18px;border-right:1px solid rgba(255,255,255,.05);font-family:var(--C);font-size:11px;color:rgba(240,236,244,.38)}
 .w-item strong{color:var(--w);font-weight:600}
 .w-item em{color:var(--red);font-style:normal;margin:0 3px}
-
 /* ADS */
 .ad-belt{max-width:1360px;margin:0 auto;padding:12px 24px}
 .ad-728{background:var(--lift);border:1px dashed rgba(255,255,255,.06);height:90px;display:flex;align-items:center;justify-content:center;gap:14px}
 .ad-tag{font-family:var(--C);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.07);padding:2px 7px}
 .ad-dim{font-family:var(--C);font-size:11px;color:rgba(255,255,255,.13)}
-
 /* CONTENT */
 .content{max-width:1360px;margin:0 auto;padding:30px 24px 60px;display:grid;grid-template-columns:1fr 285px;gap:44px}
 .sh{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;padding-bottom:9px;border-bottom:1px solid var(--border);position:relative}
@@ -184,7 +157,6 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .fb{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 11px;background:transparent;border:1px solid rgba(255,255,255,.08);color:var(--g);transition:all .18s}
 .fb:hover{border-color:rgba(200,16,46,.32);color:var(--w)}
 .fb.on{background:var(--red);border-color:var(--red);color:#fff}
-
 /* NEWS GRID */
 .ng{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.04);margin-bottom:28px}
 .nc{background:var(--ink);padding:17px;cursor:pointer;transition:background .18s;position:relative;overflow:hidden;display:block}
@@ -208,11 +180,8 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .spin{width:26px;height:26px;border:2px solid rgba(200,16,46,.14);border-top-color:var(--red);border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 10px}
 @keyframes spin{to{transform:rotate(360deg)}}
 .loading p{font-family:var(--C);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--g)}
-
 /* SIDEBAR */
 .sidebar{display:flex;flex-direction:column;gap:22px}
-
-/* LOCAL SHOWS WIDGET */
 .local-shows-widget{background:var(--card);border:1px solid rgba(200,16,46,.15);overflow:hidden}
 .lsw-head{background:linear-gradient(135deg,rgba(200,16,46,.18),rgba(8,8,14,.8));padding:14px 16px;display:flex;align-items:center;justify-content:space-between}
 .lsw-title{font-family:var(--D);font-size:18px;letter-spacing:.06em;text-transform:uppercase}
@@ -226,7 +195,6 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .lsw-submit{display:block;width:100%;background:var(--red);color:#fff;font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:10px;border:none;cursor:pointer;transition:background .18s;text-align:center}
 .lsw-submit:hover{background:var(--red2)}
 .lsw-note{font-family:var(--C);font-size:9px;color:var(--g);text-align:center;margin-top:6px;letter-spacing:.04em}
-
 .community-card{background:linear-gradient(150deg,rgba(110,0,0,.22),var(--card));border:1px solid rgba(200,16,46,.2);padding:22px;text-align:center;position:relative;overflow:hidden}
 .community-card::before{content:'';position:absolute;top:-45px;right:-45px;width:130px;height:130px;background:radial-gradient(circle,rgba(200,16,46,.18),transparent 70%);pointer-events:none}
 .cc-tag{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--g);margin-bottom:8px}
@@ -248,11 +216,6 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .tr-item:hover .tr-info h5{color:var(--red)}
 .tr-info small{font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.04em;text-transform:uppercase}
 .ad-side{background:var(--card);border:1px dashed rgba(255,255,255,.06);height:250px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px}
-.sub-widget{background:var(--card);padding:18px}
-.sub-widget p{font-size:13px;font-style:italic;font-weight:300;color:rgba(240,236,244,.62);line-height:1.65;margin-bottom:13px}
-.sub-btn{display:block;width:100%;background:transparent;color:var(--red);border:1px solid rgba(200,16,46,.3);font-family:var(--C);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:11px;transition:all .18s}
-.sub-btn:hover{background:var(--red);color:#fff;border-color:var(--red)}
-
 /* CONCERTS */
 .concerts{background:var(--lift);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:42px 0}
 .c-inner{max-width:1360px;margin:0 auto;padding:0 24px}
@@ -273,7 +236,6 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .show-venue{font-family:var(--C);font-size:10px;color:rgba(240,236,244,.32)}
 .show-tix{display:inline-flex;align-items:center;gap:5px;margin-top:11px;font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--w);border:1px solid rgba(255,255,255,.09);padding:5px 10px;transition:all .18s}
 .show:hover .show-tix{background:var(--red);border-color:var(--red)}
-
 /* LOCAL */
 .local{padding:42px 0;border-bottom:1px solid var(--border)}
 .l-inner{max-width:1360px;margin:0 auto;padding:0 24px}
@@ -287,14 +249,12 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .lc h4{font-family:var(--C);font-weight:700;font-size:14px;text-transform:uppercase;line-height:1.2;margin-bottom:6px}
 .lc p{font-size:12px;line-height:1.55;color:rgba(240,236,244,.62);font-weight:300;font-style:italic}
 .lc-time{font-family:var(--C);font-size:9px;color:var(--g);margin-top:9px}
-
 /* GENRES */
 .genres{background:var(--lift);border-top:1px solid var(--border);padding:26px 0}
 .g-inner{max-width:1360px;margin:0 auto;padding:0 24px}
 .gpills{display:flex;flex-wrap:wrap;gap:4px;margin-top:13px}
 .gp{font-family:var(--C);font-size:10px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:7px 13px;background:var(--card);color:var(--g);cursor:pointer;transition:all .18s;border-bottom:2px solid transparent}
 .gp:hover{color:var(--w);border-color:rgba(200,16,46,.28)}.gp.on{background:var(--lift);color:var(--w);border-color:var(--red)}
-
 /* FOOTER */
 footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 20px}
 .f-inner{max-width:1360px;margin:0 auto;padding:0 24px}
@@ -307,7 +267,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 .f-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
 .f-bottom p{font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.1em;text-transform:uppercase}
 .f-bottom em{color:var(--red);font-style:normal}
-
 /* RESPONSIVE */
 @media(max-width:1100px){
   .hero{grid-template-columns:1fr}.hero-rule,.hero-aside{display:none}.hero-main{padding:30px 0}
@@ -316,10 +275,10 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   .f-grid{grid-template-columns:1fr 1fr;gap:22px}
 }
 @media(max-width:768px){
-  .nav-links,.btn-free{display:none}.ham{display:flex}
+  .nav-links{display:none}.ham{display:flex}
+  .btn-free-tag{display:none}
   .btn-newsletter{font-size:9px;padding:7px 10px}
   .btn-newsletter::before{display:none}
-  .announce-text{font-size:9px;letter-spacing:.06em}
   .submit-banner-inner{flex-direction:column;align-items:flex-start;gap:12px}
   .hero,.c-inner,.l-inner,.g-inner,.f-inner,.ad-belt,.dl-inner,.world-inner,.content{padding-left:16px;padding-right:16px}
   .submit-banner{padding:12px 16px}
@@ -335,33 +294,11 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 @media(max-width:480px){
   .hero h1{font-size:36px}.hero-watermark{display:none}
   .f-grid{grid-template-columns:1fr}
-  .announce{height:auto;padding:8px 40px 8px 16px}
-  .announce-text{font-size:9px;letter-spacing:.04em}
 }
 </style>
 </head>
 <body>
 
-<!-- ANNOUNCEMENT BAR -->
-<div class="announce" id="announceBar">
-  <p class="announce-text">&#x1F918; <em>OneHeavy is 100% free</em> &mdash; all the world's metal news in one place &mdash; no login &middot; no paywall &middot; no BS</p>
-  <button class="announce-close" onclick="document.getElementById('announceBar').style.display='none'" aria-label="Dismiss">&times;</button>
-</div>
-
-<!-- TICKER -->
-<div class="ticker">
-  <div class="t-tag">&#x26A1; Breaking</div>
-  <div class="t-scroll">
-    <div class="t-track" id="tickerTrack">
-      <span class="t-item">Loading live metal news from 6 sources&#8230;</span>
-      <span class="t-item">OneHeavy &mdash; Free For Every Metal Fan</span>
-      <span class="t-item">Global metal news updated every 5 minutes</span>
-      <span class="t-item">Loading live metal news from 6 sources&#8230;</span>
-      <span class="t-item">OneHeavy &mdash; Free For Every Metal Fan</span>
-      <span class="t-item">Global metal news updated every 5 minutes</span>
-    </div>
-  </div>
-</div>
 
 <!-- NAV -->
 <nav>
@@ -377,8 +314,8 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
       <li><a href="#">Genres</a></li>
     </ul>
     <div class="nav-right">
+      <span class="btn-free-tag">&#x1F918; 100% Free Always</span>
       <button class="btn-newsletter" onclick="openNewsletter()">Weekly Digest</button>
-      <button class="btn-free">&#x1F918; Free For Everyone</button>
       <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -432,43 +369,19 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
     <div id="submitForm">
       <div class="modal-tag">&#x1F4CD; Submit Your Show</div>
       <h2>List Your <span>Show</span></h2>
-      <p class="modal-sub">Bands and promoters — get your metal show in front of thousands of fans. 100% free, always.</p>
+      <p class="modal-sub">Bands and promoters &mdash; get your metal show in front of thousands of fans. 100% free, always.</p>
       <div class="form-grid">
-        <div class="form-row">
-          <label>Band / Artist Name *</label>
-          <input type="text" id="bandName" placeholder="e.g. Iron Maiden">
-        </div>
-        <div class="form-row">
-          <label>Promoter / Your Name *</label>
-          <input type="text" id="promoterName" placeholder="Your name or company">
-        </div>
+        <div class="form-row"><label>Band / Artist Name *</label><input type="text" id="bandName" placeholder="e.g. Iron Maiden"></div>
+        <div class="form-row"><label>Promoter / Your Name *</label><input type="text" id="promoterName" placeholder="Your name or company"></div>
       </div>
       <div class="form-grid">
-        <div class="form-row">
-          <label>Show Date *</label>
-          <input type="date" id="showDate">
-        </div>
-        <div class="form-row">
-          <label>City *</label>
-          <input type="text" id="showCity" placeholder="e.g. Melbourne">
-        </div>
+        <div class="form-row"><label>Show Date *</label><input type="date" id="showDate"></div>
+        <div class="form-row"><label>City *</label><input type="text" id="showCity" placeholder="e.g. Melbourne"></div>
       </div>
-      <div class="form-row">
-        <label>Venue *</label>
-        <input type="text" id="showVenue" placeholder="e.g. The Corner Hotel">
-      </div>
-      <div class="form-row">
-        <label>Ticket Link (optional)</label>
-        <input type="url" id="showTickets" placeholder="https://...">
-      </div>
-      <div class="form-row">
-        <label>Additional Info (optional)</label>
-        <textarea id="showInfo" placeholder="Support acts, genre, doors time, ticket price..."></textarea>
-      </div>
-      <div class="form-row">
-        <label>Your Email *</label>
-        <input type="email" id="submitterEmail" placeholder="your@email.com">
-      </div>
+      <div class="form-row"><label>Venue *</label><input type="text" id="showVenue" placeholder="e.g. The Corner Hotel"></div>
+      <div class="form-row"><label>Ticket Link (optional)</label><input type="url" id="showTickets" placeholder="https://..."></div>
+      <div class="form-row"><label>Additional Info (optional)</label><textarea id="showInfo" placeholder="Support acts, genre, doors time, ticket price..."></textarea></div>
+      <div class="form-row"><label>Your Email *</label><input type="email" id="submitterEmail" placeholder="your@email.com"></div>
       <button class="form-submit" onclick="submitShow()">Submit Your Show &rarr;</button>
       <p class="modal-note" style="margin-top:10px;text-align:center">&#x1F512; Submissions reviewed within 24 hours &middot; contact@oneheavy.net</p>
     </div>
@@ -480,7 +393,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </div>
 </div>
 
-<!-- SUBMIT EVENT BANNER -->
+<!-- SUBMIT BANNER -->
 <div class="submit-banner">
   <div class="submit-banner-inner">
     <div class="submit-banner-left">
@@ -510,7 +423,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
       <div class="hero-eyebrow">Breaking News</div>
       <h1>Live Metal News<br>Loading Now</h1>
       <div class="hero-byline"><span>OneHeavy</span><span class="hdot"></span><span>Just now</span></div>
-      <p class="hero-desc">Fetching the latest metal news from Blabbermouth, Loudwire, Kerrang, Metal Injection, Revolver and Heavy Mag AU.</p>
+      <p class="hero-desc">Fetching the latest metal news from Blabbermouth, Loudwire, MetalSucks, Metal Hammer, Revolver and Heavy Mag AU.</p>
       <span class="btn-story">Loading&#8230;</span>
     </div>
   </div>
@@ -575,10 +488,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
       <div class="loading"><div class="spin"></div><p>Fetching live metal news from 6 sources&#8230;</p></div>
     </div>
   </main>
-
   <aside class="sidebar">
-
-    <!-- LOCAL SHOWS WIDGET -->
     <div class="local-shows-widget">
       <div class="lsw-head">
         <div class="lsw-title">Local <span>Shows</span></div>
@@ -593,7 +503,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
         </div>
       </div>
     </div>
-
     <div class="community-card">
       <div class="cc-tag">OneHeavy Community</div>
       <div class="cc-icon">&#x1F918;</div>
@@ -608,19 +517,16 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
       <a href="/" class="cc-btn">Explore OneHeavy &#x1F918;</a>
       <div class="cc-note">Share with every metal fan you know</div>
     </div>
-
     <div class="ad-side">
       <span class="ad-tag">Advertisement</span>
       <span style="font-family:var(--C);font-size:10px;color:rgba(255,255,255,.11)">[ 300 &times; 250 ]</span>
     </div>
-
     <div class="widget">
       <div class="wh">&#x1F525; Trending <em>Today</em></div>
       <div id="trendList">
         <div class="tr-item"><div class="tr-n">01</div><div class="tr-info"><h5>Loading stories&#8230;</h5><small>Metal News</small></div></div>
       </div>
     </div>
-
   </aside>
 </div>
 
@@ -662,7 +568,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
       <button class="cp" onclick="setTab(this,'.cp')">+ Add City</button>
     </div>
     <div class="local-grid">
-      <div class="lc"><div class="lc-tag">&#x1F4CD; Bands &amp; Promoters</div><h4>Submit Your Show Free</h4><p>Get your metal show in front of thousands of fans. Click Submit Event above — listed within 24 hours, completely free.</p><div class="lc-time"><button onclick="openSubmit()" style="background:none;border:none;color:var(--red);font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;padding:0">Submit Now &rarr;</button></div></div>
+      <div class="lc"><div class="lc-tag">&#x1F4CD; Bands &amp; Promoters</div><h4>Submit Your Show Free</h4><p>Get your metal show in front of thousands of fans. Click Submit Event above &mdash; listed within 24 hours, completely free.</p><div class="lc-time"><button onclick="openSubmit()" style="background:none;border:none;color:var(--red);font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;padding:0">Submit Now &rarr;</button></div></div>
       <div class="lc"><div class="lc-tag">&#x1F4CD; Promoters Welcome</div><h4>Free Listings for Every Venue</h4><p>OneHeavy lists every local metal show at zero cost. Get your events in front of thousands of dedicated metal fans.</p><div class="lc-time">contact@oneheavy.net</div></div>
       <div class="lc"><div class="lc-tag">&#x1F4CD; Local &amp; Unsigned Bands</div><h4>Get Your Band on OneHeavy</h4><p>Claim your free band profile, list your shows, build your local following. We support the underground.</p><div class="lc-time">Always free for bands</div></div>
     </div>
@@ -723,7 +629,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 
 <script>
 const clean = s => (s||'').replace(/<[^>]+>/g,'').replace(/&amp;/g,'&').replace(/&#8217;/g,"'").replace(/&#8220;/g,'"').replace(/&#8221;/g,'"').replace(/&quot;/g,'"').replace(/&nbsp;/g,' ').trim();
-
 function ago(d){
   const s=Math.floor((Date.now()-new Date(d))/1000);
   if(s<60)return'Just now';
@@ -731,19 +636,16 @@ function ago(d){
   if(s<86400)return Math.floor(s/3600)+'h ago';
   return Math.floor(s/86400)+'d ago';
 }
-
 const FEEDS=[
-  {url:'https://www.blabbermouth.net/feed/', key:'blabbermouth',  label:'Blabbermouth',    flag:'&#x1F1FA;&#x1F1F8;'},
-  {url:'https://loudwire.com/feed/',          key:'loudwire',      label:'Loudwire',        flag:'&#x1F1FA;&#x1F1F8;'},
-  {url:'https://feeds.feedburner.com/Metalsucks', key:'metalsucks', label:'MetalSucks',     flag:'&#x1F1FA;&#x1F1F8;'},
-  {url:'https://loudersound.com/feeds.xml',   key:'loudersound',   label:'Metal Hammer',    flag:'&#x1F1EC;&#x1F1E7;'},
-  {url:'https://www.revolvermag.com/feed',    key:'revolvermag',   label:'Revolver',        flag:'&#x1F1FA;&#x1F1F8;'},
-  {url:'https://heavymag.com.au/feed',        key:'heavymag',      label:'Heavy Mag AU',    flag:'&#x1F1E6;&#x1F1FA;'},
+  {url:'https://www.blabbermouth.net/feed/', key:'blabbermouth', label:'Blabbermouth',  flag:'&#x1F1FA;&#x1F1F8;'},
+  {url:'https://loudwire.com/feed/',          key:'loudwire',     label:'Loudwire',      flag:'&#x1F1FA;&#x1F1F8;'},
+  {url:'https://feeds.feedburner.com/Metalsucks', key:'metalsucks', label:'MetalSucks', flag:'&#x1F1FA;&#x1F1F8;'},
+  {url:'https://loudersound.com/feeds.xml',   key:'loudersound',  label:'Metal Hammer',  flag:'&#x1F1EC;&#x1F1E7;'},
+  {url:'https://www.revolvermag.com/feed',    key:'revolvermag',  label:'Revolver',      flag:'&#x1F1FA;&#x1F1F8;'},
+  {url:'https://heavymag.com.au/feed',        key:'heavymag',     label:'Heavy Mag AU',  flag:'&#x1F1E6;&#x1F1FA;'},
 ];
 let ALL=[],FILTER='all';
-
 document.getElementById('dlDate').textContent=new Date().toLocaleDateString('en-AU',{weekday:'long',year:'numeric',month:'long',day:'numeric'}).toUpperCase();
-
 async function fetchFeed(f){
   try{
     const r=await fetch('/api/rss?url='+encodeURIComponent(f.url));
@@ -754,15 +656,13 @@ async function fetchFeed(f){
     }));
   }catch(e){return[];}
 }
-
 async function loadAll(){
   document.getElementById('newsGrid').innerHTML='<div class="loading"><div class="spin"></div><p>Fetching live metal news&#8230;</p></div>';
   const res=await Promise.allSettled(FEEDS.map(fetchFeed));
   ALL=res.flatMap(r=>r.status==='fulfilled'?r.value:[]).sort((a,b)=>b.ms-a.ms);
   const show=FILTER==='all'?ALL:ALL.filter(i=>i.key===FILTER);
-  renderGrid(show);renderHero(ALL);renderTicker(ALL);renderTrend(ALL);
+  renderGrid(show);renderHero(ALL);renderTrend(ALL);
 }
-
 function renderGrid(items){
   const g=document.getElementById('newsGrid');
   if(!items.length){g.innerHTML='<div class="loading"><p>No stories loaded &mdash; refresh shortly</p></div>';return;}
@@ -777,7 +677,6 @@ function renderGrid(items){
     </a>
   `).join('');
 }
-
 function renderHero(items){
   if(!items.length)return;
   const t=items[0];
@@ -796,12 +695,6 @@ function renderHero(items){
     </div>
   `).join('');
 }
-
-function renderTicker(items){
-  const arr=[...items.slice(0,10),...items.slice(0,10)];
-  document.getElementById('tickerTrack').innerHTML=arr.map(i=>`<span class="t-item">${i.title}</span>`).join('');
-}
-
 function renderTrend(items){
   document.getElementById('trendList').innerHTML=items.slice(0,5).map((it,i)=>`
     <div class="tr-item" onclick="window.open('${it.url}','_blank')">
@@ -810,24 +703,14 @@ function renderTrend(items){
     </div>
   `).join('');
 }
-
 function filterBy(key,btn){
   FILTER=key;
   document.querySelectorAll('.fb').forEach(b=>b.classList.remove('on'));
   btn.classList.add('on');
   renderGrid(key==='all'?ALL:ALL.filter(i=>i.key===key));
 }
-
-function setTab(el,selector){
-  document.querySelectorAll(selector).forEach(t=>t.classList.remove('on'));
-  el.classList.add('on');
-}
-
-function setGenre(el){
-  document.querySelectorAll('.gp').forEach(t=>t.classList.remove('on'));
-  el.classList.add('on');
-}
-
+function setTab(el,selector){document.querySelectorAll(selector).forEach(t=>t.classList.remove('on'));el.classList.add('on');}
+function setGenre(el){document.querySelectorAll('.gp').forEach(t=>t.classList.remove('on'));el.classList.add('on');}
 const ham=document.getElementById('ham');
 const mobNav=document.getElementById('mobNav');
 ham.addEventListener('click',()=>{
@@ -835,36 +718,30 @@ ham.addEventListener('click',()=>{
   ham.classList.toggle('open',o);
   document.body.style.overflow=o?'hidden':'';
 });
-
 function closeMob(){mobNav.classList.remove('open');ham.classList.remove('open');document.body.style.overflow='';}
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMob();closeNewsletter();closeSubmit();}});
-
 function openNewsletter(){
   document.getElementById('newsletterModal').classList.add('open');
   document.body.style.overflow='hidden';
   setTimeout(()=>document.getElementById('emailInput').focus(),100);
 }
 function closeNewsletter(e){
-  if(e && e.target!==document.getElementById('newsletterModal'))return;
+  if(e&&e.target!==document.getElementById('newsletterModal'))return;
   document.getElementById('newsletterModal').classList.remove('open');
   document.body.style.overflow='';
 }
 function submitEmail(){
   const email=document.getElementById('emailInput').value.trim();
-  if(!email||!email.includes('@')){
-    document.getElementById('emailInput').style.borderColor='rgba(200,16,46,.8)';
-    return;
-  }
+  if(!email||!email.includes('@')){document.getElementById('emailInput').style.borderColor='rgba(200,16,46,.8)';return;}
   document.getElementById('modalForm').style.display='none';
   document.getElementById('modalSuccess').style.display='block';
 }
-
 function openSubmit(){
   document.getElementById('submitModal').classList.add('open');
   document.body.style.overflow='hidden';
 }
 function closeSubmit(e){
-  if(e && e.target!==document.getElementById('submitModal'))return;
+  if(e&&e.target!==document.getElementById('submitModal'))return;
   document.getElementById('submitModal').classList.remove('open');
   document.body.style.overflow='';
 }
@@ -877,30 +754,13 @@ function submitShow(){
   const promoter=document.getElementById('promoterName').value.trim();
   const tickets=document.getElementById('showTickets').value.trim();
   const info=document.getElementById('showInfo').value.trim();
-
-  if(!band||!city||!venue||!date||!email){
-    alert('Please fill in all required fields.');
-    return;
-  }
-
+  if(!band||!city||!venue||!date||!email){alert('Please fill in all required fields.');return;}
   const subject=encodeURIComponent('OneHeavy Show Submission: '+band+' @ '+venue);
-  const body=encodeURIComponent(
-    'BAND/ARTIST: '+band+'\n'+
-    'PROMOTER: '+promoter+'\n'+
-    'DATE: '+date+'\n'+
-    'VENUE: '+venue+'\n'+
-    'CITY: '+city+'\n'+
-    'TICKETS: '+(tickets||'N/A')+'\n'+
-    'INFO: '+(info||'N/A')+'\n'+
-    'SUBMITTER EMAIL: '+email
-  );
-
+  const body=encodeURIComponent('BAND/ARTIST: '+band+'\nPROMOTER: '+promoter+'\nDATE: '+date+'\nVENUE: '+venue+'\nCITY: '+city+'\nTICKETS: '+(tickets||'N/A')+'\nINFO: '+(info||'N/A')+'\nSUBMITTER EMAIL: '+email);
   window.location.href='mailto:contact@oneheavy.net?subject='+subject+'&body='+body;
-
   document.getElementById('submitForm').style.display='none';
   document.getElementById('submitSuccess').style.display='block';
 }
-
 loadAll();
 </script>
 </body>
