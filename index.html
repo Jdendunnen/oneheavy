@@ -261,6 +261,56 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 .f-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
 .f-bottom p{font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.1em;text-transform:uppercase}
 .f-bottom em{color:var(--red);font-style:normal}
+
+/* ON TOUR BUTTON */
+.btn-ontour{background:transparent;color:var(--w);font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:7px 14px;border:1px solid rgba(255,255,255,.15);cursor:pointer;transition:all .2s;white-space:nowrap;display:flex;align-items:center;gap:7px;position:relative}
+.btn-ontour::before{content:'';width:7px;height:7px;background:var(--red);border-radius:50%;animation:blink 1.4s ease infinite;flex-shrink:0}
+.btn-ontour:hover{border-color:var(--red);color:var(--red)}
+/* ON TOUR OVERLAY */
+.tours-overlay{display:none;position:fixed;inset:0;background:rgba(5,5,10,.97);z-index:500;flex-direction:column;overflow:hidden}
+.tours-overlay.open{display:flex}
+.tours-header{background:rgba(8,8,14,.9);border-bottom:1px solid rgba(200,16,46,.2);padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.tours-header-left{display:flex;align-items:center;gap:16px}
+.tours-logo{display:flex;align-items:center;gap:0}
+.tours-logo .logo-box{font-size:18px;padding:3px 8px 2px}
+.tours-logo .logo-txt{font-size:18px}
+.tours-title{font-family:var(--D);font-size:26px;letter-spacing:.06em;text-transform:uppercase;color:var(--w);display:flex;align-items:center;gap:10px}
+.tours-title span{color:var(--red)}
+.tours-title::before{content:'';width:7px;height:7px;background:var(--red);border-radius:50%;animation:blink 1.4s ease infinite;flex-shrink:0}
+.tours-close{background:none;border:1px solid rgba(255,255,255,.12);color:var(--g);cursor:pointer;font-size:20px;line-height:1;padding:6px 12px;transition:all .2s;font-family:var(--C)}
+.tours-close:hover{border-color:var(--red);color:var(--w)}
+.tours-filters{padding:14px 32px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:6px;flex-wrap:wrap;flex-shrink:0;background:rgba(8,8,14,.5)}
+.tf{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 12px;background:transparent;border:1px solid rgba(255,255,255,.08);color:var(--g);cursor:pointer;transition:all .18s}
+.tf:hover{border-color:rgba(200,16,46,.32);color:var(--w)}
+.tf.on{background:var(--red);border-color:var(--red);color:#fff}
+.tf-label{font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.1em;text-transform:uppercase;margin-right:4px}
+.tours-body{flex:1;overflow-y:auto;padding:28px 32px 40px}
+.tours-section{margin-bottom:32px}
+.tours-section-hd{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--g);padding-bottom:10px;border-bottom:1px solid var(--border);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.tours-section-hd em{color:var(--red);font-style:normal}
+.tours-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1px;background:rgba(255,255,255,.04)}
+.tour-card{background:var(--ink);padding:18px;cursor:pointer;transition:background .18s;position:relative;overflow:hidden;display:block;text-decoration:none}
+.tour-card::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--red);transition:width .3s}
+.tour-card:hover{background:var(--card)}.tour-card:hover::after{width:100%}
+.tc-source{font-family:var(--C);font-size:8px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;background:var(--red);color:#fff;padding:2px 7px;display:inline-block;margin-bottom:8px}
+.tc-aus{background:rgba(0,100,0,.4);color:rgba(100,255,100,.9);font-family:var(--C);font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:2px 7px;display:inline-block;margin-left:4px}
+.tc-title{font-family:var(--C);font-weight:700;font-size:16px;line-height:1.2;text-transform:uppercase;letter-spacing:.02em;color:var(--w);margin-bottom:6px;transition:color .18s}
+.tour-card:hover .tc-title{color:var(--red)}
+.tc-desc{font-size:12px;line-height:1.55;color:rgba(240,236,244,.55);font-weight:300;font-style:italic;margin-bottom:8px}
+.tc-foot{font-family:var(--C);font-size:9px;color:var(--g);text-transform:uppercase;letter-spacing:.04em;display:flex;align-items:center;gap:6px}
+.tc-foot::before{content:'';width:9px;height:1px;background:var(--g)}
+.tours-promo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1px;background:rgba(255,255,255,.04)}
+.tours-promo-card{background:var(--ink);padding:16px;transition:background .18s;display:flex;align-items:center;justify-content:space-between;text-decoration:none}
+.tours-promo-card:hover{background:var(--card)}
+.tpc-name{font-family:var(--C);font-weight:600;font-size:13px;color:var(--w);transition:color .18s}
+.tours-promo-card:hover .tpc-name{color:var(--red)}
+.tpc-sub{font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.06em;text-transform:uppercase;margin-top:2px}
+.tpc-arrow{color:var(--red);opacity:0;transition:opacity .18s;font-size:14px}
+.tours-promo-card:hover .tpc-arrow{opacity:1}
+.tours-loading{text-align:center;padding:60px 20px}
+.tours-loading .spin{margin:0 auto 14px}
+.tours-loading p{font-family:var(--C);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--g)}
+.tours-empty{text-align:center;padding:40px 20px;font-family:var(--C);font-size:11px;color:var(--g);letter-spacing:.06em}
 @media(max-width:1100px){
   .hero{grid-template-columns:1fr}.hero-rule,.hero-aside{display:none}.hero-main{padding:30px 0}
   .content{grid-template-columns:1fr}.sidebar{display:grid;grid-template-columns:1fr 1fr}
@@ -308,6 +358,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
     <div class="nav-right">
       <span class="btn-free-tag">&#x1F918; 100% Free Always</span>
       <button class="btn-newsletter" onclick="openNewsletter()">Weekly Digest</button>
+      <button class="btn-ontour" onclick="openTours()">&#x1F3B8; On Tour</button>
       <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -379,6 +430,30 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
       <h3>Show <span>Submitted!</span></h3>
       <p>Thanks for submitting your show.<br>We'll review it within 24 hours.<br><br>Keep it heavy!</p>
     </div>
+  </div>
+</div>
+
+<!-- ON TOUR OVERLAY -->
+<div class="tours-overlay" id="toursOverlay">
+  <div class="tours-header">
+    <div class="tours-header-left">
+      <a href="/" class="logo tours-logo"><div class="logo-box">One</div><div class="logo-txt">Heavy</div></a>
+      <div class="tours-title"><span>On</span> Tour Now &mdash; Australia</div>
+    </div>
+    <button class="tours-close" onclick="closeTours()">&#x2715; Close</button>
+  </div>
+  <div class="tours-filters">
+    <span class="tf-label">Filter:</span>
+    <button class="tf on" onclick="filterTours('all',this)">All Tours</button>
+    <button class="tf" onclick="filterTours('aus',this)">&#x1F1E6;&#x1F1FA; Australian Shows</button>
+    <button class="tf" onclick="filterTours('hardline',this)">Hardline</button>
+    <button class="tf" onclick="filterTours('destroyalllines',this)">Destroy All Lines</button>
+    <button class="tf" onclick="filterTours('frontier',this)">Frontier</button>
+    <button class="tf" onclick="filterTours('handsome',this)">Handsome</button>
+    <button class="tf" onclick="filterTours('metropolis',this)">Metropolis</button>
+  </div>
+  <div class="tours-body" id="toursBody">
+    <div class="tours-loading"><div class="spin"></div><p>Loading tour announcements&#8230;</p></div>
   </div>
 </div>
 
@@ -535,13 +610,13 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
     <div class="sh"><h2>Shows <em>Near You</em></h2><a href="#" onclick="event.preventDefault();showDev()">All Shows &rarr;</a></div>
     <div class="city-tabs">
       <button class="ct on" onclick="setTab(this,'.ct')">&#x1F1EC;&#x1F1E7; London</button>
-      <button class="ct" onclick="setTab(this,'.ct')">&#x1F1FA;&#x1F1F8; New York</button>
-      <button class="ct" onclick="setTab(this,'.ct')">&#x1F1E9;&#x1F1EA; Berlin</button>
-      <button class="ct" onclick="setTab(this,'.ct')">&#x1F1E6;&#x1F1FA; Melbourne</button>
-      <button class="ct" onclick="setTab(this,'.ct')">&#x1F1E6;&#x1F1FA; Sydney</button>
-      <button class="ct" onclick="setTab(this,'.ct')">&#x1F1E8;&#x1F1E6; Toronto</button>
-      <button class="ct" onclick="setTab(this,'.ct')">&#x1F1EF;&#x1F1F5; Tokyo</button>
-      <button class="ct" onclick="setTab(this,'.ct')">&#x1F1E7;&#x1F1F7; S&atilde;o Paulo</button>
+      <button class="ct" onclick="showDev()">&#x1F1FA;&#x1F1F8; New York</button>
+      <button class="ct" onclick="showDev()">&#x1F1E9;&#x1F1EA; Berlin</button>
+      <button class="ct" onclick="showDev()">&#x1F1E6;&#x1F1FA; Melbourne</button>
+      <button class="ct" onclick="showDev()">&#x1F1E6;&#x1F1FA; Sydney</button>
+      <button class="ct" onclick="showDev()">&#x1F1E8;&#x1F1E6; Toronto</button>
+      <button class="ct" onclick="showDev()">&#x1F1EF;&#x1F1F5; Tokyo</button>
+      <button class="ct" onclick="showDev()">&#x1F1E7;&#x1F1F7; S&atilde;o Paulo</button>
     </div>
     <div class="shows">
       <div class="show"><span class="show-genre">Thrash</span><div class="show-date"><div class="show-day">18</div><div class="show-md"><span class="show-mo">April</span><span class="show-yr">2026</span></div></div><div class="show-artist">Metallica</div><div class="show-support">with Mammoth WVH</div><div class="show-venue">O2 Arena, London</div><span class="show-tix" onclick="showDev()">Tickets</span></div>
@@ -557,13 +632,13 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
     <div class="sh"><h2>Local <em>Scene</em></h2><a href="#" onclick="openSubmit()">Submit Event &rarr;</a></div>
     <div class="city-pills">
       <button class="cp on" onclick="setTab(this,'.cp')">&#x1F1E6;&#x1F1FA; Melbourne</button>
-      <button class="cp" onclick="setTab(this,'.cp')">&#x1F1E6;&#x1F1FA; Sydney</button>
-      <button class="cp" onclick="setTab(this,'.cp')">&#x1F1E6;&#x1F1FA; Brisbane</button>
-      <button class="cp" onclick="setTab(this,'.cp')">&#x1F1EC;&#x1F1E7; London</button>
-      <button class="cp" onclick="setTab(this,'.cp')">&#x1F1FA;&#x1F1F8; New York</button>
-      <button class="cp" onclick="setTab(this,'.cp')">&#x1F1E9;&#x1F1EA; Berlin</button>
-      <button class="cp" onclick="setTab(this,'.cp')">&#x1F1E8;&#x1F1E6; Toronto</button>
-      <button class="cp" onclick="setTab(this,'.cp')">+ Add City</button>
+      <button class="cp" onclick="showDev()">&#x1F1E6;&#x1F1FA; Sydney</button>
+      <button class="cp" onclick="showDev()">&#x1F1E6;&#x1F1FA; Brisbane</button>
+      <button class="cp" onclick="showDev()">&#x1F1EC;&#x1F1E7; London</button>
+      <button class="cp" onclick="showDev()">&#x1F1FA;&#x1F1F8; New York</button>
+      <button class="cp" onclick="showDev()">&#x1F1E9;&#x1F1EA; Berlin</button>
+      <button class="cp" onclick="showDev()">&#x1F1E8;&#x1F1E6; Toronto</button>
+      <button class="cp" onclick="showDev()">+ Add City</button>
     </div>
     <div class="local-grid">
       <div class="lc"><div class="lc-tag">&#x1F4CD; Bands &amp; Promoters</div><h4>Submit Your Show Free</h4><p>Get your metal show in front of thousands of fans. Completely free, listed within 24 hours.</p><div class="lc-time"><button onclick="openSubmit()" style="background:none;border:none;color:var(--red);font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;padding:0">Submit Now &rarr;</button></div></div>
@@ -718,7 +793,7 @@ ham.addEventListener('click',()=>{
   document.body.style.overflow=o?'hidden':'';
 });
 function closeMob(){mobNav.classList.remove('open');ham.classList.remove('open');document.body.style.overflow='';}
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMob();closeNewsletter();closeSubmit();}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMob();closeNewsletter();closeSubmit();closeTours();}});
 function openNewsletter(){
   document.getElementById('newsletterModal').classList.add('open');
   document.body.style.overflow='hidden';
@@ -760,6 +835,87 @@ function submitShow(){
   document.getElementById('submitForm').style.display='none';
   document.getElementById('submitSuccess').style.display='block';
 }
+
+// ON TOUR
+let TOUR_DATA = null;
+let TOUR_FILTER = 'all';
+
+async function openTours() {
+  document.getElementById('toursOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  if (!TOUR_DATA) await loadTours();
+}
+
+function closeTours() {
+  document.getElementById('toursOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+async function loadTours() {
+  try {
+    const r = await fetch('/api/tours');
+    TOUR_DATA = await r.json();
+    renderTours();
+  } catch(e) {
+    document.getElementById('toursBody').innerHTML = '<div class="tours-empty">Unable to load tour data right now &mdash; try again shortly.</div>';
+  }
+}
+
+function filterTours(key, btn) {
+  TOUR_FILTER = key;
+  document.querySelectorAll('.tf').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  renderTours();
+}
+
+function renderTours() {
+  if (!TOUR_DATA) return;
+  const { tourNews, promoters } = TOUR_DATA;
+  const body = document.getElementById('toursBody');
+  let html = '';
+
+  let news = tourNews;
+  if (TOUR_FILTER === 'aus') news = tourNews.filter(t => t.isAus);
+
+  // Tour news section
+  if (news.length > 0) {
+    html += '<div class="tours-section">';
+    html += '<div class="tours-section-hd">&#x1F4F0; Tour <em>Announcements</em></div>';
+    html += '<div class="tours-grid">';
+    news.forEach(t => {
+      const ausTag = t.isAus ? '<span class="tc-aus">&#x1F1E6;&#x1F1FA; Aus</span>' : '';
+      html += \`<a class="tour-card" href="\${t.link}" target="_blank" rel="noopener noreferrer">
+        <div><span class="tc-source">\${t.source}</span>\${ausTag}</div>
+        <div class="tc-title">\${t.title}</div>
+        <div class="tc-desc">\${t.desc}</div>
+        <div class="tc-foot">\${t.source} &middot; Tour News</div>
+      </a>\`;
+    });
+    html += '</div></div>';
+  } else {
+    html += '<div class="tours-empty">No Australian tour news matching this filter right now &mdash; check back soon.</div>';
+  }
+
+  // Promoter quick links section (always shown unless filtered to specific promoter)
+  if (TOUR_FILTER === 'all' || TOUR_FILTER === 'aus') {
+    html += '<div class="tours-section">';
+    html += '<div class="tours-section-hd">&#x1F1E6;&#x1F1FA; Browse by <em>Promoter</em></div>';
+    html += '<div class="tours-promo-grid">';
+    promoters.forEach(p => {
+      html += \`<a class="tours-promo-card" href="\${p.url}" target="_blank" rel="noopener noreferrer">
+        <div>
+          <div class="tpc-name">\${p.flag} \${p.name}</div>
+          <div class="tpc-sub">View all upcoming shows</div>
+        </div>
+        <div class="tpc-arrow">&#x2192;</div>
+      </a>\`;
+    });
+    html += '</div></div>';
+  }
+
+  body.innerHTML = html;
+}
+
 loadAll();
 </script>
 </body>
