@@ -44,6 +44,9 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .btn-newsletter{background:var(--red);color:#fff;font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:8px 16px;border:none;cursor:pointer;transition:background .2s;white-space:nowrap;display:flex;align-items:center;gap:6px}
 .btn-newsletter:hover{background:var(--red2)}
 .btn-newsletter::before{content:'✉';font-size:11px}
+.btn-ontour{background:transparent;color:var(--w);font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:7px 14px;border:1px solid rgba(255,255,255,.15);cursor:pointer;transition:all .2s;white-space:nowrap;display:flex;align-items:center;gap:7px}
+.btn-ontour::before{content:'';width:7px;height:7px;background:var(--red);border-radius:50%;animation:blink 1.4s ease infinite;flex-shrink:0}
+.btn-ontour:hover{border-color:var(--red);color:var(--red)}
 .ham{display:none;flex-direction:column;gap:5px;padding:8px}
 .ham span{display:block;width:22px;height:2px;background:var(--w);transition:all .28s}
 .ham.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
@@ -54,6 +57,47 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .mob-nav a{font-family:var(--D);font-size:clamp(36px,7vw,56px);color:var(--g);padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04);transition:color .2s}
 .mob-nav a:hover{color:var(--red)}
 .mob-cta{margin-top:22px!important;background:var(--red)!important;color:#fff!important;padding:15px 28px!important;font-family:var(--C)!important;font-size:14px!important;font-weight:700!important;letter-spacing:.12em!important;text-transform:uppercase!important;text-align:center!important;border-bottom:none!important}
+/* ON TOUR OVERLAY */
+.tours-overlay{display:none;position:fixed;inset:0;background:rgba(5,5,10,.97);z-index:500;flex-direction:column;overflow:hidden}
+.tours-overlay.open{display:flex}
+.tours-header{background:rgba(8,8,14,.9);border-bottom:1px solid rgba(200,16,46,.2);padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.tours-title{font-family:var(--D);font-size:26px;letter-spacing:.06em;text-transform:uppercase;color:var(--w);display:flex;align-items:center;gap:10px}
+.tours-title span{color:var(--red)}
+.tours-title::before{content:'';width:7px;height:7px;background:var(--red);border-radius:50%;animation:blink 1.4s ease infinite;flex-shrink:0}
+.tours-close{background:none;border:1px solid rgba(255,255,255,.12);color:var(--g);cursor:pointer;font-size:14px;line-height:1;padding:8px 16px;transition:all .2s;font-family:var(--C);font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.tours-close:hover{border-color:var(--red);color:var(--w)}
+.tours-filters{padding:12px 32px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:6px;flex-wrap:wrap;flex-shrink:0}
+.tf-label{font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.1em;text-transform:uppercase;margin-right:4px}
+.tf{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 12px;background:transparent;border:1px solid rgba(255,255,255,.08);color:var(--g);cursor:pointer;transition:all .18s}
+.tf:hover{border-color:rgba(200,16,46,.32);color:var(--w)}
+.tf.on{background:var(--red);border-color:var(--red);color:#fff}
+.tours-body{flex:1;overflow-y:auto;padding:28px 32px 40px}
+.tours-section{margin-bottom:32px}
+.tours-section-hd{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--g);padding-bottom:10px;border-bottom:1px solid var(--border);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.tours-section-hd em{color:var(--red);font-style:normal}
+.tours-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1px;background:rgba(255,255,255,.04)}
+.tour-card{background:var(--ink);padding:18px;transition:background .18s;position:relative;overflow:hidden;display:block;text-decoration:none}
+.tour-card::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--red);transition:width .3s}
+.tour-card:hover{background:var(--card)}.tour-card:hover::after{width:100%}
+.tc-source{font-family:var(--C);font-size:8px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;background:var(--red);color:#fff;padding:2px 7px;display:inline-block;margin-bottom:8px}
+.tc-aus{background:rgba(0,100,0,.4);color:rgba(100,255,100,.9);font-family:var(--C);font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:2px 7px;display:inline-block;margin-left:4px}
+.tc-title{font-family:var(--C);font-weight:700;font-size:16px;line-height:1.2;text-transform:uppercase;color:var(--w);margin-bottom:6px;transition:color .18s}
+.tour-card:hover .tc-title{color:var(--red)}
+.tc-desc{font-size:12px;line-height:1.55;color:rgba(240,236,244,.55);font-weight:300;font-style:italic;margin-bottom:8px}
+.tc-foot{font-family:var(--C);font-size:9px;color:var(--g);text-transform:uppercase;letter-spacing:.04em;display:flex;align-items:center;gap:6px}
+.tc-foot::before{content:'';width:9px;height:1px;background:var(--g)}
+.tours-promo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1px;background:rgba(255,255,255,.04)}
+.tours-promo-card{background:var(--ink);padding:16px;transition:background .18s;display:flex;align-items:center;justify-content:space-between;text-decoration:none}
+.tours-promo-card:hover{background:var(--card)}
+.tpc-name{font-family:var(--C);font-weight:600;font-size:13px;color:var(--w);transition:color .18s}
+.tours-promo-card:hover .tpc-name{color:var(--red)}
+.tpc-sub{font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.06em;text-transform:uppercase;margin-top:2px}
+.tpc-arrow{color:var(--red);opacity:0;transition:opacity .18s;font-size:14px}
+.tours-promo-card:hover .tpc-arrow{opacity:1}
+.tours-loading{text-align:center;padding:60px 20px}
+.tours-loading .spin{margin:0 auto 14px}
+.tours-empty{text-align:center;padding:40px 20px;font-family:var(--C);font-size:11px;color:var(--g);letter-spacing:.06em}
+/* SUBMIT BANNER */
 .submit-banner{background:linear-gradient(135deg,rgba(200,16,46,.15),rgba(8,8,14,.95));border-bottom:1px solid rgba(200,16,46,.2);padding:14px 24px}
 .submit-banner-inner{max-width:1360px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .submit-banner-left{display:flex;align-items:center;gap:14px}
@@ -63,6 +107,7 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .submit-banner-text p{font-family:var(--C);font-size:10px;color:var(--g);letter-spacing:.06em}
 .submit-banner-btn{background:var(--red);color:#fff;font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:10px 22px;border:none;cursor:pointer;transition:background .2s;white-space:nowrap;flex-shrink:0}
 .submit-banner-btn:hover{background:var(--red2)}
+/* MODALS */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:1000;align-items:center;justify-content:center;padding:24px}
 .modal-overlay.open{display:flex}
 .modal{background:var(--card);border:1px solid rgba(200,16,46,.25);max-width:480px;width:100%;padding:36px;position:relative}
@@ -122,7 +167,6 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .btn-story{display:inline-flex;align-items:center;gap:10px;font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--w);border-bottom:1px solid var(--red);padding-bottom:4px;transition:gap .2s,color .2s}
 .btn-story::after{content:'\2192';color:var(--red)}
 .btn-story:hover{gap:16px;color:var(--red)}
-/* HERO ASIDE — PROMOTERS */
 .hero-aside{padding:26px 0 26px 26px;display:flex;flex-direction:column}
 .aside-hd{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--g);padding-bottom:10px;border-bottom:1px solid var(--border);margin-bottom:4px}
 .aside-promo{display:flex;align-items:center;justify-content:space-between;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.04);text-decoration:none;transition:padding-left .18s}
@@ -130,10 +174,8 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .aside-promo:hover{padding-left:6px}
 .ap-name{font-family:var(--C);font-weight:600;font-size:13px;color:var(--w);transition:color .18s;line-height:1.2}
 .aside-promo:hover .ap-name{color:var(--red)}
-.ap-type{font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.04em}
 .ap-arrow{color:var(--red);font-size:11px;opacity:0;transition:opacity .18s;flex-shrink:0;margin-left:6px}
 .aside-promo:hover .ap-arrow{opacity:1}
-/* WORLD */
 .world{background:var(--lift);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .world-inner{max-width:1360px;margin:0 auto;display:flex;overflow:hidden}
 .world-label{background:rgba(200,16,46,.1);border-right:1px solid rgba(200,16,46,.2);padding:10px 16px;font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:5px;flex-shrink:0}
@@ -261,56 +303,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 .f-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
 .f-bottom p{font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.1em;text-transform:uppercase}
 .f-bottom em{color:var(--red);font-style:normal}
-
-/* ON TOUR BUTTON */
-.btn-ontour{background:transparent;color:var(--w);font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:7px 14px;border:1px solid rgba(255,255,255,.15);cursor:pointer;transition:all .2s;white-space:nowrap;display:flex;align-items:center;gap:7px;position:relative}
-.btn-ontour::before{content:'';width:7px;height:7px;background:var(--red);border-radius:50%;animation:blink 1.4s ease infinite;flex-shrink:0}
-.btn-ontour:hover{border-color:var(--red);color:var(--red)}
-/* ON TOUR OVERLAY */
-.tours-overlay{display:none;position:fixed;inset:0;background:rgba(5,5,10,.97);z-index:500;flex-direction:column;overflow:hidden}
-.tours-overlay.open{display:flex}
-.tours-header{background:rgba(8,8,14,.9);border-bottom:1px solid rgba(200,16,46,.2);padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
-.tours-header-left{display:flex;align-items:center;gap:16px}
-.tours-logo{display:flex;align-items:center;gap:0}
-.tours-logo .logo-box{font-size:18px;padding:3px 8px 2px}
-.tours-logo .logo-txt{font-size:18px}
-.tours-title{font-family:var(--D);font-size:26px;letter-spacing:.06em;text-transform:uppercase;color:var(--w);display:flex;align-items:center;gap:10px}
-.tours-title span{color:var(--red)}
-.tours-title::before{content:'';width:7px;height:7px;background:var(--red);border-radius:50%;animation:blink 1.4s ease infinite;flex-shrink:0}
-.tours-close{background:none;border:1px solid rgba(255,255,255,.12);color:var(--g);cursor:pointer;font-size:20px;line-height:1;padding:6px 12px;transition:all .2s;font-family:var(--C)}
-.tours-close:hover{border-color:var(--red);color:var(--w)}
-.tours-filters{padding:14px 32px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:6px;flex-wrap:wrap;flex-shrink:0;background:rgba(8,8,14,.5)}
-.tf{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 12px;background:transparent;border:1px solid rgba(255,255,255,.08);color:var(--g);cursor:pointer;transition:all .18s}
-.tf:hover{border-color:rgba(200,16,46,.32);color:var(--w)}
-.tf.on{background:var(--red);border-color:var(--red);color:#fff}
-.tf-label{font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.1em;text-transform:uppercase;margin-right:4px}
-.tours-body{flex:1;overflow-y:auto;padding:28px 32px 40px}
-.tours-section{margin-bottom:32px}
-.tours-section-hd{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--g);padding-bottom:10px;border-bottom:1px solid var(--border);margin-bottom:14px;display:flex;align-items:center;gap:8px}
-.tours-section-hd em{color:var(--red);font-style:normal}
-.tours-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1px;background:rgba(255,255,255,.04)}
-.tour-card{background:var(--ink);padding:18px;cursor:pointer;transition:background .18s;position:relative;overflow:hidden;display:block;text-decoration:none}
-.tour-card::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--red);transition:width .3s}
-.tour-card:hover{background:var(--card)}.tour-card:hover::after{width:100%}
-.tc-source{font-family:var(--C);font-size:8px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;background:var(--red);color:#fff;padding:2px 7px;display:inline-block;margin-bottom:8px}
-.tc-aus{background:rgba(0,100,0,.4);color:rgba(100,255,100,.9);font-family:var(--C);font-size:8px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:2px 7px;display:inline-block;margin-left:4px}
-.tc-title{font-family:var(--C);font-weight:700;font-size:16px;line-height:1.2;text-transform:uppercase;letter-spacing:.02em;color:var(--w);margin-bottom:6px;transition:color .18s}
-.tour-card:hover .tc-title{color:var(--red)}
-.tc-desc{font-size:12px;line-height:1.55;color:rgba(240,236,244,.55);font-weight:300;font-style:italic;margin-bottom:8px}
-.tc-foot{font-family:var(--C);font-size:9px;color:var(--g);text-transform:uppercase;letter-spacing:.04em;display:flex;align-items:center;gap:6px}
-.tc-foot::before{content:'';width:9px;height:1px;background:var(--g)}
-.tours-promo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1px;background:rgba(255,255,255,.04)}
-.tours-promo-card{background:var(--ink);padding:16px;transition:background .18s;display:flex;align-items:center;justify-content:space-between;text-decoration:none}
-.tours-promo-card:hover{background:var(--card)}
-.tpc-name{font-family:var(--C);font-weight:600;font-size:13px;color:var(--w);transition:color .18s}
-.tours-promo-card:hover .tpc-name{color:var(--red)}
-.tpc-sub{font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.06em;text-transform:uppercase;margin-top:2px}
-.tpc-arrow{color:var(--red);opacity:0;transition:opacity .18s;font-size:14px}
-.tours-promo-card:hover .tpc-arrow{opacity:1}
-.tours-loading{text-align:center;padding:60px 20px}
-.tours-loading .spin{margin:0 auto 14px}
-.tours-loading p{font-family:var(--C);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--g)}
-.tours-empty{text-align:center;padding:40px 20px;font-family:var(--C);font-size:11px;color:var(--g);letter-spacing:.06em}
 @media(max-width:1100px){
   .hero{grid-template-columns:1fr}.hero-rule,.hero-aside{display:none}.hero-main{padding:30px 0}
   .content{grid-template-columns:1fr}.sidebar{display:grid;grid-template-columns:1fr 1fr}
@@ -319,7 +311,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 }
 @media(max-width:768px){
   .nav-links{display:none}.ham{display:flex}
-  .btn-free-tag{display:none}
+  .btn-free-tag,.btn-ontour{display:none}
   .btn-newsletter{font-size:9px;padding:7px 10px}
   .btn-newsletter::before{display:none}
   .submit-banner-inner{flex-direction:column;align-items:flex-start;gap:12px}
@@ -334,6 +326,8 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   .modal-form button{width:100%}
   .form-grid{grid-template-columns:1fr}
   .dev-toast{font-size:10px;padding:12px 20px;white-space:normal;text-align:center;width:90%}
+  .tours-header{padding:0 16px}.tours-filters{padding:10px 16px}.tours-body{padding:20px 16px 40px}
+  .tours-title{font-size:18px}
 }
 @media(max-width:480px){
   .hero h1{font-size:36px}.hero-watermark{display:none}
@@ -357,8 +351,8 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
     </ul>
     <div class="nav-right">
       <span class="btn-free-tag">&#x1F918; 100% Free Always</span>
-      <button class="btn-newsletter" onclick="openNewsletter()">Weekly Digest</button>
       <button class="btn-ontour" onclick="openTours()">&#x1F3B8; On Tour</button>
+      <button class="btn-newsletter" onclick="openNewsletter()">Weekly Digest</button>
       <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -371,11 +365,34 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   <a href="#" onclick="closeMob();showDev()">Reviews</a>
   <a href="#" onclick="closeMob();showDev()">Bands</a>
   <a href="#" onclick="closeMob();showDev()">Genres</a>
-  <a href="#" onclick="closeMob();openNewsletter()" style="color:var(--red)">✉ Weekly Digest</a>
+  <a href="#" onclick="closeMob();openTours()" style="color:var(--red)">&#x1F3B8; On Tour Now</a>
+  <a href="#" onclick="closeMob();openNewsletter()" style="color:var(--red)">&#x2709; Weekly Digest</a>
   <a href="#" onclick="closeMob();openSubmit()" style="color:var(--red)">&#x1F4CD; Submit Your Show</a>
   <a href="/" class="mob-cta" onclick="closeMob()">&#x1F918; OneHeavy &mdash; Free Forever</a>
 </div>
 
+<!-- ON TOUR OVERLAY -->
+<div class="tours-overlay" id="toursOverlay">
+  <div class="tours-header">
+    <div class="tours-title"><span>On</span> Tour Now &mdash; Australia</div>
+    <button class="tours-close" onclick="closeTours()">&#x2715; Close</button>
+  </div>
+  <div class="tours-filters">
+    <span class="tf-label">Filter:</span>
+    <button class="tf on" onclick="filterTours('all',this)">All Tours</button>
+    <button class="tf" onclick="filterTours('aus',this)">&#x1F1E6;&#x1F1FA; Australian Shows</button>
+    <button class="tf" onclick="filterTours('hardline',this)">Hardline</button>
+    <button class="tf" onclick="filterTours('destroyalllines',this)">Destroy All Lines</button>
+    <button class="tf" onclick="filterTours('frontier',this)">Frontier</button>
+    <button class="tf" onclick="filterTours('handsome',this)">Handsome</button>
+    <button class="tf" onclick="filterTours('metropolis',this)">Metropolis</button>
+  </div>
+  <div class="tours-body" id="toursBody">
+    <div class="tours-loading"><div class="spin"></div><p>Loading tour announcements&#8230;</p></div>
+  </div>
+</div>
+
+<!-- NEWSLETTER MODAL -->
 <div class="modal-overlay" id="newsletterModal" onclick="closeNewsletter(event)">
   <div class="modal">
     <button class="modal-close" onclick="closeNewsletter()">&times;</button>
@@ -403,6 +420,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </div>
 </div>
 
+<!-- SUBMIT EVENT MODAL -->
 <div class="modal-overlay" id="submitModal" onclick="closeSubmit(event)">
   <div class="submit-modal">
     <button class="modal-close" onclick="closeSubmit()">&times;</button>
@@ -430,30 +448,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
       <h3>Show <span>Submitted!</span></h3>
       <p>Thanks for submitting your show.<br>We'll review it within 24 hours.<br><br>Keep it heavy!</p>
     </div>
-  </div>
-</div>
-
-<!-- ON TOUR OVERLAY -->
-<div class="tours-overlay" id="toursOverlay">
-  <div class="tours-header">
-    <div class="tours-header-left">
-      <a href="/" class="logo tours-logo"><div class="logo-box">One</div><div class="logo-txt">Heavy</div></a>
-      <div class="tours-title"><span>On</span> Tour Now &mdash; Australia</div>
-    </div>
-    <button class="tours-close" onclick="closeTours()">&#x2715; Close</button>
-  </div>
-  <div class="tours-filters">
-    <span class="tf-label">Filter:</span>
-    <button class="tf on" onclick="filterTours('all',this)">All Tours</button>
-    <button class="tf" onclick="filterTours('aus',this)">&#x1F1E6;&#x1F1FA; Australian Shows</button>
-    <button class="tf" onclick="filterTours('hardline',this)">Hardline</button>
-    <button class="tf" onclick="filterTours('destroyalllines',this)">Destroy All Lines</button>
-    <button class="tf" onclick="filterTours('frontier',this)">Frontier</button>
-    <button class="tf" onclick="filterTours('handsome',this)">Handsome</button>
-    <button class="tf" onclick="filterTours('metropolis',this)">Metropolis</button>
-  </div>
-  <div class="tours-body" id="toursBody">
-    <div class="tours-loading"><div class="spin"></div><p>Loading tour announcements&#8230;</p></div>
   </div>
 </div>
 
@@ -493,27 +487,13 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   <div class="hero-rule"></div>
   <aside class="hero-aside">
     <div class="aside-hd">&#x1F1E6;&#x1F1FA; Aus Promoters</div>
-    <a class="aside-promo" href="https://hardlineentertainment.com.au" target="_blank" rel="noopener noreferrer">
-      <span class="ap-name">Hardline Entertainment</span><span class="ap-arrow">&#x2192;</span>
-    </a>
-    <a class="aside-promo" href="https://www.destroyalllines.com" target="_blank" rel="noopener noreferrer">
-      <span class="ap-name">Destroy All Lines</span><span class="ap-arrow">&#x2192;</span>
-    </a>
-    <a class="aside-promo" href="https://www.livenation.com.au" target="_blank" rel="noopener noreferrer">
-      <span class="ap-name">Live Nation Australia</span><span class="ap-arrow">&#x2192;</span>
-    </a>
-    <a class="aside-promo" href="https://www.frontiertouring.com" target="_blank" rel="noopener noreferrer">
-      <span class="ap-name">Frontier Touring</span><span class="ap-arrow">&#x2192;</span>
-    </a>
-    <a class="aside-promo" href="https://www.handsometours.com" target="_blank" rel="noopener noreferrer">
-      <span class="ap-name">Handsome Tours</span><span class="ap-arrow">&#x2192;</span>
-    </a>
-    <a class="aside-promo" href="https://www.metropolistouring.com.au" target="_blank" rel="noopener noreferrer">
-      <span class="ap-name">Metropolis Touring</span><span class="ap-arrow">&#x2192;</span>
-    </a>
-    <a class="aside-promo" href="https://www.secretsounds.com.au" target="_blank" rel="noopener noreferrer">
-      <span class="ap-name">Secret Sounds</span><span class="ap-arrow">&#x2192;</span>
-    </a>
+    <a class="aside-promo" href="https://hardlineentertainment.com.au" target="_blank" rel="noopener noreferrer"><span class="ap-name">Hardline Entertainment</span><span class="ap-arrow">&#x2192;</span></a>
+    <a class="aside-promo" href="https://www.destroyalllines.com" target="_blank" rel="noopener noreferrer"><span class="ap-name">Destroy All Lines</span><span class="ap-arrow">&#x2192;</span></a>
+    <a class="aside-promo" href="https://www.livenation.com.au" target="_blank" rel="noopener noreferrer"><span class="ap-name">Live Nation Australia</span><span class="ap-arrow">&#x2192;</span></a>
+    <a class="aside-promo" href="https://www.frontiertouring.com" target="_blank" rel="noopener noreferrer"><span class="ap-name">Frontier Touring</span><span class="ap-arrow">&#x2192;</span></a>
+    <a class="aside-promo" href="https://www.handsometours.com" target="_blank" rel="noopener noreferrer"><span class="ap-name">Handsome Tours</span><span class="ap-arrow">&#x2192;</span></a>
+    <a class="aside-promo" href="https://www.metropolistouring.com.au" target="_blank" rel="noopener noreferrer"><span class="ap-name">Metropolis Touring</span><span class="ap-arrow">&#x2192;</span></a>
+    <a class="aside-promo" href="https://www.secretsounds.com.au" target="_blank" rel="noopener noreferrer"><span class="ap-name">Secret Sounds</span><span class="ap-arrow">&#x2192;</span></a>
   </aside>
 </section>
 
@@ -742,35 +722,15 @@ async function loadAll(){
 function renderGrid(items){
   const g=document.getElementById('newsGrid');
   if(!items.length){g.innerHTML='<div class="loading"><p>No stories loaded &mdash; refresh shortly</p></div>';return;}
-  g.innerHTML=items.slice(0,12).map((it,i)=>`
-    <a class="nc${i===0?' feature':''}" href="${it.url}" target="_blank" rel="noopener noreferrer">
-      ${i===0?`<div class="nc-thumb"><div class="nc-thumb-src">${it.flag} ${it.source}</div></div><div class="nc-body">`:''}
-      <div class="nc-top"><span class="nc-src">${it.source}</span><span class="nc-age">${ago(it.pub)}</span></div>
-      <h3>${it.title}</h3>
-      ${i<3?`<p>${it.desc}</p>`:''}
-      <div class="nc-foot">${it.source} &middot; ${it.flag}</div>
-      ${i===0?'</div>':''}
-    </a>
-  `).join('');
+  g.innerHTML=items.slice(0,12).map((it,i)=>'<a class="nc'+(i===0?' feature':'')+'" href="'+it.url+'" target="_blank" rel="noopener noreferrer">'+(i===0?'<div class="nc-thumb"><div class="nc-thumb-src">'+it.flag+' '+it.source+'</div></div><div class="nc-body">':'')+'<div class="nc-top"><span class="nc-src">'+it.source+'</span><span class="nc-age">'+ago(it.pub)+'</span></div><h3>'+it.title+'</h3>'+(i<3?'<p>'+it.desc+'</p>':'')+'<div class="nc-foot">'+it.source+' &middot; '+it.flag+'</div>'+(i===0?'</div>':'')+'</a>').join('');
 }
 function renderHero(items){
   if(!items.length)return;
   const t=items[0];
-  document.getElementById('heroBody').innerHTML=`
-    <div class="hero-eyebrow">Breaking News</div>
-    <h1>${t.title}</h1>
-    <div class="hero-byline"><span>${t.flag} ${t.source}</span><span class="hdot"></span><span>${ago(t.pub)}</span></div>
-    <p class="hero-desc">${t.desc}</p>
-    <a href="${t.url}" target="_blank" rel="noopener noreferrer" class="btn-story">Read Full Story</a>
-  `;
+  document.getElementById('heroBody').innerHTML='<div class="hero-eyebrow">Breaking News</div><h1>'+t.title+'</h1><div class="hero-byline"><span>'+t.flag+' '+t.source+'</span><span class="hdot"></span><span>'+ago(t.pub)+'</span></div><p class="hero-desc">'+t.desc+'</p><a href="'+t.url+'" target="_blank" rel="noopener noreferrer" class="btn-story">Read Full Story</a>';
 }
 function renderTrend(items){
-  document.getElementById('trendList').innerHTML=items.slice(0,5).map((it,i)=>`
-    <div class="tr-item" onclick="window.open('${it.url}','_blank')">
-      <div class="tr-n">0${i+1}</div>
-      <div class="tr-info"><h5>${it.title}</h5><small>${it.source} &middot; ${ago(it.pub)}</small></div>
-    </div>
-  `).join('');
+  document.getElementById('trendList').innerHTML=items.slice(0,5).map((it,i)=>'<div class="tr-item" onclick="window.open(\''+it.url+'\',\'_blank\')"><div class="tr-n">0'+(i+1)+'</div><div class="tr-info"><h5>'+it.title+'</h5><small>'+it.source+' &middot; '+ago(it.pub)+'</small></div></div>').join('');
 }
 function filterBy(key,btn){
   FILTER=key;
@@ -784,6 +744,66 @@ function showDev(){
   const t=document.getElementById('devToast');
   t.classList.add('show');
   setTimeout(()=>t.classList.remove('show'),2800);
+}
+// ON TOUR
+let TOUR_DATA=null,TOUR_FILTER='all';
+async function openTours(){
+  document.getElementById('toursOverlay').classList.add('open');
+  document.body.style.overflow='hidden';
+  if(!TOUR_DATA) await loadTours();
+}
+function closeTours(){
+  document.getElementById('toursOverlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+async function loadTours(){
+  try{
+    const r=await fetch('/api/tours');
+    TOUR_DATA=await r.json();
+    renderTours();
+  }catch(e){
+    document.getElementById('toursBody').innerHTML='<div class="tours-empty">Unable to load tour data right now &mdash; try again shortly.</div>';
+  }
+}
+function filterTours(key,btn){
+  TOUR_FILTER=key;
+  document.querySelectorAll('.tf').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  renderTours();
+}
+function renderTours(){
+  if(!TOUR_DATA)return;
+  const {tourNews,promoters}=TOUR_DATA;
+  const body=document.getElementById('toursBody');
+  let html='';
+  let news=tourNews;
+  if(TOUR_FILTER==='aus') news=tourNews.filter(t=>t.isAus);
+  if(news.length>0){
+    html+='<div class="tours-section"><div class="tours-section-hd">&#x1F4F0; Tour <em>Announcements</em></div><div class="tours-grid">';
+    news.forEach(function(t){
+      const ausTag=t.isAus?'<span class="tc-aus">&#x1F1E6;&#x1F1FA; Aus</span>':'';
+      html+='<a class="tour-card" href="'+t.link+'" target="_blank" rel="noopener noreferrer">'
+           +'<div><span class="tc-source">'+t.source+'</span>'+ausTag+'</div>'
+           +'<div class="tc-title">'+t.title+'</div>'
+           +'<div class="tc-desc">'+t.desc+'</div>'
+           +'<div class="tc-foot">'+t.source+' &middot; Tour News</div>'
+           +'</a>';
+    });
+    html+='</div></div>';
+  } else {
+    html+='<div class="tours-empty">No tour news matching this filter right now &mdash; check back soon.</div>';
+  }
+  if(TOUR_FILTER==='all'||TOUR_FILTER==='aus'){
+    html+='<div class="tours-section"><div class="tours-section-hd">&#x1F1E6;&#x1F1FA; Browse by <em>Promoter</em></div><div class="tours-promo-grid">';
+    promoters.forEach(function(p){
+      html+='<a class="tours-promo-card" href="'+p.url+'" target="_blank" rel="noopener noreferrer">'
+           +'<div><div class="tpc-name">'+p.flag+' '+p.name+'</div>'
+           +'<div class="tpc-sub">View all upcoming shows</div></div>'
+           +'<div class="tpc-arrow">&#x2192;</div></a>';
+    });
+    html+='</div></div>';
+  }
+  body.innerHTML=html;
 }
 const ham=document.getElementById('ham');
 const mobNav=document.getElementById('mobNav');
@@ -835,87 +855,6 @@ function submitShow(){
   document.getElementById('submitForm').style.display='none';
   document.getElementById('submitSuccess').style.display='block';
 }
-
-// ON TOUR
-let TOUR_DATA = null;
-let TOUR_FILTER = 'all';
-
-async function openTours() {
-  document.getElementById('toursOverlay').classList.add('open');
-  document.body.style.overflow = 'hidden';
-  if (!TOUR_DATA) await loadTours();
-}
-
-function closeTours() {
-  document.getElementById('toursOverlay').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-async function loadTours() {
-  try {
-    const r = await fetch('/api/tours');
-    TOUR_DATA = await r.json();
-    renderTours();
-  } catch(e) {
-    document.getElementById('toursBody').innerHTML = '<div class="tours-empty">Unable to load tour data right now &mdash; try again shortly.</div>';
-  }
-}
-
-function filterTours(key, btn) {
-  TOUR_FILTER = key;
-  document.querySelectorAll('.tf').forEach(b => b.classList.remove('on'));
-  btn.classList.add('on');
-  renderTours();
-}
-
-function renderTours() {
-  if (!TOUR_DATA) return;
-  const { tourNews, promoters } = TOUR_DATA;
-  const body = document.getElementById('toursBody');
-  let html = '';
-
-  let news = tourNews;
-  if (TOUR_FILTER === 'aus') news = tourNews.filter(t => t.isAus);
-
-  // Tour news section
-  if (news.length > 0) {
-    html += '<div class="tours-section">';
-    html += '<div class="tours-section-hd">&#x1F4F0; Tour <em>Announcements</em></div>';
-    html += '<div class="tours-grid">';
-    news.forEach(t => {
-      const ausTag = t.isAus ? '<span class="tc-aus">&#x1F1E6;&#x1F1FA; Aus</span>' : '';
-      html += \`<a class="tour-card" href="\${t.link}" target="_blank" rel="noopener noreferrer">
-        <div><span class="tc-source">\${t.source}</span>\${ausTag}</div>
-        <div class="tc-title">\${t.title}</div>
-        <div class="tc-desc">\${t.desc}</div>
-        <div class="tc-foot">\${t.source} &middot; Tour News</div>
-      </a>\`;
-    });
-    html += '</div></div>';
-  } else {
-    html += '<div class="tours-empty">No Australian tour news matching this filter right now &mdash; check back soon.</div>';
-  }
-
-  // Promoter quick links section (always shown unless filtered to specific promoter)
-  if (TOUR_FILTER === 'all' || TOUR_FILTER === 'aus') {
-    html += '<div class="tours-section">';
-    html += '<div class="tours-section-hd">&#x1F1E6;&#x1F1FA; Browse by <em>Promoter</em></div>';
-    html += '<div class="tours-promo-grid">';
-    promoters.forEach(p => {
-      html += \`<a class="tours-promo-card" href="\${p.url}" target="_blank" rel="noopener noreferrer">
-        <div>
-          <div class="tpc-name">\${p.flag} \${p.name}</div>
-          <div class="tpc-sub">View all upcoming shows</div>
-        </div>
-        <div class="tpc-arrow">&#x2192;</div>
-      </a>\`;
-    });
-    html += '</div></div>';
-  }
-
-  body.innerHTML = html;
-}
-
 loadAll();
 </script>
 </body>
