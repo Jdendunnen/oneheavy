@@ -102,6 +102,10 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .form-submit{width:100%;background:var(--red);color:#fff;font-family:var(--C);font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:14px;border:none;cursor:pointer;transition:background .2s;margin-top:8px}
 .form-submit:hover{background:var(--red2)}
+/* UNDER DEVELOPMENT TOAST */
+.dev-toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--card);border:1px solid rgba(200,16,46,.3);border-left:3px solid var(--red);padding:14px 28px;font-family:var(--C);font-size:11px;letter-spacing:.08em;color:var(--w);z-index:2000;transition:transform .35s cubic-bezier(.34,1.56,.64,1);white-space:nowrap;display:flex;align-items:center;gap:10px}
+.dev-toast.show{transform:translateX(-50%) translateY(0)}
+.dev-toast strong{color:var(--red);font-weight:700}
 /* DATELINE */
 .dateline{border-top:2px solid var(--w);border-bottom:1px solid var(--border)}
 .dl-inner{max-width:1360px;margin:0 auto;padding:8px 24px;display:flex;justify-content:space-between;align-items:center}
@@ -138,6 +142,7 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .world-label{background:rgba(200,16,46,.1);border-right:1px solid rgba(200,16,46,.2);padding:10px 16px;font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:5px;flex-shrink:0}
 .world-scroll{overflow:hidden;flex:1}
 .world-track{display:flex;padding:10px 0;animation:roll 65s linear infinite;white-space:nowrap}
+@keyframes roll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .w-item{display:inline-flex;align-items:center;gap:7px;padding:0 18px;border-right:1px solid rgba(255,255,255,.05);font-family:var(--C);font-size:11px;color:rgba(240,236,244,.38)}
 .w-item strong{color:var(--w);font-weight:600}
 .w-item em{color:var(--red);font-style:normal;margin:0 3px}
@@ -234,7 +239,7 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .show-artist{font-family:var(--D);font-size:19px;text-transform:uppercase;letter-spacing:.02em;line-height:1;margin-bottom:3px}
 .show-support{font-family:var(--C);font-size:10px;color:var(--g);margin-bottom:8px}
 .show-venue{font-family:var(--C);font-size:10px;color:rgba(240,236,244,.32)}
-.show-tix{display:inline-flex;align-items:center;gap:5px;margin-top:11px;font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--w);border:1px solid rgba(255,255,255,.09);padding:5px 10px;transition:all .18s}
+.show-tix{display:inline-flex;align-items:center;gap:5px;margin-top:11px;font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--w);border:1px solid rgba(255,255,255,.09);padding:5px 10px;transition:all .18s;cursor:pointer}
 .show:hover .show-tix{background:var(--red);border-color:var(--red)}
 /* LOCAL */
 .local{padding:42px 0;border-bottom:1px solid var(--border)}
@@ -290,6 +295,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   .modal-form input{border-right:1px solid rgba(255,255,255,.12);border-bottom:none}
   .modal-form button{width:100%}
   .form-grid{grid-template-columns:1fr}
+  .dev-toast{font-size:10px;padding:12px 20px;white-space:normal;text-align:center;width:90%}
 }
 @media(max-width:480px){
   .hero h1{font-size:36px}.hero-watermark{display:none}
@@ -299,7 +305,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 </head>
 <body>
 
-
 <!-- NAV -->
 <nav>
   <div class="nav-wrap">
@@ -308,10 +313,10 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
       <li><a href="/" class="active">News</a></li>
       <li><a href="#concerts">Concerts</a></li>
       <li><a href="#local">Local Scene</a></li>
-      <li><a href="#">Reviews</a></li>
-      <li><a href="#">Interviews</a></li>
-      <li><a href="#">Bands</a></li>
-      <li><a href="#">Genres</a></li>
+      <li><a href="#" onclick="event.preventDefault();showDev()">Reviews</a></li>
+      <li><a href="#" onclick="event.preventDefault();showDev()">Interviews</a></li>
+      <li><a href="#" onclick="event.preventDefault();showDev()">Bands</a></li>
+      <li><a href="#" onclick="event.preventDefault();showDev()">Genres</a></li>
     </ul>
     <div class="nav-right">
       <span class="btn-free-tag">&#x1F918; 100% Free Always</span>
@@ -326,9 +331,9 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   <a href="/" onclick="closeMob()">News</a>
   <a href="#concerts" onclick="closeMob()">Concerts</a>
   <a href="#local" onclick="closeMob()">Local Scene</a>
-  <a href="#" onclick="closeMob()">Reviews</a>
-  <a href="#" onclick="closeMob()">Bands</a>
-  <a href="#" onclick="closeMob()">Genres</a>
+  <a href="#" onclick="closeMob();showDev()">Reviews</a>
+  <a href="#" onclick="closeMob();showDev()">Bands</a>
+  <a href="#" onclick="closeMob();showDev()">Genres</a>
   <a href="#" onclick="closeMob();openNewsletter()" style="color:var(--red)">✉ Weekly Digest</a>
   <a href="#" onclick="closeMob();openSubmit()" style="color:var(--red)">&#x1F4CD; Submit Your Show</a>
   <a href="/" class="mob-cta" onclick="closeMob()">&#x1F918; OneHeavy &mdash; Free Forever</a>
@@ -337,11 +342,11 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 <!-- NEWSLETTER MODAL -->
 <div class="modal-overlay" id="newsletterModal" onclick="closeNewsletter(event)">
   <div class="modal">
-    <button class="modal-close" onclick="closeNewsletter()" aria-label="Close">&times;</button>
+    <button class="modal-close" onclick="closeNewsletter()">&times;</button>
     <div id="modalForm">
       <div class="modal-tag">&#x1F918; OneHeavy Weekly Digest</div>
       <h2>Every <span>Friday</span><br>Night</h2>
-      <p class="modal-sub">The week's biggest metal stories delivered straight to your inbox. Free forever. Unsubscribe any time.</p>
+      <p class="modal-sub">The week's biggest metal stories delivered straight to your inbox. Free forever.</p>
       <ul class="modal-features">
         <li>Top 7 stories of the week handpicked</li>
         <li>Breaking news you may have missed</li>
@@ -365,7 +370,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 <!-- SUBMIT EVENT MODAL -->
 <div class="modal-overlay" id="submitModal" onclick="closeSubmit(event)">
   <div class="submit-modal">
-    <button class="modal-close" onclick="closeSubmit()" aria-label="Close">&times;</button>
+    <button class="modal-close" onclick="closeSubmit()">&times;</button>
     <div id="submitForm">
       <div class="modal-tag">&#x1F4CD; Submit Your Show</div>
       <h2>List Your <span>Show</span></h2>
@@ -388,9 +393,14 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
     <div class="modal-success" id="submitSuccess" style="display:none">
       <div class="success-icon">&#x1F918;</div>
       <h3>Show <span>Submitted!</span></h3>
-      <p>Thanks for submitting your show.<br>We'll review it within 24 hours and list it on OneHeavy.<br><br>Keep it heavy!</p>
+      <p>Thanks for submitting your show.<br>We'll review it within 24 hours.<br><br>Keep it heavy!</p>
     </div>
   </div>
+</div>
+
+<!-- UNDER DEVELOPMENT TOAST -->
+<div class="dev-toast" id="devToast">
+  &#x1F6A7; <strong>Coming Soon</strong> &mdash; This feature is currently under development
 </div>
 
 <!-- SUBMIT BANNER -->
@@ -463,18 +473,15 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </div>
 </div>
 
-<!-- LEADERBOARD AD -->
+<!-- AD -->
 <div class="ad-belt">
-  <div class="ad-728">
-    <span class="ad-tag">Advertisement</span>
-    <span class="ad-dim">[ 728 &times; 90 &mdash; Google AdSense ]</span>
-  </div>
+  <div class="ad-728"><span class="ad-tag">Advertisement</span><span class="ad-dim">[ 728 &times; 90 &mdash; Google AdSense ]</span></div>
 </div>
 
 <!-- MAIN CONTENT -->
 <div class="content">
   <main>
-    <div class="sh"><h2>Latest <em>News</em></h2><a href="#">All Stories &rarr;</a></div>
+    <div class="sh"><h2>Latest <em>News</em></h2><a href="#" onclick="event.preventDefault();showDev()">All Stories &rarr;</a></div>
     <div class="filters">
       <button class="fb on" onclick="filterBy('all',this)">All Sources</button>
       <button class="fb" onclick="filterBy('blabbermouth',this)">Blabbermouth</button>
@@ -533,7 +540,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 <!-- CONCERTS -->
 <section class="concerts" id="concerts">
   <div class="c-inner">
-    <div class="sh"><h2>Shows <em>Near You</em></h2><a href="#">All Shows &rarr;</a></div>
+    <div class="sh"><h2>Shows <em>Near You</em></h2><a href="#" onclick="event.preventDefault();showDev()">All Shows &rarr;</a></div>
     <div class="city-tabs">
       <button class="ct on" onclick="setTab(this,'.ct')">&#x1F1EC;&#x1F1E7; London</button>
       <button class="ct" onclick="setTab(this,'.ct')">&#x1F1FA;&#x1F1F8; New York</button>
@@ -545,10 +552,10 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
       <button class="ct" onclick="setTab(this,'.ct')">&#x1F1E7;&#x1F1F7; S&atilde;o Paulo</button>
     </div>
     <div class="shows">
-      <div class="show"><span class="show-genre">Thrash</span><div class="show-date"><div class="show-day">18</div><div class="show-md"><span class="show-mo">April</span><span class="show-yr">2026</span></div></div><div class="show-artist">Metallica</div><div class="show-support">with Mammoth WVH</div><div class="show-venue">O2 Arena, London</div><span class="show-tix">Tickets</span></div>
-      <div class="show"><span class="show-genre">Death</span><div class="show-date"><div class="show-day">25</div><div class="show-md"><span class="show-mo">April</span><span class="show-yr">2026</span></div></div><div class="show-artist">Cannibal Corpse</div><div class="show-support">with Nile + Obituary</div><div class="show-venue">Roundhouse, London</div><span class="show-tix">Tickets</span></div>
-      <div class="show"><span class="show-genre">Prog</span><div class="show-date"><div class="show-day">02</div><div class="show-md"><span class="show-mo">May</span><span class="show-yr">2026</span></div></div><div class="show-artist">Tool</div><div class="show-support">with Killing Joke</div><div class="show-venue">Alexandra Palace</div><span class="show-tix">Tickets</span></div>
-      <div class="show"><span class="show-genre">Black</span><div class="show-date"><div class="show-day">14</div><div class="show-md"><span class="show-mo">May</span><span class="show-yr">2026</span></div></div><div class="show-artist">Mayhem</div><div class="show-support">with Immortal + Marduk</div><div class="show-venue">Electric Ballroom</div><span class="show-tix">Tickets</span></div>
+      <div class="show"><span class="show-genre">Thrash</span><div class="show-date"><div class="show-day">18</div><div class="show-md"><span class="show-mo">April</span><span class="show-yr">2026</span></div></div><div class="show-artist">Metallica</div><div class="show-support">with Mammoth WVH</div><div class="show-venue">O2 Arena, London</div><span class="show-tix" onclick="showDev()">Tickets</span></div>
+      <div class="show"><span class="show-genre">Death</span><div class="show-date"><div class="show-day">25</div><div class="show-md"><span class="show-mo">April</span><span class="show-yr">2026</span></div></div><div class="show-artist">Cannibal Corpse</div><div class="show-support">with Nile + Obituary</div><div class="show-venue">Roundhouse, London</div><span class="show-tix" onclick="showDev()">Tickets</span></div>
+      <div class="show"><span class="show-genre">Prog</span><div class="show-date"><div class="show-day">02</div><div class="show-md"><span class="show-mo">May</span><span class="show-yr">2026</span></div></div><div class="show-artist">Tool</div><div class="show-support">with Killing Joke</div><div class="show-venue">Alexandra Palace</div><span class="show-tix" onclick="showDev()">Tickets</span></div>
+      <div class="show"><span class="show-genre">Black</span><div class="show-date"><div class="show-day">14</div><div class="show-md"><span class="show-mo">May</span><span class="show-yr">2026</span></div></div><div class="show-artist">Mayhem</div><div class="show-support">with Immortal + Marduk</div><div class="show-venue">Electric Ballroom</div><span class="show-tix" onclick="showDev()">Tickets</span></div>
     </div>
   </div>
 </section>
@@ -605,18 +612,23 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
       <div class="f-col">
         <h5>Navigate</h5>
         <a href="/">News</a><a href="#concerts">Concerts</a><a href="#local">Local Scene</a>
-        <a href="#">Reviews</a><a href="#">Interviews</a><a href="#">Bands A&ndash;Z</a>
+        <a href="#" onclick="event.preventDefault();showDev()">Reviews</a>
+        <a href="#" onclick="event.preventDefault();showDev()">Interviews</a>
+        <a href="#" onclick="event.preventDefault();showDev()">Bands A&ndash;Z</a>
       </div>
       <div class="f-col">
         <h5>Genres</h5>
-        <a href="#">Thrash Metal</a><a href="#">Death Metal</a><a href="#">Black Metal</a>
-        <a href="#">Prog Metal</a><a href="#">Doom Metal</a><a href="#">All Genres &rarr;</a>
+        <a href="#" onclick="event.preventDefault();showDev()">Thrash Metal</a>
+        <a href="#" onclick="event.preventDefault();showDev()">Death Metal</a>
+        <a href="#" onclick="event.preventDefault();showDev()">Black Metal</a>
+        <a href="#" onclick="event.preventDefault();showDev()">Prog Metal</a>
+        <a href="#" onclick="event.preventDefault();showDev()">All Genres &rarr;</a>
       </div>
       <div class="f-col">
         <h5>OneHeavy</h5>
         <a href="#" onclick="openNewsletter()">Weekly Digest &rarr;</a>
         <a href="#" onclick="openSubmit()">Submit Your Show &rarr;</a>
-        <a href="#">Advertise</a>
+        <a href="#" onclick="event.preventDefault();showDev()">Advertise</a>
         <a href="mailto:contact@oneheavy.net">Contact Us</a>
       </div>
     </div>
@@ -711,6 +723,11 @@ function filterBy(key,btn){
 }
 function setTab(el,selector){document.querySelectorAll(selector).forEach(t=>t.classList.remove('on'));el.classList.add('on');}
 function setGenre(el){document.querySelectorAll('.gp').forEach(t=>t.classList.remove('on'));el.classList.add('on');}
+function showDev(){
+  const t=document.getElementById('devToast');
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),2800);
+}
 const ham=document.getElementById('ham');
 const mobNav=document.getElementById('mobNav');
 ham.addEventListener('click',()=>{
