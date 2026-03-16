@@ -30,11 +30,15 @@ body{background:var(--ink);color:var(--w);font-family:var(--S);overflow-x:hidden
 a{text-decoration:none;color:inherit}
 button{cursor:pointer;font-family:inherit;border:none;background:none}
 body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.022;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ANNOUNCEMENT BAR */
 .announce{background:#0d0d1a;border-bottom:1px solid rgba(200,16,46,.2);padding:0 24px;height:36px;display:flex;align-items:center;justify-content:center;position:relative}
 .announce-text{font-family:var(--C);font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(240,236,244,.7);text-align:center}
 .announce-text em{color:var(--red);font-style:normal;font-weight:700}
 .announce-close{position:absolute;right:16px;background:none;border:none;color:var(--g);cursor:pointer;font-size:18px;line-height:1;padding:4px 8px;transition:color .2s}
 .announce-close:hover{color:var(--w)}
+
+/* TICKER */
 .ticker{background:var(--red);height:33px;display:flex;align-items:center;overflow:hidden;position:relative;z-index:200}
 .t-tag{background:var(--ink);color:var(--red);padding:0 14px;height:100%;display:flex;align-items:center;flex-shrink:0;font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;border-right:2px solid var(--red);white-space:nowrap}
 .t-scroll{overflow:hidden;flex:1}
@@ -42,6 +46,8 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:999;op
 .t-track:hover{animation-play-state:paused}
 .t-item{display:inline-flex;align-items:center;padding:0 22px;height:33px;font-family:var(--C);font-size:11px;font-weight:500;letter-spacing:.04em;color:#fff;border-right:1px solid rgba(255,255,255,.14);cursor:default}
 @keyframes roll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* NAV */
 nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(200,16,46,.16)}
 .nav-wrap{max-width:1360px;margin:0 auto;padding:0 24px;height:56px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:28px}
 .logo{display:flex;align-items:center;flex-shrink:0}
@@ -54,6 +60,12 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .nav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
 .btn-free{background:var(--red);color:#fff;font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:9px 18px;transition:background .2s;white-space:nowrap;border:none;cursor:pointer}
 .btn-free:hover{background:var(--red2)}
+
+/* NEW: NEWSLETTER NAV BUTTON */
+.btn-newsletter{background:transparent;color:var(--w);font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:8px 14px;border:1px solid rgba(255,255,255,.15);transition:all .2s;white-space:nowrap;cursor:pointer;display:flex;align-items:center;gap:6px}
+.btn-newsletter:hover{border-color:var(--red);color:var(--red)}
+.btn-newsletter::before{content:'✉';font-size:11px}
+
 .ham{display:none;flex-direction:column;gap:5px;padding:8px}
 .ham span{display:block;width:22px;height:2px;background:var(--w);transition:all .28s}
 .ham.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
@@ -64,12 +76,45 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .mob-nav a{font-family:var(--D);font-size:clamp(36px,7vw,56px);color:var(--g);padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04);transition:color .2s}
 .mob-nav a:hover{color:var(--red)}
 .mob-cta{margin-top:22px!important;background:var(--red)!important;color:#fff!important;padding:15px 28px!important;font-family:var(--C)!important;font-size:14px!important;font-weight:700!important;letter-spacing:.12em!important;text-transform:uppercase!important;text-align:center!important;border-bottom:none!important}
+
+/* NEWSLETTER MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:1000;align-items:center;justify-content:center;padding:24px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--card);border:1px solid rgba(200,16,46,.25);max-width:480px;width:100%;padding:36px;position:relative}
+.modal::before{content:'';position:absolute;top:-1px;left:0;right:0;height:2px;background:var(--red)}
+.modal-close{position:absolute;top:14px;right:16px;background:none;border:none;color:var(--g);cursor:pointer;font-size:22px;line-height:1;transition:color .2s}
+.modal-close:hover{color:var(--w)}
+.modal-tag{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+.modal h2{font-family:var(--D);font-size:36px;letter-spacing:.04em;text-transform:uppercase;line-height:1;margin-bottom:8px}
+.modal h2 span{color:var(--red)}
+.modal-sub{font-family:var(--C);font-size:11px;color:var(--g);letter-spacing:.06em;line-height:1.6;margin-bottom:20px}
+.modal-features{list-style:none;margin-bottom:22px}
+.modal-features li{font-family:var(--C);font-size:11px;color:rgba(240,236,244,.55);padding:5px 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;align-items:center;gap:8px;letter-spacing:.04em}
+.modal-features li::before{content:'✓';color:var(--red);font-size:9px;flex-shrink:0}
+.modal-form{display:flex;gap:0}
+.modal-form input{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-right:none;color:var(--w);font-family:var(--C);font-size:12px;padding:12px 16px;outline:none;letter-spacing:.04em;transition:border-color .2s}
+.modal-form input:focus{border-color:rgba(200,16,46,.5)}
+.modal-form input::placeholder{color:var(--g)}
+.modal-form button{background:var(--red);color:#fff;font-family:var(--C);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:12px 18px;border:none;cursor:pointer;white-space:nowrap;transition:background .2s;flex-shrink:0}
+.modal-form button:hover{background:var(--red2)}
+.modal-note{font-family:var(--C);font-size:9px;color:var(--g);margin-top:8px;letter-spacing:.06em}
+
+/* SUCCESS STATE */
+.modal-success{display:none;text-align:center;padding:20px 0}
+.modal-success .success-icon{font-size:48px;margin-bottom:12px}
+.modal-success h3{font-family:var(--D);font-size:28px;letter-spacing:.04em;text-transform:uppercase;color:var(--w);margin-bottom:8px}
+.modal-success h3 span{color:var(--red)}
+.modal-success p{font-family:var(--C);font-size:11px;color:var(--g);letter-spacing:.06em;line-height:1.7}
+
+/* DATE LINE */
 .dateline{border-top:2px solid var(--w);border-bottom:1px solid var(--border)}
 .dl-inner{max-width:1360px;margin:0 auto;padding:8px 24px;display:flex;justify-content:space-between;align-items:center}
 .dl-date{font-family:var(--C);font-size:10px;color:var(--g);letter-spacing:.1em;text-transform:uppercase}
 .dl-live{font-family:var(--C);font-size:10px;font-weight:700;color:var(--red);letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:6px}
 .live-dot{width:6px;height:6px;background:var(--red);border-radius:50%;animation:blink 2s ease infinite;flex-shrink:0}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.15}}
+
+/* HERO */
 .hero{max-width:1360px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr 1px 310px;min-height:490px}
 .hero-rule{background:linear-gradient(to bottom,transparent 5%,rgba(200,16,46,.22) 30%,rgba(200,16,46,.22) 70%,transparent 95%)}
 .hero-main{padding:34px 38px 34px 0;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
@@ -92,6 +137,8 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .ai-src{font-family:var(--C);font-size:8px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:var(--red);margin-bottom:3px}
 .ai-title{font-family:var(--C);font-weight:600;font-size:13px;line-height:1.2;color:var(--w);margin-bottom:3px}
 .ai-time{font-family:var(--C);font-size:9px;color:var(--g)}
+
+/* WORLD BAND */
 .world{background:var(--lift);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .world-inner{max-width:1360px;margin:0 auto;display:flex;overflow:hidden}
 .world-label{background:rgba(200,16,46,.1);border-right:1px solid rgba(200,16,46,.2);padding:10px 16px;font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red);display:flex;align-items:center;gap:5px;flex-shrink:0}
@@ -100,10 +147,14 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .w-item{display:inline-flex;align-items:center;gap:7px;padding:0 18px;border-right:1px solid rgba(255,255,255,.05);font-family:var(--C);font-size:11px;color:rgba(240,236,244,.38)}
 .w-item strong{color:var(--w);font-weight:600}
 .w-item em{color:var(--red);font-style:normal;margin:0 3px}
+
+/* ADS */
 .ad-belt{max-width:1360px;margin:0 auto;padding:12px 24px}
 .ad-728{background:var(--lift);border:1px dashed rgba(255,255,255,.06);height:90px;display:flex;align-items:center;justify-content:center;gap:14px}
 .ad-tag{font-family:var(--C);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.07);padding:2px 7px}
 .ad-dim{font-family:var(--C);font-size:11px;color:rgba(255,255,255,.13)}
+
+/* CONTENT */
 .content{max-width:1360px;margin:0 auto;padding:30px 24px 60px;display:grid;grid-template-columns:1fr 285px;gap:44px}
 .sh{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;padding-bottom:9px;border-bottom:1px solid var(--border);position:relative}
 .sh::after{content:'';position:absolute;bottom:-1px;left:0;width:40px;height:1px;background:var(--red)}
@@ -114,6 +165,8 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .fb{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 11px;background:transparent;border:1px solid rgba(255,255,255,.08);color:var(--g);transition:all .18s}
 .fb:hover{border-color:rgba(200,16,46,.32);color:var(--w)}
 .fb.on{background:var(--red);border-color:var(--red);color:#fff}
+
+/* NEWS GRID */
 .ng{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.04);margin-bottom:28px}
 .nc{background:var(--ink);padding:17px;cursor:pointer;transition:background .18s;position:relative;overflow:hidden;display:block}
 .nc::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--red);transition:width .3s}
@@ -136,6 +189,8 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .spin{width:26px;height:26px;border:2px solid rgba(200,16,46,.14);border-top-color:var(--red);border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 10px}
 @keyframes spin{to{transform:rotate(360deg)}}
 .loading p{font-family:var(--C);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--g)}
+
+/* SIDEBAR */
 .sidebar{display:flex;flex-direction:column;gap:22px}
 .community-card{background:linear-gradient(150deg,rgba(110,0,0,.22),var(--card));border:1px solid rgba(200,16,46,.2);padding:22px;text-align:center;position:relative;overflow:hidden}
 .community-card::before{content:'';position:absolute;top:-45px;right:-45px;width:130px;height:130px;background:radial-gradient(circle,rgba(200,16,46,.18),transparent 70%);pointer-events:none}
@@ -162,6 +217,8 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .sub-widget p{font-size:13px;font-style:italic;font-weight:300;color:rgba(240,236,244,.62);line-height:1.65;margin-bottom:13px}
 .sub-btn{display:block;width:100%;background:transparent;color:var(--red);border:1px solid rgba(200,16,46,.3);font-family:var(--C);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:11px;transition:all .18s}
 .sub-btn:hover{background:var(--red);color:#fff;border-color:var(--red)}
+
+/* CONCERTS */
 .concerts{background:var(--lift);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:42px 0}
 .c-inner{max-width:1360px;margin:0 auto;padding:0 24px}
 .city-tabs{display:flex;flex-wrap:wrap;gap:2px;border-bottom:1px solid var(--border);margin-bottom:18px}
@@ -181,6 +238,8 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .show-venue{font-family:var(--C);font-size:10px;color:rgba(240,236,244,.32)}
 .show-tix{display:inline-flex;align-items:center;gap:5px;margin-top:11px;font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--w);border:1px solid rgba(255,255,255,.09);padding:5px 10px;transition:all .18s}
 .show:hover .show-tix{background:var(--red);border-color:var(--red)}
+
+/* LOCAL */
 .local{padding:42px 0;border-bottom:1px solid var(--border)}
 .l-inner{max-width:1360px;margin:0 auto;padding:0 24px}
 .city-pills{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:18px}
@@ -193,11 +252,15 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .lc h4{font-family:var(--C);font-weight:700;font-size:14px;text-transform:uppercase;line-height:1.2;margin-bottom:6px}
 .lc p{font-size:12px;line-height:1.55;color:rgba(240,236,244,.62);font-weight:300;font-style:italic}
 .lc-time{font-family:var(--C);font-size:9px;color:var(--g);margin-top:9px}
+
+/* GENRES */
 .genres{background:var(--lift);border-top:1px solid var(--border);padding:26px 0}
 .g-inner{max-width:1360px;margin:0 auto;padding:0 24px}
 .gpills{display:flex;flex-wrap:wrap;gap:4px;margin-top:13px}
 .gp{font-family:var(--C);font-size:10px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:7px 13px;background:var(--card);color:var(--g);cursor:pointer;transition:all .18s;border-bottom:2px solid transparent}
 .gp:hover{color:var(--w);border-color:rgba(200,16,46,.28)}.gp.on{background:var(--lift);color:var(--w);border-color:var(--red)}
+
+/* FOOTER */
 footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 20px}
 .f-inner{max-width:1360px;margin:0 auto;padding:0 24px}
 .f-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:38px;padding-bottom:32px;border-bottom:1px solid var(--border);margin-bottom:18px}
@@ -209,6 +272,8 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 .f-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
 .f-bottom p{font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.1em;text-transform:uppercase}
 .f-bottom em{color:var(--red);font-style:normal}
+
+/* RESPONSIVE */
 @media(max-width:1100px){
   .hero{grid-template-columns:1fr}.hero-rule,.hero-aside{display:none}.hero-main{padding:30px 0}
   .content{grid-template-columns:1fr}.sidebar{display:grid;grid-template-columns:1fr 1fr}
@@ -217,11 +282,17 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 }
 @media(max-width:768px){
   .nav-links,.btn-free{display:none}.ham{display:flex}
+  .btn-newsletter{font-size:9px;padding:7px 10px}
+  .btn-newsletter::before{display:none}
   .announce-text{font-size:9px;letter-spacing:.06em}
   .hero,.c-inner,.l-inner,.g-inner,.f-inner,.ad-belt,.dl-inner,.world-inner,.content{padding-left:16px;padding-right:16px}
   .ng{grid-template-columns:1fr}.nc.feature{grid-column:span 1;display:block}.nc.feature .nc-thumb{display:none}
   .shows{grid-template-columns:1fr}.local-grid{grid-template-columns:1fr}.sidebar{grid-template-columns:1fr}
   .f-grid{grid-template-columns:1fr 1fr;gap:18px}
+  .modal{padding:24px}
+  .modal-form{flex-direction:column}
+  .modal-form input{border-right:1px solid rgba(255,255,255,.12);border-bottom:none}
+  .modal-form button{width:100%}
 }
 @media(max-width:480px){
   .hero h1{font-size:36px}.hero-watermark{display:none}
@@ -268,6 +339,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
       <li><a href="#">Genres</a></li>
     </ul>
     <div class="nav-right">
+      <button class="btn-newsletter" onclick="openNewsletter()">Weekly Digest</button>
       <button class="btn-free">&#x1F918; Free For Everyone</button>
       <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
@@ -282,7 +354,36 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   <a href="#" onclick="closeMob()">Reviews</a>
   <a href="#" onclick="closeMob()">Bands</a>
   <a href="#" onclick="closeMob()">Genres</a>
+  <a href="#" onclick="closeMob();openNewsletter()" style="color:var(--red)">✉ Weekly Digest</a>
   <a href="/" class="mob-cta" onclick="closeMob()">&#x1F918; OneHeavy &mdash; Free Forever</a>
+</div>
+
+<!-- NEWSLETTER MODAL -->
+<div class="modal-overlay" id="newsletterModal" onclick="closeNewsletter(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeNewsletter()" aria-label="Close">&times;</button>
+    <div id="modalForm">
+      <div class="modal-tag">&#x1F918; OneHeavy Weekly Digest</div>
+      <h2>Every <span>Friday</span><br>Night</h2>
+      <p class="modal-sub">The week's biggest metal stories delivered straight to your inbox. Free forever. Unsubscribe any time.</p>
+      <ul class="modal-features">
+        <li>Top 7 stories of the week handpicked</li>
+        <li>Breaking news you may have missed</li>
+        <li>Concert announcements &amp; tour news</li>
+        <li>Sent every Friday night &mdash; no spam ever</li>
+      </ul>
+      <div class="modal-form">
+        <input type="email" id="emailInput" placeholder="your@email.com" autocomplete="email">
+        <button onclick="submitEmail()">Join Free</button>
+      </div>
+      <p class="modal-note">&#x1F512; Your email is never shared. Unsubscribe any time.</p>
+    </div>
+    <div class="modal-success" id="modalSuccess">
+      <div class="success-icon">&#x1F918;</div>
+      <h3>You're <span>In!</span></h3>
+      <p>Welcome to the OneHeavy community.<br>Your first Friday digest is on its way.<br><br>Keep it heavy.</p>
+    </div>
+  </div>
 </div>
 
 <!-- DATE LINE -->
@@ -484,6 +585,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
       </div>
       <div class="f-col">
         <h5>OneHeavy</h5>
+        <a href="#" onclick="openNewsletter()">Weekly Digest &#x2192;</a>
         <a href="#">Submit News</a>
         <a href="#">List Your Show</a><a href="#">Advertise</a><a href="#">Contact</a>
       </div>
@@ -611,7 +713,31 @@ ham.addEventListener('click',()=>{
 });
 
 function closeMob(){mobNav.classList.remove('open');ham.classList.remove('open');document.body.style.overflow='';}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMob();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMob();closeNewsletter();}});
+
+function openNewsletter(){
+  document.getElementById('newsletterModal').classList.add('open');
+  document.body.style.overflow='hidden';
+  document.getElementById('emailInput').focus();
+}
+
+function closeNewsletter(e){
+  if(e && e.target !== document.getElementById('newsletterModal')) return;
+  document.getElementById('newsletterModal').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+function submitEmail(){
+  const email = document.getElementById('emailInput').value.trim();
+  if(!email || !email.includes('@')){
+    document.getElementById('emailInput').style.borderColor='rgba(200,16,46,.8)';
+    document.getElementById('emailInput').focus();
+    return;
+  }
+  document.getElementById('modalForm').style.display='none';
+  document.getElementById('modalSuccess').style.display='block';
+  console.log('Email collected:', email);
+}
 
 loadAll();
 </script>
