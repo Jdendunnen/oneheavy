@@ -1,7 +1,8 @@
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
-  res.setHeader('Cache-Control', 's-maxage=300, stale-while-revalidate=600');
+  // Reduced to 1 minute cache so stories refresh much more frequently
+  res.setHeader('Cache-Control', 's-maxage=60, stale-while-revalidate=120');
 
   if (req.method === 'OPTIONS') return res.status(200).end();
 
@@ -17,6 +18,7 @@ export default async function handler(req, res) {
       headers: {
         'User-Agent': 'Mozilla/5.0 (compatible; OneHeavy/1.0)',
         'Accept': 'application/rss+xml, application/xml, text/xml, */*',
+        'Cache-Control': 'no-cache',
       },
     });
 
