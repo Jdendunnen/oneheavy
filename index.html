@@ -40,13 +40,13 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .nav-links a:hover,.nav-links a.active{color:var(--w)}
 .nav-links a.active{border-bottom:2px solid var(--red);padding-bottom:6px}
 .nav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
-.btn-free-tag{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);border:1px solid rgba(200,16,46,.22);padding:6px 12px;white-space:nowrap}
+.btn-free-tag{font-family:var(--C);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--red);border:1px solid var(--red);padding:8px 16px;white-space:nowrap}
 .btn-newsletter{background:var(--red);color:#fff;font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:8px 16px;border:none;cursor:pointer;transition:background .2s;white-space:nowrap;display:flex;align-items:center;gap:6px}
 .btn-newsletter:hover{background:var(--red2)}
 .btn-newsletter::before{content:'✉';font-size:11px}
-.btn-ontour{background:transparent;color:var(--w);font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:7px 14px;border:1px solid rgba(255,255,255,.15);cursor:pointer;transition:all .2s;white-space:nowrap;display:flex;align-items:center;gap:7px}
-.btn-ontour::before{content:'';width:7px;height:7px;background:var(--red);border-radius:50%;animation:blink 1.4s ease infinite;flex-shrink:0}
-.btn-ontour:hover{border-color:var(--red);color:var(--red)}
+.btn-ontour{background:var(--red);color:#fff;font-family:var(--C);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:8px 16px;border:1px solid var(--red);cursor:pointer;transition:all .2s;white-space:nowrap;display:flex;align-items:center;gap:7px}
+.btn-ontour::before{content:'';width:7px;height:7px;background:#fff;border-radius:50%;animation:blink 1.4s ease infinite;flex-shrink:0}
+.btn-ontour:hover{background:var(--red2);border-color:var(--red2);color:#fff}
 .ham{display:none;flex-direction:column;gap:5px;padding:8px}
 .ham span{display:block;width:22px;height:2px;background:var(--w);transition:all .28s}
 .ham.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
@@ -441,7 +441,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
       <div class="form-row"><label>Additional Info (optional)</label><textarea id="showInfo" placeholder="Support acts, genre, doors time, ticket price..."></textarea></div>
       <div class="form-row"><label>Your Email *</label><input type="email" id="submitterEmail" placeholder="your@email.com"></div>
       <button class="form-submit" onclick="submitShow()">Submit Your Show &rarr;</button>
-      <p class="modal-note" style="margin-top:10px;text-align:center">&#x1F512; Submissions reviewed within 24 hours &middot; josefdendunnen@gmail.com</p>
+      <p class="modal-note" style="margin-top:10px;text-align:center">&#x1F512; Submissions reviewed within 24 hours &middot; <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0c66637f696a6869626879626269624c6b616d6560226f6361">[email&#160;protected]</a></p>
     </div>
     <div class="modal-success" id="submitSuccess" style="display:none">
       <div class="success-icon">&#x1F918;</div>
@@ -554,7 +554,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
           <div class="lsw-empty-icon">&#x1F3B8;</div>
           <p>Be the first to list your show here.<br>Free for all bands &amp; promoters.<br>Listed within 24 hours.</p>
           <button class="lsw-submit" onclick="openSubmit()">Submit Your Show &rarr;</button>
-          <div class="lsw-note">josefdendunnen@gmail.com</div>
+          <div class="lsw-note"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="375d5844525153525953425959525977505a565e5b1954585a">[email&#160;protected]</a></div>
         </div>
       </div>
     </div>
@@ -622,7 +622,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
     </div>
     <div class="local-grid">
       <div class="lc"><div class="lc-tag">&#x1F4CD; Bands &amp; Promoters</div><h4>Submit Your Show Free</h4><p>Get your metal show in front of thousands of fans. Completely free, listed within 24 hours.</p><div class="lc-time"><button onclick="openSubmit()" style="background:none;border:none;color:var(--red);font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;padding:0">Submit Now &rarr;</button></div></div>
-      <div class="lc"><div class="lc-tag">&#x1F4CD; Promoters Welcome</div><h4>Free Listings for Every Venue</h4><p>OneHeavy lists every local metal show at zero cost. Get your events in front of thousands of dedicated metal fans.</p><div class="lc-time">josefdendunnen@gmail.com</div></div>
+      <div class="lc"><div class="lc-tag">&#x1F4CD; Promoters Welcome</div><h4>Free Listings for Every Venue</h4><p>OneHeavy lists every local metal show at zero cost. Get your events in front of thousands of dedicated metal fans.</p><div class="lc-time"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="442e2b37212220212a20312a2a212a042329252d286a272b29">[email&#160;protected]</a></div></div>
       <div class="lc"><div class="lc-tag">&#x1F4CD; Local &amp; Unsigned Bands</div><h4>Get Your Band on OneHeavy</h4><p>Claim your free band profile, list your shows, build your local following. We support the underground.</p><div class="lc-time">Always free for bands</div></div>
     </div>
   </div>
@@ -673,7 +673,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
         <a href="#" onclick="openNewsletter()">Weekly Digest &rarr;</a>
         <a href="#" onclick="openSubmit()">Submit Your Show &rarr;</a>
         <a href="#" onclick="event.preventDefault();showDev()">Advertise</a>
-        <a href="mailto:josefdendunnen@gmail.com">Contact Us</a>
+        <a href="/cdn-cgi/l/email-protection#4a2025392f2c2e2f242e3f24242f240a2d272b232664292527">Contact Us</a>
       </div>
     </div>
     <div class="f-bottom">
