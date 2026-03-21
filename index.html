@@ -456,7 +456,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
       <div class="form-row"><label>Additional Info (optional)</label><textarea id="showInfo" placeholder="Support acts, genre, doors time, ticket price..."></textarea></div>
       <div class="form-row"><label>Your Email *</label><input type="email" id="submitterEmail" placeholder="your@email.com"></div>
       <button class="form-submit" onclick="submitShow()">Submit Your Show &rarr;</button>
-      <p class="modal-note" style="margin-top:10px;text-align:center">&#x1F512; Submissions reviewed within 24 hours &middot; oneheavymusichub&#64;gmail.com</p>
+      <p class="modal-note" style="margin-top:10px;text-align:center">&#x1F512; Submissions reviewed within 24 hours &middot; increasinglyinquisitive&#64;gmail.com</p>
     </div>
     <div class="modal-success" id="submitSuccess" style="display:none">
       <div class="success-icon">&#x1F918;</div>
@@ -605,7 +605,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
           <div class="lsw-empty-icon">&#x1F3B8;</div>
           <p>Be the first to list your show here.<br>Free for all bands &amp; promoters.<br>Listed within 24 hours.</p>
           <button class="lsw-submit" onclick="openSubmit()">Submit Your Show &rarr;</button>
-          <div class="lsw-note">oneheavymusichub&#64;gmail.com</div>
+          <div class="lsw-note">increasinglyinquisitive&#64;gmail.com</div>
         </div>
       </div>
     </div>
@@ -669,7 +669,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
     </div>
     <div class="local-grid">
       <div class="lc"><div class="lc-tag">&#x1F4CD; Bands &amp; Promoters</div><h4>Submit Your Show Free</h4><p>Get your metal show in front of thousands of fans. Completely free, listed within 24 hours.</p><div class="lc-time"><button onclick="openSubmit()" style="background:none;border:none;color:var(--red);font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;padding:0">Submit Now &rarr;</button></div></div>
-      <div class="lc"><div class="lc-tag">&#x1F4CD; Promoters Welcome</div><h4>Free Listings for Every Venue</h4><p>OneHeavy lists every local metal show at zero cost. Get your events in front of thousands of dedicated metal fans.</p><div class="lc-time">oneheavymusichub&#64;gmail.com</div></div>
+      <div class="lc"><div class="lc-tag">&#x1F4CD; Promoters Welcome</div><h4>Free Listings for Every Venue</h4><p>OneHeavy lists every local metal show at zero cost. Get your events in front of thousands of dedicated metal fans.</p><div class="lc-time">increasinglyinquisitive&#64;gmail.com</div></div>
       <div class="lc"><div class="lc-tag">&#x1F4CD; Local &amp; Unsigned Bands</div><h4>Get Your Band on OneHeavy</h4><p>Claim your free band profile, list your shows, build your local following. We support the underground.</p><div class="lc-time">Always free for bands</div></div>
     </div>
   </div>
@@ -730,7 +730,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
         <a href="#" onclick="openNewsletter()">Weekly Digest &rarr;</a>
         <a href="#" onclick="openSubmit()">Submit Your Show &rarr;</a>
         <a href="#" onclick="event.preventDefault();showDev()">Advertise</a>
-        <a href="mailto:oneheavymusichub@gmail.com">Contact Us</a>
+        <a href="/cdn-cgi/l/email-protection#066968636e6367707f6b73756f656e736446616b676f6a2865696b">Contact Us</a>
       </div>
     </div>
     <div class="f-bottom">
@@ -754,7 +754,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 </ul>
 </div>
 </noscript>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const clean = s => (s||'').replace(/<[^>]+>/g,'').replace(/&amp;/g,'&').replace(/&#8217;/g,"'").replace(/&#8220;/g,'"').replace(/&#8221;/g,'"').replace(/&quot;/g,'"').replace(/&nbsp;/g,' ').trim();
 function ago(d){
   const s=Math.floor((Date.now()-new Date(d))/1000);
@@ -1165,7 +1165,7 @@ function submitShow(){
   if(!band||!city||!venue||!date||!email){alert('Please fill in all required fields.');return;}
   const subject=encodeURIComponent('OneHeavy Show Submission: '+band+' @ '+venue);
   const body=encodeURIComponent('BAND/ARTIST: '+band+'\nPROMOTER: '+promoter+'\nDATE: '+date+'\nVENUE: '+venue+'\nCITY: '+city+'\nTICKETS: '+(tickets||'N/A')+'\nINFO: '+(info||'N/A')+'\nSUBMITTER EMAIL: '+email);
-  window.location.href='mailto:oneheavymusichub@gmail.com?subject='+subject+'&body='+body;
+  window.location.href='mailto:increasinglyinquisitive@gmail.com?subject='+subject+'&body='+body;
   document.getElementById('submitForm').style.display='none';
   document.getElementById('submitSuccess').style.display='block';
 }
