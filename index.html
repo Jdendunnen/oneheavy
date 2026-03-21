@@ -161,7 +161,7 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .hero-body{position:relative;z-index:1}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--red);margin-bottom:12px}
 .hero-eyebrow::after{content:'';width:26px;height:1px;background:var(--red)}
-.hero h1{font-family:var(--D);font-size:clamp(40px,5.5vw,76px);line-height:.92;letter-spacing:.02em;text-transform:uppercase;margin-bottom:13px}
+.hero h1{font-family:var(--D);font-size:clamp(26px,3vw,46px);line-height:1.05;letter-spacing:.02em;text-transform:uppercase;margin-bottom:13px}
 .hero-byline{display:flex;align-items:center;gap:10px;font-family:var(--C);font-size:10px;color:var(--g);letter-spacing:.07em;text-transform:uppercase;margin-bottom:12px}
 .hdot{width:3px;height:3px;background:var(--red);border-radius:50%;flex-shrink:0}
 .hero-desc{font-size:14px;font-style:italic;font-weight:300;color:rgba(240,236,244,.72);line-height:1.75;max-width:550px;margin-bottom:20px}
@@ -213,7 +213,7 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .nc.feature .nc-thumb::before{content:'🤘';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:68px;opacity:.07}
 .nc.feature .nc-thumb-src{font-family:var(--C);font-size:8px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
 .nc.feature .nc-body{padding:17px}
-.nc.feature h3{font-size:21px}
+.nc.feature h3{font-size:17px}
 .loading{grid-column:span 2;padding:44px;text-align:center}
 .spin{width:26px;height:26px;border:2px solid rgba(200,16,46,.14);border-top-color:var(--red);border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 10px}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -345,7 +345,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   .tours-title{font-size:18px}
 }
 @media(max-width:480px){
-  .hero h1{font-size:36px}.hero-watermark{display:none}
+  .hero h1{font-size:24px}.hero-watermark{display:none}
   .f-grid{grid-template-columns:1fr}
 }
 </style>
@@ -493,7 +493,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
     <div class="hero-watermark">METAL</div>
     <div class="hero-body" id="heroBody">
       <div class="hero-eyebrow">Breaking News</div>
-      <h1>World Metal<br>News Hub</h1>
+      <h1>World Metal News Hub</h1>
       <div class="hero-byline"><span>OneHeavy</span><span class="hdot"></span><span>Updated Every 5 Minutes</span></div>
       <p class="hero-desc">The world&#x27;s heaviest music hub. Live metal news from Blabbermouth, Loudwire, MetalSucks, Metal Hammer, Revolver and Heavy Mag AU — all in one place, free forever.</p>
       <a href="#news" class="btn-story">Read Latest News</a>
@@ -730,7 +730,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
         <a href="#" onclick="openNewsletter()">Weekly Digest &rarr;</a>
         <a href="#" onclick="openSubmit()">Submit Your Show &rarr;</a>
         <a href="#" onclick="event.preventDefault();showDev()">Advertise</a>
-        <a href="/cdn-cgi/l/email-protection#066968636e6367707f6b73756f656e736446616b676f6a2865696b">Contact Us</a>
+        <a href="mailto:increasinglyinquisitive@gmail.com">Contact Us</a>
       </div>
     </div>
     <div class="f-bottom">
@@ -754,7 +754,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 </ul>
 </div>
 </noscript>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 const clean = s => (s||'').replace(/<[^>]+>/g,'').replace(/&amp;/g,'&').replace(/&#8217;/g,"'").replace(/&#8220;/g,'"').replace(/&#8221;/g,'"').replace(/&quot;/g,'"').replace(/&nbsp;/g,' ').trim();
 function ago(d){
   const s=Math.floor((Date.now()-new Date(d))/1000);
