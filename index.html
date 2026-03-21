@@ -42,12 +42,12 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .nav-links a.active{border-bottom:2px solid var(--red);padding-bottom:6px}
 .nav-right{display:flex;align-items:center;gap:8px;flex-shrink:0}
 .btn-free-tag{font-family:var(--C);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--red);border:1px solid var(--red);padding:8px 16px;white-space:nowrap}
+.btn-ontour{background:var(--red);color:#fff;font-family:var(--C);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:8px 16px;border:1px solid var(--red);cursor:pointer;transition:all .2s;white-space:nowrap;display:flex;align-items:center;gap:7px}
+.btn-ontour::before{content:'';width:7px;height:7px;background:#fff;border-radius:50%;animation:blink 1.4s ease infinite;flex-shrink:0}
+.btn-ontour:hover{background:var(--red2);border-color:var(--red2)}
 .btn-newsletter{background:var(--red);color:#fff;font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:8px 16px;border:none;cursor:pointer;transition:background .2s;white-space:nowrap;display:flex;align-items:center;gap:6px}
 .btn-newsletter:hover{background:var(--red2)}
 .btn-newsletter::before{content:'✉';font-size:11px}
-.btn-ontour{background:var(--red);color:#fff;font-family:var(--C);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:8px 16px;border:1px solid var(--red);cursor:pointer;transition:all .2s;white-space:nowrap;display:flex;align-items:center;gap:7px}
-.btn-ontour::before{content:'';width:7px;height:7px;background:#fff;border-radius:50%;animation:blink 1.4s ease infinite;flex-shrink:0}
-.btn-ontour:hover{background:var(--red2);border-color:var(--red2);color:#fff}
 .ham{display:none;flex-direction:column;gap:5px;padding:8px}
 .ham span{display:block;width:22px;height:2px;background:var(--w);transition:all .28s}
 .ham.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
@@ -58,7 +58,6 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .mob-nav a{font-family:var(--D);font-size:clamp(36px,7vw,56px);color:var(--g);padding:6px 0;border-bottom:1px solid rgba(255,255,255,.04);transition:color .2s}
 .mob-nav a:hover{color:var(--red)}
 .mob-cta{margin-top:22px!important;background:var(--red)!important;color:#fff!important;padding:15px 28px!important;font-family:var(--C)!important;font-size:14px!important;font-weight:700!important;letter-spacing:.12em!important;text-transform:uppercase!important;text-align:center!important;border-bottom:none!important}
-/* ON TOUR OVERLAY */
 .tours-overlay{display:none;position:fixed;inset:0;background:rgba(5,5,10,.97);z-index:500;flex-direction:column;overflow:hidden}
 .tours-overlay.open{display:flex}
 .tours-header{background:rgba(8,8,14,.9);border-bottom:1px solid rgba(200,16,46,.2);padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
@@ -96,19 +95,7 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .tpc-arrow{color:var(--red);opacity:0;transition:opacity .18s;font-size:14px}
 .tours-promo-card:hover .tpc-arrow{opacity:1}
 .tours-loading{text-align:center;padding:60px 20px}
-.tours-loading .spin{margin:0 auto 14px}
 .tours-empty{text-align:center;padding:40px 20px;font-family:var(--C);font-size:11px;color:var(--g);letter-spacing:.06em}
-/* SUBMIT BANNER */
-.submit-banner{background:linear-gradient(135deg,rgba(200,16,46,.15),rgba(8,8,14,.95));border-bottom:1px solid rgba(200,16,46,.2);padding:14px 24px}
-.submit-banner-inner{max-width:1360px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.submit-banner-left{display:flex;align-items:center;gap:14px}
-.submit-banner-icon{font-family:var(--D);font-size:32px;color:var(--red);line-height:1;flex-shrink:0}
-.submit-banner-text h3{font-family:var(--D);font-size:18px;letter-spacing:.06em;text-transform:uppercase;color:var(--w);margin-bottom:2px}
-.submit-banner-text h3 em{color:var(--red);font-style:normal}
-.submit-banner-text p{font-family:var(--C);font-size:10px;color:var(--g);letter-spacing:.06em}
-.submit-banner-btn{background:var(--red);color:#fff;font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:10px 22px;border:none;cursor:pointer;transition:background .2s;white-space:nowrap;flex-shrink:0}
-.submit-banner-btn:hover{background:var(--red2)}
-/* MODALS */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:1000;align-items:center;justify-content:center;padding:24px}
 .modal-overlay.open{display:flex}
 .modal{background:var(--card);border:1px solid rgba(200,16,46,.25);max-width:480px;width:100%;padding:36px;position:relative}
@@ -148,6 +135,15 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .dev-toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--card);border:1px solid rgba(200,16,46,.3);border-left:3px solid var(--red);padding:14px 28px;font-family:var(--C);font-size:11px;letter-spacing:.08em;color:var(--w);z-index:2000;transition:transform .35s cubic-bezier(.34,1.56,.64,1);white-space:nowrap;display:flex;align-items:center;gap:10px}
 .dev-toast.show{transform:translateX(-50%) translateY(0)}
 .dev-toast strong{color:var(--red);font-weight:700}
+.submit-banner{background:linear-gradient(135deg,rgba(200,16,46,.15),rgba(8,8,14,.95));border-bottom:1px solid rgba(200,16,46,.2);padding:14px 24px}
+.submit-banner-inner{max-width:1360px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.submit-banner-left{display:flex;align-items:center;gap:14px}
+.submit-banner-icon{font-family:var(--D);font-size:32px;color:var(--red);line-height:1;flex-shrink:0}
+.submit-banner-text h3{font-family:var(--D);font-size:18px;letter-spacing:.06em;text-transform:uppercase;color:var(--w);margin-bottom:2px}
+.submit-banner-text h3 em{color:var(--red);font-style:normal}
+.submit-banner-text p{font-family:var(--C);font-size:10px;color:var(--g);letter-spacing:.06em}
+.submit-banner-btn{background:var(--red);color:#fff;font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:10px 22px;border:none;cursor:pointer;transition:background .2s;white-space:nowrap;flex-shrink:0}
+.submit-banner-btn:hover{background:var(--red2)}
 .dateline{border-top:2px solid var(--w);border-bottom:1px solid var(--border)}
 .dl-inner{max-width:1360px;margin:0 auto;padding:8px 24px;display:flex;justify-content:space-between;align-items:center}
 .dl-date{font-family:var(--C);font-size:10px;color:var(--g);letter-spacing:.1em;text-transform:uppercase}
@@ -288,7 +284,6 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .gpills{display:flex;flex-wrap:wrap;gap:4px;margin-top:13px}
 .gp{font-family:var(--C);font-size:10px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:7px 13px;background:var(--card);color:var(--g);cursor:pointer;transition:all .18s;border-bottom:2px solid transparent}
 .gp:hover{color:var(--w);border-color:rgba(200,16,46,.28)}.gp.on{background:var(--lift);color:var(--w);border-color:var(--red)}
-/* GENRE DROPDOWN */
 .genre-panel{display:none;background:var(--lift);border-top:1px solid rgba(200,16,46,.2);border-bottom:1px solid var(--border);padding:28px 0;margin-top:14px}
 .genre-panel.open{display:block}
 .genre-panel-inner{max-width:1360px;margin:0 auto;padding:0 24px}
@@ -298,15 +293,12 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .genre-panel-close{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--g);border:1px solid rgba(255,255,255,.1);padding:5px 12px;cursor:pointer;transition:all .18s;background:none}
 .genre-panel-close:hover{border-color:var(--red);color:var(--w)}
 .genre-top10{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:rgba(255,255,255,.04)}
-.genre-album{background:var(--ink);padding:16px;transition:background .18s;position:relative}
+.genre-album{background:var(--ink);padding:16px;transition:background .18s}
 .genre-album:hover{background:var(--card)}
 .ga-rank{font-family:var(--D);font-size:38px;color:rgba(200,16,46,.12);line-height:1;margin-bottom:6px}
 .ga-artist{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:4px}
 .ga-album{font-family:var(--C);font-weight:700;font-size:14px;color:var(--w);line-height:1.2;margin-bottom:3px}
 .ga-year{font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.06em}
-@media(max-width:1100px){.genre-top10{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:768px){.genre-top10{grid-template-columns:repeat(2,1fr)}.genre-panel-inner{padding:0 16px}}
-
 footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 20px}
 .f-inner{max-width:1360px;margin:0 auto;padding:0 24px}
 .f-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:38px;padding-bottom:32px;border-bottom:1px solid var(--border);margin-bottom:18px}
@@ -323,6 +315,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   .content{grid-template-columns:1fr}.sidebar{display:grid;grid-template-columns:1fr 1fr}
   .shows{grid-template-columns:1fr 1fr}.local-grid{grid-template-columns:1fr 1fr}
   .f-grid{grid-template-columns:1fr 1fr;gap:22px}
+  .genre-top10{grid-template-columns:repeat(3,1fr)}
 }
 @media(max-width:768px){
   .nav-links{display:none}.ham{display:flex}
@@ -343,6 +336,8 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   .dev-toast{font-size:10px;padding:12px 20px;white-space:normal;text-align:center;width:90%}
   .tours-header{padding:0 16px}.tours-filters{padding:10px 16px}.tours-body{padding:20px 16px 40px}
   .tours-title{font-size:18px}
+  .genre-top10{grid-template-columns:repeat(2,1fr)}
+  .genre-panel-inner{padding:0 16px}
 }
 @media(max-width:480px){
   .hero h1{font-size:24px}.hero-watermark{display:none}
@@ -351,7 +346,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 </style>
 </head>
 <body>
-
 <nav>
   <div class="nav-wrap">
     <a href="/" class="logo"><div class="logo-box">One</div><div class="logo-txt">Heavy</div></a>
@@ -386,7 +380,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   <a href="/" class="mob-cta" onclick="closeMob()">&#x1F918; OneHeavy &mdash; Free Forever</a>
 </div>
 
-<!-- ON TOUR OVERLAY -->
 <div class="tours-overlay" id="toursOverlay">
   <div class="tours-header">
     <div class="tours-title"><span>On</span> Tour Now &mdash; Australia</div>
@@ -407,7 +400,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </div>
 </div>
 
-<!-- NEWSLETTER MODAL -->
 <div class="modal-overlay" id="newsletterModal" onclick="closeNewsletter(event)">
   <div class="modal">
     <button class="modal-close" onclick="closeNewsletter()">&times;</button>
@@ -435,7 +427,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </div>
 </div>
 
-<!-- SUBMIT EVENT MODAL -->
 <div class="modal-overlay" id="submitModal" onclick="closeSubmit(event)">
   <div class="submit-modal">
     <button class="modal-close" onclick="closeSubmit()">&times;</button>
@@ -461,7 +452,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
     <div class="modal-success" id="submitSuccess" style="display:none">
       <div class="success-icon">&#x1F918;</div>
       <h3>Show <span>Submitted!</span></h3>
-      <p>Thanks for submitting your show.<br>We'll review it within 24 hours.<br><br>Keep it heavy!</p>
+      <p>Thanks for submitting your show.<br>We will review it within 24 hours.<br><br>Keep it heavy!</p>
     </div>
   </div>
 </div>
@@ -495,7 +486,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
       <div class="hero-eyebrow">Breaking News</div>
       <h1>World Metal News Hub</h1>
       <div class="hero-byline"><span>OneHeavy</span><span class="hdot"></span><span>Updated Every 5 Minutes</span></div>
-      <p class="hero-desc">The world&#x27;s heaviest music hub. Live metal news from Blabbermouth, Loudwire, MetalSucks, Metal Hammer, Revolver and Heavy Mag AU — all in one place, free forever.</p>
+      <p class="hero-desc">The world's heaviest music hub. Live metal news from Blabbermouth, Loudwire, MetalSucks, Metal Hammer, Revolver and Heavy Mag AU &mdash; all in one place, free forever.</p>
       <a href="#news" class="btn-story">Read Latest News</a>
     </div>
   </div>
@@ -539,7 +530,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </div>
 </div>
 
-
 <div class="content">
   <main>
     <div class="sh" id="news"><h2>Latest <em>News</em></h2><a href="#" onclick="event.preventDefault();showDev()">All Stories &rarr;</a></div>
@@ -552,45 +542,44 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
       <button class="fb" onclick="filterBy('revolvermag',this)">Revolver</button>
       <button class="fb" onclick="filterBy('heavymag',this)">Heavy Mag AU</button>
     </div>
-    <div id="newsGrid">
-      <!-- Static content for search crawlers — replaced by live RSS feed on load -->
+    <div class="ng" id="newsGrid">
       <a class="nc feature" href="https://www.blabbermouth.net" target="_blank" rel="noopener noreferrer">
         <div class="nc-thumb"><div class="nc-thumb-src">&#x1F1FA;&#x1F1F8; Blabbermouth</div></div>
         <div class="nc-body">
           <div class="nc-top"><span class="nc-src">Blabbermouth</span><span class="nc-age">Latest</span></div>
-          <h3>Breaking Metal News — Live Updates From Around The World</h3>
-          <p>OneHeavy aggregates the latest heavy metal news from Blabbermouth, Loudwire, MetalSucks, Metal Hammer, Revolver and Heavy Mag AU — all in one place, updated every 5 minutes, free forever.</p>
+          <h3>Breaking Metal News &mdash; Live Updates From Around The World</h3>
+          <p>OneHeavy aggregates the latest heavy metal news from Blabbermouth, Loudwire, MetalSucks, Metal Hammer, Revolver and Heavy Mag AU &mdash; all in one place, updated every 5 minutes, free forever.</p>
           <div class="nc-foot">Blabbermouth &middot; &#x1F1FA;&#x1F1F8;</div>
         </div>
       </a>
       <a class="nc" href="https://loudwire.com" target="_blank" rel="noopener noreferrer">
         <div class="nc-top"><span class="nc-src">Loudwire</span><span class="nc-age">Latest</span></div>
-        <h3>Hard Rock &amp; Heavy Metal News — Loudwire</h3>
-        <p>The latest rock and metal news, tour announcements, album releases and interviews from Loudwire.</p>
+        <h3>Hard Rock &amp; Heavy Metal News</h3>
+        <p>The latest rock and metal news, tour announcements, album releases and interviews.</p>
         <div class="nc-foot">Loudwire &middot; &#x1F1FA;&#x1F1F8;</div>
       </a>
       <a class="nc" href="https://www.metalsucks.net" target="_blank" rel="noopener noreferrer">
         <div class="nc-top"><span class="nc-src">MetalSucks</span><span class="nc-age">Latest</span></div>
-        <h3>Metal News, Reviews &amp; Opinion — MetalSucks</h3>
+        <h3>Metal News, Reviews &amp; Opinion</h3>
         <p>MetalSucks covers the heavy metal world with news, reviews, interviews and commentary.</p>
         <div class="nc-foot">MetalSucks &middot; &#x1F1FA;&#x1F1F8;</div>
       </a>
       <a class="nc" href="https://www.loudersound.com" target="_blank" rel="noopener noreferrer">
         <div class="nc-top"><span class="nc-src">Metal Hammer</span><span class="nc-age">Latest</span></div>
-        <h3>Metal Hammer — The World&#x27;s Greatest Metal Magazine</h3>
-        <p>News, reviews and features from Metal Hammer, the UK&#x27;s leading heavy metal publication.</p>
+        <h3>Metal Hammer &mdash; The World's Greatest Metal Magazine</h3>
+        <p>News, reviews and features from Metal Hammer, the UK's leading heavy metal publication.</p>
         <div class="nc-foot">Metal Hammer &middot; &#x1F1EC;&#x1F1E7;</div>
       </a>
       <a class="nc" href="https://www.revolvermag.com" target="_blank" rel="noopener noreferrer">
         <div class="nc-top"><span class="nc-src">Revolver</span><span class="nc-age">Latest</span></div>
-        <h3>Heavy Metal News &amp; Culture — Revolver Magazine</h3>
+        <h3>Heavy Metal News &amp; Culture</h3>
         <p>Revolver covers the world of heavy metal with in-depth features, news and exclusive interviews.</p>
         <div class="nc-foot">Revolver &middot; &#x1F1FA;&#x1F1F8;</div>
       </a>
       <a class="nc" href="https://heavymag.com.au" target="_blank" rel="noopener noreferrer">
         <div class="nc-top"><span class="nc-src">Heavy Mag AU</span><span class="nc-age">Latest</span></div>
-        <h3>Australian Heavy Metal News — Heavy Mag</h3>
-        <p>Heavy Mag Australia brings you the best in Australian and international heavy metal news and reviews.</p>
+        <h3>Australian Heavy Metal News</h3>
+        <p>Heavy Mag Australia brings you the best in Australian and international heavy metal news.</p>
         <div class="nc-foot">Heavy Mag AU &middot; &#x1F1E6;&#x1F1FA;</div>
       </a>
     </div>
@@ -681,26 +670,33 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
     <div class="sh" style="border-bottom:none"><h2>Browse by <em>Genre</em></h2></div>
     <div class="gpills">
       <span class="gp on" onclick="setGenre(this);showGenrePanel('all-metal')">All Metal</span>
-      <span class="gp" onclick="setGenre(this);showGenrePanel('thrash')">Thrash</span><span class="gp" onclick="setGenre(this);showGenrePanel('death')">Death</span>
-      <span class="gp" onclick="setGenre(this);showGenrePanel('black')">Black</span><span class="gp" onclick="setGenre(this);showGenrePanel('doom')">Doom</span>
-      <span class="gp" onclick="setGenre(this);showGenrePanel('power')">Power</span><span class="gp" onclick="setGenre(this);showGenrePanel('progressive')">Progressive</span>
-      <span class="gp" onclick="setGenre(this);showGenrePanel('symphonic')">Symphonic</span><span class="gp" onclick="setGenre(this);showGenrePanel('groove')">Groove</span>
-      <span class="gp" onclick="setGenre(this);showGenrePanel('nu-metal')">Nu-Metal</span><span class="gp" onclick="setGenre(this);showGenrePanel('metalcore')">Metalcore</span>
-      <span class="gp" onclick="setGenre(this);showGenrePanel('deathcore')">Deathcore</span><span class="gp" onclick="setGenre(this);showGenrePanel('folk')">Folk</span>
-      <span class="gp" onclick="setGenre(this);showGenrePanel('viking')">Viking</span><span class="gp" onclick="setGenre(this);showGenrePanel('industrial')">Industrial</span>
-      <span class="gp" onclick="setGenre(this);showGenrePanel('post-metal')">Post-Metal</span><span class="gp" onclick="setGenre(this);showGenrePanel('djent')">Djent</span>
+      <span class="gp" onclick="setGenre(this);showGenrePanel('thrash')">Thrash</span>
+      <span class="gp" onclick="setGenre(this);showGenrePanel('death')">Death</span>
+      <span class="gp" onclick="setGenre(this);showGenrePanel('black')">Black</span>
+      <span class="gp" onclick="setGenre(this);showGenrePanel('doom')">Doom</span>
+      <span class="gp" onclick="setGenre(this);showGenrePanel('power')">Power</span>
+      <span class="gp" onclick="setGenre(this);showGenrePanel('progressive')">Progressive</span>
+      <span class="gp" onclick="setGenre(this);showGenrePanel('symphonic')">Symphonic</span>
+      <span class="gp" onclick="setGenre(this);showGenrePanel('groove')">Groove</span>
+      <span class="gp" onclick="setGenre(this);showGenrePanel('nu-metal')">Nu-Metal</span>
+      <span class="gp" onclick="setGenre(this);showGenrePanel('metalcore')">Metalcore</span>
+      <span class="gp" onclick="setGenre(this);showGenrePanel('deathcore')">Deathcore</span>
+      <span class="gp" onclick="setGenre(this);showGenrePanel('folk')">Folk</span>
+      <span class="gp" onclick="setGenre(this);showGenrePanel('viking')">Viking</span>
+      <span class="gp" onclick="setGenre(this);showGenrePanel('industrial')">Industrial</span>
+      <span class="gp" onclick="setGenre(this);showGenrePanel('post-metal')">Post-Metal</span>
+      <span class="gp" onclick="setGenre(this);showGenrePanel('djent')">Djent</span>
       <span class="gp" onclick="setGenre(this);showGenrePanel('stoner')">Stoner</span>
     </div>
-
-  <div class="genre-panel" id="genrePanel">
-    <div class="genre-panel-inner">
-      <div class="genre-panel-hd">
-        <div class="genre-panel-title">Top 10 <span id="genrePanelName">Metal</span> Albums</div>
-        <button class="genre-panel-close" onclick="closeGenrePanel()">&#x2715; Close</button>
+    <div class="genre-panel" id="genrePanel">
+      <div class="genre-panel-inner">
+        <div class="genre-panel-hd">
+          <div class="genre-panel-title">Top 10 <span id="genrePanelName">Metal</span> Albums</div>
+          <button class="genre-panel-close" onclick="closeGenrePanel()">&#x2715; Close</button>
+        </div>
+        <div class="genre-top10" id="genreTop10"></div>
       </div>
-      <div class="genre-top10" id="genreTop10"></div>
     </div>
-  </div>
   </div>
 </div>
 
@@ -749,7 +745,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 <li><a href="https://www.blabbermouth.net" style="color:#c8102e">Blabbermouth &mdash; Heavy Metal News</a></li>
 <li><a href="https://loudwire.com" style="color:#c8102e">Loudwire &mdash; Hard Rock &amp; Metal</a></li>
 <li><a href="https://www.metalsucks.net" style="color:#c8102e">MetalSucks &mdash; Metal News &amp; Reviews</a></li>
-<li><a href="https://www.loudersound.com" style="color:#c8102e">Metal Hammer &mdash; World&#x27;s Greatest Metal Magazine</a></li>
+<li><a href="https://www.loudersound.com" style="color:#c8102e">Metal Hammer &mdash; World's Greatest Metal Magazine</a></li>
 <li><a href="https://www.revolvermag.com" style="color:#c8102e">Revolver Magazine &mdash; Metal Culture</a></li>
 <li><a href="https://heavymag.com.au" style="color:#c8102e">Heavy Mag AU &mdash; Australian Metal News</a></li>
 </ul>
@@ -765,12 +761,12 @@ function ago(d){
   return Math.floor(s/86400)+'d ago';
 }
 const FEEDS=[
-  {url:'https://www.blabbermouth.net/feed/', key:'blabbermouth', label:'Blabbermouth',  flag:'&#x1F1FA;&#x1F1F8;'},
-  {url:'https://loudwire.com/feed/',          key:'loudwire',     label:'Loudwire',      flag:'&#x1F1FA;&#x1F1F8;'},
+  {url:'https://www.blabbermouth.net/feed/', key:'blabbermouth', label:'Blabbermouth', flag:'&#x1F1FA;&#x1F1F8;'},
+  {url:'https://loudwire.com/feed/',          key:'loudwire',    label:'Loudwire',     flag:'&#x1F1FA;&#x1F1F8;'},
   {url:'https://feeds.feedburner.com/Metalsucks', key:'metalsucks', label:'MetalSucks', flag:'&#x1F1FA;&#x1F1F8;'},
-  {url:'https://loudersound.com/feeds.xml',   key:'loudersound',  label:'Metal Hammer',  flag:'&#x1F1EC;&#x1F1E7;'},
-  {url:'https://www.revolvermag.com/feed',    key:'revolvermag',  label:'Revolver',      flag:'&#x1F1FA;&#x1F1F8;'},
-  {url:'https://heavymag.com.au/feed',        key:'heavymag',     label:'Heavy Mag AU',  flag:'&#x1F1E6;&#x1F1FA;'},
+  {url:'https://loudersound.com/feeds.xml',   key:'loudersound', label:'Metal Hammer',  flag:'&#x1F1EC;&#x1F1E7;'},
+  {url:'https://www.revolvermag.com/feed',    key:'revolvermag', label:'Revolver',      flag:'&#x1F1FA;&#x1F1F8;'},
+  {url:'https://heavymag.com.au/feed',        key:'heavymag',    label:'Heavy Mag AU',  flag:'&#x1F1E6;&#x1F1FA;'},
 ];
 let ALL=[],FILTER='all';
 document.getElementById('dlDate').textContent=new Date().toLocaleDateString('en-AU',{weekday:'long',year:'numeric',month:'long',day:'numeric'}).toUpperCase();
@@ -785,14 +781,21 @@ async function fetchFeed(f){
   }catch(e){return[];}
 }
 async function loadAll(){
-  document.getElementById('newsGrid').innerHTML='<div class="loading"><div class="spin"></div><p>Fetching live metal news&#8230;</p></div>';
+  const g=document.getElementById('newsGrid');
+  g.className='ng';
+  g.innerHTML='<div class="loading"><div class="spin"></div><p>Fetching live metal news&#8230;</p></div>';
   const res=await Promise.allSettled(FEEDS.map(fetchFeed));
   ALL=res.flatMap(r=>r.status==='fulfilled'?r.value:[]).sort((a,b)=>b.ms-a.ms);
+  if(ALL.length===0){
+    g.innerHTML='<div class="loading"><p>Unable to load news right now &mdash; please refresh shortly.</p></div>';
+    return;
+  }
   const show=FILTER==='all'?ALL:ALL.filter(i=>i.key===FILTER);
   renderGrid(show);renderHero(ALL);renderTrend(ALL);
 }
 function renderGrid(items){
-  const g=document.getElementById('newsGrid'); g.className='ng';
+  const g=document.getElementById('newsGrid');
+  g.className='ng';
   if(!items.length){g.innerHTML='<div class="loading"><p>No stories loaded &mdash; refresh shortly</p></div>';return;}
   g.innerHTML=items.slice(0,12).map((it,i)=>'<a class="nc'+(i===0?' feature':'')+'" href="'+it.url+'" target="_blank" rel="noopener noreferrer">'+(i===0?'<div class="nc-thumb"><div class="nc-thumb-src">'+it.flag+' '+it.source+'</div></div><div class="nc-body">':'')+'<div class="nc-top"><span class="nc-src">'+it.source+'</span><span class="nc-age">'+ago(it.pub)+'</span></div><h3>'+it.title+'</h3>'+(i<3?'<p>'+it.desc+'</p>':'')+'<div class="nc-foot">'+it.source+' &middot; '+it.flag+'</div>'+(i===0?'</div>':'')+'</a>').join('');
 }
@@ -817,250 +820,6 @@ function showDev(){
   t.classList.add('show');
   setTimeout(()=>t.classList.remove('show'),2800);
 }
-
-// GENRE TOP 10
-const GENRE_DATA = {
-  'all-metal': {name:'Essential Metal', albums:[
-    {rank:1,artist:'Black Sabbath',album:'Paranoid',year:1970},
-    {rank:2,artist:'Metallica',album:'Master of Puppets',year:1986},
-    {rank:3,artist:'Iron Maiden',album:'The Number of the Beast',year:1982},
-    {rank:4,artist:'Judas Priest',album:'British Steel',year:1980},
-    {rank:5,artist:'Pantera',album:'Vulgar Display of Power',year:1992},
-    {rank:6,artist:'Slayer',album:'Reign in Blood',year:1986},
-    {rank:7,artist:'Megadeth',album:'Rust in Peace',year:1990},
-    {rank:8,artist:'Dio',album:'Holy Diver',year:1983},
-    {rank:9,artist:'Ozzy Osbourne',album:'Blizzard of Ozz',year:1980},
-    {rank:10,artist:'Deep Purple',album:'Machine Head',year:1972},
-  ]},
-  'thrash': {name:'Thrash Metal', albums:[
-    {rank:1,artist:'Metallica',album:'Master of Puppets',year:1986},
-    {rank:2,artist:'Slayer',album:'Reign in Blood',year:1986},
-    {rank:3,artist:'Megadeth',album:'Rust in Peace',year:1990},
-    {rank:4,artist:'Anthrax',album:'Among the Living',year:1987},
-    {rank:5,artist:'Exodus',album:'Bonded by Blood',year:1985},
-    {rank:6,artist:'Testament',album:'The New Order',year:1988},
-    {rank:7,artist:'Overkill',album:'The Years of Decay',year:1989},
-    {rank:8,artist:'Kreator',album:'Pleasure to Kill',year:1986},
-    {rank:9,artist:'Death Angel',album:'The Ultra-Violence',year:1987},
-    {rank:10,artist:'Destruction',album:'Eternal Devastation',year:1986},
-  ]},
-  'death': {name:'Death Metal', albums:[
-    {rank:1,artist:'Death',album:'Symbolic',year:1995},
-    {rank:2,artist:'Morbid Angel',album:'Altars of Madness',year:1989},
-    {rank:3,artist:'Cannibal Corpse',album:'Tomb of the Mutilated',year:1992},
-    {rank:4,artist:'Obituary',album:'Cause of Death',year:1990},
-    {rank:5,artist:'Suffocation',album:'Effigy of the Forgotten',year:1991},
-    {rank:6,artist:'Deicide',album:'Legion',year:1992},
-    {rank:7,artist:'Possessed',album:'Seven Churches',year:1985},
-    {rank:8,artist:'Bolt Thrower',album:'Realm of Chaos',year:1989},
-    {rank:9,artist:'Gorguts',album:'Obscura',year:1998},
-    {rank:10,artist:'Immolation',album:'Here in After',year:1996},
-  ]},
-  'black': {name:'Black Metal', albums:[
-    {rank:1,artist:'Mayhem',album:'De Mysteriis Dom Sathanas',year:1994},
-    {rank:2,artist:'Burzum',album:'Hvis lyset tar oss',year:1994},
-    {rank:3,artist:'Darkthrone',album:'Transilvanian Hunger',year:1994},
-    {rank:4,artist:'Emperor',album:'In the Nightside Eclipse',year:1994},
-    {rank:5,artist:'Immortal',album:'Pure Holocaust',year:1993},
-    {rank:6,artist:'Gorgoroth',album:'Antichrist',year:1996},
-    {rank:7,artist:'Dissection',album:'Storm of the Lights Bane',year:1995},
-    {rank:8,artist:'Bathory',album:'Under the Sign of the Black Mark',year:1987},
-    {rank:9,artist:'Satyricon',album:'Nemesis Divina',year:1996},
-    {rank:10,artist:'Enslaved',album:'Vikingligr Veldi',year:1994},
-  ]},
-  'doom': {name:'Doom Metal', albums:[
-    {rank:1,artist:'Black Sabbath',album:'Master of Reality',year:1971},
-    {rank:2,artist:'Candlemass',album:'Epicus Doomicus Metallicus',year:1986},
-    {rank:3,artist:'My Dying Bride',album:'Turn Loose the Swans',year:1993},
-    {rank:4,artist:'Paradise Lost',album:'Gothic',year:1991},
-    {rank:5,artist:'Anathema',album:'The Silent Enigma',year:1995},
-    {rank:6,artist:'Electric Wizard',album:'Dopethrone',year:2000},
-    {rank:7,artist:'Cathedral',album:'Forest of Equilibrium',year:1991},
-    {rank:8,artist:'Type O Negative',album:'Bloody Kisses',year:1993},
-    {rank:9,artist:'Sleep',album:'Dopesmoker',year:2003},
-    {rank:10,artist:'Pallbearer',album:'Sorrow and Extinction',year:2012},
-  ]},
-  'power': {name:'Power Metal', albums:[
-    {rank:1,artist:'Helloween',album:'Keeper of the Seven Keys Pt. II',year:1988},
-    {rank:2,artist:'Blind Guardian',album:'Somewhere Far Beyond',year:1992},
-    {rank:3,artist:'Gamma Ray',album:'Land of the Free',year:1995},
-    {rank:4,artist:'Stratovarius',album:'Visions',year:1997},
-    {rank:5,artist:'DragonForce',album:'Sonic Firestorm',year:2004},
-    {rank:6,artist:'Iced Earth',album:'Something Wicked This Way Comes',year:1998},
-    {rank:7,artist:'Rhapsody',album:'Symphony of Enchanted Lands',year:1998},
-    {rank:8,artist:'Edguy',album:'Mandrake',year:2001},
-    {rank:9,artist:'Sonata Arctica',album:'Ecliptica',year:1999},
-    {rank:10,artist:'Manowar',album:'Kings of Metal',year:1988},
-  ]},
-  'progressive': {name:'Progressive Metal', albums:[
-    {rank:1,artist:'Dream Theater',album:'Images and Words',year:1992},
-    {rank:2,artist:'Tool',album:'Lateralus',year:2001},
-    {rank:3,artist:'Opeth',album:'Blackwater Park',year:2001},
-    {rank:4,artist:'Queensryche',album:'Operation: Mindcrime',year:1988},
-    {rank:5,artist:'Fates Warning',album:'Parallels',year:1991},
-    {rank:6,artist:'Meshuggah',album:'Destroy Erase Improve',year:1995},
-    {rank:7,artist:'Porcupine Tree',album:'In Absentia',year:2002},
-    {rank:8,artist:'Ayreon',album:'The Human Equation',year:2004},
-    {rank:9,artist:'Pain of Salvation',album:'The Perfect Element Pt. I',year:2000},
-    {rank:10,artist:'Symphony X',album:'The Divine Wings of Tragedy',year:1997},
-  ]},
-  'symphonic': {name:'Symphonic Metal', albums:[
-    {rank:1,artist:'Nightwish',album:'Oceanborn',year:1998},
-    {rank:2,artist:'Within Temptation',album:'The Silent Force',year:2004},
-    {rank:3,artist:'Epica',album:'The Phantom Agony',year:2003},
-    {rank:4,artist:'Therion',album:'Theli',year:1996},
-    {rank:5,artist:'Lacuna Coil',album:'Comalies',year:2002},
-    {rank:6,artist:'Evanescence',album:'Fallen',year:2003},
-    {rank:7,artist:'Dimmu Borgir',album:'Puritanical Euphoric Misanthropia',year:2001},
-    {rank:8,artist:'Kamelot',album:'The Black Halo',year:2005},
-    {rank:9,artist:'Tarja',album:'My Winter Storm',year:2007},
-    {rank:10,artist:'Xandria',album:'Neverworlds End',year:2012},
-  ]},
-  'groove': {name:'Groove Metal', albums:[
-    {rank:1,artist:'Pantera',album:'Vulgar Display of Power',year:1992},
-    {rank:2,artist:'Pantera',album:'Far Beyond Driven',year:1994},
-    {rank:3,artist:'Sepultura',album:'Chaos A.D.',year:1993},
-    {rank:4,artist:'White Zombie',album:'Astro-Creep: 2000',year:1995},
-    {rank:5,artist:'Machine Head',album:'Burn My Eyes',year:1994},
-    {rank:6,artist:'Lamb of God',album:'Ashes of the Wake',year:2004},
-    {rank:7,artist:'Crowbar',album:'Crowbar',year:1993},
-    {rank:8,artist:'Exhorder',album:'Slaughter in the Vatican',year:1990},
-    {rank:9,artist:'Down',album:'NOLA',year:1995},
-    {rank:10,artist:'Hellyeah',album:'Hellyeah',year:2007},
-  ]},
-  'nu-metal': {name:'Nu-Metal', albums:[
-    {rank:1,artist:'Korn',album:'Korn',year:1994},
-    {rank:2,artist:'Deftones',album:'White Pony',year:2000},
-    {rank:3,artist:'Linkin Park',album:'Hybrid Theory',year:2000},
-    {rank:4,artist:'System of a Down',album:'Toxicity',year:2001},
-    {rank:5,artist:'Slipknot',album:'Slipknot',year:1999},
-    {rank:6,artist:'Rage Against the Machine',album:'Rage Against the Machine',year:1992},
-    {rank:7,artist:'Limp Bizkit',album:'Significant Other',year:1999},
-    {rank:8,artist:'Mudvayne',album:'L.D. 50',year:2000},
-    {rank:9,artist:'P.O.D.',album:'Satellite',year:2001},
-    {rank:10,artist:'Disturbed',album:'The Sickness',year:2000},
-  ]},
-  'metalcore': {name:'Metalcore', albums:[
-    {rank:1,artist:'Killswitch Engage',album:'The End of Heartache',year:2004},
-    {rank:2,artist:'As I Lay Dying',album:'Shadows Are Security',year:2005},
-    {rank:3,artist:'Converge',album:'Jane Doe',year:2001},
-    {rank:4,artist:'Parkway Drive',album:'Horizons',year:2007},
-    {rank:5,artist:'Bullet for My Valentine',album:'The Poison',year:2005},
-    {rank:6,artist:'Hatebreed',album:'Perseverance',year:2002},
-    {rank:7,artist:'Trivium',album:'Ascendancy',year:2005},
-    {rank:8,artist:'All That Remains',album:'The Fall of Ideals',year:2006},
-    {rank:9,artist:'Underoath',album:'Theyre Only Chasing Safety',year:2004},
-    {rank:10,artist:'August Burns Red',album:'Messengers',year:2007},
-  ]},
-  'deathcore': {name:'Deathcore', albums:[
-    {rank:1,artist:'Suicide Silence',album:'The Cleansing',year:2007},
-    {rank:2,artist:'Whitechapel',album:'This Is Exile',year:2008},
-    {rank:3,artist:'Job for a Cowboy',album:'Doom',year:2007},
-    {rank:4,artist:'Bring Me the Horizon',album:'Suicide Season',year:2008},
-    {rank:5,artist:'Carnifex',album:'Hell Chose Me',year:2010},
-    {rank:6,artist:'Chelsea Grin',album:'Desolation of Eden',year:2010},
-    {rank:7,artist:'Despised Icon',album:'The Healing Process',year:2005},
-    {rank:8,artist:'Oceano',album:'Depths',year:2009},
-    {rank:9,artist:'Thy Art Is Murder',album:'Hate',year:2012},
-    {rank:10,artist:'Emmure',album:'Felony',year:2009},
-  ]},
-  'folk': {name:'Folk Metal', albums:[
-    {rank:1,artist:'Primordial',album:'The Gathering Wilderness',year:2005},
-    {rank:2,artist:'Moonsorrow',album:'Voimasta ja Kunniasta',year:2001},
-    {rank:3,artist:'Finntroll',album:'Nattfodd',year:2004},
-    {rank:4,artist:'Arkona',album:'Goi Rode Goi!',year:2006},
-    {rank:5,artist:'Eluveitie',album:'Slania',year:2008},
-    {rank:6,artist:'Skyclad',album:'The Wayward Sons of Mother Earth',year:1991},
-    {rank:7,artist:'Cruachan',album:'Folk-Lore',year:2002},
-    {rank:8,artist:'Waylander',album:'Reawakening Pride Once Lost',year:1998},
-    {rank:9,artist:'Mago de Oz',album:'Finisterra',year:2000},
-    {rank:10,artist:'Heidevolk',album:'Walhalla Wacht',year:2008},
-  ]},
-  'viking': {name:'Viking Metal', albums:[
-    {rank:1,artist:'Bathory',album:'Hammerheart',year:1990},
-    {rank:2,artist:'Enslaved',album:'Eld',year:1997},
-    {rank:3,artist:'Amon Amarth',album:'With Oden on Our Side',year:2006},
-    {rank:4,artist:'Windir',album:'Arntor',year:1999},
-    {rank:5,artist:'Burzum',album:'Belus',year:2010},
-    {rank:6,artist:'Mithotyn',album:'King of the Distant Forest',year:1997},
-    {rank:7,artist:'Falkenbach',album:'Magni Blandinn Ok Megintiri',year:1998},
-    {rank:8,artist:'Thyrfing',album:'Valdr Galga',year:1999},
-    {rank:9,artist:'Graveland',album:'Immortal Pride',year:1998},
-    {rank:10,artist:'Unleashed',album:'Across the Open Sea',year:1993},
-  ]},
-  'industrial': {name:'Industrial Metal', albums:[
-    {rank:1,artist:'Nine Inch Nails',album:'The Downward Spiral',year:1994},
-    {rank:2,artist:'Ministry',album:'Psalm 69',year:1992},
-    {rank:3,artist:'Fear Factory',album:'Demanufacture',year:1995},
-    {rank:4,artist:'Rammstein',album:'Sehnsucht',year:1997},
-    {rank:5,artist:'KMFDM',album:'Nihil',year:1995},
-    {rank:6,artist:'Marilyn Manson',album:'Antichrist Superstar',year:1996},
-    {rank:7,artist:'Godflesh',album:'Streetcleaner',year:1989},
-    {rank:8,artist:'Static-X',album:'Wisconsin Death Trip',year:1999},
-    {rank:9,artist:'Otep',album:'Sevas Tra',year:2002},
-    {rank:10,artist:'Stabbing Westward',album:'Wither Blister Burn + Peel',year:1996},
-  ]},
-  'post-metal': {name:'Post-Metal', albums:[
-    {rank:1,artist:'Neurosis',album:'Through Silver in Blood',year:1996},
-    {rank:2,artist:'Isis',album:'Panopticon',year:2004},
-    {rank:3,artist:'Cult of Luna',album:'Somewhere Along the Highway',year:2006},
-    {rank:4,artist:'Pelican',album:'The Fire in Our Throats Will Beckon the Thaw',year:2005},
-    {rank:5,artist:'Baroness',album:'Blue Record',year:2009},
-    {rank:6,artist:'Mastodon',album:'Leviathan',year:2004},
-    {rank:7,artist:'Amenra',album:'Mass IIII',year:2012},
-    {rank:8,artist:'Russian Circles',album:'Memorial',year:2013},
-    {rank:9,artist:'Pallbearer',album:'Heartless',year:2017},
-    {rank:10,artist:'Deafheaven',album:'Sunbather',year:2013},
-  ]},
-  'djent': {name:'Djent', albums:[
-    {rank:1,artist:'Meshuggah',album:'obZen',year:2008},
-    {rank:2,artist:'Periphery',album:'Periphery II: This Time Its Personal',year:2012},
-    {rank:3,artist:'Animals as Leaders',album:'Animals as Leaders',year:2009},
-    {rank:4,artist:'Tesseract',album:'One',year:2011},
-    {rank:5,artist:'Vildhjarta',album:'Masstaden',year:2011},
-    {rank:6,artist:'Intervals',album:'A Voice Within',year:2014},
-    {rank:7,artist:'Plini',album:'Handmade Cities',year:2016},
-    {rank:8,artist:'Born of Osiris',album:'The Discovery',year:2011},
-    {rank:9,artist:'Skyhill',album:'Skyhill',year:2014},
-    {rank:10,artist:'Northlane',album:'Singularity',year:2013},
-  ]},
-  'stoner': {name:'Stoner Metal', albums:[
-    {rank:1,artist:'Kyuss',album:'Welcome to Sky Valley',year:1994},
-    {rank:2,artist:'Sleep',album:'Dopesmoker',year:2003},
-    {rank:3,artist:'Queens of the Stone Age',album:'Songs for the Deaf',year:2002},
-    {rank:4,artist:'Monster Magnet',album:'Superjudge',year:1993},
-    {rank:5,artist:'Fu Manchu',album:'The Action Is Go',year:1997},
-    {rank:6,artist:'Clutch',album:'Elephant Riders',year:1998},
-    {rank:7,artist:'Orange Goblin',album:'Coup de Grace',year:2002},
-    {rank:8,artist:'Brant Bjork',album:'Jacoozzi',year:2011},
-    {rank:9,artist:'Colour Haze',album:'All',year:2008},
-    {rank:10,artist:'Wo Fat',album:'The Conjuring',year:2012},
-  ]},
-};
-
-function showGenrePanel(key) {
-  const data = GENRE_DATA[key];
-  if (!data) { closeGenrePanel(); return; }
-  document.getElementById('genrePanelName').textContent = data.name;
-  document.getElementById('genreTop10').innerHTML = data.albums.map(function(a) {
-    return '<div class="genre-album">'
-      + '<div class="ga-rank">' + (a.rank < 10 ? '0' + a.rank : a.rank) + '</div>'
-      + '<div class="ga-artist">' + a.artist + '</div>'
-      + '<div class="ga-album">' + a.album + '</div>'
-      + '<div class="ga-year">' + a.year + '</div>'
-      + '</div>';
-  }).join('');
-  const panel = document.getElementById('genrePanel');
-  panel.classList.add('open');
-  panel.scrollIntoView({behavior:'smooth', block:'nearest'});
-}
-
-function closeGenrePanel() {
-  document.getElementById('genrePanel').classList.remove('open');
-  document.querySelectorAll('.gp').forEach(function(g) { g.classList.remove('on'); });
-  document.querySelector('.gp').classList.add('on');
-}
-// ON TOUR
 let TOUR_DATA=null,TOUR_FILTER='all';
 async function openTours(){
   document.getElementById('toursOverlay').classList.add('open');
@@ -1088,51 +847,79 @@ function filterTours(key,btn){
 }
 function renderTours(){
   if(!TOUR_DATA)return;
-  const {tourNews,promoters}=TOUR_DATA;
   const body=document.getElementById('toursBody');
+  const tourNews=TOUR_DATA.tourNews||[];
+  const promoters=TOUR_DATA.promoters||[];
   let html='';
-  let news=tourNews;
-  if(TOUR_FILTER==='aus') news=tourNews.filter(t=>t.isAus);
+  let news=TOUR_FILTER==='aus'?tourNews.filter(function(t){return t.isAus;}):tourNews;
   if(news.length>0){
     html+='<div class="tours-section"><div class="tours-section-hd">&#x1F4F0; Tour <em>Announcements</em></div><div class="tours-grid">';
     news.forEach(function(t){
       const ausTag=t.isAus?'<span class="tc-aus">&#x1F1E6;&#x1F1FA; Aus</span>':'';
-      html+='<a class="tour-card" href="'+t.link+'" target="_blank" rel="noopener noreferrer">'
-           +'<div><span class="tc-source">'+t.source+'</span>'+ausTag+'</div>'
-           +'<div class="tc-title">'+t.title+'</div>'
-           +'<div class="tc-desc">'+t.desc+'</div>'
-           +'<div class="tc-foot">'+t.source+' &middot; Tour News</div>'
-           +'</a>';
+      html+='<a class="tour-card" href="'+t.link+'" target="_blank" rel="noopener noreferrer"><div><span class="tc-source">'+t.source+'</span>'+ausTag+'</div><div class="tc-title">'+t.title+'</div><div class="tc-desc">'+t.desc+'</div><div class="tc-foot">'+t.source+' &middot; Tour News</div></a>';
     });
     html+='</div></div>';
   } else {
-    html+='<div class="tours-empty">No tour news matching this filter right now &mdash; check back soon.</div>';
+    html+='<div class="tours-empty">No tour news right now &mdash; check back soon.</div>';
   }
   if(TOUR_FILTER==='all'||TOUR_FILTER==='aus'){
     html+='<div class="tours-section"><div class="tours-section-hd">&#x1F1E6;&#x1F1FA; Browse by <em>Promoter</em></div><div class="tours-promo-grid">';
     promoters.forEach(function(p){
-      html+='<a class="tours-promo-card" href="'+p.url+'" target="_blank" rel="noopener noreferrer">'
-           +'<div><div class="tpc-name">'+p.flag+' '+p.name+'</div>'
-           +'<div class="tpc-sub">View all upcoming shows</div></div>'
-           +'<div class="tpc-arrow">&#x2192;</div></a>';
+      html+='<a class="tours-promo-card" href="'+p.url+'" target="_blank" rel="noopener noreferrer"><div><div class="tpc-name">'+p.flag+' '+p.name+'</div><div class="tpc-sub">View all upcoming shows</div></div><div class="tpc-arrow">&#x2192;</div></a>';
     });
     html+='</div></div>';
   }
   body.innerHTML=html;
 }
+const GENRE_DATA={
+  'all-metal':{name:'Essential Metal',albums:[{rank:1,artist:'Black Sabbath',album:'Paranoid',year:1970},{rank:2,artist:'Metallica',album:'Master of Puppets',year:1986},{rank:3,artist:'Iron Maiden',album:'The Number of the Beast',year:1982},{rank:4,artist:'Judas Priest',album:'British Steel',year:1980},{rank:5,artist:'Pantera',album:'Vulgar Display of Power',year:1992},{rank:6,artist:'Slayer',album:'Reign in Blood',year:1986},{rank:7,artist:'Megadeth',album:'Rust in Peace',year:1990},{rank:8,artist:'Dio',album:'Holy Diver',year:1983},{rank:9,artist:'Ozzy Osbourne',album:'Blizzard of Ozz',year:1980},{rank:10,artist:'Deep Purple',album:'Machine Head',year:1972}]},
+  'thrash':{name:'Thrash Metal',albums:[{rank:1,artist:'Metallica',album:'Master of Puppets',year:1986},{rank:2,artist:'Slayer',album:'Reign in Blood',year:1986},{rank:3,artist:'Megadeth',album:'Rust in Peace',year:1990},{rank:4,artist:'Anthrax',album:'Among the Living',year:1987},{rank:5,artist:'Exodus',album:'Bonded by Blood',year:1985},{rank:6,artist:'Testament',album:'The New Order',year:1988},{rank:7,artist:'Overkill',album:'The Years of Decay',year:1989},{rank:8,artist:'Kreator',album:'Pleasure to Kill',year:1986},{rank:9,artist:'Death Angel',album:'The Ultra-Violence',year:1987},{rank:10,artist:'Destruction',album:'Eternal Devastation',year:1986}]},
+  'death':{name:'Death Metal',albums:[{rank:1,artist:'Death',album:'Symbolic',year:1995},{rank:2,artist:'Morbid Angel',album:'Altars of Madness',year:1989},{rank:3,artist:'Cannibal Corpse',album:'Tomb of the Mutilated',year:1992},{rank:4,artist:'Obituary',album:'Cause of Death',year:1990},{rank:5,artist:'Suffocation',album:'Effigy of the Forgotten',year:1991},{rank:6,artist:'Deicide',album:'Legion',year:1992},{rank:7,artist:'Possessed',album:'Seven Churches',year:1985},{rank:8,artist:'Bolt Thrower',album:'Realm of Chaos',year:1989},{rank:9,artist:'Gorguts',album:'Obscura',year:1998},{rank:10,artist:'Immolation',album:'Here in After',year:1996}]},
+  'black':{name:'Black Metal',albums:[{rank:1,artist:'Mayhem',album:'De Mysteriis Dom Sathanas',year:1994},{rank:2,artist:'Burzum',album:'Hvis lyset tar oss',year:1994},{rank:3,artist:'Darkthrone',album:'Transilvanian Hunger',year:1994},{rank:4,artist:'Emperor',album:'In the Nightside Eclipse',year:1994},{rank:5,artist:'Immortal',album:'Pure Holocaust',year:1993},{rank:6,artist:'Gorgoroth',album:'Antichrist',year:1996},{rank:7,artist:'Dissection',album:'Storm of the Lights Bane',year:1995},{rank:8,artist:'Bathory',album:'Under the Sign of the Black Mark',year:1987},{rank:9,artist:'Satyricon',album:'Nemesis Divina',year:1996},{rank:10,artist:'Enslaved',album:'Vikingligr Veldi',year:1994}]},
+  'doom':{name:'Doom Metal',albums:[{rank:1,artist:'Black Sabbath',album:'Master of Reality',year:1971},{rank:2,artist:'Candlemass',album:'Epicus Doomicus Metallicus',year:1986},{rank:3,artist:'My Dying Bride',album:'Turn Loose the Swans',year:1993},{rank:4,artist:'Paradise Lost',album:'Gothic',year:1991},{rank:5,artist:'Anathema',album:'The Silent Enigma',year:1995},{rank:6,artist:'Electric Wizard',album:'Dopethrone',year:2000},{rank:7,artist:'Cathedral',album:'Forest of Equilibrium',year:1991},{rank:8,artist:'Type O Negative',album:'Bloody Kisses',year:1993},{rank:9,artist:'Sleep',album:'Dopesmoker',year:2003},{rank:10,artist:'Pallbearer',album:'Sorrow and Extinction',year:2012}]},
+  'power':{name:'Power Metal',albums:[{rank:1,artist:'Helloween',album:'Keeper of the Seven Keys Pt. II',year:1988},{rank:2,artist:'Blind Guardian',album:'Somewhere Far Beyond',year:1992},{rank:3,artist:'Gamma Ray',album:'Land of the Free',year:1995},{rank:4,artist:'Stratovarius',album:'Visions',year:1997},{rank:5,artist:'DragonForce',album:'Sonic Firestorm',year:2004},{rank:6,artist:'Iced Earth',album:'Something Wicked This Way Comes',year:1998},{rank:7,artist:'Rhapsody',album:'Symphony of Enchanted Lands',year:1998},{rank:8,artist:'Edguy',album:'Mandrake',year:2001},{rank:9,artist:'Sonata Arctica',album:'Ecliptica',year:1999},{rank:10,artist:'Manowar',album:'Kings of Metal',year:1988}]},
+  'progressive':{name:'Progressive Metal',albums:[{rank:1,artist:'Dream Theater',album:'Images and Words',year:1992},{rank:2,artist:'Tool',album:'Lateralus',year:2001},{rank:3,artist:'Opeth',album:'Blackwater Park',year:2001},{rank:4,artist:'Queensryche',album:'Operation: Mindcrime',year:1988},{rank:5,artist:'Fates Warning',album:'Parallels',year:1991},{rank:6,artist:'Meshuggah',album:'Destroy Erase Improve',year:1995},{rank:7,artist:'Porcupine Tree',album:'In Absentia',year:2002},{rank:8,artist:'Ayreon',album:'The Human Equation',year:2004},{rank:9,artist:'Pain of Salvation',album:'The Perfect Element Pt. I',year:2000},{rank:10,artist:'Symphony X',album:'The Divine Wings of Tragedy',year:1997}]},
+  'symphonic':{name:'Symphonic Metal',albums:[{rank:1,artist:'Nightwish',album:'Oceanborn',year:1998},{rank:2,artist:'Within Temptation',album:'The Silent Force',year:2004},{rank:3,artist:'Epica',album:'The Phantom Agony',year:2003},{rank:4,artist:'Therion',album:'Theli',year:1996},{rank:5,artist:'Lacuna Coil',album:'Comalies',year:2002},{rank:6,artist:'Evanescence',album:'Fallen',year:2003},{rank:7,artist:'Dimmu Borgir',album:'Puritanical Euphoric Misanthropia',year:2001},{rank:8,artist:'Kamelot',album:'The Black Halo',year:2005},{rank:9,artist:'Tarja',album:'My Winter Storm',year:2007},{rank:10,artist:'Xandria',album:'Neverworlds End',year:2012}]},
+  'groove':{name:'Groove Metal',albums:[{rank:1,artist:'Pantera',album:'Vulgar Display of Power',year:1992},{rank:2,artist:'Pantera',album:'Far Beyond Driven',year:1994},{rank:3,artist:'Sepultura',album:'Chaos A.D.',year:1993},{rank:4,artist:'White Zombie',album:'Astro-Creep: 2000',year:1995},{rank:5,artist:'Machine Head',album:'Burn My Eyes',year:1994},{rank:6,artist:'Lamb of God',album:'Ashes of the Wake',year:2004},{rank:7,artist:'Crowbar',album:'Crowbar',year:1993},{rank:8,artist:'Exhorder',album:'Slaughter in the Vatican',year:1990},{rank:9,artist:'Down',album:'NOLA',year:1995},{rank:10,artist:'Hellyeah',album:'Hellyeah',year:2007}]},
+  'nu-metal':{name:'Nu-Metal',albums:[{rank:1,artist:'Korn',album:'Korn',year:1994},{rank:2,artist:'Deftones',album:'White Pony',year:2000},{rank:3,artist:'Linkin Park',album:'Hybrid Theory',year:2000},{rank:4,artist:'System of a Down',album:'Toxicity',year:2001},{rank:5,artist:'Slipknot',album:'Slipknot',year:1999},{rank:6,artist:'Rage Against the Machine',album:'Rage Against the Machine',year:1992},{rank:7,artist:'Limp Bizkit',album:'Significant Other',year:1999},{rank:8,artist:'Mudvayne',album:'L.D. 50',year:2000},{rank:9,artist:'P.O.D.',album:'Satellite',year:2001},{rank:10,artist:'Disturbed',album:'The Sickness',year:2000}]},
+  'metalcore':{name:'Metalcore',albums:[{rank:1,artist:'Killswitch Engage',album:'The End of Heartache',year:2004},{rank:2,artist:'As I Lay Dying',album:'Shadows Are Security',year:2005},{rank:3,artist:'Converge',album:'Jane Doe',year:2001},{rank:4,artist:'Parkway Drive',album:'Horizons',year:2007},{rank:5,artist:'Bullet for My Valentine',album:'The Poison',year:2005},{rank:6,artist:'Hatebreed',album:'Perseverance',year:2002},{rank:7,artist:'Trivium',album:'Ascendancy',year:2005},{rank:8,artist:'All That Remains',album:'The Fall of Ideals',year:2006},{rank:9,artist:'Underoath',album:'Theyre Only Chasing Safety',year:2004},{rank:10,artist:'August Burns Red',album:'Messengers',year:2007}]},
+  'deathcore':{name:'Deathcore',albums:[{rank:1,artist:'Suicide Silence',album:'The Cleansing',year:2007},{rank:2,artist:'Whitechapel',album:'This Is Exile',year:2008},{rank:3,artist:'Job for a Cowboy',album:'Doom',year:2007},{rank:4,artist:'Bring Me the Horizon',album:'Suicide Season',year:2008},{rank:5,artist:'Carnifex',album:'Hell Chose Me',year:2010},{rank:6,artist:'Chelsea Grin',album:'Desolation of Eden',year:2010},{rank:7,artist:'Despised Icon',album:'The Healing Process',year:2005},{rank:8,artist:'Oceano',album:'Depths',year:2009},{rank:9,artist:'Thy Art Is Murder',album:'Hate',year:2012},{rank:10,artist:'Emmure',album:'Felony',year:2009}]},
+  'folk':{name:'Folk Metal',albums:[{rank:1,artist:'Primordial',album:'The Gathering Wilderness',year:2005},{rank:2,artist:'Moonsorrow',album:'Voimasta ja Kunniasta',year:2001},{rank:3,artist:'Finntroll',album:'Nattfodd',year:2004},{rank:4,artist:'Arkona',album:'Goi Rode Goi!',year:2006},{rank:5,artist:'Eluveitie',album:'Slania',year:2008},{rank:6,artist:'Skyclad',album:'The Wayward Sons of Mother Earth',year:1991},{rank:7,artist:'Cruachan',album:'Folk-Lore',year:2002},{rank:8,artist:'Waylander',album:'Reawakening Pride Once Lost',year:1998},{rank:9,artist:'Mago de Oz',album:'Finisterra',year:2000},{rank:10,artist:'Heidevolk',album:'Walhalla Wacht',year:2008}]},
+  'viking':{name:'Viking Metal',albums:[{rank:1,artist:'Bathory',album:'Hammerheart',year:1990},{rank:2,artist:'Enslaved',album:'Eld',year:1997},{rank:3,artist:'Amon Amarth',album:'With Oden on Our Side',year:2006},{rank:4,artist:'Windir',album:'Arntor',year:1999},{rank:5,artist:'Burzum',album:'Belus',year:2010},{rank:6,artist:'Mithotyn',album:'King of the Distant Forest',year:1997},{rank:7,artist:'Falkenbach',album:'Magni Blandinn Ok Megintiri',year:1998},{rank:8,artist:'Thyrfing',album:'Valdr Galga',year:1999},{rank:9,artist:'Graveland',album:'Immortal Pride',year:1998},{rank:10,artist:'Unleashed',album:'Across the Open Sea',year:1993}]},
+  'industrial':{name:'Industrial Metal',albums:[{rank:1,artist:'Nine Inch Nails',album:'The Downward Spiral',year:1994},{rank:2,artist:'Ministry',album:'Psalm 69',year:1992},{rank:3,artist:'Fear Factory',album:'Demanufacture',year:1995},{rank:4,artist:'Rammstein',album:'Sehnsucht',year:1997},{rank:5,artist:'KMFDM',album:'Nihil',year:1995},{rank:6,artist:'Marilyn Manson',album:'Antichrist Superstar',year:1996},{rank:7,artist:'Godflesh',album:'Streetcleaner',year:1989},{rank:8,artist:'Static-X',album:'Wisconsin Death Trip',year:1999},{rank:9,artist:'Otep',album:'Sevas Tra',year:2002},{rank:10,artist:'Stabbing Westward',album:'Wither Blister Burn and Peel',year:1996}]},
+  'post-metal':{name:'Post-Metal',albums:[{rank:1,artist:'Neurosis',album:'Through Silver in Blood',year:1996},{rank:2,artist:'Isis',album:'Panopticon',year:2004},{rank:3,artist:'Cult of Luna',album:'Somewhere Along the Highway',year:2006},{rank:4,artist:'Pelican',album:'The Fire in Our Throats Will Beckon the Thaw',year:2005},{rank:5,artist:'Baroness',album:'Blue Record',year:2009},{rank:6,artist:'Mastodon',album:'Leviathan',year:2004},{rank:7,artist:'Amenra',album:'Mass IIII',year:2012},{rank:8,artist:'Russian Circles',album:'Memorial',year:2013},{rank:9,artist:'Pallbearer',album:'Heartless',year:2017},{rank:10,artist:'Deafheaven',album:'Sunbather',year:2013}]},
+  'djent':{name:'Djent',albums:[{rank:1,artist:'Meshuggah',album:'obZen',year:2008},{rank:2,artist:'Periphery',album:'Periphery II: This Time Its Personal',year:2012},{rank:3,artist:'Animals as Leaders',album:'Animals as Leaders',year:2009},{rank:4,artist:'Tesseract',album:'One',year:2011},{rank:5,artist:'Vildhjarta',album:'Masstaden',year:2011},{rank:6,artist:'Intervals',album:'A Voice Within',year:2014},{rank:7,artist:'Plini',album:'Handmade Cities',year:2016},{rank:8,artist:'Born of Osiris',album:'The Discovery',year:2011},{rank:9,artist:'Skyhill',album:'Skyhill',year:2014},{rank:10,artist:'Northlane',album:'Singularity',year:2013}]},
+  'stoner':{name:'Stoner Metal',albums:[{rank:1,artist:'Kyuss',album:'Welcome to Sky Valley',year:1994},{rank:2,artist:'Sleep',album:'Dopesmoker',year:2003},{rank:3,artist:'Queens of the Stone Age',album:'Songs for the Deaf',year:2002},{rank:4,artist:'Monster Magnet',album:'Superjudge',year:1993},{rank:5,artist:'Fu Manchu',album:'The Action Is Go',year:1997},{rank:6,artist:'Clutch',album:'Elephant Riders',year:1998},{rank:7,artist:'Orange Goblin',album:'Coup de Grace',year:2002},{rank:8,artist:'Brant Bjork',album:'Jacoozzi',year:2011},{rank:9,artist:'Colour Haze',album:'All',year:2008},{rank:10,artist:'Wo Fat',album:'The Conjuring',year:2012}]}
+};
+function showGenrePanel(key){
+  const data=GENRE_DATA[key];
+  if(!data){closeGenrePanel();return;}
+  document.getElementById('genrePanelName').textContent=data.name;
+  document.getElementById('genreTop10').innerHTML=data.albums.map(function(a){
+    return '<div class="genre-album"><div class="ga-rank">'+(a.rank<10?'0'+a.rank:a.rank)+'</div><div class="ga-artist">'+a.artist+'</div><div class="ga-album">'+a.album+'</div><div class="ga-year">'+a.year+'</div></div>';
+  }).join('');
+  const panel=document.getElementById('genrePanel');
+  panel.classList.add('open');
+  panel.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function closeGenrePanel(){
+  document.getElementById('genrePanel').classList.remove('open');
+  document.querySelectorAll('.gp').forEach(function(g){g.classList.remove('on');});
+  document.querySelector('.gp').classList.add('on');
+}
 const ham=document.getElementById('ham');
 const mobNav=document.getElementById('mobNav');
-ham.addEventListener('click',()=>{
+ham.addEventListener('click',function(){
   const o=mobNav.classList.toggle('open');
   ham.classList.toggle('open',o);
   document.body.style.overflow=o?'hidden':'';
 });
 function closeMob(){mobNav.classList.remove('open');ham.classList.remove('open');document.body.style.overflow='';}
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeMob();closeNewsletter();closeSubmit();closeTours();}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeMob();closeNewsletter();closeSubmit();closeTours();}});
 function openNewsletter(){
   document.getElementById('newsletterModal').classList.add('open');
   document.body.style.overflow='hidden';
-  setTimeout(()=>document.getElementById('emailInput').focus(),100);
+  setTimeout(function(){document.getElementById('emailInput').focus();},100);
 }
 function closeNewsletter(e){
   if(e&&e.target!==document.getElementById('newsletterModal'))return;
@@ -1166,7 +953,7 @@ function submitShow(){
   if(!band||!city||!venue||!date||!email){alert('Please fill in all required fields.');return;}
   const subject=encodeURIComponent('OneHeavy Show Submission: '+band+' @ '+venue);
   const body=encodeURIComponent('BAND/ARTIST: '+band+'\nPROMOTER: '+promoter+'\nDATE: '+date+'\nVENUE: '+venue+'\nCITY: '+city+'\nTICKETS: '+(tickets||'N/A')+'\nINFO: '+(info||'N/A')+'\nSUBMITTER EMAIL: '+email);
-  window.location.href='mailto:increasinglyinquisitive@gmail.com?subject='+subject+'&body='+body  window.location.href='mailto:increasinglyinquisitive@gmail.com?subject='+subject+'&body='+body;
+  window.location.href='mailto:increasinglyinquisitive@gmail.com?subject='+subject+'&body='+body;
   document.getElementById('submitForm').style.display='none';
   document.getElementById('submitSuccess').style.display='block';
 }
