@@ -1,15 +1,15 @@
 {
   "rewrites": [
-    { "source": "/privacy", "destination": "/privacy.html" },
-    { "source": "/terms", "destination": "/terms.html" },
-    { "source": "/about", "destination": "/about.html" },
-    { "source": "/melbourne", "destination": "/melbourne.html" },
-    { "source": "/sydney", "destination": "/sydney.html" },
-    { "source": "/brisbane", "destination": "/brisbane.html" },
-    { "source": "/adelaide", "destination": "/adelaide.html" },
-    { "source": "/perth", "destination": "/perth.html" },
-    { "source": "/london", "destination": "/london.html" },
+    { "source": "/privacy", "destination": "/Privacy.html" },
+    { "source": "/terms", "destination": "/Terms.html" },
+    { "source": "/about", "destination": "/About.html" },
+    { "source": "/melbourne", "destination": "/Melbourne.html" },
+    { "source": "/sydney", "destination": "/Sydney.html" },
+    { "source": "/brisbane", "destination": "/Brisbane.html" },
+    { "source": "/adelaide", "destination": "/Adelaide.html" },
+    { "source": "/perth", "destination": "/Perth.html" },
+    { "source": "/london", "destination": "/London.html" },
     { "source": "/newyork", "destination": "/newyork.html" },
-    { "source": "/berlin", "destination": "/berlin.html" }
+    { "source": "/berlin", "destination": "/Berlin.html" }
   ]
 }
