@@ -2,6 +2,14 @@
   "rewrites": [
     { "source": "/privacy", "destination": "/privacy.html" },
     { "source": "/terms", "destination": "/terms.html" },
-    { "source": "/about", "destination": "/about.html" }
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/melbourne", "destination": "/melbourne.html" },
+    { "source": "/sydney", "destination": "/sydney.html" },
+    { "source": "/brisbane", "destination": "/brisbane.html" },
+    { "source": "/adelaide", "destination": "/adelaide.html" },
+    { "source": "/perth", "destination": "/perth.html" },
+    { "source": "/london", "destination": "/london.html" },
+    { "source": "/newyork", "destination": "/newyork.html" },
+    { "source": "/berlin", "destination": "/berlin.html" }
   ]
 }
