@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="OneHeavy Perth - Heavy metal shows, venues and local scene guide for Perth. Submit your show free.">
+<title>Perth Metal Scene - OneHeavy</title>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://oneheavy.net/perth">
+<meta property="og:title" content="Perth Metal Scene - OneHeavy">
+<meta property="og:description" content="Heavy metal shows, venues and local scene guide for Perth. Submit your show free on OneHeavy.">
+<meta property="og:site_name" content="OneHeavy">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://oneheavy.net/perth">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-528395746"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-528395746');</script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+<style>*{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#08080e;--card:#0f0f1a;--lift:#161624;--red:#c8102e;--red2:#e01030;--w:#f0ecf4;--g:#58587a;--border:rgba(255,255,255,.07);--D:'Bebas Neue',impact,sans-serif;--C:'Oswald',sans-serif;--S:'Source Serif 4',Georgia,serif}
+body{background:var(--ink);color:var(--w);font-family:var(--S);min-height:100vh}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;font-family:inherit;border:none;background:none}
+nav{position:sticky;top:0;z-index:100;background:rgba(8,8,14,.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(200,16,46,.16)}
+.nav-inner{max-width:1360px;margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;flex-shrink:0}
+.logo-box{background:var(--red);font-family:var(--D);font-size:22px;padding:4px 10px 2px;color:#fff;line-height:1}
+.logo-txt{font-family:var(--D);font-size:22px;letter-spacing:.04em;color:var(--w)}
+.nav-links{display:flex;gap:0;list-style:none}
+.nav-links a{font-family:var(--C);font-size:11px;font-weight:500;letter-spacing:.11em;text-transform:uppercase;color:var(--g);padding:8px 11px;transition:color .2s}
+.nav-links a:hover{color:var(--w)}
+.nav-back{font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--g);transition:color .2s;flex-shrink:0}
+.nav-back:hover{color:var(--red)}
+.hero{background:linear-gradient(135deg,rgba(200,16,46,.14),var(--ink));border-bottom:1px solid rgba(200,16,46,.2);padding:60px 24px}
+.hero-inner{max-width:1200px;margin:0 auto}
+.hero-flag{font-size:56px;margin-bottom:16px;line-height:1}
+.hero-tag{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--red);margin-bottom:12px}
+h1{font-family:var(--D);font-size:clamp(48px,8vw,88px);letter-spacing:.02em;text-transform:uppercase;line-height:.92;margin-bottom:16px}
+h1 span{color:var(--red)}
+.hero-desc{font-size:16px;font-style:italic;font-weight:300;color:rgba(240,236,244,.72);line-height:1.75;max-width:580px;margin-bottom:24px}
+.hero-cta{display:inline-flex;align-items:center;gap:10px;background:var(--red);color:#fff;font-family:var(--C);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:13px 24px;border:none;cursor:pointer;transition:background .2s}
+.hero-cta:hover{background:var(--red2)}
+.page{max-width:1200px;margin:0 auto;padding:48px 24px 80px}
+.section{margin-bottom:48px}
+.sh{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;padding-bottom:9px;border-bottom:1px solid var(--border);position:relative}
+.sh::after{content:'';position:absolute;bottom:-1px;left:0;width:40px;height:1px;background:var(--red)}
+.sh h2{font-family:var(--D);font-size:22px;letter-spacing:.05em;text-transform:uppercase}
+.sh h2 em{color:var(--red);font-style:normal}
+.venues-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.05)}
+.venue{background:var(--card);padding:20px;transition:background .18s;border-left:3px solid transparent}
+.venue:hover{background:var(--lift);border-left-color:var(--red)}
+.venue-name{font-family:var(--C);font-weight:700;font-size:15px;text-transform:uppercase;color:var(--w);margin-bottom:4px}
+.venue-type{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+.venue-desc{font-size:13px;line-height:1.6;color:rgba(240,236,244,.55);font-weight:300;font-style:italic}
+.submit-box{background:linear-gradient(135deg,rgba(200,16,46,.14),var(--card));border:1px solid rgba(200,16,46,.25);padding:36px;text-align:center}
+.submit-box h3{font-family:var(--D);font-size:32px;letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px}
+.submit-box h3 em{color:var(--red);font-style:normal}
+.submit-box p{font-family:var(--C);font-size:11px;color:var(--g);letter-spacing:.06em;line-height:1.7;margin-bottom:22px;max-width:440px;margin-left:auto;margin-right:auto}
+.submit-btn{background:var(--red);color:#fff;font-family:var(--C);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:13px 28px;border:none;cursor:pointer;transition:background .2s;display:inline-block}
+.submit-btn:hover{background:var(--red2)}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.05);margin-bottom:32px}
+.info-block{background:var(--card);padding:24px}
+.info-block h3{font-family:var(--C);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:12px}
+.info-block p{font-size:14px;line-height:1.72;color:rgba(240,236,244,.65);font-weight:300;font-style:italic}
+.cities{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:32px}
+.city-link{font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:7px 14px;border:1px solid rgba(255,255,255,.08);color:var(--g);transition:all .18s}
+.city-link:hover,.city-link.on{background:var(--red);border-color:var(--red);color:#fff}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:1000;align-items:center;justify-content:center;padding:24px}
+.modal-overlay.open{display:flex}
+.submit-modal{background:var(--card);border:1px solid rgba(200,16,46,.25);max-width:560px;width:100%;padding:36px;position:relative;max-height:90vh;overflow-y:auto}
+.submit-modal::before{content:'';position:absolute;top:-1px;left:0;right:0;height:2px;background:var(--red)}
+.modal-close{position:absolute;top:14px;right:16px;background:none;border:none;color:var(--g);cursor:pointer;font-size:22px;line-height:1}
+.modal-close:hover{color:var(--w)}
+.modal-tag{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+.modal h2{font-family:var(--D);font-size:32px;letter-spacing:.04em;text-transform:uppercase;line-height:1;margin-bottom:8px}
+.modal h2 span{color:var(--red)}
+.modal-sub{font-family:var(--C);font-size:11px;color:var(--g);letter-spacing:.06em;line-height:1.6;margin-bottom:20px}
+.form-row{margin-bottom:14px}
+.form-row label{display:block;font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--g);margin-bottom:6px}
+.form-row input,.form-row textarea{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:var(--w);font-family:var(--C);font-size:12px;padding:10px 14px;outline:none;letter-spacing:.04em;transition:border-color .2s}
+.form-row input:focus,.form-row textarea:focus{border-color:rgba(200,16,46,.5)}
+.form-row input::placeholder,.form-row textarea::placeholder{color:var(--g)}
+.form-row textarea{resize:vertical;min-height:80px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-submit{width:100%;background:var(--red);color:#fff;font-family:var(--C);font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:14px;border:none;cursor:pointer;transition:background .2s;margin-top:8px}
+.form-submit:hover{background:var(--red2)}
+footer{background:var(--ink);border-top:1px solid var(--border);padding:24px;text-align:center;font-family:var(--C);font-size:10px;color:var(--g);letter-spacing:.08em}
+footer a{color:var(--red);margin:0 8px}
+@media(max-width:768px){.venues-grid{grid-template-columns:1fr}.info-grid{grid-template-columns:1fr}.nav-links{display:none}.page{padding:32px 16px 60px}.hero{padding:40px 16px}.form-grid{grid-template-columns:1fr}}</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo"><div class="logo-box">One</div><div class="logo-txt">Heavy</div></a>
+    <ul class="nav-links">
+      <li><a href="/">News</a></li>
+      <li><a href="/#concerts">Concerts</a></li>
+      <li><a href="/#genres">Genres</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+    <a href="/" class="nav-back">&larr; Back to OneHeavy</a>
+  </div>
+</nav>
+<div class="modal-overlay" id="submitModal" onclick="closeSubmit(event)">
+  <div class="submit-modal">
+    <button class="modal-close" onclick="closeSubmit()">&times;</button>
+    <div id="submitForm">
+      <div class="modal-tag">&#x1F4CD; Submit Your Show</div>
+      <h2>List Your <span>Show</span></h2>
+      <p class="modal-sub">Get your Perth metal show in front of thousands of fans. 100% free, always.</p>
+      <div class="form-grid">
+        <div class="form-row"><label>Band / Artist Name *</label><input type="text" id="bandName" placeholder="e.g. Iron Maiden"></div>
+        <div class="form-row"><label>Promoter / Your Name *</label><input type="text" id="promoterName" placeholder="Your name or company"></div>
+      </div>
+      <div class="form-grid">
+        <div class="form-row"><label>Show Date *</label><input type="date" id="showDate"></div>
+        <div class="form-row"><label>City *</label><input type="text" id="showCity" value="Perth"></div>
+      </div>
+      <div class="form-row"><label>Venue *</label><input type="text" id="showVenue" placeholder="Venue name"></div>
+      <div class="form-row"><label>Ticket Link (optional)</label><input type="url" id="showTickets" placeholder="https://..."></div>
+      <div class="form-row"><label>Additional Info (optional)</label><textarea id="showInfo" placeholder="Support acts, genre, doors time, ticket price..."></textarea></div>
+      <div class="form-row"><label>Your Email *</label><input type="email" id="submitterEmail" placeholder="your@email.com"></div>
+      <button class="form-submit" onclick="submitShow()">Submit Your Show &rarr;</button>
+      <p style="font-family:var(--C);font-size:9px;color:var(--g);margin-top:10px;text-align:center">&#x1F512; Reviewed within 24 hours &middot; increasinglyinquisitive&#64;gmail&#46;com</p>
+    </div>
+    <div id="submitSuccess" style="display:none;text-align:center;padding:20px 0">
+      <div style="font-size:48px;margin-bottom:12px">&#x1F918;</div>
+      <h2 style="font-family:var(--D);font-size:28px;letter-spacing:.04em;text-transform:uppercase;color:var(--w);margin-bottom:8px">Show <span style="color:var(--red)">Submitted!</span></h2>
+      <p style="font-family:var(--C);font-size:11px;color:var(--g);letter-spacing:.06em;line-height:1.7">Thanks for your Perth show submission.<br>We will review it within 24 hours.<br><br>Keep it heavy!</p>
+    </div>
+  </div>
+</div>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-flag">&#x1F1E6;&#x1F1FA;</div>
+    <div class="hero-tag">Local Metal Scene</div>
+    <h1><span>Perth</span><br>Metal</h1>
+    <p class="hero-desc">Perth's isolation from the rest of Australia has forged one of the most self-reliant and creative heavy music scenes in the country. The Western Australian metal community is fiercely proud, deeply passionate and home to some truly unique heavy talent.</p>
+    <button class="hero-cta" onclick="openSubmit()">&#x1F4CD; Submit Your Show Free &rarr;</button>
+  </div>
+</div>
+<div class="page">
+  <div class="section">
+    <div class="sh"><h2>Other <em>Cities</em></h2></div>
+    <div class="cities"><a href="/melbourne" class="city-link">&#x1F1E6;&#x1F1FA; Melbourne</a><a href="/sydney" class="city-link">&#x1F1E6;&#x1F1FA; Sydney</a><a href="/brisbane" class="city-link">&#x1F1E6;&#x1F1FA; Brisbane</a><a href="/adelaide" class="city-link">&#x1F1E6;&#x1F1FA; Adelaide</a><a href="/perth" class="city-link on">&#x1F1E6;&#x1F1FA; Perth</a><a href="/london" class="city-link">&#x1F1EC;&#x1F1E7; London</a><a href="/newyork" class="city-link">&#x1F1FA;&#x1F1F8; New York</a><a href="/berlin" class="city-link">&#x1F1E9;&#x1F1EA; Berlin</a></div>
+  </div>
+  <div class="section">
+    <div class="info-grid">
+      <div class="info-block"><h3>The Scene</h3><p>Perth has produced internationally touring metal acts and maintains an active underground scene that thrives despite its geographic remoteness. Local bands, dedicated venues and passionate fans make Perth a genuine heavy music city.</p></div>
+      <div class="info-block"><h3>Submit Your Show</h3><p>Are you a band or promoter with an upcoming show in Perth? List it on OneHeavy for free. We review all submissions within 24 hours. No cost, no catch &mdash; just metal.</p></div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="sh"><h2>Key <em>Venues</em></h2></div>
+    <div class="venues-grid"><div class="venue"><div class="venue-type">Live Venue</div><div class="venue-name">Amplifier Bar</div><div class="venue-desc">Perth's legendary dedicated rock and metal bar in the CBD &mdash; the heartbeat of the Perth metal scene.</div></div><div class="venue"><div class="venue-type">Live Venue</div><div class="venue-name">The Rosemount Hotel</div><div class="venue-desc">North Perth live music pub hosting regular heavy shows and touring acts.</div></div><div class="venue"><div class="venue-type">Live Venue</div><div class="venue-name">Badlands Bar</div><div class="venue-desc">Underground heavy music venue in the CBD with a raw, authentic atmosphere.</div></div><div class="venue"><div class="venue-type">Live Venue</div><div class="venue-name">Capitol</div><div class="venue-desc">Northbridge venue hosting mid-capacity metal and rock shows.</div></div><div class="venue"><div class="venue-type">Live Venue</div><div class="venue-name">Astor Theatre</div><div class="venue-desc">Mount Lawley heritage theatre hosting larger touring metal acts in Perth.</div></div><div class="venue"><div class="venue-type">Live Venue</div><div class="venue-name">RAC Arena</div><div class="venue-desc">Perth's major arena for the biggest international metal headliners.</div></div></div>
+  </div>
+  <div class="section"><div class="sh"><h2>Key <em>Promoters</em></h2></div><div class="venues-grid"><div class="venue"><div class="venue-type">Promoter</div><div class="venue-name"><a href="https://www.destroyalllines.com" target="_blank" rel="noopener noreferrer" style="color:var(--w)">Destroy All Lines &rarr;</a></div><div class="venue-desc">National metal promoter regularly routing tours through Perth.</div></div><div class="venue"><div class="venue-type">Promoter</div><div class="venue-name"><a href="https://www.frontiertouring.com" target="_blank" rel="noopener noreferrer" style="color:var(--w)">Frontier Touring &rarr;</a></div><div class="venue-desc">Major Australian promoter ensuring Perth is included on international metal tours.</div></div></div></div>
+  <div class="submit-box">
+    <h3>List Your <em>Show</em> in Perth</h3>
+    <p>OneHeavy is the free platform for metal bands and promoters to reach fans in Perth and beyond. Submit your show and get listed within 24 hours.</p>
+    <button class="submit-btn" onclick="openSubmit()">Submit Your Show Free &rarr;</button>
+  </div>
+</div>
+<footer>
+  &copy; 2026 <strong>OneHeavy</strong> &middot; oneheavy.net &middot;
+  <a href="/">Home</a>
+  <a href="/about">About</a>
+  <a href="/privacy">Privacy Policy</a>
+  <a href="/terms">Terms of Service</a>
+  <a href="mailto:increasinglyinquisitive@gmail.com">Contact</a>
+</footer>
+<script>
+function openSubmit(){document.getElementById('submitModal').classList.add('open');document.body.style.overflow='hidden';}
+function closeSubmit(e){if(e&&e.target!==document.getElementById('submitModal'))return;document.getElementById('submitModal').classList.remove('open');document.body.style.overflow='';}
+function submitShow(){
+  var band=document.getElementById('bandName').value.trim();
+  var city=document.getElementById('showCity').value.trim();
+  var venue=document.getElementById('showVenue').value.trim();
+  var date=document.getElementById('showDate').value;
+  var email=document.getElementById('submitterEmail').value.trim();
+  var promoter=document.getElementById('promoterName').value.trim();
+  var tickets=document.getElementById('showTickets').value.trim();
+  var info=document.getElementById('showInfo').value.trim();
+  if(!band||!city||!venue||!date||!email){alert('Please fill in all required fields.');return;}
+  var subject=encodeURIComponent('OneHeavy Show Submission: '+band+' @ '+venue);
+  var body=encodeURIComponent('BAND: '+band+'\nPROMOTER: '+promoter+'\nDATE: '+date+'\nVENUE: '+venue+'\nCITY: '+city+'\nTICKETS: '+(tickets||'N/A')+'\nINFO: '+(info||'N/A')+'\nEMAIL: '+email);
+  window.location.href='mailto:increasinglyinquisitive@gmail.com?subject='+subject+'&body='+body;
+  document.getElementById('submitForm').style.display='none';
+  document.getElementById('submitSuccess').style.display='block';
+}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSubmit();});
+</script>
+</body>
+</html>
