@@ -1,0 +1,33 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.oneheavy.net" }],
+      "destination": "https://oneheavy.net/:path*",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {"key": "Cache-Control", "value": "no-cache, no-store, must-revalidate"},
+        {"key": "Pragma", "value": "no-cache"},
+        {"key": "Expires", "value": "0"}
+      ]
+    }
+  ],
+  "rewrites": [
+    { "source": "/privacy", "destination": "/privacy.html" },
+    { "source": "/terms", "destination": "/terms.html" },
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/melbourne", "destination": "/Melbourne.html" },
+    { "source": "/sydney", "destination": "/Sydney.html" },
+    { "source": "/brisbane", "destination": "/Brisbane.html" },
+    { "source": "/adelaide", "destination": "/Adelaide.html" },
+    { "source": "/perth", "destination": "/Perth.html" },
+    { "source": "/london", "destination": "/London.html" },
+    { "source": "/newyork", "destination": "/newyork.html" },
+    { "source": "/berlin", "destination": "/Berlin.html" }
+  ]
+}
