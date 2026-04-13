@@ -377,7 +377,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   var infolinks_pid = 3444849;
   var infolinks_wsid = 0;
 </script>
-<script type="text/javascript" src="http://resources.infolinks.com/js/infolinks_main.js"></script>
+<script type="text/javascript" src="https://resources.infolinks.com/js/infolinks_main.js"></script>
 </head>
 <body>
 
@@ -796,7 +796,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
         <a href="#" onclick="openNewsletter()">Weekly Digest &rarr;</a>
         <a href="#" onclick="openSubmit()">Submit Your Show &rarr;</a>
         <a href="/about">About Us</a>
-        <a href="/cdn-cgi/l/email-protection#f891969b8a9d998b91969f94819196898d918b918c918e9db89f95999194d69b9795">Contact Us</a>
+        <a href="mailto:increasinglyinquisitive@gmail.com">Contact Us</a>
         <a href="/merch" style="color:#c9a84c">&#x1F6CD; Merch Store</a>
         <a href="https://ko-fi.com/oneheavynet" target="_blank" rel="noopener noreferrer" style="color:var(--red)">&#x2615; Support Us</a>
       </div>
@@ -823,7 +823,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 </div>
 </noscript>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 var clean=function(s){return(s||'').replace(/<[^>]+>/g,'').replace(/&amp;/g,'&').replace(/&#8217;/g,"'").replace(/&#8220;/g,'"').replace(/&#8221;/g,'"').replace(/&quot;/g,'"').replace(/&nbsp;/g,' ').trim();};
 function ago(d){var s=Math.floor((Date.now()-new Date(d))/1000);if(s<60)return'Just now';if(s<3600)return Math.floor(s/60)+'m ago';if(s<86400)return Math.floor(s/3600)+'h ago';return Math.floor(s/86400)+'d ago';}
 var FEEDS=[
@@ -1166,4 +1166,8 @@ function submitShow(){
   document.getElementById('submitForm').style.display='none';
   document.getElementById('submitSuccess').style.display='block';
 }
-function showDev(){var 
+function showDev(){var t=document.getElementById('devToast');if(t){t.classList.add('show');setTimeout(function(){t.classList.remove('show');},2800);}}
+loadAll();
+</script>
+</body>
+</html>
