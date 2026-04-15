@@ -1307,11 +1307,7 @@ function submitEmail(){
   var email=document.getElementById('emailInput').value.trim();
   if(!email||!email.includes('@')){document.getElementById('emailInput').style.borderColor='rgba(200,16,46,.8)';return;}
   var subject=encodeURIComponent('OneHeavy Weekly Digest Signup');
-  var body=encodeURIComponent('Please add me to the OneHeavy Weekly Digest.
-
-Email: '+email+'
-
-Keep it heavy!');
+  var body=encodeURIComponent('Please add me to the OneHeavy Weekly Digest.\n\nEmail: '+email+'\n\nKeep it heavy!');
   window.open('mailto:increasinglyinquisitive@gmail.com?subject='+subject+'&body='+body,'_blank');
   document.getElementById('modalForm').style.display='none';
   document.getElementById('modalSuccess').style.display='block';
