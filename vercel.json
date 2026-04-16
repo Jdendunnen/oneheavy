@@ -2,7 +2,12 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.oneheavy.net" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "www.oneheavy.net"
+        }
+      ],
       "destination": "https://oneheavy.net/:path*",
       "permanent": true
     }
@@ -11,40 +16,161 @@
     {
       "source": "/(.*)",
       "headers": [
-        {"key": "Cache-Control", "value": "no-cache, no-store, must-revalidate"},
-        {"key": "Pragma", "value": "no-cache"},
-        {"key": "Expires", "value": "0"}
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        },
+        {
+          "key": "Pragma",
+          "value": "no-cache"
+        },
+        {
+          "key": "Expires",
+          "value": "0"
+        }
       ]
     }
   ],
   "rewrites": [
-    { "source": "/privacy",           "destination": "/privacy.html" },
-    { "source": "/terms",             "destination": "/terms.html" },
-    { "source": "/about",             "destination": "/about.html" },
-    { "source": "/melbourne",         "destination": "/Melbourne.html" },
-    { "source": "/sydney",            "destination": "/Sydney.html" },
-    { "source": "/brisbane",          "destination": "/Brisbane.html" },
-    { "source": "/adelaide",          "destination": "/Adelaide.html" },
-    { "source": "/perth",             "destination": "/Perth.html" },
-    { "source": "/london",            "destination": "/London.html" },
-    { "source": "/newyork",           "destination": "/newyork.html" },
-    { "source": "/berlin",            "destination": "/Berlin.html" },
-    { "source": "/thrash-metal",      "destination": "/thrash-metal.html" },
-    { "source": "/death-metal",       "destination": "/death-metal.html" },
-    { "source": "/black-metal",       "destination": "/black-metal.html" },
-    { "source": "/doom-metal",        "destination": "/doom-metal.html" },
-    { "source": "/power-metal",       "destination": "/power-metal.html" },
-    { "source": "/progressive-metal", "destination": "/progressive-metal.html" },
-    { "source": "/symphonic-metal",   "destination": "/symphonic-metal.html" },
-    { "source": "/groove-metal",      "destination": "/groove-metal.html" },
-    { "source": "/nu-metal",          "destination": "/nu-metal.html" },
-    { "source": "/metalcore",         "destination": "/metalcore.html" },
-    { "source": "/deathcore",         "destination": "/deathcore.html" },
-    { "source": "/folk-metal",        "destination": "/folk-metal.html" },
-    { "source": "/viking-metal",      "destination": "/viking-metal.html" },
-    { "source": "/industrial-metal",  "destination": "/industrial-metal.html" },
-    { "source": "/post-metal",        "destination": "/post-metal.html" },
-    { "source": "/djent",             "destination": "/djent.html" },
-    { "source": "/stoner-metal",      "destination": "/stoner-metal.html" }
+    {
+      "source": "/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/terms",
+      "destination": "/terms.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/melbourne",
+      "destination": "/Melbourne.html"
+    },
+    {
+      "source": "/sydney",
+      "destination": "/Sydney.html"
+    },
+    {
+      "source": "/brisbane",
+      "destination": "/Brisbane.html"
+    },
+    {
+      "source": "/adelaide",
+      "destination": "/Adelaide.html"
+    },
+    {
+      "source": "/perth",
+      "destination": "/Perth.html"
+    },
+    {
+      "source": "/london",
+      "destination": "/London.html"
+    },
+    {
+      "source": "/newyork",
+      "destination": "/newyork.html"
+    },
+    {
+      "source": "/berlin",
+      "destination": "/Berlin.html"
+    },
+    {
+      "source": "/thrash-metal",
+      "destination": "/thrash-metal.html"
+    },
+    {
+      "source": "/death-metal",
+      "destination": "/death-metal.html"
+    },
+    {
+      "source": "/black-metal",
+      "destination": "/black-metal.html"
+    },
+    {
+      "source": "/doom-metal",
+      "destination": "/doom-metal.html"
+    },
+    {
+      "source": "/power-metal",
+      "destination": "/power-metal.html"
+    },
+    {
+      "source": "/progressive-metal",
+      "destination": "/progressive-metal.html"
+    },
+    {
+      "source": "/symphonic-metal",
+      "destination": "/symphonic-metal.html"
+    },
+    {
+      "source": "/groove-metal",
+      "destination": "/groove-metal.html"
+    },
+    {
+      "source": "/nu-metal",
+      "destination": "/nu-metal.html"
+    },
+    {
+      "source": "/metalcore",
+      "destination": "/metalcore.html"
+    },
+    {
+      "source": "/deathcore",
+      "destination": "/deathcore.html"
+    },
+    {
+      "source": "/folk-metal",
+      "destination": "/folk-metal.html"
+    },
+    {
+      "source": "/viking-metal",
+      "destination": "/viking-metal.html"
+    },
+    {
+      "source": "/industrial-metal",
+      "destination": "/industrial-metal.html"
+    },
+    {
+      "source": "/post-metal",
+      "destination": "/post-metal.html"
+    },
+    {
+      "source": "/djent",
+      "destination": "/djent.html"
+    },
+    {
+      "source": "/stoner-metal",
+      "destination": "/stoner-metal.html"
+    },
+    {
+      "source": "/merch",
+      "destination": "/merch.html"
+    },
+    {
+      "source": "/articles",
+      "destination": "/articles.html"
+    },
+    {
+      "source": "/articles/why-australian-metal-punches-above-its-weight",
+      "destination": "/why-australian-metal-punches-above-its-weight.html"
+    },
+    {
+      "source": "/articles/5-australian-metal-albums-you-need-to-hear",
+      "destination": "/5-australian-metal-albums-you-need-to-hear.html"
+    },
+    {
+      "source": "/articles/history-of-heavy-metal",
+      "destination": "/history-of-heavy-metal.html"
+    },
+    {
+      "source": "/articles/best-metal-festivals-world",
+      "destination": "/best-metal-festivals-world.html"
+    },
+    {
+      "source": "/articles/guide-to-metal-subgenres",
+      "destination": "/guide-to-metal-subgenres.html"
+    }
   ]
 }

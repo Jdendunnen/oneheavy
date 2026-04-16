@@ -181,4 +181,52 @@
     <priority>0.8</priority>
   </url>
 
+
+  <!-- Merch page -->
+  <url>
+    <loc>https://oneheavy.net/merch</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+
+  <!-- Article pages -->
+  <url>
+    <loc>https://oneheavy.net/articles</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://oneheavy.net/articles/why-australian-metal-punches-above-its-weight</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://oneheavy.net/articles/5-australian-metal-albums-you-need-to-hear</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://oneheavy.net/articles/history-of-heavy-metal</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://oneheavy.net/articles/best-metal-festivals-world</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://oneheavy.net/articles/guide-to-metal-subgenres</loc>
+    <lastmod>2026-04-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
 </urlset>

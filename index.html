@@ -438,6 +438,28 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 .editorial-body p{margin-bottom:14px}
 .editorial-body p:last-child{margin-bottom:0}
 @media(max-width:768px){.editorial-grid{grid-template-columns:1fr}}
+
+.story-modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:2000;align-items:center;justify-content:center;padding:24px}
+.story-modal-overlay.open{display:flex}
+.story-modal{background:var(--card);border:1px solid rgba(200,16,46,.25);max-width:640px;width:100%;max-height:88vh;overflow-y:auto;position:relative}
+.story-modal::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--red)}
+.story-modal-close{position:absolute;top:14px;right:16px;background:none;border:none;color:var(--g);cursor:pointer;font-size:22px;line-height:1;z-index:10}
+.story-modal-close:hover{color:var(--w)}
+.story-modal-inner{padding:32px}
+.story-modal-source{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--red);margin-bottom:10px}
+.story-modal-title{font-family:var(--D);font-size:28px;letter-spacing:.04em;text-transform:uppercase;color:var(--w);line-height:1.1;margin-bottom:12px}
+.story-modal-meta{font-family:var(--C);font-size:10px;color:var(--g);letter-spacing:.08em;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.story-modal-summary{font-size:15px;line-height:1.82;color:rgba(240,236,244,.78);font-weight:300;margin-bottom:24px}
+.story-modal-summary p{margin-bottom:14px}
+.story-modal-summary p:last-child{margin-bottom:0}
+.story-modal-disclaimer{background:rgba(200,16,46,.08);border:1px solid rgba(200,16,46,.15);padding:14px 18px;margin-bottom:20px}
+.story-modal-disclaimer p{font-family:var(--C);font-size:10px;color:var(--g);letter-spacing:.06em;line-height:1.6}
+.story-modal-disclaimer p strong{color:var(--w)}
+.story-modal-cta{display:flex;gap:12px;flex-wrap:wrap}
+.story-modal-btn-primary{background:var(--red);color:#fff;font-family:var(--C);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:12px 24px;border:none;cursor:pointer;transition:background .2s;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.story-modal-btn-primary:hover{background:var(--red2)}
+.story-modal-btn-secondary{background:transparent;color:var(--g);font-family:var(--C);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:12px 24px;border:1px solid rgba(255,255,255,.1);cursor:pointer;transition:all .2s}
+.story-modal-btn-secondary:hover{border-color:var(--g);color:var(--w)}
 </style>
 
 <script type="text/javascript">
@@ -467,6 +489,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
       <li><a href="#local">Local Scene</a></li>
       <li><a href="#genres">Genres</a></li>
       <li><a href="/about">About</a></li>
+      <li><a href="/articles">Articles</a></li>
     </ul>
     <div class="nav-right">
 
@@ -961,6 +984,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
         <a href="#" onclick="openNewsletter()">Weekly Digest &rarr;</a>
         <a href="#" onclick="openSubmit()">Submit Your Show &rarr;</a>
         <a href="/about">About Us</a>
+        <a href="/articles">Articles &rarr;</a>
         <a href="mailto:increasinglyinquisitive@gmail.com">Contact Us</a>
         <a href="https://ko-fi.com/oneheavynet" target="_blank" rel="noopener noreferrer" style="color:var(--red)">&#x2615; Support Us</a>
       </div>
@@ -1016,14 +1040,14 @@ function renderGrid(items){
   var g=document.getElementById('newsGrid');
   g.className='ng';
   if(!items.length){g.innerHTML='<div class="loading"><p>No stories found &mdash; refresh shortly.</p></div>';return;}
-  g.innerHTML=items.slice(0,12).map(function(it,i){return'<a class="nc'+(i===0?' feature':'')+'" href="'+it.url+'" target="_blank" rel="noopener noreferrer">'+(i===0?'<div class="nc-thumb"><div class="nc-thumb-src">'+it.flag+' '+it.source+'</div></div><div class="nc-body">':'')+'<div class="nc-top"><span class="nc-src">'+it.source+'</span><span class="nc-age">'+ago(it.pub)+'</span></div><h3>'+it.title+'</h3>'+(i<3?'<p>'+it.desc+'</p>':'')+'<div class="nc-foot">'+it.source+' &middot; '+it.flag+'</div>'+(i===0?'</div>':'')+'</a>';}).join('');
+  g.innerHTML=items.slice(0,12).map(function(it,i){var t=it.title.replace(/'/g,"\\'");var d=(it.desc||'').replace(/'/g,"\\'");var u=it.url.replace(/'/g,"\\'");var s=it.source.replace(/'/g,"\\'");var p=ago(it.pub);return'<a class="nc'+(i===0?' feature':'')+'" href="'+it.url+'" onclick="openStoryModal(\''+t+'\',\''+s+'\',\''+d+'\',\''+u+'\',\''+p+'\'); return false;">'+(i===0?'<div class="nc-thumb"><div class="nc-thumb-src">'+it.flag+' '+it.source+'</div></div><div class="nc-body">':'')+'<div class="nc-top"><span class="nc-src">'+it.source+'</span><span class="nc-age">'+ago(it.pub)+'</span></div><h3>'+it.title+'</h3>'+(i<3?'<p>'+it.desc+'</p>':'')+'<div class="nc-foot">'+it.source+' &middot; '+it.flag+' &middot; <span style="color:var(--red);font-size:9px;letter-spacing:.1em">EXPAND &darr;</span></div>'+(i===0?'</div>':'')+'</a>';}).join('');
 }
 function renderHero(items){
   if(!items.length)return;
   var t=items[0];
   document.getElementById('heroBody').innerHTML='<div class="hero-eyebrow">Breaking News</div><h1>'+t.title+'</h1><div class="hero-byline"><span>'+t.flag+' '+t.source+'</span><span class="hdot"></span><span>'+ago(t.pub)+'</span></div><p class="hero-desc">'+t.desc+'</p><a href="'+t.url+'" target="_blank" rel="noopener noreferrer" class="btn-story">Read Full Story</a>';
 }
-function renderTrend(items){document.getElementById('trendList').innerHTML=items.slice(0,5).map(function(it,i){var d=document.createElement('div');d.className='tr-item';d.onclick=function(){window.open(it.url,'_blank');};d.innerHTML='<div class="tr-n">0'+(i+1)+'</div><div class="tr-info"><h5>'+it.title+'</h5><small>'+it.source+' &middot; '+ago(it.pub)+'</small></div>';return d.outerHTML;}).join('');
+function renderTrend(items){document.getElementById('trendList').innerHTML=items.slice(0,5).map(function(it,i){var d=document.createElement('div');d.className='tr-item';d.onclick=function(){openStoryModal(it.title,it.source,it.desc,it.url,ago(it.pub));};d.innerHTML='<div class="tr-n">0'+(i+1)+'</div><div class="tr-info"><h5>'+it.title+'</h5><small>'+it.source+' &middot; '+ago(it.pub)+'</small></div>';return d.outerHTML;}).join('');
 }
 function filterBy(key,btn){
   FILTER=key;
@@ -1340,8 +1364,45 @@ function submitShow(){
   document.getElementById('submitForm').style.display='none';
   document.getElementById('submitSuccess').style.display='block';
 }
+
+function openStoryModal(title, source, desc, url, pubDate){
+  document.getElementById('storyTitle').textContent = title;
+  document.getElementById('storySource').textContent = source;
+  document.getElementById('storyMeta').textContent = source + ' · ' + pubDate;
+  var summaryEl = document.getElementById('storySummary');
+  var summary = desc || 'Click below to read the full story on ' + source + '.';
+  var sentences = summary.match(/[^.!?]+[.!?]+/g) || [summary];
+  summaryEl.innerHTML = sentences.slice(0, 4).map(function(s){ return '<p>' + s.trim() + '</p>'; }).join('');
+  document.getElementById('storyReadBtn').href = url;
+  document.getElementById('storyModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeStoryModal(e){
+  if(e && e.target !== document.getElementById('storyModal')) return;
+  document.getElementById('storyModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
 function showDev(){var t=document.getElementById('devToast');if(t){t.classList.add('show');setTimeout(function(){t.classList.remove('show');},2800);}}
 loadAll();
 </script>
+
+<div class="story-modal-overlay" id="storyModal" onclick="closeStoryModal(event)">
+  <div class="story-modal">
+    <button class="story-modal-close" onclick="closeStoryModal()">&times;</button>
+    <div class="story-modal-inner">
+      <div class="story-modal-source" id="storySource"></div>
+      <div class="story-modal-title" id="storyTitle"></div>
+      <div class="story-modal-meta" id="storyMeta"></div>
+      <div class="story-modal-summary" id="storySummary"></div>
+      <div class="story-modal-disclaimer">
+        <p><strong>Full story on original publisher.</strong> OneHeavy aggregates headlines and summaries from leading metal publications. Click below to read the complete article on the original source.</p>
+      </div>
+      <div class="story-modal-cta">
+        <a href="#" id="storyReadBtn" target="_blank" rel="noopener noreferrer" class="story-modal-btn-primary">Read Full Story &rarr;</a>
+        <button onclick="closeStoryModal()" class="story-modal-btn-secondary">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
