@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="OneHeavy Articles &mdash; Original editorial content about heavy metal history, Australian metal, genre guides and festival coverage.">
+<meta name="description" content="OneHeavy Articles &mdash; Original editorial content about heavy metal history, Australian band profiles, genre guides and festival coverage.">
 <title>Articles &mdash; OneHeavy</title>
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://oneheavy.net/articles">
 <meta property="og:title" content="Articles &mdash; OneHeavy">
-<meta property="og:description" content="Original editorial content about heavy metal history, Australian metal, genre guides and festival coverage.">
+<meta property="og:description" content="Original editorial content about heavy metal history, Australian band profiles, genre guides and festival coverage.">
 <meta property="og:site_name" content="OneHeavy">
 <link rel="canonical" href="https://oneheavy.net/articles">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-528395746"></script>
@@ -28,42 +28,49 @@ nav{position:sticky;top:0;z-index:100;background:rgba(8,8,14,.96);backdrop-filte
 .logo{display:flex;align-items:center}
 .logo-box{background:var(--red);font-family:var(--D);font-size:22px;padding:4px 10px 2px;color:#fff;line-height:1}
 .logo-txt{font-family:var(--D);font-size:22px;letter-spacing:.04em;color:var(--w)}
+.logo-slogan{font-family:var(--C);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--red);font-style:italic;margin-left:6px;opacity:.85;white-space:nowrap}
 .nav-back{font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--g);transition:color .2s}
 .nav-back:hover{color:var(--red)}
 .hero{background:linear-gradient(135deg,rgba(200,16,46,.14),var(--ink));border-bottom:1px solid rgba(200,16,46,.2);padding:60px 24px}
 .hero-inner{max-width:1200px;margin:0 auto}
 .hero-tag{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--red);margin-bottom:12px}
+.hero-slogan{font-family:var(--C);font-size:11px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--red);font-style:italic;margin-bottom:16px;display:block}
 h1{font-family:var(--D);font-size:clamp(48px,8vw,80px);letter-spacing:.02em;text-transform:uppercase;line-height:.92;margin-bottom:16px}
 h1 em{color:var(--red);font-style:normal}
 .hero-desc{font-size:15px;font-style:italic;font-weight:300;color:rgba(240,236,244,.65);line-height:1.75;max-width:560px}
 .page{max-width:1200px;margin:0 auto;padding:48px 24px 80px}
+.articles-count{font-family:var(--C);font-size:11px;color:var(--g);letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px;text-align:center}
+.articles-count em{color:var(--red);font-style:normal;font-weight:700}
 .articles-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.05);margin-top:24px}
-.article-card{background:var(--card);padding:32px;display:flex;flex-direction:column;gap:10px;border-left:3px solid transparent;transition:all .2s}
+.article-card{background:var(--card);padding:28px;display:flex;flex-direction:column;gap:10px;border-left:3px solid transparent;transition:all .2s}
 .article-card:hover{background:var(--lift);border-left-color:var(--red)}
 .ac-cat{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red)}
-.ac-title{font-family:var(--D);font-size:24px;letter-spacing:.04em;text-transform:uppercase;color:var(--w);line-height:1.1}
+.ac-title{font-family:var(--D);font-size:22px;letter-spacing:.04em;text-transform:uppercase;color:var(--w);line-height:1.1}
 .ac-desc{font-size:13px;line-height:1.72;color:rgba(240,236,244,.6);font-weight:300;font-style:italic;flex:1}
 .ac-meta{font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.1em;text-transform:uppercase}
 .ac-read{font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
 footer{background:var(--ink);border-top:1px solid var(--border);padding:24px;text-align:center;font-family:var(--C);font-size:10px;color:var(--g);letter-spacing:.08em}
 footer a{color:var(--red);margin:0 8px}
+.footer-slogan{font-family:var(--C);font-size:10px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--red);font-style:italic;margin-bottom:8px}
 @media(max-width:768px){.articles-grid{grid-template-columns:1fr}.hero{padding:40px 16px}.page{padding:32px 16px 60px}}</style>
 </head>
 <body>
 <nav>
   <div class="nav-inner">
-    <a href="/" class="logo"><div class="logo-box">One</div><div class="logo-txt">Heavy</div></a>
+    <a href="/" class="logo"><div class="logo-box">One</div><div class="logo-txt">Heavy</div><span class="logo-slogan">Unity Means Everything To Us</span></a>
     <a href="/" class="nav-back">&larr; Back to OneHeavy</a>
   </div>
 </nav>
 <div class="hero">
   <div class="hero-inner">
     <div class="hero-tag">Original Content</div>
+    <span class="hero-slogan">Unity Means Everything To Us</span>
     <h1>One<em>Heavy</em><br>Articles</h1>
-    <p class="hero-desc">Original editorial content about heavy metal history, the Australian scene, genre guides and festival coverage — written by metal fans for metal fans.</p>
+    <p class="hero-desc">Original editorial content about heavy metal history, Australian band profiles, genre guides and festival coverage &mdash; written by metal fans for metal fans.</p>
   </div>
 </div>
 <div class="page">
+  <div class="articles-count"><em>15</em> articles &middot; all original content</div>
   <div class="articles-grid"><a href="/articles/why-australian-metal-punches-above-its-weight" class="article-card">
   <div class="ac-cat">Editorial</div>
   <div class="ac-title">Why Australian Metal Punches Above Its Weight</div>
@@ -94,9 +101,70 @@ footer a{color:var(--red);margin:0 8px}
   <div class="ac-desc">Thrash, death, black, doom, progressive, metalcore and beyond — your complete guide to every major heavy metal subgenre.</div>
   <div class="ac-meta">OneHeavy &middot; Josef Den Dunnen &middot; 9 min read</div>
   <div class="ac-read">Read Article &rarr;</div>
+</a><a href="/articles/parkway-drive-band-profile" class="article-card">
+  <div class="ac-cat">Band Profile</div>
+  <div class="ac-title">Parkway Drive — The Gold Coast Metalcore Juggernaut</div>
+  <div class="ac-desc">The definitive profile of Parkway Drive — from Byron Bay garage band to headlining European metal festivals.</div>
+  <div class="ac-meta">OneHeavy &middot; Josef Den Dunnen &middot; 7 min read</div>
+  <div class="ac-read">Read Article &rarr;</div>
+</a><a href="/articles/thy-art-is-murder-band-profile" class="article-card">
+  <div class="ac-cat">Band Profile</div>
+  <div class="ac-title">Thy Art Is Murder — Sydney's Deathcore Titans</div>
+  <div class="ac-desc">The complete profile of Thy Art Is Murder — from the Sydney underground to international deathcore dominance.</div>
+  <div class="ac-meta">OneHeavy &middot; Josef Den Dunnen &middot; 7 min read</div>
+  <div class="ac-read">Read Article &rarr;</div>
+</a><a href="/articles/ne-obliviscaris-band-profile" class="article-card">
+  <div class="ac-cat">Band Profile</div>
+  <div class="ac-title">Ne Obliviscaris — Melbourne's Progressive Death Metal Visionaries</div>
+  <div class="ac-desc">The complete profile of Melbourne's progressive death metal masters who combined violin, clean vocals and extreme metal.</div>
+  <div class="ac-meta">OneHeavy &middot; Josef Den Dunnen &middot; 7 min read</div>
+  <div class="ac-read">Read Article &rarr;</div>
+</a><a href="/articles/polaris-band-profile" class="article-card">
+  <div class="ac-cat">Band Profile</div>
+  <div class="ac-title">Polaris — Sydney's Modern Metalcore Champions</div>
+  <div class="ac-desc">The complete profile of Polaris — Sydney's ARIA-winning modern metalcore masters.</div>
+  <div class="ac-meta">OneHeavy &middot; Josef Den Dunnen &middot; 6 min read</div>
+  <div class="ac-read">Read Article &rarr;</div>
+</a><a href="/articles/caligulas-horse-band-profile" class="article-card">
+  <div class="ac-cat">Band Profile</div>
+  <div class="ac-title">Caligula's Horse — Brisbane's Progressive Metal Masters</div>
+  <div class="ac-desc">The complete profile of Caligula's Horse — Brisbane's progressive metal visionaries whose compositional sophistication has earned them a global following.</div>
+  <div class="ac-meta">OneHeavy &middot; Josef Den Dunnen &middot; 6 min read</div>
+  <div class="ac-read">Read Article &rarr;</div>
+</a><a href="/articles/amity-affliction-band-profile" class="article-card">
+  <div class="ac-cat">Band Profile</div>
+  <div class="ac-title">The Amity Affliction — Gympie's Metalcore Giants</div>
+  <div class="ac-desc">The complete profile of The Amity Affliction — the Gympie metalcore band that became one of Australia's most commercially successful heavy acts.</div>
+  <div class="ac-meta">OneHeavy &middot; Josef Den Dunnen &middot; 6 min read</div>
+  <div class="ac-read">Read Article &rarr;</div>
+</a><a href="/articles/karnivool-band-profile" class="article-card">
+  <div class="ac-cat">Band Profile</div>
+  <div class="ac-title">Karnivool — Perth's Progressive Rock Masters</div>
+  <div class="ac-desc">The complete profile of Karnivool — Perth's progressive rock and metal masters whose influence has been genuinely transformative.</div>
+  <div class="ac-meta">OneHeavy &middot; Josef Den Dunnen &middot; 6 min read</div>
+  <div class="ac-read">Read Article &rarr;</div>
+</a><a href="/articles/voyager-band-profile" class="article-card">
+  <div class="ac-cat">Band Profile</div>
+  <div class="ac-title">Voyager — Perth's Eurovision Metal Ambassadors</div>
+  <div class="ac-desc">The complete profile of Voyager — Perth's progressive power metal masters who took Australian heavy music to Eurovision.</div>
+  <div class="ac-meta">OneHeavy &middot; Josef Den Dunnen &middot; 5 min read</div>
+  <div class="ac-read">Read Article &rarr;</div>
+</a><a href="/articles/northlane-band-profile" class="article-card">
+  <div class="ac-cat">Band Profile</div>
+  <div class="ac-title">Northlane — Sydney's Djent Innovators</div>
+  <div class="ac-desc">The complete profile of Northlane — Sydney's djent-influenced progressive metalcore band.</div>
+  <div class="ac-meta">OneHeavy &middot; Josef Den Dunnen &middot; 6 min read</div>
+  <div class="ac-read">Read Article &rarr;</div>
+</a><a href="/articles/hidden-intent-band-profile" class="article-card">
+  <div class="ac-cat">Band Profile</div>
+  <div class="ac-title">Hidden Intent — Adelaide's Thrash Metal Champions</div>
+  <div class="ac-desc">The complete profile of Hidden Intent — Adelaide's thrash metal masters who have built a genuine international reputation.</div>
+  <div class="ac-meta">OneHeavy &middot; Josef Den Dunnen &middot; 5 min read</div>
+  <div class="ac-read">Read Article &rarr;</div>
 </a></div>
 </div>
 <footer>
+  <div class="footer-slogan">Unity Means Everything To Us</div>
   &copy; 2026 <strong>OneHeavy</strong> &middot; oneheavy.net &middot;
   <a href="/">Home</a><a href="/about">About</a><a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Service</a><a href="mailto:increasinglyinquisitive@gmail.com">Contact</a>
 </footer>

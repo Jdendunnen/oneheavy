@@ -171,6 +171,46 @@
     {
       "source": "/articles/guide-to-metal-subgenres",
       "destination": "/guide-to-metal-subgenres.html"
+    },
+    {
+      "source": "/articles/parkway-drive-band-profile",
+      "destination": "/parkway-drive-band-profile.html"
+    },
+    {
+      "source": "/articles/thy-art-is-murder-band-profile",
+      "destination": "/thy-art-is-murder-band-profile.html"
+    },
+    {
+      "source": "/articles/ne-obliviscaris-band-profile",
+      "destination": "/ne-obliviscaris-band-profile.html"
+    },
+    {
+      "source": "/articles/polaris-band-profile",
+      "destination": "/polaris-band-profile.html"
+    },
+    {
+      "source": "/articles/caligulas-horse-band-profile",
+      "destination": "/caligulas-horse-band-profile.html"
+    },
+    {
+      "source": "/articles/amity-affliction-band-profile",
+      "destination": "/amity-affliction-band-profile.html"
+    },
+    {
+      "source": "/articles/karnivool-band-profile",
+      "destination": "/karnivool-band-profile.html"
+    },
+    {
+      "source": "/articles/voyager-band-profile",
+      "destination": "/voyager-band-profile.html"
+    },
+    {
+      "source": "/articles/northlane-band-profile",
+      "destination": "/northlane-band-profile.html"
+    },
+    {
+      "source": "/articles/hidden-intent-band-profile",
+      "destination": "/hidden-intent-band-profile.html"
     }
   ]
 }
