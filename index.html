@@ -507,6 +507,17 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 .fa-source a:hover{color:var(--red)}
 @media(max-width:900px){.fa-inner{grid-template-columns:1fr;gap:24px}.fa-cover{max-width:280px;margin:0 auto}.fa-headline{text-align:center}.fa-eyebrow{align-self:center}}
 @media(max-width:600px){.featured-album{padding:32px 16px}.fa-cover-band{font-size:48px}}
+
+.fa-cover-link{display:block;position:relative;text-decoration:none}
+.fa-cover-image{width:100%;aspect-ratio:1;object-fit:cover;display:block;border:1px solid rgba(200,16,46,.25);transition:all .3s;background:#0a0a14}
+.fa-cover-link:hover .fa-cover-image{border-color:var(--red);box-shadow:0 0 30px rgba(200,16,46,.25)}
+.fa-cover-fallback-text{display:none;position:absolute;inset:0;background:linear-gradient(135deg,#1a1a26,#08080e);align-items:center;justify-content:center;text-align:center;padding:24px;flex-direction:column}
+.fa-cover-fallback .fa-cover-fallback-text{display:flex}
+.fa-cover-fallback-text .fa-cover-band{font-family:var(--D);font-size:64px;letter-spacing:.04em;color:var(--red);line-height:.9;margin-bottom:8px;text-shadow:0 0 20px rgba(200,16,46,.4)}
+.fa-cover-fallback-text .fa-cover-title{font-family:var(--C);font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:rgba(240,236,244,.85);margin-bottom:16px;font-style:italic}
+.fa-cover-fallback-text .fa-cover-motto{font-family:var(--D);font-size:14px;letter-spacing:.18em;color:rgba(200,16,46,.7);text-transform:uppercase}
+.fa-bandcamp-embed{margin-top:12px;background:#0f0f1a;border:1px solid var(--border);overflow:hidden}
+.fa-bandcamp-embed iframe{display:block}
 </style>
 
 <script type="text/javascript">
@@ -550,15 +561,19 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 <section class="featured-album" id="creators-pick">
   <div class="fa-inner">
     <div class="fa-cover">
-      <div class="fa-cover-frame">
+      <a href="https://www.amazon.com.au/dp/B0FND1YQ8W?tag=oneheavymetal-22" target="_blank" rel="noopener noreferrer sponsored" class="fa-cover-link">
         <div class="fa-cover-stamp">&#x2605; Creator's Pick</div>
-        <div class="fa-cover-text">
+        <img src="https://m.media-amazon.com/images/I/81rYSkJiOsL._SL1500_.jpg" alt="1914 - Viribus Unitis album cover" class="fa-cover-image" loading="lazy" onerror="this.onerror=null;this.parentElement.classList.add('fa-cover-fallback');this.style.display='none';">
+        <div class="fa-cover-fallback-text">
           <div class="fa-cover-band">1914</div>
           <div class="fa-cover-title">Viribus Unitis</div>
           <div class="fa-cover-motto">&laquo; With United Forces &raquo;</div>
         </div>
+      </a>
+      <div class="fa-bandcamp-embed">
+        <iframe style="border:0;width:100%;height:120px" src="https://bandcamp.com/EmbeddedPlayer/album=2814834103/size=large/bgcol=0f0f1a/linkcol=c8102e/tracklist=false/artwork=none/transparent=true/" seamless title="Viribus Unitis by 1914 - Bandcamp player"><a href="https://x1914x.bandcamp.com/album/viribus-unitis">Viribus Unitis by 1914</a></iframe>
       </div>
-      <div class="fa-cover-credit">Cover art via Wikipedia &middot; Napalm Records</div>
+      <div class="fa-cover-credit">Album art via Amazon &middot; Stream via Bandcamp &middot; Napalm Records</div>
     </div>
     <div class="fa-content">
       <div class="fa-eyebrow">From the Creator &middot; Featured Album</div>
