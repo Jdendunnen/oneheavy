@@ -466,16 +466,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 
 .featured-album{background:linear-gradient(135deg,#0a0a14,#08080e 60%);border-bottom:1px solid rgba(200,16,46,.16);padding:48px 24px;position:relative;overflow:hidden}
 .featured-album::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--red),transparent)}
-.fa-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:340px 1fr;gap:40px;align-items:start}
-.fa-cover{position:relative}
-.fa-cover-frame{aspect-ratio:1;background:linear-gradient(135deg,#1a1a26,#08080e);border:1px solid rgba(200,16,46,.25);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px}
-.fa-cover-frame::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 30%,rgba(200,16,46,.15),transparent 60%);pointer-events:none}
-.fa-cover-text{position:relative;z-index:2}
-.fa-cover-band{font-family:var(--D);font-size:64px;letter-spacing:.04em;color:var(--red);line-height:.9;margin-bottom:8px;text-shadow:0 0 20px rgba(200,16,46,.4)}
-.fa-cover-title{font-family:var(--C);font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:rgba(240,236,244,.85);margin-bottom:16px;font-style:italic}
-.fa-cover-motto{font-family:var(--D);font-size:14px;letter-spacing:.18em;color:rgba(200,16,46,.7);text-transform:uppercase}
-.fa-cover-stamp{position:absolute;top:12px;right:12px;background:var(--red);color:#fff;font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:5px 10px;z-index:3}
-.fa-cover-credit{font-family:var(--C);font-size:8px;color:var(--g);letter-spacing:.1em;text-align:center;margin-top:10px;text-transform:uppercase}
+.fa-inner{max-width:840px;margin:0 auto;display:block}
 .fa-content{display:flex;flex-direction:column;gap:18px}
 .fa-eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--red);align-self:flex-start}
 .fa-eyebrow::before{content:'';width:18px;height:1px;background:var(--red)}
@@ -505,14 +496,10 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 .fa-source{font-family:var(--C);font-size:8px;color:var(--g);letter-spacing:.1em;font-style:italic;padding-top:8px}
 .fa-source a{color:var(--g);text-decoration:underline;text-decoration-color:rgba(88,88,122,.4);text-underline-offset:2px}
 .fa-source a:hover{color:var(--red)}
-@media(max-width:900px){.fa-inner{grid-template-columns:1fr;gap:24px}.fa-cover{max-width:280px;margin:0 auto}.fa-headline{text-align:center}.fa-eyebrow{align-self:center}}
-@media(max-width:600px){.featured-album{padding:32px 16px}.fa-cover-band{font-size:48px}}
+@media(max-width:900px){.fa-headline{text-align:left}.fa-eyebrow{align-self:flex-start}}
+@media(max-width:600px){.featured-album{padding:32px 16px}}
 
-.fa-stamp-wrap{position:relative;height:0;z-index:5}
 .fa-cover-stamp{position:absolute;top:8px;right:-4px;background:var(--red);color:#fff;font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:6px 12px;box-shadow:0 4px 16px rgba(200,16,46,.4);transform:rotate(2deg)}
-.fa-bandcamp-embed{background:#0f0f1a;border:1px solid rgba(200,16,46,.25);overflow:hidden;transition:border-color .3s,box-shadow .3s;width:100%;aspect-ratio:1}
-.fa-bandcamp-embed:hover{border-color:var(--red);box-shadow:0 0 30px rgba(200,16,46,.25)}
-.fa-bc-iframe{display:block;border:0;width:100%;height:100%;min-height:340px}
 </style>
 
 <script type="text/javascript">
@@ -555,17 +542,8 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 
 <section class="featured-album" id="creators-pick">
   <div class="fa-inner">
-    <div class="fa-cover">
-      <div class="fa-stamp-wrap">
-        <div class="fa-cover-stamp">&#x2605; Creator's Pick</div>
-      </div>
-      <div class="fa-bandcamp-embed">
-        <iframe class="fa-bc-iframe" src="https://bandcamp.com/EmbeddedPlayer/album=2814834103/size=large/bgcol=0f0f1a/linkcol=c8102e/tracklist=false/transparent=true/" seamless title="Viribus Unitis by 1914 - Listen on Bandcamp"><a href="https://x1914x.bandcamp.com/album/viribus-unitis">Viribus Unitis by 1914</a></iframe>
-      </div>
-      <div class="fa-cover-credit">Official Bandcamp player &middot; Stream and support 1914 directly</div>
-    </div>
-    <div class="fa-content">
-      <div class="fa-eyebrow">From the Creator &middot; Featured Album</div>
+<div class="fa-content">
+      <div class="fa-eyebrow">&#x2605; Creator's Pick &middot; From the Creator &middot; Featured Album</div>
       <h2 class="fa-headline">1914 &mdash; <em>Viribus Unitis</em></h2>
       <div class="fa-meta">
         <div class="fa-meta-item"><div class="fa-meta-label">Released</div><div class="fa-meta-value">14 Nov 2025</div></div>
@@ -603,9 +581,10 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
         </div>
       </div>
       <div class="fa-actions">
-        <a href="https://www.amazon.com.au/s?k=1914%20Viribus%20Unitis%20vinyl&tag=oneheavymetal-22" target="_blank" rel="noopener noreferrer sponsored" class="fa-btn fa-btn-primary">&#x1F6CD; Buy on Amazon &rarr;</a>
-        <a href="https://x1914x.bandcamp.com/album/viribus-unitis" target="_blank" rel="noopener noreferrer" class="fa-btn fa-btn-secondary">&#x266B; Listen on Bandcamp</a>
+        <a href="https://x1914x.bandcamp.com/album/viribus-unitis" target="_blank" rel="noopener noreferrer" class="fa-btn fa-btn-primary">&#x266B; Listen &amp; Buy on Bandcamp &rarr;</a>
+        <a href="https://www.amazon.com.au/s?k=1914%20Viribus%20Unitis%20vinyl&tag=oneheavymetal-22" target="_blank" rel="noopener noreferrer sponsored" class="fa-btn fa-btn-secondary">&#x1F6CD; Or buy CD/Vinyl on Amazon</a>
       </div>
+      <p style="font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.08em;font-style:italic;margin-top:-4px">&#x2665; Bandcamp pays artists more &mdash; support 1914 directly</p>
       <p class="fa-source">Album facts and chart data sourced from <a href="https://en.wikipedia.org/wiki/Viribus_Unitis_(1914_album)" target="_blank" rel="noopener noreferrer">Wikipedia</a> under CC BY-SA 4.0. Review and editorial commentary &copy; 2026 OneHeavy. As an Amazon Associate, OneHeavy earns from qualifying purchases.</p>
     </div>
   </div>
