@@ -25,6 +25,7 @@
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6161974684049416" crossorigin="anonymous"></script>
 <script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-6161974684049416",enable_page_level_ads:true});</script>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 80 80%22><circle cx=%2240%22 cy=%2240%22 r=%2236%22 fill=%22none%22 stroke=%22%23c8102e%22 stroke-width=%224%22/><circle cx=%2240%22 cy=%2240%22 r=%2231%22 fill=%22none%22 stroke=%22%23c8102e%22 stroke-width=%221%22/><text x=%2240%22 y=%2240%22 text-anchor=%22middle%22 font-family=%22Impact,sans-serif%22 font-size=%2218%22 font-weight=%22700%22 fill=%22%23f0ecf4%22>ONE</text><text x=%2240%22 y=%2258%22 text-anchor=%22middle%22 font-family=%22Impact,sans-serif%22 font-size=%2218%22 font-weight=%22700%22 fill=%22%23c8102e%22>HEAVY</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
@@ -36,8 +37,6 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
 nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filter:blur(20px);border-bottom:1px solid rgba(200,16,46,.16)}
 .nav-wrap{max-width:1360px;margin:0 auto;padding:0 24px;height:56px;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:28px}
 .logo{display:flex;align-items:center;flex-shrink:0}
-.logo-box{background:var(--red);font-family:var(--D);font-size:22px;padding:4px 10px 2px;color:#fff;line-height:1}
-.logo-txt{font-family:var(--D);font-size:22px;letter-spacing:.04em;color:var(--w)}
 .nav-links{display:flex;align-items:center;gap:0;list-style:none}
 .nav-links a{font-family:var(--C);font-size:11px;font-weight:500;letter-spacing:.11em;text-transform:uppercase;color:var(--g);padding:8px 11px;transition:color .2s;white-space:nowrap}
 .nav-links a:hover,.nav-links a.active{color:var(--w)}
@@ -460,7 +459,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 .story-modal-btn-primary:hover{background:var(--red2)}
 .story-modal-btn-secondary{background:transparent;color:var(--g);font-family:var(--C);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:12px 24px;border:1px solid rgba(255,255,255,.1);cursor:pointer;transition:all .2s}
 .story-modal-btn-secondary:hover{border-color:var(--g);color:var(--w)}
-.logo-slogan{font-family:var(--C);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--red);font-style:italic;margin-left:6px;opacity:.85;white-space:nowrap}
 .hero-slogan{font-family:var(--C);font-size:11px;font-weight:400;letter-spacing:.22em;text-transform:uppercase;color:var(--red);font-style:italic;margin-bottom:16px;display:block}
 .footer-slogan{font-family:var(--C);font-size:10px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--red);font-style:italic;margin-bottom:8px}
 
@@ -500,6 +498,16 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 @media(max-width:600px){.featured-album{padding:32px 16px}}
 
 .fa-cover-stamp{position:absolute;top:8px;right:-4px;background:var(--red);color:#fff;font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:6px 12px;box-shadow:0 4px 16px rgba(200,16,46,.4);transform:rotate(2deg)}
+
+.oh-logo{width:48px;height:48px;display:block;flex-shrink:0;transition:transform .25s}
+.oh-logo:hover{transform:scale(1.05)}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0;text-decoration:none}
+.logo-text{display:flex;flex-direction:column;line-height:1;gap:2px}
+.logo-text-main{font-family:var(--D);font-size:18px;letter-spacing:.04em;color:var(--w);text-transform:uppercase}
+.logo-text-main em{color:var(--red);font-style:normal}
+.logo-text-slogan{font-family:var(--C);font-size:8px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--red);font-style:italic;opacity:.85}
+.footer-logo{width:80px;height:80px;display:inline-block;margin-bottom:16px}
+@media(max-width:600px){.oh-logo{width:40px;height:40px}.logo-text-main{font-size:15px}.logo-text-slogan{font-size:7px}}
 </style>
 
 <script type="text/javascript">
@@ -522,7 +530,22 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 <div class="ticker-wrap"><div class="ticker-track"><span class="ticker-item"><span class="ticker-dot"></span>OneHeavy Merch &mdash; Coming Soon</span><span class="ticker-item"><span class="ticker-dot"></span>Band Tees &middot; Vinyl &middot; Hoodies &middot; OneHeavy Originals</span><span class="ticker-item"><span class="ticker-dot"></span>Ships Australia Wide</span><span class="ticker-item"><span class="ticker-dot"></span>OneHeavy Merch &mdash; Coming Soon</span><span class="ticker-item"><span class="ticker-dot"></span>Band Tees &middot; Vinyl &middot; Hoodies &middot; OneHeavy Originals</span><span class="ticker-item"><span class="ticker-dot"></span>Ships Australia Wide</span></div></div>
 <nav>
   <div class="nav-wrap">
-    <a href="/" class="logo"><div class="logo-box">One</div><div class="logo-txt">Heavy</div><span class="logo-slogan">Unity Means Everything To Us</span></a>
+    <a href="/" class="logo"><svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" class="oh-logo" aria-label="OneHeavy">
+<circle cx="40" cy="40" r="36" fill="none" stroke="#c8102e" stroke-width="2.5"/>
+<circle cx="40" cy="40" r="31" fill="none" stroke="#c8102e" stroke-width="0.6"/>
+<defs>
+<path id="ohTopArc" d="M 11.5,38 a 28.5,28.5 0 0,1 57,0" fill="none"/>
+</defs>
+<text font-family="Impact,sans-serif" font-size="5" font-weight="700" fill="#c8102e" letter-spacing="2">
+<textPath href="#ohTopArc" startOffset="50%" text-anchor="middle">UNITY MEANS EVERYTHING</textPath>
+</text>
+<text x="40" y="38" text-anchor="middle" font-family="Impact,sans-serif" font-size="13" font-weight="700" fill="#f0ecf4" letter-spacing="0.5">ONE</text>
+<text x="40" y="52" text-anchor="middle" font-family="Impact,sans-serif" font-size="13" font-weight="700" fill="#c8102e" letter-spacing="0.5">HEAVY</text>
+<line x1="32" y1="56" x2="48" y2="56" stroke="#c8102e" stroke-width="0.6"/>
+<text x="40" y="63" text-anchor="middle" font-family="Oswald,sans-serif" font-size="3.5" font-weight="700" fill="#c8102e" letter-spacing="1.5">EST 2026</text>
+<circle cx="4" cy="40" r="1.2" fill="#c8102e"/>
+<circle cx="76" cy="40" r="1.2" fill="#c8102e"/>
+</svg><div class="logo-text"><div class="logo-text-main">One<em>Heavy</em></div><div class="logo-text-slogan">Unity Means Everything To Us</div></div></a>
     <ul class="nav-links">
       <li><a href="/" class="active">News</a></li>
       <li><a href="#concerts">Concerts</a></li>
@@ -557,13 +580,13 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
         <div class="fa-meta-item"><div class="fa-meta-label">Length</div><div class="fa-meta-value">56:58</div></div>
       </div>
       <div class="fa-review">
-        <p>I have not been able to stop listening to this record. <em>Viribus Unitis</em> is the fourth studio album from the Ukrainian blackened death metal band 1914 — and it might be the most powerful, immersive heavy metal experience I have had in years. This is metal as historical document, as personal testimony, as art with genuine purpose.</p>
+        <p>I have not been able to stop listening to this record. <em>Viribus Unitis</em> is the fourth studio album from the Ukrainian blackened death metal band 1914 — and it might be the most powerful, immersive heavy music experience I have had in years. This is heavy music as historical document, as personal testimony, as art with genuine purpose.</p>
 
 <p>The album tells the story of a Ukrainian soldier from Lviv who survived the horrors of World War I — through the siege of Przemyśl, the Isonzo Front, captivity in Italy and finally returning home to fight in the Polish-Ukrainian War. The title <em>Viribus Unitis</em> is the personal motto of Austro-Hungarian Emperor Franz Joseph I — Latin for "with united forces" — and there is a heavy, devastating irony in 1914 reclaiming that phrase to tell the story of the men who actually paid the price.</p>
 
 <p>Sonically this is blackened death metal at its finest — crushing, atmospheric, genuinely cinematic. The death-doom passages are punishing without being plodding, the blackened sections are ferocious without ever losing the melody, and Ditmar Kumarberg's vocal performance carries the weight of every story he is telling. The guest spots from Aaron Stainthorpe of My Dying Bride and Jérôme Reuter add genuine emotional depth where they appear.</p>
 
-<p>For a site whose slogan is "Unity Means Everything To Us" — there is something profoundly fitting about featuring this record. 1914 are reminding us what united forces actually cost. This is essential heavy metal, and it is OneHeavy's first official Creator's Pick. Crank it loud. Keep it heavy.</p>
+<p>For a site whose slogan is "Unity Means Everything To Us" — there is something profoundly fitting about featuring this record. 1914 are reminding us what united forces actually cost. This is essential heavy music, and it is OneHeavy's first official Creator's Pick. Crank it loud. Keep it heavy.</p>
       </div>
       <div class="fa-byline"><strong>Reviewed by</strong> &middot; Josef Den Dunnen, OneHeavy Creator</div>
       <div class="fa-ratings">
@@ -842,9 +865,9 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
     <div class="intro-text">
       <div class="intro-tag">About OneHeavy</div>
       <h2 class="intro-heading">The World's <em>Heaviest</em> Music Hub</h2>
-      <p class="intro-body">OneHeavy is a free heavy metal news aggregation and music discovery platform built for metal fans worldwide. We pull live headlines from six of the world's leading metal publications &mdash; <a href="https://www.blabbermouth.net" target="_blank" rel="noopener noreferrer">Blabbermouth</a>, <a href="https://loudwire.com" target="_blank" rel="noopener noreferrer">Loudwire</a>, <a href="https://www.metalsucks.net" target="_blank" rel="noopener noreferrer">MetalSucks</a>, <a href="https://www.loudersound.com" target="_blank" rel="noopener noreferrer">Metal Hammer</a>, <a href="https://www.revolvermag.com" target="_blank" rel="noopener noreferrer">Revolver</a> and <a href="https://heavymag.com.au" target="_blank" rel="noopener noreferrer">Heavy Mag AU</a> &mdash; updated automatically every five minutes, 24 hours a day, seven days a week. Every headline links directly back to the original publisher.</p>
+      <p class="intro-body">OneHeavy is a free heavy music news aggregation and discovery platform built for fans of heavy music worldwide. We pull live headlines from six of the world's leading metal publications &mdash; <a href="https://www.blabbermouth.net" target="_blank" rel="noopener noreferrer">Blabbermouth</a>, <a href="https://loudwire.com" target="_blank" rel="noopener noreferrer">Loudwire</a>, <a href="https://www.metalsucks.net" target="_blank" rel="noopener noreferrer">MetalSucks</a>, <a href="https://www.loudersound.com" target="_blank" rel="noopener noreferrer">Metal Hammer</a>, <a href="https://www.revolvermag.com" target="_blank" rel="noopener noreferrer">Revolver</a> and <a href="https://heavymag.com.au" target="_blank" rel="noopener noreferrer">Heavy Mag AU</a> &mdash; updated automatically every five minutes, 24 hours a day, seven days a week. Every headline links directly back to the original publisher.</p>
       <p class="intro-body">Beyond the <a href="#news">live news feed</a>, OneHeavy offers comprehensive <a href="#genres">genre guides across 17 metal subgenres</a> &mdash; from classic thrash and death metal to post-metal, djent and stoner &mdash; each featuring community-rated Top 10 album lists curated from decades of passionate listening. Our <a href="#local">local scene pages</a> cover eight major cities across Australia, the UK, the USA and Europe, complete with venue guides, promoter directories and a free show submission system for bands and promoters. No paywalls. No subscriptions. No logins. Just metal.</p>
-      <p class="intro-body">OneHeavy has a particular focus on the Australian heavy metal community. With dedicated local pages for <a href="/melbourne">Melbourne</a>, <a href="/sydney">Sydney</a>, <a href="/brisbane">Brisbane</a>, <a href="/adelaide">Adelaide</a> and <a href="/perth">Perth</a>, we provide Australian metal fans with the most comprehensive guide to their local scene available online. We also cover the global scene with city pages for <a href="/london">London</a>, <a href="/newyork">New York</a> and <a href="/berlin">Berlin</a>. All shows can be submitted free of charge &mdash; we review every submission within 24 hours.</p>
+      <p class="intro-body">OneHeavy has a particular focus on the Australian heavy music community. With dedicated local pages for <a href="/melbourne">Melbourne</a>, <a href="/sydney">Sydney</a>, <a href="/brisbane">Brisbane</a>, <a href="/adelaide">Adelaide</a> and <a href="/perth">Perth</a>, we provide Australian metal fans with the most comprehensive guide to their local scene available online. We also cover the global scene with city pages for <a href="/london">London</a>, <a href="/newyork">New York</a> and <a href="/berlin">Berlin</a>. All shows can be submitted free of charge &mdash; we review every submission within 24 hours.</p>
     </div>
     <div class="intro-links">
       <div class="intro-links-title">Explore OneHeavy</div>
@@ -881,7 +904,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   <div class="globe-inner-wrap">
     <div class="globe-text-left">
       <h2>The World's<br><em>Heaviest</em><br>Music Hub</h2>
-      <p>OneHeavy covers the global heavy metal scene — live news, tour dates and local scene guides across Australia, the UK, the USA and Europe. One site. All the metal. Free forever.</p>
+      <p>OneHeavy covers the global heavy music scene — live news, tour dates and local scene guides across Australia, the UK, the USA and Europe. One site. All the metal. Free forever.</p>
     </div>
     <div class="globe-container">
       <div class="globe-ring-outer"></div>
@@ -1051,7 +1074,24 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   <div class="f-inner">
     <div class="f-grid">
       <div class="f-brand">
-        <a href="/" class="logo"><div class="logo-box">One</div><div class="logo-txt">Heavy</div></a>
+        <a href="/" class="footer-crest-link" style="display:inline-block;text-decoration:none;margin-bottom:14px">
+<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" class="oh-logo" style="width:84px;height:84px" aria-label="OneHeavy">
+<circle cx="40" cy="40" r="36" fill="none" stroke="#c8102e" stroke-width="2.5"/>
+<circle cx="40" cy="40" r="31" fill="none" stroke="#c8102e" stroke-width="0.6"/>
+<defs>
+<path id="ftrTopArc" d="M 11.5,38 a 28.5,28.5 0 0,1 57,0" fill="none"/>
+</defs>
+<text font-family="Impact,sans-serif" font-size="5" font-weight="700" fill="#c8102e" letter-spacing="2">
+<textPath href="#ftrTopArc" startOffset="50%" text-anchor="middle">UNITY MEANS EVERYTHING</textPath>
+</text>
+<text x="40" y="38" text-anchor="middle" font-family="Impact,sans-serif" font-size="13" font-weight="700" fill="#f0ecf4" letter-spacing="0.5">ONE</text>
+<text x="40" y="52" text-anchor="middle" font-family="Impact,sans-serif" font-size="13" font-weight="700" fill="#c8102e" letter-spacing="0.5">HEAVY</text>
+<line x1="32" y1="56" x2="48" y2="56" stroke="#c8102e" stroke-width="0.6"/>
+<text x="40" y="63" text-anchor="middle" font-family="Oswald,sans-serif" font-size="3.5" font-weight="700" fill="#c8102e" letter-spacing="1.5">EST 2026</text>
+<circle cx="4" cy="40" r="1.2" fill="#c8102e"/>
+<circle cx="76" cy="40" r="1.2" fill="#c8102e"/>
+</svg>
+</a>
         <p>The world's heaviest music hub. All metal, all genres, all scenes &mdash; in one place. Free forever. Updated every 5 minutes.</p>
       </div>
       <div class="f-col">
@@ -1091,7 +1131,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 <noscript>
 <div style="max-width:1360px;margin:40px auto;padding:0 24px;font-family:Georgia,serif;color:#f0ecf4;background:#08080e">
 <h2 style="font-size:24px;margin-bottom:16px">Latest Heavy Metal News</h2>
-<p style="margin-bottom:12px">OneHeavy aggregates live heavy metal news from Blabbermouth, Loudwire, MetalSucks, Metal Hammer, Revolver and Heavy Mag AU — updated every 5 minutes, free forever. Enable JavaScript to see the full live feed.</p>
+<p style="margin-bottom:12px">OneHeavy aggregates live heavy music news from Blabbermouth, Loudwire, MetalSucks, Metal Hammer, Revolver and Heavy Mag AU — updated every 5 minutes, free forever. Enable JavaScript to see the full live feed.</p>
 <ul style="line-height:2">
 <li><a href="https://www.blabbermouth.net" style="color:#c8102e">Blabbermouth — World's Leading Metal News Site</a></li>
 <li><a href="https://loudwire.com" style="color:#c8102e">Loudwire — Hard Rock &amp; Heavy Metal</a></li>
