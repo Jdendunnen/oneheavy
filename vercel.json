@@ -33,10 +33,6 @@
   ],
   "rewrites": [
     {
-      "source": "/news",
-      "destination": "/news.html"
-    },
-    {
       "source": "/privacy",
       "destination": "/privacy.html"
     },

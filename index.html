@@ -525,6 +525,36 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 .fa-section-cta:hover{background:var(--red);color:#fff}
 @media(max-width:900px){.fa-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.fa-grid{grid-template-columns:1fr}.featured-articles{padding:32px 16px}}
+
+.layout-with-sidebar{display:grid;grid-template-columns:280px 1fr;max-width:1400px;margin:0 auto;gap:0;align-items:start}
+.left-sidebar{position:sticky;top:80px;padding:24px 16px 24px 24px;align-self:start;max-height:calc(100vh - 80px);overflow-y:auto}
+.left-sidebar::-webkit-scrollbar{width:4px}
+.left-sidebar::-webkit-scrollbar-thumb{background:rgba(200,16,46,.3);border-radius:2px}
+.ls-widget{background:var(--card);border:1px solid var(--border);overflow:hidden;margin-bottom:18px}
+.ls-widget::before{content:'';display:block;height:2px;background:var(--red)}
+.ls-widget-head{padding:14px 18px;border-bottom:1px solid var(--border)}
+.ls-widget-eyebrow{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--red);margin-bottom:4px}
+.ls-widget-title{font-family:var(--D);font-size:22px;letter-spacing:.04em;text-transform:uppercase;color:var(--w);line-height:1}
+.ls-widget-title em{color:var(--red);font-style:normal}
+.ls-widget-sub{font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.08em;margin-top:4px;font-style:italic}
+.ls-source{display:block;padding:14px 18px;border-bottom:1px solid var(--border);text-decoration:none;border-left:3px solid transparent;transition:all .18s}
+.ls-source:last-child{border-bottom:none}
+.ls-source:hover{background:var(--lift);border-left-color:var(--red)}
+.ls-source-flag{font-family:var(--C);font-size:8px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:3px}
+.ls-source-name{font-family:var(--D);font-size:18px;letter-spacing:.04em;text-transform:uppercase;color:var(--w);line-height:1}
+.ls-source-arrow{font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.1em;text-transform:uppercase;margin-top:5px}
+.ls-source:hover .ls-source-arrow{color:var(--red)}
+.ls-widget-foot{padding:12px 18px;font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.06em;line-height:1.6;font-style:italic;border-top:1px solid var(--border)}
+.ls-widget-foot strong{color:var(--w);font-style:normal;font-weight:700}
+.ls-mini{background:var(--card);border:1px solid var(--border);padding:18px;text-align:center}
+.ls-mini::before{content:'';display:block;height:2px;background:var(--red);margin:-18px -18px 14px}
+.ls-mini-title{font-family:var(--D);font-size:18px;letter-spacing:.04em;text-transform:uppercase;color:var(--w);line-height:1;margin-bottom:6px}
+.ls-mini-title em{color:var(--red);font-style:normal}
+.ls-mini-desc{font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.06em;line-height:1.6;margin-bottom:12px}
+.ls-mini-btn{display:inline-block;background:var(--red);color:#fff;font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:9px 16px;text-decoration:none;transition:background .2s}
+.ls-mini-btn:hover{background:var(--red2)}
+@media(max-width:1100px){.layout-with-sidebar{grid-template-columns:1fr}.left-sidebar{position:static;max-height:none;padding:24px 24px 0;overflow:visible}.ls-widget,.ls-mini{margin-bottom:14px}}
+
 </style>
 
 <script type="text/javascript">
@@ -564,7 +594,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 <circle cx="76" cy="40" r="1.2" fill="#c8102e"/>
 </svg><div class="logo-text"><div class="logo-text-main">One<em>Heavy</em></div><div class="logo-text-slogan">Unity Means Everything To Us</div></div></a>
     <ul class="nav-links">
-      <li><a href="/" class="active">News</a></li>
+      <li><a href="/#latest-news">Read News</a></li>
       <li><a href="#concerts">Concerts</a></li>
       <li><a href="#local">Local Scene</a></li>
       <li><a href="#genres">Genres</a></li>
@@ -631,7 +661,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 </section>
 
 <div class="mob-nav" id="mobNav">
-  <a href="/" onclick="closeMob()">News</a>
+  <a href="/#latest-news" onclick="closeMob()">Read News</a>
   <a href="#concerts" onclick="closeMob()">Concerts</a>
   <a href="#local" onclick="closeMob()">Local Scene</a>
   <a href="#genres" onclick="closeMob()">Genres</a>
@@ -785,6 +815,60 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </div>
 </div>
 
+<div class="layout-with-sidebar">
+<aside class="left-sidebar" id="latest-news">
+  <div class="ls-widget">
+    <div class="ls-widget-head">
+      <div class="ls-widget-eyebrow">Where We Read</div>
+      <div class="ls-widget-title">Latest <em>News</em></div>
+      <div class="ls-widget-sub">Six trusted sources we recommend</div>
+    </div>
+    <a class="ls-source" href="https://www.blabbermouth.net" target="_blank" rel="noopener noreferrer">
+      <div class="ls-source-flag">&#x1F1FA;&#x1F1F8; United States</div>
+      <div class="ls-source-name">Blabbermouth</div>
+      <div class="ls-source-arrow">Visit Site &rarr;</div>
+    </a>
+    <a class="ls-source" href="https://loudwire.com" target="_blank" rel="noopener noreferrer">
+      <div class="ls-source-flag">&#x1F1FA;&#x1F1F8; United States</div>
+      <div class="ls-source-name">Loudwire</div>
+      <div class="ls-source-arrow">Visit Site &rarr;</div>
+    </a>
+    <a class="ls-source" href="https://www.metalsucks.net" target="_blank" rel="noopener noreferrer">
+      <div class="ls-source-flag">&#x1F1FA;&#x1F1F8; United States</div>
+      <div class="ls-source-name">MetalSucks</div>
+      <div class="ls-source-arrow">Visit Site &rarr;</div>
+    </a>
+    <a class="ls-source" href="https://www.loudersound.com/metal-hammer" target="_blank" rel="noopener noreferrer">
+      <div class="ls-source-flag">&#x1F1EC;&#x1F1E7; United Kingdom</div>
+      <div class="ls-source-name">Metal Hammer</div>
+      <div class="ls-source-arrow">Visit Site &rarr;</div>
+    </a>
+    <a class="ls-source" href="https://www.revolvermag.com" target="_blank" rel="noopener noreferrer">
+      <div class="ls-source-flag">&#x1F1FA;&#x1F1F8; United States</div>
+      <div class="ls-source-name">Revolver</div>
+      <div class="ls-source-arrow">Visit Site &rarr;</div>
+    </a>
+    <a class="ls-source" href="https://heavymag.com.au" target="_blank" rel="noopener noreferrer">
+      <div class="ls-source-flag">&#x1F1E6;&#x1F1FA; Australia</div>
+      <div class="ls-source-name">Heavy Mag AU</div>
+      <div class="ls-source-arrow">Visit Site &rarr;</div>
+    </a>
+    <div class="ls-widget-foot">
+      <strong>OneHeavy is original.</strong> We curate trusted publications &mdash; never copy them. Click any source to read on the publisher&#39;s own site.
+    </div>
+  </div>
+  <div class="ls-mini">
+    <div class="ls-mini-title">Submit Your <em>Show</em></div>
+    <div class="ls-mini-desc">Free listing for bands and promoters. Reviewed within 24 hours.</div>
+    <a href="#concerts" class="ls-mini-btn">Submit Free &rarr;</a>
+  </div>
+  <div class="ls-mini">
+    <div class="ls-mini-title">Read Our <em>Articles</em></div>
+    <div class="ls-mini-desc">15 original editorials &mdash; band profiles, genre guides, festival deep dives.</div>
+    <a href="/articles" class="ls-mini-btn">Browse Articles &rarr;</a>
+  </div>
+</aside>
+<div class="main-column">
 <section class="featured-articles" id="featured-articles">
   <div class="fa-section-inner">
     <div class="sh"><h2>Featured <em>Articles</em></h2><a href="/articles">All Articles &rarr;</a></div>
@@ -839,18 +923,21 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </div>
 </section>
 
+
+</div>
+</div>
 <section class="site-intro" id="about-oneheavy">
   <div class="intro-inner">
     <div class="intro-text">
       <div class="intro-tag">About OneHeavy</div>
       <h2 class="intro-heading">The World's <em>Heaviest</em> Music Hub</h2>
-      <p class="intro-body">OneHeavy is a free heavy music news aggregation and discovery platform built for fans of heavy music worldwide. We pull live headlines from six of the world's leading metal publications &mdash; <a href="https://www.blabbermouth.net" target="_blank" rel="noopener noreferrer">Blabbermouth</a>, <a href="https://loudwire.com" target="_blank" rel="noopener noreferrer">Loudwire</a>, <a href="https://www.metalsucks.net" target="_blank" rel="noopener noreferrer">MetalSucks</a>, <a href="https://www.loudersound.com" target="_blank" rel="noopener noreferrer">Metal Hammer</a>, <a href="https://www.revolvermag.com" target="_blank" rel="noopener noreferrer">Revolver</a> and <a href="https://heavymag.com.au" target="_blank" rel="noopener noreferrer">Heavy Mag AU</a> &mdash; updated automatically every five minutes, 24 hours a day, seven days a week. Every headline links directly back to the original publisher.</p>
-      <p class="intro-body">Beyond the <a href="/news">live news feed</a>, OneHeavy offers comprehensive <a href="#genres">genre guides across 17 metal subgenres</a> &mdash; from classic thrash and death metal to post-metal, djent and stoner &mdash; each featuring community-rated Top 10 album lists curated from decades of passionate listening. Our <a href="#local">local scene pages</a> cover eight major cities across Australia, the UK, the USA and Europe, complete with venue guides, promoter directories and a free show submission system for bands and promoters. No paywalls. No subscriptions. No logins. Just metal.</p>
+      <p class="intro-body">OneHeavy is a 100% original heavy music publication built for fans of heavy music worldwide. Every word on this site is written by us &mdash; band profiles, genre guides, festival deep dives, album reviews and Australian metal commentary in our own editorial voice. For breaking news, we curate a list of six trusted publications we recommend &mdash; <a href="https://www.blabbermouth.net" target="_blank" rel="noopener noreferrer">Blabbermouth</a>, <a href="https://loudwire.com" target="_blank" rel="noopener noreferrer">Loudwire</a>, <a href="https://www.metalsucks.net" target="_blank" rel="noopener noreferrer">MetalSucks</a>, <a href="https://www.loudersound.com/metal-hammer" target="_blank" rel="noopener noreferrer">Metal Hammer</a>, <a href="https://www.revolvermag.com" target="_blank" rel="noopener noreferrer">Revolver</a> and <a href="https://heavymag.com.au" target="_blank" rel="noopener noreferrer">Heavy Mag AU</a> &mdash; with direct links to each publisher's own site. We never republish their content.</p>
+      <p class="intro-body">Beyond the <a href="#latest-news">curated news source list</a>, OneHeavy offers comprehensive <a href="#genres">genre guides across 17 metal subgenres</a> &mdash; from classic thrash and death metal to post-metal, djent and stoner &mdash; each featuring community-rated Top 10 album lists curated from decades of passionate listening. Our <a href="#local">local scene pages</a> cover eight major cities across Australia, the UK, the USA and Europe, complete with venue guides, promoter directories and a free show submission system for bands and promoters. No paywalls. No subscriptions. No logins. Just metal.</p>
       <p class="intro-body">OneHeavy has a particular focus on the Australian heavy music community. With dedicated local pages for <a href="/melbourne">Melbourne</a>, <a href="/sydney">Sydney</a>, <a href="/brisbane">Brisbane</a>, <a href="/adelaide">Adelaide</a> and <a href="/perth">Perth</a>, we provide Australian metal fans with the most comprehensive guide to their local scene available online. We also cover the global scene with city pages for <a href="/london">London</a>, <a href="/newyork">New York</a> and <a href="/berlin">Berlin</a>. All shows can be submitted free of charge &mdash; we review every submission within 24 hours.</p>
     </div>
     <div class="intro-links">
       <div class="intro-links-title">Explore OneHeavy</div>
-      <a href="/news" class="intro-link"><span class="il-label">Latest Metal News</span><span class="il-desc">Live from 6 sources every 5 mins</span></a>
+      <a href="#latest-news" class="intro-link"><span class="il-label">Latest Metal News</span><span class="il-desc">Live from 6 sources every 5 mins</span></a>
       <a href="#concerts" class="intro-link"><span class="il-label">Concert Listings</span><span class="il-desc">Submit your show free</span></a>
       <a href="#local" class="intro-link"><span class="il-label">Local Scene</span><span class="il-desc">8 cities covered</span></a>
       <a href="#genres" class="intro-link"><span class="il-label">Genre Guides</span><span class="il-desc">17 genres, Top 10 album lists</span></a>
@@ -862,8 +949,8 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   <div class="about-inner">
     <div class="about-block">
       <div class="about-block-num">6</div>
-      <div class="about-block-title">Live News Sources</div>
-      <div class="about-block-desc">We aggregate headlines from Blabbermouth, Loudwire, MetalSucks, Metal Hammer, Revolver and Heavy Mag AU every five minutes around the clock.</div>
+      <div class="about-block-title">Trusted News Sources</div>
+      <div class="about-block-desc">We curate and recommend six leading heavy music publications &mdash; Blabbermouth, Loudwire, MetalSucks, Metal Hammer, Revolver and Heavy Mag AU. We link, we never copy.</div>
     </div>
     <div class="about-block">
       <div class="about-block-num">17</div>
@@ -1075,7 +1162,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
       </div>
       <div class="f-col">
         <h5>Navigate</h5>
-        <a href="/">News</a>
+        <a href="/#latest-news">Read News</a>
         <a href="#concerts">Concerts</a>
         <a href="#local">Local Scene</a>
         <a href="#genres">Genres</a>
