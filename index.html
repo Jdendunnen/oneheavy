@@ -508,6 +508,23 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 .logo-text-slogan{font-family:var(--C);font-size:8px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--red);font-style:italic;opacity:.85}
 .footer-logo{width:80px;height:80px;display:inline-block;margin-bottom:16px}
 @media(max-width:600px){.oh-logo{width:40px;height:40px}.logo-text-main{font-size:15px}.logo-text-slogan{font-size:7px}}
+
+.featured-articles{padding:48px 24px;background:var(--ink);border-bottom:1px solid var(--border)}
+.fa-section-inner{max-width:1360px;margin:0 auto}
+.fa-section-intro{font-size:14px;font-style:italic;font-weight:300;color:rgba(240,236,244,.65);line-height:1.78;max-width:640px;margin-bottom:24px}
+.fa-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.05);margin-bottom:24px}
+.fa-card{background:var(--card);padding:22px;display:flex;flex-direction:column;gap:8px;border-left:3px solid transparent;transition:all .2s;text-decoration:none}
+.fa-card:hover{background:var(--lift);border-left-color:var(--red)}
+.fa-card-cat{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red)}
+.fa-card-title{font-family:var(--D);font-size:18px;letter-spacing:.04em;text-transform:uppercase;color:var(--w);line-height:1.15;margin:2px 0}
+.fa-card-desc{font-size:12px;line-height:1.7;color:rgba(240,236,244,.6);font-weight:300;font-style:italic;flex:1}
+.fa-card-meta{font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.1em;text-transform:uppercase;margin-top:6px;padding-top:10px;border-top:1px solid var(--border)}
+.fa-card-read{font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
+.fa-section-footer{text-align:center;padding-top:8px}
+.fa-section-cta{display:inline-block;background:transparent;color:var(--red);font-family:var(--C);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:12px 28px;border:1px solid rgba(200,16,46,.4);transition:all .2s;text-decoration:none}
+.fa-section-cta:hover{background:var(--red);color:#fff}
+@media(max-width:900px){.fa-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.fa-grid{grid-template-columns:1fr}.featured-articles{padding:32px 16px}}
 </style>
 
 <script type="text/javascript">
@@ -768,97 +785,59 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   </div>
 </div>
 
-<div class="content">
-  <main>
-    <div class="sh" id="news"><h2>Latest <em>News</em></h2><a href="https://www.blabbermouth.net" target="_blank" rel="noopener noreferrer">All Stories &rarr;</a></div>
-    <div class="filters">
-      <button class="fb on" onclick="filterBy('all',this)">All Sources</button>
-      <button class="fb" onclick="filterBy('blabbermouth',this)">Blabbermouth</button>
-      <button class="fb" onclick="filterBy('loudwire',this)">Loudwire</button>
-      <button class="fb" onclick="filterBy('metalsucks',this)">MetalSucks</button>
-      <button class="fb" onclick="filterBy('loudersound',this)">Metal Hammer</button>
-      <button class="fb" onclick="filterBy('revolvermag',this)">Revolver</button>
-      <button class="fb" onclick="filterBy('heavymag',this)">Heavy Mag AU</button>
-    </div>
-    <div class="ng" id="newsGrid">
-      <a class="nc feature" href="https://www.blabbermouth.net" target="_blank" rel="noopener noreferrer">
-        <div class="nc-thumb"><div class="nc-thumb-src">&#x1F1FA;&#x1F1F8; Blabbermouth</div></div>
-        <div class="nc-body">
-          <div class="nc-top"><span class="nc-src">Blabbermouth</span><span class="nc-age">Latest</span></div>
-          <h3>Live Heavy Metal News &mdash; Updated Every 5 Minutes</h3>
-          <p>OneHeavy pulls live headlines from Blabbermouth, Loudwire, MetalSucks, Metal Hammer, Revolver and Heavy Mag AU automatically. Every story links directly to the original publisher. The most comprehensive free metal news feed on the web.</p>
-          <div class="nc-foot">Blabbermouth &middot; &#x1F1FA;&#x1F1F8;</div>
-        </div>
+<section class="featured-articles" id="featured-articles">
+  <div class="fa-section-inner">
+    <div class="sh"><h2>Featured <em>Articles</em></h2><a href="/articles">All Articles &rarr;</a></div>
+    <p class="fa-section-intro">Original editorial content from OneHeavy &mdash; band profiles, genre guides, festival deep dives and Australian metal commentary, written by metal fans for metal fans.</p>
+    <div class="fa-grid">
+      <a href="/articles/parkway-drive-band-profile" class="fa-card">
+        <div class="fa-card-cat">Band Profile</div>
+        <h3 class="fa-card-title">Parkway Drive &mdash; The Gold Coast Metalcore Juggernaut</h3>
+        <p class="fa-card-desc">From Byron Bay garage band to headlining European metal festivals. The complete story of Australia&#39;s biggest heavy music export.</p>
+        <div class="fa-card-meta">OneHeavy &middot; Josef Den Dunnen &middot; 7 min read</div>
+        <div class="fa-card-read">Read Article &rarr;</div>
       </a>
-      <a class="nc" href="https://loudwire.com" target="_blank" rel="noopener noreferrer">
-        <div class="nc-top"><span class="nc-src">Loudwire</span><span class="nc-age">Latest</span></div>
-        <h3>Hard Rock &amp; Heavy Metal News</h3>
-        <p>The latest rock and metal news, tour announcements, album releases and interviews from one of the web's most trusted hard music publications.</p>
-        <div class="nc-foot">Loudwire &middot; &#x1F1FA;&#x1F1F8;</div>
+      <a href="/articles/thy-art-is-murder-band-profile" class="fa-card">
+        <div class="fa-card-cat">Band Profile</div>
+        <h3 class="fa-card-title">Thy Art Is Murder &mdash; Sydney&#39;s Deathcore Titans</h3>
+        <p class="fa-card-desc">From the Sydney underground to international deathcore dominance. The band that proved Australian extreme metal is world class.</p>
+        <div class="fa-card-meta">OneHeavy &middot; Josef Den Dunnen &middot; 7 min read</div>
+        <div class="fa-card-read">Read Article &rarr;</div>
       </a>
-      <a class="nc" href="https://www.metalsucks.net" target="_blank" rel="noopener noreferrer">
-        <div class="nc-top"><span class="nc-src">MetalSucks</span><span class="nc-age">Latest</span></div>
-        <h3>Metal News, Reviews &amp; Opinion</h3>
-        <p>MetalSucks covers the heavy metal world with sharp news, honest reviews, interviews and commentary that pulls no punches.</p>
-        <div class="nc-foot">MetalSucks &middot; &#x1F1FA;&#x1F1F8;</div>
+      <a href="/articles/why-australian-metal-punches-above-its-weight" class="fa-card">
+        <div class="fa-card-cat">Editorial</div>
+        <h3 class="fa-card-title">Why Australian Metal Punches Above Its Weight</h3>
+        <p class="fa-card-desc">Australian heavy metal has produced world-class bands that headline European festivals and tour globally. Here is why the scene punches so far above its weight.</p>
+        <div class="fa-card-meta">OneHeavy &middot; Josef Den Dunnen &middot; 5 min read</div>
+        <div class="fa-card-read">Read Article &rarr;</div>
       </a>
-      <a class="nc" href="https://www.loudersound.com" target="_blank" rel="noopener noreferrer">
-        <div class="nc-top"><span class="nc-src">Metal Hammer</span><span class="nc-age">Latest</span></div>
-        <h3>Metal Hammer &mdash; The World's Greatest Metal Magazine</h3>
-        <p>News, reviews, features and interviews from Metal Hammer, the UK's leading heavy metal publication since 1983.</p>
-        <div class="nc-foot">Metal Hammer &middot; &#x1F1EC;&#x1F1E7;</div>
+      <a href="/articles/history-of-heavy-metal" class="fa-card">
+        <div class="fa-card-cat">Metal History</div>
+        <h3 class="fa-card-title">The History of Heavy Metal</h3>
+        <p class="fa-card-desc">From Black Sabbath in Birmingham to the global metal community of today &mdash; the complete story of how heavy metal was born and conquered the world.</p>
+        <div class="fa-card-meta">OneHeavy &middot; Josef Den Dunnen &middot; 8 min read</div>
+        <div class="fa-card-read">Read Article &rarr;</div>
       </a>
-      <a class="nc" href="https://www.revolvermag.com" target="_blank" rel="noopener noreferrer">
-        <div class="nc-top"><span class="nc-src">Revolver</span><span class="nc-age">Latest</span></div>
-        <h3>Heavy Metal News &amp; Culture</h3>
-        <p>Revolver covers the world of heavy metal with in-depth features, exclusive interviews and breaking news from across the metal spectrum.</p>
-        <div class="nc-foot">Revolver &middot; &#x1F1FA;&#x1F1F8;</div>
+      <a href="/articles/best-metal-festivals-world" class="fa-card">
+        <div class="fa-card-cat">Festival Guide</div>
+        <h3 class="fa-card-title">The Best Metal Festivals in the World</h3>
+        <p class="fa-card-desc">From Wacken Open Air in Germany to Download Festival in the UK &mdash; the definitive guide to the world&#39;s greatest heavy metal festivals.</p>
+        <div class="fa-card-meta">OneHeavy &middot; Josef Den Dunnen &middot; 7 min read</div>
+        <div class="fa-card-read">Read Article &rarr;</div>
       </a>
-      <a class="nc" href="https://heavymag.com.au" target="_blank" rel="noopener noreferrer">
-        <div class="nc-top"><span class="nc-src">Heavy Mag AU</span><span class="nc-age">Latest</span></div>
-        <h3>Australian Heavy Metal News</h3>
-        <p>Heavy Mag is Australia's home of heavy music, covering local and international metal news, reviews and Australian tour announcements.</p>
-        <div class="nc-foot">Heavy Mag AU &middot; &#x1F1E6;&#x1F1FA;</div>
+      <a href="/articles/guide-to-metal-subgenres" class="fa-card">
+        <div class="fa-card-cat">Genre Guide</div>
+        <h3 class="fa-card-title">A Complete Guide to Metal Subgenres</h3>
+        <p class="fa-card-desc">Thrash, death, black, doom, progressive, metalcore and beyond &mdash; your complete guide to every major heavy metal subgenre.</p>
+        <div class="fa-card-meta">OneHeavy &middot; Josef Den Dunnen &middot; 9 min read</div>
+        <div class="fa-card-read">Read Article &rarr;</div>
       </a>
     </div>
-  </main>
-  <aside class="sidebar">
-    <div class="local-shows-widget">
-      <div class="lsw-head">
-        <div class="lsw-title">Local <span>Shows</span></div>
-        <button class="lsw-btn" onclick="openSubmit()">+ Add Show</button>
-      </div>
-      <div class="lsw-body">
-        <div class="lsw-empty">
-          <div class="lsw-empty-icon">&#x1F3B8;</div>
-          <p>Be the first to list your show here.<br>Free for all bands &amp; promoters.<br>Listed within 24 hours.</p>
-          <button class="lsw-submit" onclick="openSubmit()">Submit Your Show &rarr;</button>
-          <div class="lsw-note">increasinglyinquisitive&#64;gmail.com</div>
-        </div>
-      </div>
+    <div class="fa-section-footer">
+      <a href="/articles" class="fa-section-cta">Browse All 15 Articles &rarr;</a>
     </div>
-    <div class="community-card">
-      <div class="cc-tag">OneHeavy Community</div>
-      <div class="cc-icon">&#x1F918;</div>
-      <div class="cc-period">Free Forever &middot; No Login Needed</div>
-      <ul class="cc-list">
-        <li>All metal news in one place</li>
-        <li>6 sources updated every 5 mins</li>
-        <li>Concert listings worldwide</li>
-        <li>Local scene discovery</li>
-        <li>100% free, always</li>
-      </ul>
-      <a href="/about" class="cc-btn">About OneHeavy &#x1F918;</a>
-      <div class="cc-note">Share with every metal fan you know</div>
-    </div>
-    <div class="widget">
-      <div class="wh">&#x1F525; Trending <em>Today</em></div>
-      <div id="trendList">
-        <div class="tr-item"><div class="tr-n">01</div><div class="tr-info"><h5>Loading latest stories&#8230;</h5><small>Metal News</small></div></div>
-      </div>
-    </div>
-  </aside>
-</div>
+  </div>
+</section>
 
 <section class="site-intro" id="about-oneheavy">
   <div class="intro-inner">
@@ -866,12 +845,12 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
       <div class="intro-tag">About OneHeavy</div>
       <h2 class="intro-heading">The World's <em>Heaviest</em> Music Hub</h2>
       <p class="intro-body">OneHeavy is a free heavy music news aggregation and discovery platform built for fans of heavy music worldwide. We pull live headlines from six of the world's leading metal publications &mdash; <a href="https://www.blabbermouth.net" target="_blank" rel="noopener noreferrer">Blabbermouth</a>, <a href="https://loudwire.com" target="_blank" rel="noopener noreferrer">Loudwire</a>, <a href="https://www.metalsucks.net" target="_blank" rel="noopener noreferrer">MetalSucks</a>, <a href="https://www.loudersound.com" target="_blank" rel="noopener noreferrer">Metal Hammer</a>, <a href="https://www.revolvermag.com" target="_blank" rel="noopener noreferrer">Revolver</a> and <a href="https://heavymag.com.au" target="_blank" rel="noopener noreferrer">Heavy Mag AU</a> &mdash; updated automatically every five minutes, 24 hours a day, seven days a week. Every headline links directly back to the original publisher.</p>
-      <p class="intro-body">Beyond the <a href="#news">live news feed</a>, OneHeavy offers comprehensive <a href="#genres">genre guides across 17 metal subgenres</a> &mdash; from classic thrash and death metal to post-metal, djent and stoner &mdash; each featuring community-rated Top 10 album lists curated from decades of passionate listening. Our <a href="#local">local scene pages</a> cover eight major cities across Australia, the UK, the USA and Europe, complete with venue guides, promoter directories and a free show submission system for bands and promoters. No paywalls. No subscriptions. No logins. Just metal.</p>
+      <p class="intro-body">Beyond the <a href="/news">live news feed</a>, OneHeavy offers comprehensive <a href="#genres">genre guides across 17 metal subgenres</a> &mdash; from classic thrash and death metal to post-metal, djent and stoner &mdash; each featuring community-rated Top 10 album lists curated from decades of passionate listening. Our <a href="#local">local scene pages</a> cover eight major cities across Australia, the UK, the USA and Europe, complete with venue guides, promoter directories and a free show submission system for bands and promoters. No paywalls. No subscriptions. No logins. Just metal.</p>
       <p class="intro-body">OneHeavy has a particular focus on the Australian heavy music community. With dedicated local pages for <a href="/melbourne">Melbourne</a>, <a href="/sydney">Sydney</a>, <a href="/brisbane">Brisbane</a>, <a href="/adelaide">Adelaide</a> and <a href="/perth">Perth</a>, we provide Australian metal fans with the most comprehensive guide to their local scene available online. We also cover the global scene with city pages for <a href="/london">London</a>, <a href="/newyork">New York</a> and <a href="/berlin">Berlin</a>. All shows can be submitted free of charge &mdash; we review every submission within 24 hours.</p>
     </div>
     <div class="intro-links">
       <div class="intro-links-title">Explore OneHeavy</div>
-      <a href="#news" class="intro-link"><span class="il-label">Latest Metal News</span><span class="il-desc">Live from 6 sources every 5 mins</span></a>
+      <a href="/news" class="intro-link"><span class="il-label">Latest Metal News</span><span class="il-desc">Live from 6 sources every 5 mins</span></a>
       <a href="#concerts" class="intro-link"><span class="il-label">Concert Listings</span><span class="il-desc">Submit your show free</span></a>
       <a href="#local" class="intro-link"><span class="il-label">Local Scene</span><span class="il-desc">8 cities covered</span></a>
       <a href="#genres" class="intro-link"><span class="il-label">Genre Guides</span><span class="il-desc">17 genres, Top 10 album lists</span></a>
@@ -1146,376 +1125,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 <script>
 var clean=function(s){return(s||'').replace(/<[^>]+>/g,'').replace(/&amp;/g,'&').replace(/&#8217;/g,"'").replace(/&#8220;/g,'"').replace(/&#8221;/g,'"').replace(/&quot;/g,'"').replace(/&nbsp;/g,' ').trim();};
 function ago(d){var s=Math.floor((Date.now()-new Date(d))/1000);if(s<60)return'Just now';if(s<3600)return Math.floor(s/60)+'m ago';if(s<86400)return Math.floor(s/3600)+'h ago';return Math.floor(s/86400)+'d ago';}
-var FEEDS=[
-  {url:'https://www.blabbermouth.net/feed/',key:'blabbermouth',label:'Blabbermouth',flag:'&#x1F1FA;&#x1F1F8;'},
-  {url:'https://loudwire.com/feed/',key:'loudwire',label:'Loudwire',flag:'&#x1F1FA;&#x1F1F8;'},
-  {url:'https://feeds.feedburner.com/Metalsucks',key:'metalsucks',label:'MetalSucks',flag:'&#x1F1FA;&#x1F1F8;'},
-  {url:'https://loudersound.com/feeds.xml',key:'loudersound',label:'Metal Hammer',flag:'&#x1F1EC;&#x1F1E7;'},
-  {url:'https://www.revolvermag.com/feed',key:'revolvermag',label:'Revolver',flag:'&#x1F1FA;&#x1F1F8;'},
-  {url:'https://heavymag.com.au/feed',key:'heavymag',label:'Heavy Mag AU',flag:'&#x1F1E6;&#x1F1FA;'}
-];
-var ALL=[],FILTER='all';
-document.getElementById('dlDate').textContent=new Date().toLocaleDateString('en-AU',{weekday:'long',year:'numeric',month:'long',day:'numeric'}).toUpperCase();
-function fetchFeed(f){return fetch('/api/rss?url='+encodeURIComponent(f.url)).then(function(r){return r.json();}).then(function(d){return(d.items||[]).map(function(i){return{title:clean(i.title),desc:clean(i.description||'').slice(0,340),url:i.link,source:f.label,key:f.key,flag:f.flag,pub:i.pubDate,ms:new Date(i.pubDate).getTime()};});}).catch(function(){return[];});}
-function loadAll(){
-  var g=document.getElementById('newsGrid');
-  g.className='ng';
-  g.innerHTML='<div class="loading"><div class="spin"></div><p>Fetching live metal news&#8230;</p></div>';
-  Promise.allSettled(FEEDS.map(fetchFeed)).then(function(res){
-    ALL=res.reduce(function(a,r){return r.status==='fulfilled'?a.concat(r.value):a;},[]).sort(function(a,b){return b.ms-a.ms;});
-    if(!ALL.length){g.innerHTML='<div class="loading"><p>Unable to load news right now &mdash; please refresh shortly.</p></div>';return;}
-    var show=FILTER==='all'?ALL:ALL.filter(function(i){return i.key===FILTER;});
-    renderGrid(show);renderHero(ALL);renderTrend(ALL);
-  });
-}
-function renderGrid(items){
-  var g=document.getElementById('newsGrid');
-  g.className='ng';
-  if(!items.length){g.innerHTML='<div class="loading"><p>No stories found &mdash; refresh shortly.</p></div>';return;}
-  g.innerHTML=items.slice(0,12).map(function(it,i){var t=it.title.replace(/'/g,"\\'");var d=(it.desc||'').replace(/'/g,"\\'");var u=it.url.replace(/'/g,"\\'");var s=it.source.replace(/'/g,"\\'");var p=ago(it.pub);return'<a class="nc'+(i===0?' feature':'')+'" href="'+it.url+'" onclick="openStoryModal(\''+t+'\',\''+s+'\',\''+d+'\',\''+u+'\',\''+p+'\'); return false;">'+(i===0?'<div class="nc-thumb"><div class="nc-thumb-src">'+it.flag+' '+it.source+'</div></div><div class="nc-body">':'')+'<div class="nc-top"><span class="nc-src">'+it.source+'</span><span class="nc-age">'+ago(it.pub)+'</span></div><h3>'+it.title+'</h3>'+(i<3?'<p>'+it.desc+'</p>':'')+'<div class="nc-foot">'+it.source+' &middot; '+it.flag+' &middot; <span style="color:var(--red);font-size:9px;letter-spacing:.1em">EXPAND &darr;</span></div>'+(i===0?'</div>':'')+'</a>';}).join('');
-}
-function renderHero(items){
-  if(!items.length)return;
-  var t=items[0];
-  document.getElementById('heroBody').innerHTML='<div class="hero-eyebrow">Breaking News</div><h1>'+t.title+'</h1><div class="hero-byline"><span>'+t.flag+' '+t.source+'</span><span class="hdot"></span><span>'+ago(t.pub)+'</span></div><p class="hero-desc">'+t.desc+'</p><a href="'+t.url+'" target="_blank" rel="noopener noreferrer" class="btn-story">Read Full Story</a>';
-}
-function renderTrend(items){document.getElementById('trendList').innerHTML=items.slice(0,5).map(function(it,i){var d=document.createElement('div');d.className='tr-item';d.onclick=function(){openStoryModal(it.title,it.source,it.desc,it.url,ago(it.pub));};d.innerHTML='<div class="tr-n">0'+(i+1)+'</div><div class="tr-info"><h5>'+it.title+'</h5><small>'+it.source+' &middot; '+ago(it.pub)+'</small></div>';return d.outerHTML;}).join('');
-}
-function filterBy(key,btn){
-  FILTER=key;
-  document.querySelectorAll('.fb').forEach(function(b){b.classList.remove('on');});
-  btn.classList.add('on');
-  renderGrid(key==='all'?ALL:ALL.filter(function(i){return i.key===key;}));
-}
-function setGenre(el){document.querySelectorAll('.gp').forEach(function(t){t.classList.remove('on');});el.classList.add('on');}
-var TOUR_DATA=null,TOUR_FILTER='all';
-function openTours(){document.getElementById('toursOverlay').classList.add('open');document.body.style.overflow='hidden';if(!TOUR_DATA)loadTours();}
-function closeTours(){document.getElementById('toursOverlay').classList.remove('open');document.body.style.overflow='';}
-function loadTours(){
-  fetch('/api/tours').then(function(r){return r.json();}).then(function(d){TOUR_DATA=d;renderTours();}).catch(function(){document.getElementById('toursBody').innerHTML='<div class="tours-empty">Unable to load tour data &mdash; try again shortly.</div>';});
-}
-function filterTours(key,btn){TOUR_FILTER=key;document.querySelectorAll('.tf').forEach(function(b){b.classList.remove('on');});btn.classList.add('on');renderTours();document.getElementById('toursBody').scrollTop=0;}
-function renderTours(){
-  if(!TOUR_DATA)return;
-  var body=document.getElementById('toursBody');
-  var tourNews=TOUR_DATA.tourNews||[];
-  var intlNews=TOUR_DATA.intlNews||tourNews.filter(function(t){return !t.isAus;});
-  var ausNews=TOUR_DATA.ausNews||tourNews.filter(function(t){return t.isAus;});
-  var html='';
-  function buildCards(items,tag){
-    var s='<div class="tours-grid">';
-    items.forEach(function(t){
-      var regionTag=tag?'<span class="tc-aus">'+tag+'</span>':'';
-      s+='<a class="tour-card" href="'+t.link+'" target="_blank" rel="noopener noreferrer"><div><span class="tc-source">'+t.source+'</span>'+regionTag+'</div><div class="tc-title">'+t.title+'</div><div class="tc-desc">'+t.desc+'</div><div class="tc-foot">'+t.source+' &middot; Tour News</div></a>';
-    });
-    s+='</div>';
-    return s;
-  }
-  if(TOUR_FILTER==='all'){
-    if(ausNews.length){html+='<div class="tours-section"><div class="tours-section-hd">&#x1F1E6;&#x1F1FA; <em>Australian</em> Shows</div>'+buildCards(ausNews,'&#x1F1E6;&#x1F1FA; Aus')+'</div>';}
-    if(intlNews.length){html+='<div class="tours-section"><div class="tours-section-hd">&#x1F30D; <em>International</em> Shows</div>'+buildCards(intlNews,'')+'</div>';}
-  } else if(TOUR_FILTER==='aus'){
-    if(ausNews.length){html+='<div class="tours-section"><div class="tours-section-hd">&#x1F1E6;&#x1F1FA; <em>Australian</em> Shows</div>'+buildCards(ausNews,'&#x1F1E6;&#x1F1FA; Aus')+'</div>';}
-    else{html+='<div class="tours-empty">No Australian shows right now &mdash; check back soon.</div>';}
-  } else if(TOUR_FILTER==='intl'){
-    if(intlNews.length){html+='<div class="tours-section"><div class="tours-section-hd">&#x1F30D; <em>International</em> Shows</div>'+buildCards(intlNews,'')+'</div>';}
-    else{html+='<div class="tours-empty">No international shows right now &mdash; check back soon.</div>';}
-  }
-  if(!html)html='<div class="tours-empty">No tour announcements found &mdash; check back shortly.</div>';
-  body.innerHTML=html;
-}
-var GENRE_DATA={
-'all-metal':{name:'Essential Metal',albums:[
-{rank:1,artist:'Metallica',album:'Master Of Puppets',year:1986},
-{rank:2,artist:'Megadeth',album:'Rust In Peace',year:1990},
-{rank:3,artist:'Death',album:'Symbolic',year:1995},
-{rank:4,artist:'Metallica',album:'Ride The Lightning',year:1984},
-{rank:5,artist:'Opeth',album:'Blackwater Park',year:2001},
-{rank:6,artist:'Black Sabbath',album:'Paranoid',year:1970},
-{rank:7,artist:'Slayer',album:'Reign In Blood',year:1986},
-{rank:8,artist:'Helloween',album:'Keeper Of The Seven Keys Part II',year:1988},
-{rank:9,artist:'Agalloch',album:'The Mantle',year:2002},
-{rank:10,artist:'Rammstein',album:'Mutter',year:2001}
-]},
-'thrash':{name:'Thrash Metal',albums:[
-{rank:1,artist:'Metallica',album:'Master Of Puppets',year:1986},
-{rank:2,artist:'Megadeth',album:'Rust In Peace',year:1990},
-{rank:3,artist:'Death',album:'Symbolic',year:1995},
-{rank:4,artist:'Metallica',album:'Ride The Lightning',year:1984},
-{rank:5,artist:'Death',album:'The Sound Of Perseverance',year:1998},
-{rank:6,artist:'Slayer',album:'Reign In Blood',year:1986},
-{rank:7,artist:'Death',album:'Human',year:1991},
-{rank:8,artist:'Sepultura',album:'Arise',year:1991},
-{rank:9,artist:'Slayer',album:'Seasons In The Abyss',year:1990},
-{rank:10,artist:'Sepultura',album:'Beneath The Remains',year:1989}
-]},
-'death':{name:'Death Metal',albums:[
-{rank:1,artist:'Death',album:'Symbolic',year:1995},
-{rank:2,artist:'Death',album:'The Sound Of Perseverance',year:1998},
-{rank:3,artist:'Edge Of Sanity',album:'Crimson',year:1996},
-{rank:4,artist:'Dissection',album:"Storm Of The Light's Bane",year:1995},
-{rank:5,artist:'Death',album:'Human',year:1991},
-{rank:6,artist:'Sepultura',album:'Arise',year:1991},
-{rank:7,artist:"Be'lakor",album:"Stone's Reach",year:2009},
-{rank:8,artist:'Gojira',album:'From Mars To Sirius',year:2005},
-{rank:9,artist:'Sepultura',album:'Beneath The Remains',year:1989},
-{rank:10,artist:'Bolt Thrower',album:'Those Once Loyal',year:2005}
-]},
-'black':{name:'Black Metal',albums:[
-{rank:1,artist:'Agalloch',album:'The Mantle',year:2002},
-{rank:2,artist:'Agalloch',album:'Ashes Against The Grain',year:2006},
-{rank:3,artist:'Dissection',album:"Storm Of The Light's Bane",year:1995},
-{rank:4,artist:'Immortal',album:'At The Heart Of Winter',year:1999},
-{rank:5,artist:'Emperor',album:'Anthems To The Welkin At Dusk',year:1997},
-{rank:6,artist:'Mgla',album:'Exercises In Futility',year:2015},
-{rank:7,artist:'Mercyful Fate',album:'Melissa',year:1983},
-{rank:8,artist:'Mercyful Fate',album:"Don't Break The Oath",year:1984},
-{rank:9,artist:'Primordial',album:'To The Nameless Dead',year:2007},
-{rank:10,artist:'Summoning',album:'Stronghold',year:1999}
-]},
-'doom':{name:'Doom Metal',albums:[
-{rank:1,artist:'Black Sabbath',album:'Paranoid',year:1970},
-{rank:2,artist:'Black Sabbath',album:'Master Of Reality',year:1971},
-{rank:3,artist:'Black Sabbath',album:'Black Sabbath',year:1970},
-{rank:4,artist:'Candlemass',album:'Epicus Doomicus Metallicus',year:1986},
-{rank:5,artist:'Saturnus',album:'Veronika Decides To Die',year:2006},
-{rank:6,artist:'Paradise Lost',album:'Draconian Times',year:1995},
-{rank:7,artist:'Draconian',album:'Arcane Rain Fell',year:2005},
-{rank:8,artist:'Anathema',album:'Judgement',year:1999},
-{rank:9,artist:'Empyrium',album:'Songs Of Moors And Misty Fields',year:1997},
-{rank:10,artist:'My Dying Bride',album:'The Angel And The Dark River',year:1995}
-]},
-'power':{name:'Power Metal',albums:[
-{rank:1,artist:'Helloween',album:'Keeper Of The Seven Keys Part II',year:1988},
-{rank:2,artist:'Wintersun',album:'Wintersun',year:2004},
-{rank:3,artist:'Blind Guardian',album:'Imaginations From The Other Side',year:1995},
-{rank:4,artist:'Helloween',album:'Keeper Of The Seven Keys Part I',year:1987},
-{rank:5,artist:'Blind Guardian',album:'Nightfall In Middle-Earth',year:1998},
-{rank:6,artist:'Gamma Ray',album:'Land Of The Free',year:1995},
-{rank:7,artist:'Kamelot',album:'The Black Halo',year:2005},
-{rank:8,artist:'Symphony X',album:'The Divine Wings Of Tragedy',year:1997},
-{rank:9,artist:'Blind Guardian',album:'Somewhere Far Beyond',year:1992},
-{rank:10,artist:'Lost Horizon',album:'A Flame To The Ground Beneath',year:2003}
-]},
-'progressive':{name:'Progressive Metal',albums:[
-{rank:1,artist:'Opeth',album:'Blackwater Park',year:2001},
-{rank:2,artist:'Opeth',album:'Still Life',year:1999},
-{rank:3,artist:'Dream Theater',album:'Metropolis Pt. 2: Scenes From A Memory',year:1999},
-{rank:4,artist:'Dream Theater',album:'Images And Words',year:1992},
-{rank:5,artist:'Tool',album:'Lateralus',year:2001},
-{rank:6,artist:'Opeth',album:'Ghost Reveries',year:2005},
-{rank:7,artist:'Ayreon',album:'The Human Equation',year:2004},
-{rank:8,artist:'Nevermore',album:'Dead Heart In A Dead World',year:2000},
-{rank:9,artist:'Porcupine Tree',album:'Fear Of A Blank Planet',year:2007},
-{rank:10,artist:'Nevermore',album:'This Godless Endeavor',year:2005}
-]},
-'symphonic':{name:'Symphonic Metal',albums:[
-{rank:1,artist:'Therion',album:'Theli',year:1996},
-{rank:2,artist:'Haggard',album:'Eppur Si Muove',year:2004},
-{rank:3,artist:'Therion',album:'Vovin',year:1998},
-{rank:4,artist:'Therion',album:'Lemuria',year:2004},
-{rank:5,artist:'Lacrimosa',album:'Elodia',year:1999},
-{rank:6,artist:'Wilderun',album:'Veil Of Imagination',year:2019},
-{rank:7,artist:'Diablo Swing Orchestra',album:"The Butcher's Ballroom",year:2006},
-{rank:8,artist:'Virgin Steele',album:'The Marriage Of Heaven And Hell Part II',year:1995},
-{rank:9,artist:'Septicflesh',album:'The Great Mass',year:2011},
-{rank:10,artist:'Virgin Steele',album:'Invictus',year:1998}
-]},
-'groove':{name:'Groove Metal',albums:[
-{rank:1,artist:'Pantera',album:'Vulgar Display Of Power',year:1992},
-{rank:2,artist:'Pantera',album:'Far Beyond Driven',year:1994},
-{rank:3,artist:'Sepultura',album:'Chaos A.D.',year:1993},
-{rank:4,artist:'White Zombie',album:'Astro-Creep: 2000',year:1995},
-{rank:5,artist:'Machine Head',album:'Burn My Eyes',year:1994},
-{rank:6,artist:'Lamb of God',album:'Ashes of the Wake',year:2004},
-{rank:7,artist:'Crowbar',album:'Crowbar',year:1993},
-{rank:8,artist:'Exhorder',album:'Slaughter in the Vatican',year:1990},
-{rank:9,artist:'Down',album:'NOLA',year:1995},
-{rank:10,artist:'Hellyeah',album:'Hellyeah',year:2007}
-]},
-'nu-metal':{name:'Nu-Metal',albums:[
-{rank:1,artist:'Rage Against The Machine',album:'Rage Against The Machine',year:1992},
-{rank:2,artist:'Snot',album:'Get Some',year:1997},
-{rank:3,artist:'Linkin Park',album:'Hybrid Theory',year:2000},
-{rank:4,artist:'Linkin Park',album:'Meteora',year:2003},
-{rank:5,artist:'Nothingface',album:'Violence',year:2000},
-{rank:6,artist:'Nothingface',album:'Skeletons',year:2003},
-{rank:7,artist:'DevilDriver',album:"The Fury Of Our Maker's Hand",year:2005},
-{rank:8,artist:'Mudvayne',album:'L.D. 50',year:2000},
-{rank:9,artist:'Deftones',album:'Around The Fur',year:1997},
-{rank:10,artist:'Korn',album:'Korn',year:1994}
-]},
-'metalcore':{name:'Metalcore',albums:[
-{rank:1,artist:'Between The Buried And Me',album:'Colors',year:2007},
-{rank:2,artist:'Converge',album:'Jane Doe',year:2001},
-{rank:3,artist:'The Black Dahlia Murder',album:'Nocturnal',year:2007},
-{rank:4,artist:'Protest The Hero',album:'Fortress',year:2008},
-{rank:5,artist:'Hypno5e',album:'Acid Mist Tomorrow',year:2012},
-{rank:6,artist:'Shokran',album:'Supreme Truth',year:2014},
-{rank:7,artist:'The Human Abstract',album:'Digital Veil',year:2011},
-{rank:8,artist:'Poison The Well',album:'You Come Before You',year:2003},
-{rank:9,artist:'Electric Callboy',album:'Tekkno',year:2022},
-{rank:10,artist:'Ice Nine Kills',album:'The Silver Scream',year:2018}
-]},
-'deathcore':{name:'Deathcore',albums:[
-{rank:1,artist:'Slice The Cake',album:'Odyssey To The West',year:2016},
-{rank:2,artist:'Shokran',album:'Supreme Truth',year:2014},
-{rank:3,artist:'Shadow Of Intent',album:'Reclaimer',year:2017},
-{rank:4,artist:'After The Burial',album:'Rareform',year:2008},
-{rank:5,artist:'Born Of Osiris',album:'The Discovery',year:2011},
-{rank:6,artist:'The Faceless',album:'Akeldama',year:2006},
-{rank:7,artist:'Shadow Of Intent',album:'Melancholy',year:2019},
-{rank:8,artist:'Fit For An Autopsy',album:'The Sea Of Tragic Beasts',year:2019},
-{rank:9,artist:'All Shall Perish',album:'The Price Of Existence',year:2006},
-{rank:10,artist:'Lorna Shore',album:'Pain Remains',year:2022}
-]},
-'folk':{name:'Folk Metal',albums:[
-{rank:1,artist:'Ensiferum',album:'Ensiferum',year:2001},
-{rank:2,artist:'Moonsorrow',album:'Kivenkantaja',year:2003},
-{rank:3,artist:'Moonsorrow',album:'Voimasta Ja Kunniasta',year:2001},
-{rank:4,artist:'Primordial',album:'To The Nameless Dead',year:2007},
-{rank:5,artist:'Orphaned Land',album:'Mabool: The Story Of The Three Sons Of Seven',year:2004},
-{rank:6,artist:'Ensiferum',album:'Iron',year:2004},
-{rank:7,artist:'Moonspell',album:'Wolfheart',year:1995},
-{rank:8,artist:'Empyrium',album:'Songs Of Moors And Misty Fields',year:1997},
-{rank:9,artist:'Equilibrium',album:'Sagas',year:2008},
-{rank:10,artist:'Amorphis',album:'Under The Red Cloud',year:2015}
-]},
-'viking':{name:'Viking Metal',albums:[
-{rank:1,artist:'Bathory',album:'Hammerheart',year:1990},
-{rank:2,artist:'Enslaved',album:'Eld',year:1997},
-{rank:3,artist:'Amon Amarth',album:'With Oden On Our Side',year:2006},
-{rank:4,artist:'Windir',album:'Arntor',year:1999},
-{rank:5,artist:'Burzum',album:'Belus',year:2010},
-{rank:6,artist:'Mithotyn',album:'King Of The Distant Forest',year:1997},
-{rank:7,artist:'Falkenbach',album:'Magni Blandinn Ok Megintiri',year:1998},
-{rank:8,artist:'Thyrfing',album:'Valdr Galga',year:1999},
-{rank:9,artist:'Graveland',album:'Immortal Pride',year:1998},
-{rank:10,artist:'Unleashed',album:'Across The Open Sea',year:1993}
-]},
-'industrial':{name:'Industrial Metal',albums:[
-{rank:1,artist:'Rammstein',album:'Mutter',year:2001},
-{rank:2,artist:'Fear Factory',album:'Demanufacture',year:1995},
-{rank:3,artist:'Nine Inch Nails',album:'The Downward Spiral',year:1994},
-{rank:4,artist:'Front Line Assembly',album:'Implode',year:1999},
-{rank:5,artist:'Buckethead',album:'Hold Me Forever',year:2014},
-{rank:6,artist:'Strapping Young Lad',album:'City',year:1997},
-{rank:7,artist:'Nine Inch Nails',album:'The Fragile',year:1999},
-{rank:8,artist:'Godkiller',album:'The End Of The World',year:1998},
-{rank:9,artist:'Strapping Young Lad',album:'Alien',year:2005},
-{rank:10,artist:'Sybreed',album:'Antares',year:2007}
-]},
-'post-metal':{name:'Post-Metal',albums:[
-{rank:1,artist:'Isis',album:'Panopticon',year:2004},
-{rank:2,artist:'Ghost Brigade',album:'Isolation Songs',year:2009},
-{rank:3,artist:'The Ocean',album:'Pelagial',year:2013},
-{rank:4,artist:'Isis',album:'Oceanic',year:2002},
-{rank:5,artist:'Cult Of Luna',album:'Somewhere Along The Highway',year:2006},
-{rank:6,artist:'Oceansize',album:'Frames',year:2007},
-{rank:7,artist:'Cult Of Luna',album:'Salvation',year:2004},
-{rank:8,artist:'Rosetta',album:'Wake / Lift',year:2007},
-{rank:9,artist:'Cult Of Luna',album:'A Dawn To Fear',year:2019},
-{rank:10,artist:'Russian Circles',album:'Station',year:2008}
-]},
-'djent':{name:'Djent',albums:[
-{rank:1,artist:'Meshuggah',album:'obZen',year:2008},
-{rank:2,artist:'Periphery',album:'Periphery II: This Time Its Personal',year:2012},
-{rank:3,artist:'Animals as Leaders',album:'Animals as Leaders',year:2009},
-{rank:4,artist:'Tesseract',album:'One',year:2011},
-{rank:5,artist:'Vildhjarta',album:'Masstaden',year:2011},
-{rank:6,artist:'Intervals',album:'A Voice Within',year:2014},
-{rank:7,artist:'Plini',album:'Handmade Cities',year:2016},
-{rank:8,artist:'Born Of Osiris',album:'The Discovery',year:2011},
-{rank:9,artist:'Skyhill',album:'Skyhill',year:2014},
-{rank:10,artist:'Northlane',album:'Singularity',year:2013}
-]},
-'stoner':{name:'Stoner Metal',albums:[
-{rank:1,artist:'Kyuss',album:'Welcome To Sky Valley',year:1994},
-{rank:2,artist:'Sleep',album:'Dopesmoker',year:2003},
-{rank:3,artist:'Queens of the Stone Age',album:'Songs For The Deaf',year:2002},
-{rank:4,artist:'Monster Magnet',album:'Superjudge',year:1993},
-{rank:5,artist:'Fu Manchu',album:'The Action Is Go',year:1997},
-{rank:6,artist:'Clutch',album:'Elephant Riders',year:1998},
-{rank:7,artist:'Orange Goblin',album:'Coup de Grace',year:2002},
-{rank:8,artist:'Brant Bjork',album:'Jacoozzi',year:2011},
-{rank:9,artist:'Colour Haze',album:'All',year:2008},
-{rank:10,artist:'Wo Fat',album:'The Conjuring',year:2012}
-]}};
-function showGenrePanel(key){
-  var data=GENRE_DATA[key];if(!data){closeGenrePanel();return;}
-  document.getElementById('genrePanelName').textContent=data.name;
-  document.getElementById('genreTop10').innerHTML=data.albums.map(function(a){
-    var q=encodeURIComponent(a.artist+' '+a.album);
-    var amzUrl='https://www.amazon.com.au/s?k='+q+'&tag=oneheavymetal-22';
-    return'<div class="genre-album"><div class="ga-rank">'+(a.rank<10?'0'+a.rank:a.rank)+'</div><div class="ga-info"><div class="ga-artist">'+a.artist+'</div><div class="ga-album">'+a.album+'</div><div class="ga-year">'+a.year+'</div></div><a class="ga-buy" href="'+amzUrl+'" target="_blank" rel="noopener noreferrer sponsored">Buy &rarr;</a></div>';
-  }).join('');
-  var panel=document.getElementById('genrePanel');panel.classList.add('open');panel.scrollIntoView({behavior:'smooth',block:'nearest'});
-}
-function closeGenrePanel(){document.getElementById('genrePanel').classList.remove('open');document.querySelectorAll('.gp').forEach(function(g){g.classList.remove('on');});document.querySelector('.gp').classList.add('on');}
-var ham=document.getElementById('ham');
-var mobNav=document.getElementById('mobNav');
-ham.addEventListener('click',function(){var o=mobNav.classList.toggle('open');ham.classList.toggle('open',o);document.body.style.overflow=o?'hidden':'';});
-function closeMob(){mobNav.classList.remove('open');ham.classList.remove('open');document.body.style.overflow='';}
-document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeMob();closeNewsletter();closeSubmit();closeTours();}});
-function openNewsletter(){document.getElementById('newsletterModal').classList.add('open');document.body.style.overflow='hidden';setTimeout(function(){document.getElementById('emailInput').focus();},100);}
-function closeNewsletter(e){if(e&&e.target!==document.getElementById('newsletterModal'))return;document.getElementById('newsletterModal').classList.remove('open');document.body.style.overflow='';}
-function submitEmail(){
-  var email=document.getElementById('emailInput').value.trim();
-  if(!email||!email.includes('@')){document.getElementById('emailInput').style.borderColor='rgba(200,16,46,.8)';return;}
-  var subject=encodeURIComponent('OneHeavy Weekly Digest Signup');
-  var body=encodeURIComponent('Please add me to the OneHeavy Weekly Digest.\n\nEmail: '+email+'\n\nKeep it heavy!');
-  window.open('mailto:increasinglyinquisitive@gmail.com?subject='+subject+'&body='+body,'_blank');
-  document.getElementById('modalForm').style.display='none';
-  document.getElementById('modalSuccess').style.display='block';
-}
-function openSubmit(){document.getElementById('submitModal').classList.add('open');document.body.style.overflow='hidden';}
-function closeSubmit(e){if(e&&e.target!==document.getElementById('submitModal'))return;document.getElementById('submitModal').classList.remove('open');document.body.style.overflow='';}
-function submitShow(){
-  var band=document.getElementById('bandName').value.trim();
-  var city=document.getElementById('showCity').value.trim();
-  var venue=document.getElementById('showVenue').value.trim();
-  var date=document.getElementById('showDate').value;
-  var email=document.getElementById('submitterEmail').value.trim();
-  var promoter=document.getElementById('promoterName').value.trim();
-  var tickets=document.getElementById('showTickets').value.trim();
-  var info=document.getElementById('showInfo').value.trim();
-  if(!band||!city||!venue||!date||!email){alert('Please fill in all required fields.');return;}
-  var subject=encodeURIComponent('OneHeavy Show Submission: '+band+' @ '+venue);
-  var body=encodeURIComponent('BAND/ARTIST: '+band+'\nPROMOTER: '+promoter+'\nDATE: '+date+'\nVENUE: '+venue+'\nCITY: '+city+'\nTICKETS: '+(tickets||'N/A')+'\nINFO: '+(info||'N/A')+'\nSUBMITTER EMAIL: '+email);
-  fetch('https://script.google.com/macros/s/AKfycbyGZFUviTc4_9JNbE85MlO2iLUS6YKyo1Ita4ceDT6UcFPkR9nlES7Mz2mBDcFOi6NUCw/exec', {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify({
-      band: band, promoter: promoter, showDate: date,
-      venue: venue, city: city, tickets: tickets,
-      info: info, email: email
-    })
-  }).catch(function(){});
-  window.location.href='mailto:increasinglyinquisitive@gmail.com?subject='+subject+'&body='+body;
-  document.getElementById('submitForm').style.display='none';
-  document.getElementById('submitSuccess').style.display='block';
-}
-
-function openStoryModal(title, source, desc, url, pubDate){
-  document.getElementById('storyTitle').textContent = title;
-  document.getElementById('storySource').textContent = source;
-  document.getElementById('storyMeta').textContent = source + ' · ' + pubDate;
-  var summaryEl = document.getElementById('storySummary');
-  var summary = desc || 'Click below to read the full story on ' + source + '.';
-  var sentences = summary.match(/[^.!?]+[.!?]+/g) || [summary];
-  summaryEl.innerHTML = sentences.slice(0, 4).map(function(s){ return '<p>' + s.trim() + '</p>'; }).join('');
-  document.getElementById('storyReadBtn').href = url;
-  document.getElementById('storyModal').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-function closeStoryModal(e){
-  if(e && e.target !== document.getElementById('storyModal')) return;
-  document.getElementById('storyModal').classList.remove('open');
-  document.body.style.overflow = '';
-}
 function showDev(){var t=document.getElementById('devToast');if(t){t.classList.add('show');setTimeout(function(){t.classList.remove('show');},2800);}}
-loadAll();
 </script>
 
 <div class="story-modal-overlay" id="storyModal" onclick="closeStoryModal(event)">
