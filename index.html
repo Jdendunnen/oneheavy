@@ -1213,6 +1213,130 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 var clean=function(s){return(s||'').replace(/<[^>]+>/g,'').replace(/&amp;/g,'&').replace(/&#8217;/g,"'").replace(/&#8220;/g,'"').replace(/&#8221;/g,'"').replace(/&quot;/g,'"').replace(/&nbsp;/g,' ').trim();};
 function ago(d){var s=Math.floor((Date.now()-new Date(d))/1000);if(s<60)return'Just now';if(s<3600)return Math.floor(s/60)+'m ago';if(s<86400)return Math.floor(s/3600)+'h ago';return Math.floor(s/86400)+'d ago';}
 function showDev(){var t=document.getElementById('devToast');if(t){t.classList.add('show');setTimeout(function(){t.classList.remove('show');},2800);}}
+
+function openMob(){var m=document.getElementById('mobNav');if(m){m.classList.add('open');document.body.style.overflow='hidden';}}
+function closeMob(){var m=document.getElementById('mobNav');if(m){m.classList.remove('open');document.body.style.overflow='';}}
+
+function openNewsletter(){var m=document.getElementById('nlModal');if(m){m.classList.add('open');document.body.style.overflow='hidden';}}
+function closeNewsletter(e){if(e&&e.target&&e.target.id!=='nlModal')return;var m=document.getElementById('nlModal');if(m){m.classList.remove('open');document.body.style.overflow='';}}
+
+function submitEmail(){
+  var emailInput=document.getElementById('emailInput');
+  if(!emailInput)return;
+  var email=emailInput.value.trim();
+  if(!email||!email.includes('@')){emailInput.style.borderColor='rgba(200,16,46,.8)';return;}
+  var subject=encodeURIComponent('OneHeavy Weekly Digest Signup');
+  var body=encodeURIComponent('Please add me to the OneHeavy Weekly Digest.\n\nEmail: '+email+'\n\nKeep it heavy!');
+  window.open('mailto:increasinglyinquisitive@gmail.com?subject='+subject+'&body='+body,'_blank');
+  var form=document.getElementById('modalForm');
+  var success=document.getElementById('modalSuccess');
+  if(form)form.style.display='none';
+  if(success)success.style.display='block';
+}
+
+function openSubmit(){var m=document.getElementById('submitModal');if(m){m.classList.add('open');document.body.style.overflow='hidden';}}
+function closeSubmit(e){if(e&&e.target&&e.target.id!=='submitModal')return;var m=document.getElementById('submitModal');if(m){m.classList.remove('open');document.body.style.overflow='';}}
+
+function submitShow(){
+  var band=document.getElementById('bandName');
+  var promoter=document.getElementById('promoterName');
+  var dateEl=document.getElementById('showDate');
+  var city=document.getElementById('showCity');
+  var venue=document.getElementById('showVenue');
+  var tickets=document.getElementById('showTickets');
+  var info=document.getElementById('showInfo');
+  var emailEl=document.getElementById('submitterEmail');
+  if(!band||!dateEl||!city||!venue||!emailEl)return;
+  band=band.value.trim();
+  promoter=promoter?promoter.value.trim():'';
+  var date=dateEl.value;
+  city=city.value.trim();
+  venue=venue.value.trim();
+  tickets=tickets?tickets.value.trim():'';
+  info=info?info.value.trim():'';
+  var email=emailEl.value.trim();
+  if(!band||!city||!venue||!date||!email){alert('Please fill in all required fields.');return;}
+  var subject=encodeURIComponent('OneHeavy Show Submission: '+band+' @ '+venue);
+  var body=encodeURIComponent('BAND: '+band+'\nPROMOTER: '+promoter+'\nDATE: '+date+'\nVENUE: '+venue+'\nCITY: '+city+'\nTICKETS: '+(tickets||'N/A')+'\nINFO: '+(info||'N/A')+'\nEMAIL: '+email);
+  fetch('https://script.google.com/macros/s/AKfycbyGZFUviTc4_9JNbE85MlO2iLUS6YKyo1Ita4ceDT6UcFPkR9nlES7Mz2mBDcFOi6NUCw/exec',{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify({band:band,promoter:promoter,showDate:date,venue:venue,city:city,tickets:tickets,info:info,email:email})}).catch(function(){});
+  window.location.href='mailto:increasinglyinquisitive@gmail.com?subject='+subject+'&body='+body;
+  var form=document.getElementById('submitForm');
+  var success=document.getElementById('submitSuccess');
+  if(form)form.style.display='none';
+  if(success)success.style.display='block';
+}
+
+function openTours(){var m=document.getElementById('toursModal');if(m){m.classList.add('open');document.body.style.overflow='hidden';}}
+function closeTours(e){if(e&&e.target&&e.target.id!=='toursModal')return;var m=document.getElementById('toursModal');if(m){m.classList.remove('open');document.body.style.overflow='';}}
+function filterTours(filter,btn){
+  var btns=document.querySelectorAll('.tours-filter-btn');
+  for(var i=0;i<btns.length;i++)btns[i].classList.remove('on');
+  if(btn)btn.classList.add('on');
+  var items=document.querySelectorAll('.tour-item');
+  for(var j=0;j<items.length;j++){
+    var item=items[j];
+    if(filter==='all'||item.getAttribute('data-region')===filter){item.style.display='';}else{item.style.display='none';}
+  }
+}
+
+function setGenre(genre,btn){
+  var tabs=document.querySelectorAll('.genre-tab');
+  for(var i=0;i<tabs.length;i++)tabs[i].classList.remove('on');
+  if(btn)btn.classList.add('on');
+  var panels=document.querySelectorAll('.genre-panel');
+  for(var j=0;j<panels.length;j++){
+    var p=panels[j];
+    if(p.getAttribute('data-genre')===genre){p.classList.add('on');}else{p.classList.remove('on');}
+  }
+}
+
+function showGenrePanel(genre){
+  var panel=document.getElementById('genrePanel-'+genre);
+  if(panel){panel.classList.add('open');document.body.style.overflow='hidden';}
+}
+function closeGenrePanel(e){
+  if(e&&e.target&&!e.target.classList.contains('genre-overlay')&&!e.target.classList.contains('genre-overlay-close'))return;
+  var panels=document.querySelectorAll('.genre-overlay');
+  for(var i=0;i<panels.length;i++)panels[i].classList.remove('open');
+  document.body.style.overflow='';
+}
+
+function openStoryModal(title,source,desc,url,pubDate){
+  var t=document.getElementById('storyTitle');
+  var s=document.getElementById('storySource');
+  var m=document.getElementById('storyMeta');
+  var sum=document.getElementById('storySummary');
+  var btn=document.getElementById('storyReadBtn');
+  var modal=document.getElementById('storyModal');
+  if(!modal)return;
+  if(t)t.textContent=title;
+  if(s)s.textContent=source;
+  if(m)m.textContent=source+' \u00b7 '+pubDate;
+  if(sum){
+    var summary=desc||'Click below to read the full story on '+source+'.';
+    var sentences=summary.match(/[^.!?]+[.!?]+/g)||[summary];
+    sum.innerHTML=sentences.slice(0,4).map(function(x){return '<p>'+x.trim()+'</p>';}).join('');
+  }
+  if(btn)btn.href=url;
+  modal.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeStoryModal(e){
+  if(e&&e.target&&e.target.id!=='storyModal')return;
+  var modal=document.getElementById('storyModal');
+  if(modal){modal.classList.remove('open');document.body.style.overflow='';}
+}
+
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){
+    closeMob();
+    closeNewsletter();
+    closeSubmit();
+    closeTours();
+    closeGenrePanel();
+    closeStoryModal();
+  }
+});
 </script>
 
 <div class="story-modal-overlay" id="storyModal" onclick="closeStoryModal(event)">
