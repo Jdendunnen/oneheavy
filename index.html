@@ -533,6 +533,45 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 .ls-mini-btn:hover{background:var(--red2)}
 @media(max-width:1100px){.layout-with-sidebar{grid-template-columns:1fr}.left-sidebar{position:static;max-height:none;padding:24px 24px 0;overflow:visible}.ls-widget,.ls-mini{margin-bottom:14px}}
 
+
+.g-album{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid var(--border)}
+.g-album:last-child{border-bottom:none}
+.g-num{font-family:var(--D);font-size:24px;color:var(--red);letter-spacing:.04em;line-height:1;flex-shrink:0;width:36px;text-align:center}
+.g-info{flex:1;min-width:0}
+.g-band{font-family:var(--D);font-size:18px;letter-spacing:.04em;text-transform:uppercase;color:var(--w);line-height:1.1;margin-bottom:3px}
+.g-title{font-family:var(--C);font-size:11px;font-style:italic;color:var(--g);letter-spacing:.06em}
+.genre-top10:empty::before{content:'Click any genre tab above to view the Top 10 album picks';display:block;text-align:center;font-family:var(--C);font-size:11px;color:var(--g);font-style:italic;letter-spacing:.06em;padding:32px 0}
+
+
+.devoted-bands{padding:64px 24px;background:linear-gradient(180deg,var(--ink) 0%,#0a0a14 50%,var(--ink) 100%);border-top:1px solid var(--border);border-bottom:1px solid var(--border);position:relative}
+.devoted-bands::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--red),transparent)}
+.db-inner{max-width:1200px;margin:0 auto}
+.db-header{margin-bottom:40px;text-align:center}
+.db-eyebrow{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+.db-title{font-family:var(--D);font-size:clamp(36px,5vw,56px);letter-spacing:.04em;text-transform:uppercase;line-height:.95;color:var(--w);margin-bottom:18px}
+.db-title em{color:var(--red);font-style:normal}
+.db-lede{font-size:15px;font-style:italic;font-weight:300;color:rgba(240,236,244,.7);line-height:1.78;max-width:680px;margin:0 auto}
+.db-feature{background:linear-gradient(135deg,rgba(200,16,46,.18),rgba(200,16,46,.06) 60%,transparent);border:1px solid rgba(200,16,46,.4);padding:36px 32px;margin-bottom:32px;position:relative;overflow:hidden}
+.db-feature::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--red)}
+.db-feature::after{content:'\271D';position:absolute;top:24px;right:24px;font-size:64px;color:rgba(200,16,46,.12);transform:rotate(180deg);line-height:1;font-weight:700}
+.db-feature-tag{display:inline-block;font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:#fff;background:var(--red);padding:5px 12px;margin-bottom:14px}
+.db-feature-band{font-family:var(--D);font-size:clamp(40px,6vw,68px);letter-spacing:.02em;text-transform:uppercase;color:var(--w);line-height:.95;margin-bottom:8px}
+.db-feature-origin{font-family:var(--C);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:20px;font-style:italic}
+.db-feature-body{position:relative;z-index:2}
+.db-feature-body p{font-size:15px;line-height:1.86;color:rgba(240,236,244,.84);font-weight:300;margin-bottom:14px}
+.db-feature-body p:last-child{margin-bottom:0}
+.db-feature-body em{color:var(--red);font-style:italic}
+.db-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.06);margin-bottom:32px}
+.db-card{background:var(--card);padding:24px;display:flex;flex-direction:column;gap:8px;border-left:3px solid transparent;transition:all .2s}
+.db-card:hover{background:var(--lift);border-left-color:var(--red)}
+.db-flag{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
+.db-name{font-family:var(--D);font-size:24px;letter-spacing:.04em;text-transform:uppercase;color:var(--w);line-height:1;margin:0}
+.db-desc{font-size:13px;line-height:1.74;color:rgba(240,236,244,.7);font-weight:300;font-style:italic;margin:0}
+.db-desc em{color:var(--red);font-style:italic;font-weight:400}
+.db-footer{text-align:center;padding-top:24px;border-top:1px solid var(--border)}
+.db-footer-text{font-family:var(--S);font-size:14px;font-style:italic;color:rgba(240,236,244,.7);max-width:640px;margin:0 auto 10px;line-height:1.78}
+.db-footer-byline{font-family:var(--C);font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+@media(max-width:768px){.devoted-bands{padding:48px 16px}.db-feature{padding:28px 22px}.db-feature::after{display:none}.db-grid{grid-template-columns:1fr}}
 </style>
 
 <script type="text/javascript">
@@ -1009,6 +1048,77 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
     </div>
   </div>
 </section>
+
+<section class="devoted-bands" id="devoted-bands">
+  <div class="db-inner">
+    <div class="db-header">
+      <div class="db-eyebrow">From the Creator</div>
+      <h2 class="db-title">The Creator&#39;s <em>Devoted Bands</em></h2>
+      <p class="db-lede">The bands that have shaped my listening, my taste and even my skin. These are the artists I return to most &mdash; the records I know by heart and the live shows I would travel for. Heavy music is more than entertainment for me. It is identity. These eight bands are why.</p>
+    </div>
+    
+    <article class="db-feature">
+      <div class="db-feature-tag">&#x2696; Most Devoted &middot; Inked For Life</div>
+      <div class="db-feature-band">Dark Funeral</div>
+      <div class="db-feature-origin">Stockholm, Sweden &middot; Formed 1993</div>
+      <div class="db-feature-body">
+        <p>Dark Funeral are the band that means the most to me, full stop. The Stockholm second-wave black metal masters founded in 1993 by Lord Ahriman have spent over three decades carving out one of the most uncompromising and consistent careers in extreme heavy music. Seven full-length albums &mdash; from the foundational <em>The Secrets of the Black Arts</em> (1996) through to the magisterial <em>We Are the Apocalypse</em> (2022) &mdash; mark them as one of the founding pillars of Swedish black metal.</p>
+        <p>My commitment to this band is permanent. I have two inverted crosses tattooed on my left and right arms, with the goat from the Dark Funeral logo encapsulated between them. It is the most personal piece of metal iconography I carry, and it is dedicated to a band whose ferocity, atmosphere and refusal to compromise have informed my taste in heavy music more than any other. Lord Ahriman has guided this band through every lineup change, every legal battle, every era, with a vision that has never wavered. That is what real metal devotion looks like.</p>
+      </div>
+    </article>
+    
+    <div class="db-grid">
+      
+      <article class="db-card">
+        <div class="db-flag">&#x1F1F8;&#x1F1EA; Sweden &middot; Formed 1992</div>
+        <h3 class="db-name">Amon Amarth</h3>
+        <p class="db-desc">The Tumba-based Viking metal titans are the band that took Norse mythology and turned it into stadium metal. From the early underground days to headlining Wacken Open Air, Amon Amarth have built one of the most consistent catalogues in melodic death metal. Johan Hegg&#39;s vocals carry the weight of every battle they sing about.</p>
+      </article>
+      
+      <article class="db-card">
+        <div class="db-flag">&#x1F1EB;&#x1F1EE; Finland &middot; Formed 1995</div>
+        <h3 class="db-name">Ensiferum</h3>
+        <p class="db-desc">Helsinki&#39;s flagship folk metal export. Ensiferum combine epic melodic death metal with traditional Finnish folk melodies into something that feels like the soundtrack to ancient battles. <em>Iron</em> (2004) and <em>Victory Songs</em> (2007) are essential pillars of the genre.</p>
+      </article>
+      
+      <article class="db-card">
+        <div class="db-flag">&#x1F1EB;&#x1F1EE; Finland &middot; Formed 2013</div>
+        <h3 class="db-name">Wolfheart</h3>
+        <p class="db-desc">Tuomas Saukkonen&#39;s self-coined &laquo;winter metal&raquo; project. Seven full-length albums of icy melodic death metal that feels like Finnish winter itself &mdash; from <em>Winterborn</em> (2013) to <em>Draconian Darkness</em> (2024). Saukkonen writes the entire universe of this band himself.</p>
+      </article>
+      
+      <article class="db-card">
+        <div class="db-flag">&#x1F1EB;&#x1F1EE; Finland &middot; 2001 &mdash; 2013, Resurrected 2022</div>
+        <h3 class="db-name">Before the Dawn</h3>
+        <p class="db-desc">Saukkonen&#39;s other Finnish melodic death metal masterwork. Originally active 2001 to 2013, Before the Dawn rose again in 2022 with the same dark melodic intensity that defined records like <em>Deathstar Rising</em> (2011). Few bands do melancholy this well.</p>
+      </article>
+      
+      <article class="db-card">
+        <div class="db-flag">&#x1F1F5;&#x1F1F1; Poland &middot; Formed 1991</div>
+        <h3 class="db-name">Behemoth</h3>
+        <p class="db-desc">The Polish blackened death metal monolith led by Adam &laquo;Nergal&raquo; Darski. Behemoth have built a career on uncompromising aggression, controversial lyrical themes and some of the most intense live shows in heavy music. <em>The Satanist</em> (2014) is a masterpiece by any measure.</p>
+      </article>
+      
+      <article class="db-card">
+        <div class="db-flag">&#x1F1EB;&#x1F1EE; Finland &middot; Formed 2003</div>
+        <h3 class="db-name">Wintersun</h3>
+        <p class="db-desc">Jari M&auml;enp&auml;&auml;&#39;s perfectionist epic. The legendary self-titled debut (2004) is one of the finest power metal albums ever recorded. <em>Time I</em> (2012) and <em>The Forest Seasons</em> (2017) followed years of meticulous studio work. Few bands chase their vision this relentlessly.</p>
+      </article>
+      
+      <article class="db-card">
+        <div class="db-flag">&#x1F1EB;&#x1F1EE; Finland &middot; 1996 &mdash; 2012</div>
+        <h3 class="db-name">Norther</h3>
+        <p class="db-desc">The Espoo melodic death metal greats who released six studio albums before disbanding in 2012. <em>Mirror of Madness</em> (2003) and <em>Death Unlimited</em> (2004) remain essential listening. Members went on to Wintersun, Amberian Dawn and beyond &mdash; their legacy endures.</p>
+      </article>
+      
+    </div>
+    
+    <div class="db-footer">
+      <p class="db-footer-text">These bands have my listening time, my collection space and in one case my skin. That is what real heavy music devotion looks like.</p>
+      <p class="db-footer-byline">&mdash; Josef Den Dunnen, OneHeavy Creator</p>
+    </div>
+  </div>
+</section>
 <section class="concerts" id="concerts">
   <div class="c-inner">
     <div class="sh"><h2>Shows <em>Near You</em></h2><a href="#concerts" onclick="openSubmit()">Submit a Show &rarr;</a></div>
@@ -1226,26 +1336,253 @@ function filterTours(filter,btn){
   }
 }
 
-function setGenre(genre,btn){
-  var tabs=document.querySelectorAll('.genre-tab');
+var GENRE_DATA = {
+  'all-metal': {name: 'Metal', albums: [
+    ['Black Sabbath', 'Paranoid', '1970'],
+    ['Metallica', 'Master of Puppets', '1986'],
+    ['Iron Maiden', 'The Number of the Beast', '1982'],
+    ['Slayer', 'Reign in Blood', '1986'],
+    ['Pantera', 'Vulgar Display of Power', '1992'],
+    ['Tool', 'Lateralus', '2001'],
+    ['Megadeth', 'Rust in Peace', '1990'],
+    ['Judas Priest', 'Painkiller', '1990'],
+    ['Death', 'Symbolic', '1995'],
+    ['Mastodon', 'Crack the Skye', '2009']
+  ]},
+  'thrash': {name: 'Thrash Metal', albums: [
+    ['Metallica', 'Master of Puppets', '1986'],
+    ['Slayer', 'Reign in Blood', '1986'],
+    ['Megadeth', 'Rust in Peace', '1990'],
+    ['Anthrax', 'Among the Living', '1987'],
+    ['Testament', 'The New Order', '1988'],
+    ['Exodus', 'Bonded by Blood', '1985'],
+    ['Kreator', 'Pleasure to Kill', '1986'],
+    ['Sodom', 'Agent Orange', '1989'],
+    ['Death Angel', 'The Ultra-Violence', '1987'],
+    ['Sepultura', 'Beneath the Remains', '1989']
+  ]},
+  'death': {name: 'Death Metal', albums: [
+    ['Death', 'Symbolic', '1995'],
+    ['Cannibal Corpse', 'Tomb of the Mutilated', '1992'],
+    ['Morbid Angel', 'Altars of Madness', '1989'],
+    ['Obituary', 'Cause of Death', '1990'],
+    ['Suffocation', 'Effigy of the Forgotten', '1991'],
+    ['Deicide', 'Legion', '1992'],
+    ['Entombed', 'Left Hand Path', '1990'],
+    ['Carcass', 'Heartwork', '1993'],
+    ['At the Gates', 'Slaughter of the Soul', '1995'],
+    ['Bolt Thrower', 'Realm of Chaos', '1989']
+  ]},
+  'black': {name: 'Black Metal', albums: [
+    ['Mayhem', 'De Mysteriis Dom Sathanas', '1994'],
+    ['Burzum', 'Filosofem', '1996'],
+    ['Emperor', 'In the Nightside Eclipse', '1994'],
+    ['Darkthrone', 'Transilvanian Hunger', '1994'],
+    ['Immortal', 'At the Heart of Winter', '1999'],
+    ['Bathory', 'Under the Sign of the Black Mark', '1987'],
+    ['Dissection', 'Storm of the Lights Bane', '1995'],
+    ['Watain', 'Sworn to the Dark', '2007'],
+    ['Behemoth', 'The Satanist', '2014'],
+    ['Wolves in the Throne Room', 'Two Hunters', '2007']
+  ]},
+  'doom': {name: 'Doom Metal', albums: [
+    ['Black Sabbath', 'Black Sabbath', '1970'],
+    ['Candlemass', 'Epicus Doomicus Metallicus', '1986'],
+    ['Electric Wizard', 'Dopethrone', '2000'],
+    ['Sleep', 'Dopesmoker', '2003'],
+    ['My Dying Bride', 'The Angel and the Dark River', '1995'],
+    ['Pallbearer', 'Foundations of Burden', '2014'],
+    ['Type O Negative', 'October Rust', '1996'],
+    ['Solitude Aeturnus', 'Beyond the Crimson Horizon', '1992'],
+    ['Cathedral', 'Forest of Equilibrium', '1991'],
+    ['YOB', 'Clearing the Path to Ascend', '2014']
+  ]},
+  'power': {name: 'Power Metal', albums: [
+    ['Helloween', 'Keeper of the Seven Keys Part II', '1988'],
+    ['Blind Guardian', 'Imaginations from the Other Side', '1995'],
+    ['DragonForce', 'Inhuman Rampage', '2006'],
+    ['Stratovarius', 'Visions', '1997'],
+    ['Sabaton', 'Carolus Rex', '2012'],
+    ['Hammerfall', 'Glory to the Brave', '1997'],
+    ['Rhapsody of Fire', 'Symphony of Enchanted Lands', '1998'],
+    ['Iced Earth', 'The Dark Saga', '1996'],
+    ['Manowar', 'Kings of Metal', '1988'],
+    ['Gamma Ray', 'Land of the Free', '1995']
+  ]},
+  'progressive': {name: 'Progressive Metal', albums: [
+    ['Tool', 'Lateralus', '2001'],
+    ['Dream Theater', 'Images and Words', '1992'],
+    ['Opeth', 'Blackwater Park', '2001'],
+    ['Mastodon', 'Crack the Skye', '2009'],
+    ['Between the Buried and Me', 'Colors', '2007'],
+    ['Cynic', 'Focus', '1993'],
+    ['Porcupine Tree', 'In Absentia', '2002'],
+    ['Symphony X', 'The Odyssey', '2002'],
+    ['Ne Obliviscaris', 'Citadel', '2014'],
+    ['Caligulas Horse', 'In Contact', '2017']
+  ]},
+  'symphonic': {name: 'Symphonic Metal', albums: [
+    ['Nightwish', 'Once', '2004'],
+    ['Epica', 'The Holographic Principle', '2016'],
+    ['Within Temptation', 'The Silent Force', '2004'],
+    ['Therion', 'Theli', '1996'],
+    ['Kamelot', 'Karma', '2001'],
+    ['After Forever', 'Decipher', '2001'],
+    ['Delain', 'April Rain', '2009'],
+    ['Tarja', 'My Winter Storm', '2007'],
+    ['Sirenia', 'An Elixir for Existence', '2004'],
+    ['Lacuna Coil', 'Comalies', '2002']
+  ]},
+  'groove': {name: 'Groove Metal', albums: [
+    ['Pantera', 'Vulgar Display of Power', '1992'],
+    ['Pantera', 'Far Beyond Driven', '1994'],
+    ['Lamb of God', 'Ashes of the Wake', '2004'],
+    ['Sepultura', 'Chaos A.D.', '1993'],
+    ['Machine Head', 'Burn My Eyes', '1994'],
+    ['Devildriver', 'The Fury of Our Makers Hand', '2005'],
+    ['Chimaira', 'The Impossibility of Reason', '2003'],
+    ['White Zombie', 'Astro-Creep: 2000', '1995'],
+    ['Damageplan', 'New Found Power', '2004'],
+    ['Hellyeah', 'Hellyeah', '2007']
+  ]},
+  'nu-metal': {name: 'Nu-Metal', albums: [
+    ['Korn', 'Korn', '1994'],
+    ['Slipknot', 'Iowa', '2001'],
+    ['Deftones', 'White Pony', '2000'],
+    ['System of a Down', 'Toxicity', '2001'],
+    ['Linkin Park', 'Hybrid Theory', '2000'],
+    ['Limp Bizkit', 'Significant Other', '1999'],
+    ['Disturbed', 'The Sickness', '2000'],
+    ['P.O.D.', 'Satellite', '2001'],
+    ['Sevendust', 'Home', '1999'],
+    ['Coal Chamber', 'Coal Chamber', '1997']
+  ]},
+  'metalcore': {name: 'Metalcore', albums: [
+    ['Killswitch Engage', 'The End of Heartache', '2004'],
+    ['Parkway Drive', 'Horizons', '2007'],
+    ['As I Lay Dying', 'Shadows Are Security', '2005'],
+    ['August Burns Red', 'Constellations', '2009'],
+    ['Trivium', 'Ascendancy', '2005'],
+    ['All That Remains', 'The Fall of Ideals', '2006'],
+    ['Bullet for My Valentine', 'The Poison', '2005'],
+    ['Polaris', 'The Death of Me', '2020'],
+    ['Architects', 'Holy Hell', '2018'],
+    ['The Amity Affliction', 'Let the Ocean Take Me', '2014']
+  ]},
+  'deathcore': {name: 'Deathcore', albums: [
+    ['Whitechapel', 'A New Era of Corruption', '2010'],
+    ['Suicide Silence', 'No Time to Bleed', '2009'],
+    ['Thy Art Is Murder', 'Dear Desolation', '2017'],
+    ['Carnifex', 'Until I Feel Nothing', '2011'],
+    ['Job for a Cowboy', 'Doom', '2005'],
+    ['Despised Icon', 'The Ills of Modern Man', '2007'],
+    ['Lorna Shore', 'Pain Remains', '2022'],
+    ['Chelsea Grin', 'Desolation of Eden', '2010'],
+    ['Bring Me the Horizon', 'Suicide Season', '2008'],
+    ['Oceano', 'Depths', '2009']
+  ]},
+  'folk': {name: 'Folk Metal', albums: [
+    ['Eluveitie', 'Slania', '2008'],
+    ['Korpiklaani', 'Tales Along This Road', '2006'],
+    ['Ensiferum', 'Iron', '2004'],
+    ['Finntroll', 'Jaktens Tid', '2001'],
+    ['Tyr', 'How Far to Asgaard', '2002'],
+    ['Skyclad', 'The Wayward Sons of Mother Earth', '1991'],
+    ['Turisas', 'The Varangian Way', '2007'],
+    ['Equilibrium', 'Sagas', '2008'],
+    ['Mago de Oz', 'Finisterra', '2000'],
+    ['Wintersun', 'Wintersun', '2004']
+  ]},
+  'viking': {name: 'Viking Metal', albums: [
+    ['Bathory', 'Hammerheart', '1990'],
+    ['Amon Amarth', 'With Oden on Our Side', '2006'],
+    ['Enslaved', 'Below the Lights', '2003'],
+    ['Tyr', 'Eric the Red', '2003'],
+    ['Falkenbach', 'En Their Medh Riki Fara', '1996'],
+    ['Moonsorrow', 'Verisakeet', '2005'],
+    ['Manegarm', 'Fornaldarsagor', '2014'],
+    ['Wardruna', 'Runaljod - Gap Var Ginnunga', '2009'],
+    ['Heidevolk', 'Uit Oude Grond', '2010'],
+    ['Einherjer', 'Norrun', '1998']
+  ]},
+  'industrial': {name: 'Industrial Metal', albums: [
+    ['Ministry', 'Psalm 69', '1992'],
+    ['Nine Inch Nails', 'The Downward Spiral', '1994'],
+    ['Rammstein', 'Mutter', '2001'],
+    ['Fear Factory', 'Demanufacture', '1995'],
+    ['KMFDM', 'Nihil', '1995'],
+    ['Marilyn Manson', 'Antichrist Superstar', '1996'],
+    ['Skinny Puppy', 'Last Rights', '1992'],
+    ['Static-X', 'Wisconsin Death Trip', '1999'],
+    ['Pitchshifter', 'pitchshifter.com', '1998'],
+    ['Godflesh', 'Streetcleaner', '1989']
+  ]},
+  'post-metal': {name: 'Post-Metal', albums: [
+    ['Isis', 'Oceanic', '2002'],
+    ['Neurosis', 'Through Silver in Blood', '1996'],
+    ['Cult of Luna', 'Somewhere Along the Highway', '2006'],
+    ['Russian Circles', 'Station', '2008'],
+    ['Pelican', 'The Fire in Our Throats', '2005'],
+    ['Mono', 'Hymn to the Immortal Wind', '2009'],
+    ['Rosetta', 'The Galilean Satellites', '2005'],
+    ['Year of No Light', 'Tocsin', '2013'],
+    ['Amenra', 'Mass VI', '2017'],
+    ['Deafheaven', 'Sunbather', '2013']
+  ]},
+  'djent': {name: 'Djent', albums: [
+    ['Meshuggah', 'Catch Thirtythree', '2005'],
+    ['Periphery', 'Periphery II', '2012'],
+    ['Animals as Leaders', 'Animals as Leaders', '2009'],
+    ['TesseracT', 'One', '2011'],
+    ['Northlane', 'Singularity', '2013'],
+    ['Volumes', 'Via', '2011'],
+    ['Monuments', 'Gnosis', '2012'],
+    ['Vildhjarta', 'Masstaden', '2011'],
+    ['Polyphia', 'New Levels New Devils', '2018'],
+    ['Architects', 'Daybreaker', '2012']
+  ]},
+  'stoner': {name: 'Stoner Metal', albums: [
+    ['Kyuss', 'Welcome to Sky Valley', '1994'],
+    ['Sleep', 'Sleeps Holy Mountain', '1992'],
+    ['Queens of the Stone Age', 'Songs for the Deaf', '2002'],
+    ['Electric Wizard', 'Dopethrone', '2000'],
+    ['Monster Magnet', 'Dopes to Infinity', '1995'],
+    ['Clutch', 'Earth Rocker', '2013'],
+    ['Fu Manchu', 'The Action Is Go', '1997'],
+    ['Down', 'NOLA', '1995'],
+    ['High on Fire', 'Death Is This Communion', '2007'],
+    ['Mastodon', 'Leviathan', '2004']
+  ]}
+};
+
+function setGenre(btn){
+  var tabs=document.querySelectorAll('.gp');
   for(var i=0;i<tabs.length;i++)tabs[i].classList.remove('on');
   if(btn)btn.classList.add('on');
-  var panels=document.querySelectorAll('.genre-panel');
-  for(var j=0;j<panels.length;j++){
-    var p=panels[j];
-    if(p.getAttribute('data-genre')===genre){p.classList.add('on');}else{p.classList.remove('on');}
-  }
 }
 
-function showGenrePanel(genre){
-  var panel=document.getElementById('genrePanel-'+genre);
-  if(panel){panel.classList.add('open');document.body.style.overflow='hidden';}
+function showGenrePanel(key){
+  var data=GENRE_DATA[key];
+  if(!data)return;
+  var nameEl=document.getElementById('genrePanelName');
+  var top10El=document.getElementById('genreTop10');
+  if(nameEl)nameEl.textContent=data.name;
+  if(top10El){
+    top10El.innerHTML=data.albums.map(function(a,i){
+      var n=String(i+1);
+      if(n.length<2)n='0'+n;
+      return '<div class="g-album"><div class="g-num">'+n+'</div><div class="g-info"><div class="g-band">'+a[0]+'</div><div class="g-title">'+a[1]+' &middot; '+a[2]+'</div></div></div>';
+    }).join('');
+  }
+  var panel=document.getElementById('genrePanel');
+  if(panel)panel.scrollIntoView({behavior:'smooth',block:'nearest'});
 }
-function closeGenrePanel(e){
-  if(e&&e.target&&!e.target.classList.contains('genre-overlay')&&!e.target.classList.contains('genre-overlay-close'))return;
-  var panels=document.querySelectorAll('.genre-overlay');
-  for(var i=0;i<panels.length;i++)panels[i].classList.remove('open');
-  document.body.style.overflow='';
+
+function closeGenrePanel(){
+  var top10El=document.getElementById('genreTop10');
+  if(top10El)top10El.innerHTML='';
+  var nameEl=document.getElementById('genrePanelName');
+  if(nameEl)nameEl.textContent='Metal';
 }
 
 function openStoryModal(title,source,desc,url,pubDate){
