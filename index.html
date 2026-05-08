@@ -572,6 +572,29 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 .db-footer-text{font-family:var(--S);font-size:14px;font-style:italic;color:rgba(240,236,244,.7);max-width:640px;margin:0 auto 10px;line-height:1.78}
 .db-footer-byline{font-family:var(--C);font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
 @media(max-width:768px){.devoted-bands{padding:48px 16px}.db-feature{padding:28px 22px}.db-feature::after{display:none}.db-grid{grid-template-columns:1fr}}
+
+.genre-discover{padding:48px 24px;background:linear-gradient(180deg,#0a0a14 0%,var(--ink) 100%);border-bottom:1px solid var(--border);position:relative}
+.genre-discover::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--red),transparent)}
+.gd-inner{max-width:1200px;margin:0 auto}
+.gd-header{margin-bottom:32px;text-align:center}
+.gd-eyebrow{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--red);margin-bottom:14px}
+.gd-title{font-family:var(--D);font-size:clamp(32px,4.5vw,48px);letter-spacing:.04em;text-transform:uppercase;line-height:.95;color:var(--w);margin-bottom:14px}
+.gd-title em{color:var(--red);font-style:normal}
+.gd-lede{font-size:14px;font-style:italic;font-weight:300;color:rgba(240,236,244,.68);line-height:1.78;max-width:680px;margin:0 auto}
+.gd-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:rgba(255,255,255,.06);margin-bottom:24px}
+.gd-card{background:var(--card);padding:22px 18px;display:flex;flex-direction:column;gap:8px;border-top:3px solid transparent;transition:all .22s;text-decoration:none;cursor:pointer;min-height:230px}
+.gd-card:hover{background:var(--lift);border-top-color:var(--red);transform:translateY(-3px)}
+.gd-card-black{position:relative;overflow:hidden}
+.gd-card-black::after{content:'\271D';position:absolute;top:8px;right:8px;font-size:48px;color:rgba(200,16,46,.08);transform:rotate(180deg);line-height:1;font-weight:700;pointer-events:none}
+.gd-card-tag{font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);position:relative;z-index:2}
+.gd-card-genre{font-family:var(--D);font-size:22px;letter-spacing:.04em;text-transform:uppercase;color:var(--w);line-height:1;margin:2px 0;position:relative;z-index:2}
+.gd-card-desc{font-size:12px;line-height:1.7;color:rgba(240,236,244,.6);font-weight:300;font-style:italic;flex:1;position:relative;z-index:2}
+.gd-card-cta{font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin-top:6px;padding-top:10px;border-top:1px solid var(--border);position:relative;z-index:2}
+.gd-disclosure{font-family:var(--C);font-size:10px;color:var(--g);letter-spacing:.06em;line-height:1.7;text-align:center;font-style:italic;max-width:760px;margin:0 auto;padding-top:18px;border-top:1px solid var(--border)}
+.gd-disclosure strong{color:var(--red);font-style:normal;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+@media(max-width:1100px){.gd-grid{grid-template-columns:repeat(3,1fr)}.gd-card:nth-child(4),.gd-card:nth-child(5){grid-column:span 1}}
+@media(max-width:768px){.gd-grid{grid-template-columns:repeat(2,1fr)}.gd-card{min-height:210px}.gd-card:last-child{grid-column:1/-1}}
+@media(max-width:480px){.gd-grid{grid-template-columns:1fr}.gd-card:last-child{grid-column:auto}.genre-discover{padding:32px 16px}}
 </style>
 
 <script type="text/javascript">
@@ -671,6 +694,57 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
       <p style="font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.08em;font-style:italic;margin-top:-4px">&#x2665; Bandcamp pays artists more &mdash; support 1914 directly</p>
       <p class="fa-source">Album facts and chart data sourced from <a href="https://en.wikipedia.org/wiki/Viribus_Unitis_(1914_album)" target="_blank" rel="noopener noreferrer">Wikipedia</a> under CC BY-SA 4.0. Review and editorial commentary &copy; 2026 OneHeavy. As an Amazon Associate, OneHeavy earns from qualifying purchases.</p>
     </div>
+  </div>
+</section>
+
+<section class="genre-discover" id="discover-by-genre">
+  <div class="gd-inner">
+    <div class="gd-header">
+      <div class="gd-eyebrow">&#x266B; Discover &middot; Curated by OneHeavy</div>
+      <h2 class="gd-title">Upcoming Releases <em>By Genre</em></h2>
+      <p class="gd-lede">Five of our favourite heavy music subgenres &mdash; each link takes you straight to Bandcamp&#39;s live discovery page for that genre. Always current, always artist-supporting. Bandcamp pays artists 82&ndash;85&#37; of every sale, so every click is a click for the bands themselves.</p>
+    </div>
+    <div class="gd-grid">
+
+      <a href="https://bandcamp.com/discover/black-metal" target="_blank" rel="noopener noreferrer" class="gd-card gd-card-black">
+        <div class="gd-card-tag">01 &middot; Most Devoted</div>
+        <div class="gd-card-genre">Black Metal</div>
+        <div class="gd-card-desc">Atmospheric, raw and uncompromising &mdash; the genre OneHeavy was built on. From Norwegian second wave to modern atmospheric black metal.</div>
+        <div class="gd-card-cta">Browse on Bandcamp &rarr;</div>
+      </a>
+
+      <a href="https://bandcamp.com/discover/melodic-death-metal" target="_blank" rel="noopener noreferrer" class="gd-card">
+        <div class="gd-card-tag">02 &middot; Genre</div>
+        <div class="gd-card-genre">Melodic Death</div>
+        <div class="gd-card-desc">The Finnish and Swedish school of death metal at its most emotionally powerful. Wolfheart, Before the Dawn, Insomnium and the Gothenburg legends.</div>
+        <div class="gd-card-cta">Browse on Bandcamp &rarr;</div>
+      </a>
+
+      <a href="https://bandcamp.com/discover/blackened-death-metal" target="_blank" rel="noopener noreferrer" class="gd-card">
+        <div class="gd-card-tag">03 &middot; Genre</div>
+        <div class="gd-card-genre">Blackened Death</div>
+        <div class="gd-card-desc">Where black metal&#39;s atmosphere meets death metal&#39;s brutality. Behemoth, 1914, Belphegor and the new wave of crushing extreme metal.</div>
+        <div class="gd-card-cta">Browse on Bandcamp &rarr;</div>
+      </a>
+
+      <a href="https://bandcamp.com/discover/folk-metal" target="_blank" rel="noopener noreferrer" class="gd-card">
+        <div class="gd-card-tag">04 &middot; Genre</div>
+        <div class="gd-card-genre">Folk Metal</div>
+        <div class="gd-card-desc">Heavy music meets ancient traditions. Ensiferum, Korpiklaani, Eluveitie and the European folk metal scene that turns every gig into a celebration.</div>
+        <div class="gd-card-cta">Browse on Bandcamp &rarr;</div>
+      </a>
+
+      <a href="https://bandcamp.com/discover/power-metal" target="_blank" rel="noopener noreferrer" class="gd-card">
+        <div class="gd-card-tag">05 &middot; Genre</div>
+        <div class="gd-card-genre">Power Metal</div>
+        <div class="gd-card-desc">Soaring vocals, twin-guitar harmonies and triumphant choruses. Wintersun, Helloween, Blind Guardian and the heroic side of heavy music.</div>
+        <div class="gd-card-cta">Browse on Bandcamp &rarr;</div>
+      </a>
+
+    </div>
+    <p class="gd-disclosure">
+      &#x2665; OneHeavy is a Bandcamp supporter. We do not earn commission on these links &mdash; we simply believe Bandcamp is the most ethical way to discover and support heavy music. <strong>Unity Means Everything To Us.</strong>
+    </p>
   </div>
 </section>
 
