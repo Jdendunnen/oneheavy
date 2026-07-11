@@ -24,7 +24,7 @@
   gtag('config','G-528395746');
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6161974684049416" crossorigin="anonymous"></script>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({google_ad_client:"ca-pub-6161974684049416",enable_page_level_ads:true});</script>
+
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 80 80%22><circle cx=%2240%22 cy=%2240%22 r=%2236%22 fill=%22none%22 stroke=%22%23c8102e%22 stroke-width=%224%22/><circle cx=%2240%22 cy=%2240%22 r=%2231%22 fill=%22none%22 stroke=%22%23c8102e%22 stroke-width=%221%22/><text x=%2240%22 y=%2240%22 text-anchor=%22middle%22 font-family=%22Impact,sans-serif%22 font-size=%2218%22 font-weight=%22700%22 fill=%22%23f0ecf4%22>ONE</text><text x=%2240%22 y=%2258%22 text-anchor=%22middle%22 font-family=%22Impact,sans-serif%22 font-size=%2218%22 font-weight=%22700%22 fill=%22%23c8102e%22>HEAVY</text></svg>">
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 <style>
@@ -1640,23 +1640,30 @@ function showGenrePanel(key){
   if(!data)return;
   var nameEl=document.getElementById('genrePanelName');
   var top10El=document.getElementById('genreTop10');
+  var panel=document.getElementById('genrePanel');
   if(nameEl)nameEl.textContent=data.name;
   if(top10El){
     top10El.innerHTML=data.albums.map(function(a,i){
       var n=String(i+1);
       if(n.length<2)n='0'+n;
-      return '<div class="g-album"><div class="g-num">'+n+'</div><div class="g-info"><div class="g-band">'+a[0]+'</div><div class="g-title">'+a[1]+' &middot; '+a[2]+'</div></div></div>';
+      return '<div class="g-album"><div class="g-num">'+n+'</div><div class="g-info"><div class="g-band">'+a[0]+'</div><div class="g-title">'+a[1]+' · '+a[2]+'</div></div></div>';
     }).join('');
   }
-  var panel=document.getElementById('genrePanel');
-  if(panel)panel.scrollIntoView({behavior:'smooth',block:'nearest'});
+  if(panel){
+    panel.classList.add('open');
+    setTimeout(function(){panel.scrollIntoView({behavior:'smooth',block:'nearest'});},50);
+  }
 }
 
 function closeGenrePanel(){
+  var panel=document.getElementById('genrePanel');
   var top10El=document.getElementById('genreTop10');
-  if(top10El)top10El.innerHTML='';
   var nameEl=document.getElementById('genrePanelName');
+  if(panel)panel.classList.remove('open');
+  if(top10El)top10El.innerHTML='';
   if(nameEl)nameEl.textContent='Metal';
+  var tabs=document.querySelectorAll('.gp');
+  for(var i=0;i<tabs.length;i++)tabs[i].classList.remove('on');
 }
 
 function openStoryModal(title,source,desc,url,pubDate){
@@ -1694,6 +1701,11 @@ document.addEventListener('keydown',function(e){
     closeGenrePanel();
     closeStoryModal();
   }
+});
+
+document.addEventListener('DOMContentLoaded',function(){
+  var firstTab=document.querySelector('.gp.on');
+  if(firstTab){showGenrePanel('all-metal');}
 });
 </script>
 
