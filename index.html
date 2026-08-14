@@ -142,7 +142,6 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .submit-banner-btn{background:var(--red);color:#fff;font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:10px 22px;border:none;cursor:pointer;transition:background .2s;white-space:nowrap;flex-shrink:0}
 .submit-banner-btn:hover{background:var(--red2)}
 
-50%{opacity:.15}}
 .hero{max-width:1360px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr 1px 310px;min-height:490px}
 .hero-rule{background:linear-gradient(to bottom,transparent 5%,rgba(200,16,46,.22) 30%,rgba(200,16,46,.22) 70%,transparent 95%)}
 .hero-main{padding:34px 38px 34px 0;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
@@ -167,7 +166,6 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .ap-arrow{color:var(--red);font-size:11px;opacity:0;transition:opacity .18s;flex-shrink:0;margin-left:6px}
 .aside-promo:hover .ap-arrow{opacity:1}
 
-100%{transform:translateX(-50%)}}
 
 .content{max-width:1360px;margin:0 auto;padding:30px 24px 60px;display:grid;grid-template-columns:1fr 285px;gap:44px}
 .sh{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;padding-bottom:9px;border-bottom:1px solid var(--border);position:relative}
@@ -199,7 +197,6 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .nc.feature h3{font-size:17px}
 
 
-}
 
 .sidebar{display:flex;flex-direction:column;gap:22px}
 .local-shows-widget{background:var(--card);border:1px solid rgba(200,16,46,.15);overflow:hidden}
@@ -321,6 +318,11 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 .f-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
 .f-bottom p{font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.1em;text-transform:uppercase}
 .f-bottom em{color:var(--red);font-style:normal}
+
+.fa-quote{display:block;border-left:3px solid var(--red);padding:14px 22px;margin:20px 0;background:rgba(200,16,46,.06);clear:both}
+.fa-quote-en{display:block;font-family:var(--D);font-size:20px;letter-spacing:.04em;text-transform:uppercase;color:var(--w);line-height:1.3;margin-bottom:6px}
+.fa-quote-de{display:block;font-family:var(--S);font-size:14px;color:rgba(240,236,244,.6);letter-spacing:.04em;font-weight:300;font-style:italic;margin:0}
+.fa-signoff{display:block;font-family:var(--C);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-top:16px;padding-top:14px;border-top:1px solid var(--border)}
 @media(max-width:1100px){
   .hero{grid-template-columns:1fr}.hero-rule,.hero-aside{display:none}.hero-main{padding:30px 0}
   .content{grid-template-columns:1fr}.sidebar{display:grid;grid-template-columns:1fr 1fr}
@@ -356,7 +358,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   .f-grid{grid-template-columns:1fr}
 }
 
-100%{transform:translateX(-50%)}}
 
 .globe-section{background:#08080e;border-top:1px solid rgba(200,16,46,.12);border-bottom:1px solid rgba(200,16,46,.12);padding:56px 24px;overflow:hidden;position:relative}
 .globe-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(200,16,46,.06) 0%,transparent 70%);pointer-events:none}
@@ -456,7 +457,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 .fa-review{font-size:14px;line-height:1.82;color:rgba(240,236,244,.8);font-weight:300;font-family:var(--S)}
 .fa-review p{margin-bottom:14px}
 .fa-review p:last-child{margin-bottom:0}
-.fa-review p:first-child::first-letter{font-family:var(--D);font-size:42px;float:left;line-height:.85;margin:4px 8px 0 0;color:var(--red)}
+.fa-review p:first-child::first-letter{font-family:var(--D);font-size:36px;float:left;line-height:.88;margin:3px 8px 0 0;color:var(--red)}
 .fa-byline{font-family:var(--C);font-size:10px;font-style:italic;letter-spacing:.1em;color:var(--g);padding-top:6px;border-top:1px solid var(--border)}
 .fa-byline strong{color:var(--red);font-style:normal;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:9px}
 .fa-ratings{display:flex;gap:14px;flex-wrap:wrap}
@@ -595,6 +596,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 @media(max-width:1100px){.gd-grid{grid-template-columns:repeat(3,1fr)}.gd-card:nth-child(4),.gd-card:nth-child(5){grid-column:span 1}}
 @media(max-width:768px){.gd-grid{grid-template-columns:repeat(2,1fr)}.gd-card{min-height:210px}.gd-card:last-child{grid-column:1/-1}}
 @media(max-width:480px){.gd-grid{grid-template-columns:1fr}.gd-card:last-child{grid-column:auto}.genre-discover{padding:32px 16px}}
+
 </style>
 
 <script type="text/javascript">
@@ -632,67 +634,69 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 <text x="40" y="63" text-anchor="middle" font-family="Oswald,sans-serif" font-size="3.5" font-weight="700" fill="#c8102e" letter-spacing="1.5">EST 2026</text>
 <circle cx="4" cy="40" r="1.2" fill="#c8102e"/>
 <circle cx="76" cy="40" r="1.2" fill="#c8102e"/>
-</svg><div class="logo-text"><div class="logo-text-main">One<em>Heavy</em></div><div class="logo-text-slogan">Unity Means Everything To Us</div></div></a>
-    <ul class="nav-links">
-      <li><a href="/#latest-news">Read News</a></li>
-      <li><a href="/articles">Articles</a></li>
-      <li><a href="/#concerts">Concerts</a></li>
-      <li><a href="/#local">Local Scene</a></li>
-      <li><a href="/#genres">Genres</a></li>
-      <li><a href="/about">About</a></li>
-    </ul>
-    <div class="nav-right">
-      <button class="ham" id="ham" aria-label="Menu"></button>
-    </div>
-  </div>
-</nav>
-
-<section class="featured-album" id="creators-pick">
+</svg><div class="logo-te<section class="featured-album" id="creators-pick">
   <div class="fa-inner">
-<div class="fa-content">
-      <div class="fa-eyebrow">&#x2605; Creator&#39;s Pick &middot; From the Creator &middot; Featured Album</div>
-      <h2 class="fa-headline">Thron &mdash; <em>Vurias</em></h2>
+    <div class="fa-content">
+      <div class="fa-eyebrow">&#x2605; Creator&#39;s Pick &middot; From the Creator &middot; Advance Deep Dive</div>
+      <h2 class="fa-headline">&#x1F1E9;&#x1F1EA; HKSPK &mdash; <em>Heimkehr</em></h2>
       <div class="fa-meta">
-        <div class="fa-meta-item"><div class="fa-meta-label">Released</div><div class="fa-meta-value">31 Oct 2025</div></div>
+        <div class="fa-meta-item"><div class="fa-meta-label">Released</div><div class="fa-meta-value">11 Sep 2026</div></div>
         <div class="fa-meta-divider"></div>
-        <div class="fa-meta-item"><div class="fa-meta-label">Label</div><div class="fa-meta-value">Listenable Records</div></div>
+        <div class="fa-meta-item"><div class="fa-meta-label">Label</div><div class="fa-meta-value">Independent</div></div>
         <div class="fa-meta-divider"></div>
-        <div class="fa-meta-item"><div class="fa-meta-label">Genre</div><div class="fa-meta-value">Melodic Black Metal</div></div>
+        <div class="fa-meta-item"><div class="fa-meta-label">Genre</div><div class="fa-meta-value">Black / Death Metal</div></div>
         <div class="fa-meta-divider"></div>
-        <div class="fa-meta-item"><div class="fa-meta-label">Origin</div><div class="fa-meta-value">&#x1F1E9;&#x1F1EA; Black Forest, Germany</div></div>
+        <div class="fa-meta-item"><div class="fa-meta-label">Origin</div><div class="fa-meta-value">&#x1F1E9;&#x1F1EA; Frankfurt (Oder), Germany</div></div>
         <div class="fa-meta-divider"></div>
-        <div class="fa-meta-item"><div class="fa-meta-label">Length</div><div class="fa-meta-value">47:00</div></div>
+        <div class="fa-meta-item"><div class="fa-meta-label">Length</div><div class="fa-meta-value">25:21 &middot; 8 Tracks</div></div>
       </div>
       <div class="fa-review">
-        <p>I have been listening to this record on repeat. <em>Vurias</em> is the fifth studio album from Germany&#39;s Thron &mdash; the Black Forest melodic black metal quintet whose career has been one of the most consistently rewarding evolutions in modern extreme metal. Every record they release somehow improves on the last. With <em>Vurias</em>, they have written their best album yet, and one of the strongest melodic black metal records of 2025.</p>
+        <p>I have listened to this album more times than I can count. I sat with each track, let each one breathe and followed the story from the first orchestral keys of <em>Prelude</em> through to the final, devastating notes of <em>Heimkehr</em> itself. What HKSPK have built here deserves more than a surface reading, and I am not prepared to give it anything less.</p>
 
-<p>The album title is itself a statement of intent. As guitarist PVIII has explained, &laquo;Vurias&raquo; is derived from the Latin word <em>Furias</em>, meaning &laquo;the Furies&raquo; &mdash; the ancient Roman deities of vengeance and transformation. The band replaced the F with a V to mark this as their fifth album. Vurias, in their own words, symbolises both &laquo;fury and evolution&raquo; &mdash; and a &laquo;fire that consumes and creates.&raquo; That mission statement runs through every minute of the record.</p>
+        <p><em>Prelude</em> opens proceedings with exactly the right restraint &mdash; orchestral tone keys setting a mood of quiet menace in the background, creating space for the onslaught to come. It is a brief and deliberate statement of intent. By the time <em>Torture</em> arrives it is already too late to brace yourself. Ferocious blast beats, shouting vocals that never let up for a single second &mdash; there is nothing left on the bone here, nothing to chew on. The track gets you pumped and keeps you there until the last note. It does not give you a moment to recover and does not care that you need one.</p>
 
-<p>Sonically, this is melodic black metal of extraordinary depth and ambition. The bedrock is classic second-wave black metal in the lineage of Dissection, Naglfar and Necrophobic &mdash; ferocious tremolo riffing, blast beats, frostbitten atmosphere &mdash; but Thron have layered in vintage 70s synthesizers, Hammond organ, saxophone passages and even German lyrics on <em>Ungemach (Stilles Ende)</em>. The opening track <em>The Serpent&#39;s Path</em> kicks things off with the fastest blast beat the band have ever recorded. <em>Hubris&#39; Crown</em> is the most accessible cut on the record, while <em>The Hunter and the Prey</em> ventures into genuinely uncharted territory with its ritualistic-meets-urban duality. Drummer J is operating at an absolutely phenomenal level throughout. Guest appearances from Zingultus (Nagelfar) and Norman Lonhard (Triptykon) add genuine extreme metal pedigree.</p>
+        <p><em>White Secretions II</em> is where the album reveals it has more colours than the opening assault might suggest. Chug, gallop, gallop &mdash; an ascending chord pattern over rhythmic drive that borders on bliss, the low gutturals sitting perfectly in the mix and complementing every move the instrumentation makes beneath them. I found myself wanting more of it the moment it ended. <em>Sonnenj&auml;ger</em> &mdash; the sun hunter &mdash; follows without missing a step, maintaining the album&#39;s momentum and keeping the trend in high spirits. Deep tremolo riffing doing what only deep tremolo riffing can do &mdash; the kind of guitar work I genuinely never tire of, coating the track in the icy atmospheric colour the first half of this record wears so well. <em>Kill the Weak</em> then throws something unexpected into the mix: a genuine punk energy that rolls straight into smooth double kick transitions without losing the thread for even a moment. I was not prepared for it. I was very impressed when it came. The album&#39;s more violent first half closes here, and it closes with force.</p>
 
-<p>This is what melodic black metal sounds like in 2025 when a band is fully committed to evolution without abandoning the genre&#39;s soul. Crowned by Daniele Valeriani&#39;s majestic cover art and produced to perfection by Christoph Brandes at Iguana Studios, <em>Vurias</em> is essential listening for anyone who loves black metal at its most musically ambitious. This is OneHeavy&#39;s third official Creator&#39;s Pick. Crank it loud. Keep it heavy.</p>
+        <p>Then the record turns inward. <em>Rot in Despair</em> opens on clean tone &mdash; a deliberate, unhurried shift in mood &mdash; before the deep guttural delivery arrives, smooth and controlled and all the more devastating for its restraint. The vocal tone throughout this track is outstanding, and what builds beneath it leads into one of the finest outros I have heard in a very long time. It is that rare moment on a record where everything the band set out to do crystallises into a single passage that justifies the entire journey to reach it. Well done, lads. <em>Rain in the Face</em> carries that weight forward with layered, harmonised guitar parts that deeply impressed me &mdash; uniquely so. The casual strum that accompanies the song&#39;s broader themes feels considered rather than accidental. The outro &mdash; a howling, screamed delivery moving into spoken word, the rasp sitting beautifully over a clean tone close &mdash; is wonderful. Delivered with genuine conviction, yet again.</p>
+
+        <p>Then <em>Heimkehr</em> itself. The title track. The homecoming that was never going to offer closure. I want to borrow the band&#39;s own words here, because they say it better than I can:</p>
+
+        <blockquote class="fa-quote">
+          <p class="fa-quote-en">&ldquo;A melody rang out &mdash; of unfathomable sound.&rdquo;</p>
+          <p class="fa-quote-de"><em>Eine Melodie erklang &mdash; von unergr&uuml;ndlichem Klang.</em></p>
+        </blockquote>
+
+        <p>Yes. That is this album. That is exactly what this album is. I am fortunate enough to have a physical reaction to music &mdash; the kind that produces goosebumps when something lands exactly as it should. The way HKSPK have composed this final track gave me that reaction. I felt it. Chills. I am grateful to Jim and the rest of HKSPK for reaching out to OneHeavy and trusting me with this work of art ahead of its release. I hope this review does it justice. I genuinely hope I have the honour of reviewing the next one.</p>
+
+        <p class="fa-signoff">Your metal brethren in Adelaide &mdash; Josef Den Dunnen, OneHeavy.</p>
       </div>
-      <div class="fa-byline"><strong>Reviewed by</strong> &middot; Josef Den Dunnen, OneHeavy Creator</div>
+      <div class="fa-byline"><strong>Track-by-Track Advance Review by</strong> &middot; Josef Den Dunnen, OneHeavy Creator</div>
       <div class="fa-ratings">
         <div class="fa-rating">
-          <div class="fa-rating-source">Angry Metal Guy</div>
-          <div class="fa-rating-score">Great!</div>
+          <div class="fa-rating-source">No Clean Singing</div>
+          <div class="fa-rating-score">Full Premiere 10 Sep</div>
         </div>
         <div class="fa-rating">
-          <div class="fa-rating-source">Metal Archives</div>
-          <div class="fa-rating-score">8.5/10</div>
+          <div class="fa-rating-source">Legacy Magazine (DE)</div>
+          <div class="fa-rating-score">2-Page Feature</div>
         </div>
         <div class="fa-rating">
-          <div class="fa-rating-source">MetalBite</div>
-          <div class="fa-rating-score">Highly Recommended</div>
+          <div class="fa-rating-source">Spotify (28 days)</div>
+          <div class="fa-rating-score">11,537 Listeners</div>
         </div>
       </div>
       <div class="fa-actions">
-        <a href="https://thronkvlt.bandcamp.com/album/vurias" target="_blank" rel="noopener noreferrer" class="fa-btn fa-btn-primary">&#x266B; Listen &amp; Buy on Bandcamp &rarr;</a>
-        <a href="https://www.amazon.com.au/s?k=Thron+Vurias+CD&tag=oneheavymetal-22" target="_blank" rel="noopener noreferrer sponsored" class="fa-btn fa-btn-secondary">&#x1F6CD; Or buy CD on Amazon</a>
+        <a href="https://hkspk.bandcamp.com" target="_blank" rel="noopener noreferrer" class="fa-btn fa-btn-primary">&#x266B; Listen &amp; Pre-Order on Bandcamp &rarr;</a>
+        <a href="mailto:info@hkspk.de" class="fa-btn fa-btn-secondary">&#x2709; Contact HKSPK</a>
       </div>
-      <p style="font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.08em;font-style:italic;margin-top:-4px">&#x2665; Bandcamp pays artists more &mdash; support Thron directly</p>
-      <p class="fa-source">Album facts and band statements sourced from <a href="https://www.metal-archives.com/bands/Thron/3540421720" target="_blank" rel="noopener noreferrer">Encyclopaedia Metallum</a>, the band&#39;s official Bandcamp page, and interviews with PVIII (DeathByMusic, Highwire Daze). Review and editorial commentary &copy; 2026 OneHeavy. As an Amazon Associate, OneHeavy earns from qualifying purchases.</p>
+      <p style="font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.08em;font-style:italic;margin-top:-4px">&#x2665; Independent release &mdash; only 50 physical CDs. Support HKSPK directly via Bandcamp.</p>
+      <p class="fa-source">Band facts sourced from RAMzine On The Radar (June 2026), Toxic Metal Zine, Heavymetal.no and direct correspondence with Jim Kalubba (August 2026). Spotify data per band press materials. Review and editorial commentary &copy; 2026 OneHeavy.</p>
+    </div>
+  </div>
+</section>condary">&#x2709; Contact the Band</a>
+      </div>
+      <p style="font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.08em;font-style:italic;margin-top:-4px">&#x2665; Independent release &mdash; only 50 physical CDs. Support HKSPK directly via Bandcamp.</p>
+      <p class="fa-source">Band facts sourced from RAMzine On The Radar interview (June 2026), Toxic Metal Zine, and direct correspondence with Jim Kalubba (August 2026). Spotify data per band press materials. Review and editorial commentary &copy; 2026 OneHeavy.</p>
     </div>
   </div>
 </section>
