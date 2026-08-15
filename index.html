@@ -96,6 +96,9 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .tours-promo-card:hover .tpc-arrow{opacity:1}
 
 .tours-empty{text-align:center;padding:40px 20px;font-family:var(--C);font-size:11px;color:var(--g);letter-spacing:.06em}
+@keyframes spin{to{transform:rotate(360deg)}}
+.spin{width:28px;height:28px;border:2px solid rgba(200,16,46,.15);border-top-color:var(--red);border-radius:50%;animation:spin .7s linear infinite;margin:0 auto}
+.tours-loading{padding:60px 20px;text-align:center}
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:1000;align-items:center;justify-content:center;padding:24px}
 .modal-overlay.open{display:flex}
 .modal{background:var(--card);border:1px solid rgba(200,16,46,.25);max-width:480px;width:100%;padding:36px;position:relative}
@@ -779,7 +782,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   <a href="/" class="mob-cta" onclick="closeMob()"> OneHeavy &mdash; Free Forever</a>
 </div>
 
-<div class="tours-overlay" id="toursModal">
+<div class="tours-overlay" id="toursModal" onclick="closeTours(event)">
   <div class="tours-header">
     <div class="tours-title"><span>On</span> Tour Now &mdash; International &amp; Australia</div>
     <button class="tours-close" onclick="closeTours()">&#x2715; Close</button>
@@ -1413,10 +1416,101 @@ function submitShow(){
   if(success)success.style.display='block';
 }
 
-function openTours(){var m=document.getElementById('toursModal');if(m){m.classList.add('open');document.body.style.overflow='hidden';}}
+// ── TOURS FEED ──────────────────────────────────────────────────────────────
+var TOURS_LOADED=false;
+var TOUR_FEEDS=[
+  {n:'Blabbermouth',url:'https://blabbermouth.net/feed',r:'intl'},
+  {n:'Loudwire',url:'https://loudwire.com/feed/',r:'intl'},
+  {n:'MetalSucks',url:'https://www.metalsucks.net/feed/',r:'intl'},
+  {n:'Revolver',url:'https://www.revolvermag.com/rss',r:'intl'},
+  {n:'Heavy Mag AU',url:'https://heavymag.com.au/feed/',r:'aus'}
+];
+var TOUR_KW=/\b(tour|touring|dates?|shows?|tickets?|headline|gig|concert|announces?|supporting|leg)\b/i;
+var AUS_KW=/\b(australia|australian|melbourne|sydney|brisbane|adelaide|perth|auckland|new zealand)\b/i;
+var AU_PROMOS=[
+  ['Hardline Media','hardlinemedia.net','https://hardlinemedia.net'],
+  ['Destroy All Lines','destroyalllines.com','https://www.destroyalllines.com'],
+  ['Live Nation Australia','livenation.com.au','https://www.livenation.com.au'],
+  ['Frontier Touring','frontiertouring.com','https://www.frontiertouring.com'],
+  ['Handsome Tours','handsometours.com','https://www.handsometours.com'],
+  ['Metropolis Touring','metropolistouring.com','https://metropolistouring.com'],
+  ['Secret Sounds','secretsounds.com','https://www.secretsounds.com'],
+  ['Soundworks Touring','swdpresents.com','https://www.swdpresents.com']
+];
+
+function loadTours(){
+  if(TOURS_LOADED)return;
+  var body=document.getElementById('toursBody');
+  if(!body)return;
+  body.innerHTML='<div class="tours-loading"><div class="spin"></div></div>';
+  var R2J='https://api.rss2json.com/v1/api.json?rss_url=';
+  Promise.allSettled(TOUR_FEEDS.map(function(feed){
+    return fetch(R2J+encodeURIComponent(feed.url))
+      .then(function(r){return r.json();})
+      .then(function(d){return{feed:feed,items:d.items||[]};});
+  })).then(function(results){
+    var all=[];
+    results.forEach(function(r){
+      if(r.status==='fulfilled'){
+        (r.value.items||[]).forEach(function(item){
+          var txt=(item.title||'')+' '+(item.description||'');
+          if(TOUR_KW.test(txt)){
+            var isAus=AUS_KW.test(txt)||r.value.feed.r==='aus';
+            all.push({
+              title:clean(item.title),
+              desc:clean(item.description).slice(0,200),
+              url:item.link||'#',
+              src:r.value.feed.n,
+              age:item.pubDate?ago(item.pubDate):'',
+              region:isAus?'aus':'intl',
+              aus:isAus
+            });
+          }
+        });
+      }
+    });
+    var html='';
+    if(all.length===0){
+      html='<div class="tours-empty">No tour announcements found right now. Check back soon or visit the source sites directly.</div>';
+    }else{
+      html+='<div class="tours-section">';
+      html+='<div class="tours-section-hd">Tour &amp; Show Announcements &mdash; <em>'+all.length+' found</em></div>';
+      html+='<div class="tours-grid">';
+      all.forEach(function(t){
+        html+='<a class="tour-card tour-item" href="'+t.url+'" target="_blank" rel="noopener noreferrer" data-region="'+t.region+'">';
+        html+='<div><span class="tc-source">'+t.src+'</span>';
+        if(t.aus)html+='<span class="tc-aus">&#x1F1E6;&#x1F1FA; Australia</span>';
+        html+='</div>';
+        html+='<div class="tc-title">'+t.title+'</div>';
+        if(t.desc)html+='<div class="tc-desc">'+t.desc+'&hellip;</div>';
+        html+='<div class="tc-foot">'+t.age+'</div>';
+        html+='</a>';
+      });
+      html+='</div></div>';
+    }
+    html+='<div class="tours-section">';
+    html+='<div class="tours-section-hd">&#x1F1E6;&#x1F1FA; Australian Promoters &mdash; <em>contact for show submissions</em></div>';
+    html+='<div class="tours-promo-grid">';
+    AU_PROMOS.forEach(function(p){
+      html+='<a class="tours-promo-card" href="'+p[2]+'" target="_blank" rel="noopener noreferrer">';
+      html+='<div><div class="tpc-name">'+p[0]+'</div><div class="tpc-sub">'+p[1]+'</div></div>';
+      html+='<span class="tpc-arrow">&#x2192;</span>';
+      html+='</a>';
+    });
+    html+='</div></div>';
+    body.innerHTML=html;
+    TOURS_LOADED=true;
+  }).catch(function(){
+    TOURS_LOADED=false;
+    var b=document.getElementById('toursBody');
+    if(b)b.innerHTML='<div class="tours-empty">Could not load tour data. Please try again later.</div>';
+  });
+}
+
+function openTours(){var m=document.getElementById('toursModal');if(m){m.classList.add('open');document.body.style.overflow='hidden';loadTours();}}
 function closeTours(e){if(e&&e.target&&e.target.id!=='toursModal')return;var m=document.getElementById('toursModal');if(m){m.classList.remove('open');document.body.style.overflow='';}}
 function filterTours(filter,btn){
-  var btns=document.querySelectorAll('.tours-filter-btn');
+  var btns=document.querySelectorAll('.tf');
   for(var i=0;i<btns.length;i++)btns[i].classList.remove('on');
   if(btn)btn.classList.add('on');
   var items=document.querySelectorAll('.tour-item');
@@ -1651,7 +1745,7 @@ function setGenre(btn){
   if(btn)btn.classList.add('on');
 }
 
-function showGenrePanel(key){
+function showGenrePanel(key,skipScroll){
   var data=GENRE_DATA[key];
   if(!data)return;
   var nameEl=document.getElementById('genrePanelName');
@@ -1667,7 +1761,7 @@ function showGenrePanel(key){
   }
   if(panel){
     panel.classList.add('open');
-    setTimeout(function(){panel.scrollIntoView({behavior:'smooth',block:'nearest'});},50);
+    if(!skipScroll){setTimeout(function(){panel.scrollIntoView({behavior:'smooth',block:'nearest'});},50);}
   }
 }
 
@@ -1720,8 +1814,12 @@ document.addEventListener('keydown',function(e){
 });
 
 document.addEventListener('DOMContentLoaded',function(){
+  // Prevent browser restoring mid-page scroll position on load / back-nav
+  if(history.scrollRestoration)history.scrollRestoration='manual';
+  window.scrollTo(0,0);
+  // Pre-open the All Metal genre panel without scrolling to it
   var firstTab=document.querySelector('.gp.on');
-  if(firstTab){showGenrePanel('all-metal');}
+  if(firstTab){showGenrePanel('all-metal',true);}
 });
 </script>
 
