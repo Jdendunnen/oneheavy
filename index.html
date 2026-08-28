@@ -45,6 +45,7 @@ nav{position:sticky;top:0;z-index:300;background:rgba(8,8,14,.96);backdrop-filte
 .btn-free-tag{font-family:var(--C);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--red);border:1px solid var(--red);padding:8px 16px;white-space:nowrap}
 .btn-ontour{background:var(--red);color:#fff;font-family:var(--C);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:8px 16px;border:1px solid var(--red);cursor:pointer;transition:all .2s;white-space:nowrap;display:flex;align-items:center;gap:7px}
 .btn-ontour::before{content:'';width:7px;height:7px;background:#fff;border-radius:50%;animation:blink 1.4s ease infinite;flex-shrink:0}
+.btn-liveshows{display:none;background:var(--red);color:#fff;font-family:var(--C);font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:7px 11px;border:1px solid var(--red);cursor:pointer;align-items:center;gap:5px;white-space:nowrap}
 .btn-ontour:hover{background:var(--red2)}
 .btn-newsletter{background:var(--red);color:#fff;font-family:var(--C);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:8px 16px;border:none;cursor:pointer;transition:background .2s;white-space:nowrap;display:flex;align-items:center;gap:6px}
 .btn-newsletter:hover{background:var(--red2)}
@@ -336,7 +337,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 }
 @media(max-width:768px){
   .nav-links{display:none}.ham{display:flex}
-  .btn-free-tag,.btn-ontour{display:none}
+  .btn-free-tag,.btn-ontour{display:none}.btn-liveshows{display:flex}
   .intro-inner{grid-template-columns:1fr}
   .intro-links{display:none}
   .btn-newsletter{font-size:9px;padding:7px 10px}
@@ -469,7 +470,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 .ss-btn-secondary{background:transparent;color:var(--w);border:1px solid var(--border)}
 .ss-btn-secondary:hover{border-color:var(--red);color:var(--red)}
 .ss-tag{align-self:flex-start;font-family:var(--C);font-size:8.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--g);border:1px solid var(--border);padding:4px 9px}
-@media(max-width:1100px){.fa-inner{grid-template-columns:1fr}.show-spotlight{position:static;max-width:520px}}
+@media(max-width:1100px){.fa-inner{grid-template-columns:1fr}.fa-content{order:2}.show-spotlight{position:static;max-width:520px;order:1}}
 .fa-eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--red);align-self:flex-start}
 .fa-eyebrow::before{content:'';width:18px;height:1px;background:var(--red)}
 .fa-headline{font-family:var(--D);font-size:clamp(32px,4.5vw,52px);letter-spacing:.02em;text-transform:uppercase;line-height:.95;color:var(--w)}
@@ -674,6 +675,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
     <div class="nav-right">
       <span class="btn-free-tag">Free Forever</span>
       <button class="btn-ontour" onclick="openTours()">On Tour</button>
+      <button class="btn-liveshows" onclick="openTours()">&#x1F3AB; Live Shows</button>
       <button class="btn-newsletter" onclick="openNewsletter()">&#x2709; Weekly Digest</button>
       <button class="ham" id="hamBtn" onclick="openMob()"><span></span><span></span><span></span></button>
     </div>
@@ -828,6 +830,7 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
   <a href="/about" onclick="closeMob()">About</a>
   
   
+  <a href="#" onclick="closeMob();openTours()" style="color:var(--red)">&#x1F3AB; Live Shows</a>
   <a href="#" onclick="closeMob();openSubmit()" style="color:var(--red)">&#x1F4CD; Submit Your Show</a>
   <a href="/" class="mob-cta" onclick="closeMob()"> OneHeavy &mdash; Free Forever</a>
 </div>
@@ -1488,11 +1491,30 @@ var AU_PROMOS=[
   ['Soundworks Touring','swdpresents.com','https://www.swdpresents.com']
 ];
 
+var COMMUNITY_SHOWS=[
+  {band:'Tribute of the Beast &mdash; Iron Maiden Tribute',date:'Fri 11 Sep 2026 &middot; Doors 7:00pm',venue:'Vinnies Dive, Gold Coast',desc:'Full Volume tribute triple bill with We Salute You (AC/DC) and Out on the Tiles (Led Zeppelin).',url:'https://tickets.oztix.com.au/outlet/event/be717fd2-b6fe-4e8b-b6ef-cf4b7689024c'}
+];
+
 function loadTours(){
   if(TOURS_LOADED)return;
   var body=document.getElementById('toursBody');
   if(!body)return;
-  body.innerHTML='<div class="tours-loading"><div class="spin"></div></div>';
+  var communityHtml='';
+  if(COMMUNITY_SHOWS.length){
+    communityHtml+='<div class="tours-section">';
+    communityHtml+='<div class="tours-section-hd">&#x1F4CD; Community Submitted Shows &mdash; <em>'+COMMUNITY_SHOWS.length+' listed</em></div>';
+    communityHtml+='<div class="tours-grid">';
+    COMMUNITY_SHOWS.forEach(function(s){
+      communityHtml+='<a class="tour-card" href="'+s.url+'" target="_blank" rel="noopener noreferrer">';
+      communityHtml+='<div><span class="tc-source">OneHeavy Listing</span><span class="tc-aus">&#x1F1E6;&#x1F1FA; Australia</span></div>';
+      communityHtml+='<div class="tc-title">'+s.band+'</div>';
+      communityHtml+='<div class="tc-desc">'+s.venue+' &mdash; '+s.date+'. '+s.desc+'</div>';
+      communityHtml+='<div class="tc-foot">Submitted via OneHeavy</div>';
+      communityHtml+='</a>';
+    });
+    communityHtml+='</div></div>';
+  }
+  body.innerHTML=communityHtml+'<div class="tours-loading"><div class="spin"></div></div>';
   var R2J='https://api.rss2json.com/v1/api.json?rss_url=';
   Promise.allSettled(TOUR_FEEDS.map(function(feed){
     return fetch(R2J+encodeURIComponent(feed.url))
@@ -1548,7 +1570,7 @@ function loadTours(){
       html+='</a>';
     });
     html+='</div></div>';
-    body.innerHTML=html;
+    body.innerHTML=communityHtml+html;
     TOURS_LOADED=true;
   }).catch(function(){
     TOURS_LOADED=false;
