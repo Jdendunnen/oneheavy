@@ -46,27 +46,27 @@
     },
     {
       "source": "/melbourne",
-      "destination": "/Melbourne.html"
+      "destination": "/melbourne.html"
     },
     {
       "source": "/sydney",
-      "destination": "/Sydney.html"
+      "destination": "/sydney.html"
     },
     {
       "source": "/brisbane",
-      "destination": "/Brisbane.html"
+      "destination": "/brisbane.html"
     },
     {
       "source": "/adelaide",
-      "destination": "/Adelaide.html"
+      "destination": "/adelaide.html"
     },
     {
       "source": "/perth",
-      "destination": "/Perth.html"
+      "destination": "/perth.html"
     },
     {
       "source": "/london",
-      "destination": "/London.html"
+      "destination": "/london.html"
     },
     {
       "source": "/newyork",
@@ -74,7 +74,7 @@
     },
     {
       "source": "/berlin",
-      "destination": "/Berlin.html"
+      "destination": "/berlin.html"
     },
     {
       "source": "/thrash-metal",
