@@ -446,30 +446,9 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
 
 .featured-album{background:linear-gradient(135deg,#0a0a14,#08080e 60%);border-bottom:1px solid rgba(200,16,46,.16);padding:48px 24px;position:relative;overflow:hidden}
 .featured-album::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--red),transparent)}
-.fa-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 320px;gap:36px;align-items:start}
+.fa-inner{max-width:840px;margin:0 auto;display:block}
 .fa-content{display:flex;flex-direction:column;gap:18px;min-width:0}
-.show-spotlight{background:var(--card);border:1px solid var(--border);border-top:2px solid var(--red);padding:22px 20px;position:sticky;top:76px;display:flex;flex-direction:column;gap:14px}
-.ss-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--red)}
-.ss-eyebrow::before{content:'';width:14px;height:1px;background:var(--red)}
-.ss-band{font-family:var(--D);font-size:26px;letter-spacing:.01em;text-transform:uppercase;line-height:1.05;color:var(--w)}
-.ss-tribute{font-family:var(--C);font-size:11px;color:var(--g);letter-spacing:.04em;margin-top:-8px}
-.ss-lineup{font-family:var(--C);font-size:10px;color:rgba(240,236,244,.62);letter-spacing:.05em;line-height:1.6;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:12px 0}
-.ss-details{display:flex;flex-direction:column;gap:9px}
-.ss-row{display:flex;gap:10px;align-items:flex-start;font-family:var(--C);font-size:11.5px;letter-spacing:.03em}
-.ss-row-icon{flex-shrink:0;width:16px;text-align:center;color:var(--red);font-size:12px}
-.ss-row-label{color:var(--g);font-size:9px;letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:2px}
-.ss-row-value{color:var(--w);line-height:1.4}
-.ss-row-value a{color:var(--w);border-bottom:1px solid rgba(240,236,244,.25);transition:border-color .18s}
-.ss-row-value a:hover{border-color:var(--red);color:var(--red)}
-.ss-desc{font-family:var(--S);font-size:12.5px;line-height:1.6;color:rgba(240,236,244,.78)}
-.ss-actions{display:flex;flex-direction:column;gap:8px;margin-top:2px}
-.ss-btn{display:block;width:100%;text-align:center;font-family:var(--C);font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:12px;transition:background .18s,color .18s}
-.ss-btn-primary{background:var(--red);color:#fff}
-.ss-btn-primary:hover{background:var(--red2)}
-.ss-btn-secondary{background:transparent;color:var(--w);border:1px solid var(--border)}
-.ss-btn-secondary:hover{border-color:var(--red);color:var(--red)}
-.ss-tag{align-self:flex-start;font-family:var(--C);font-size:8.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--g);border:1px solid var(--border);padding:4px 9px}
-@media(max-width:1100px){.fa-inner{grid-template-columns:1fr}.fa-content{order:2}.show-spotlight{position:static;max-width:520px;order:1}}
+
 .fa-eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--C);font-size:9px;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--red);align-self:flex-start}
 .fa-eyebrow::before{content:'';width:18px;height:1px;background:var(--red)}
 .fa-headline{font-family:var(--D);font-size:clamp(32px,4.5vw,52px);letter-spacing:.02em;text-transform:uppercase;line-height:.95;color:var(--w)}
@@ -738,34 +717,6 @@ footer{background:var(--ink);border-top:1px solid var(--border);padding:42px 0 2
       <p style="font-family:var(--C);font-size:9px;color:var(--g);letter-spacing:.08em;font-style:italic;margin-top:-4px">&#x2665; Independent release &mdash; only 50 physical CDs. Support HKSPK directly via Bandcamp.</p>
       <p class="fa-source">Band facts sourced from RAMzine On The Radar (June 2026), Toxic Metal Zine, Heavymetal.no and direct correspondence with Jim Kalubba (August 2026). Spotify data per band press materials. Review and editorial commentary &copy; 2026 OneHeavy.</p>
     </div>
-
-    <aside class="show-spotlight" id="show-spotlight">
-      <span class="ss-tag">&#x1F4CD; First Community Submission</span>
-      <div class="ss-eyebrow">Show Spotlight &middot; Gold Coast</div>
-      <div class="ss-band">Tribute of the Beast</div>
-      <div class="ss-tribute">Iron Maiden Tribute</div>
-      <div class="ss-lineup">Full Volume Tribute Triple Bill<br>Tribute of the Beast (Iron Maiden) &middot; We Salute You (AC/DC) &middot; Out on the Tiles (Led Zeppelin)</div>
-      <div class="ss-details">
-        <div class="ss-row">
-          <span class="ss-row-icon">&#x1F4C5;</span>
-          <span><span class="ss-row-label">Date</span><span class="ss-row-value">Friday, 11 September 2026 &middot; Doors 7:00pm</span></span>
-        </div>
-        <div class="ss-row">
-          <span class="ss-row-icon">&#x1F3DB;</span>
-          <span><span class="ss-row-label">Venue</span><span class="ss-row-value">Vinnies Dive, Gold Coast &mdash; <a href="https://www.google.com/maps/search/44A+Nerang+Street,+Southport" target="_blank" rel="noopener noreferrer">44A Nerang Street, Southport &rarr;</a></span></span>
-        </div>
-        <div class="ss-row">
-          <span class="ss-row-icon">&#x1F3AB;</span>
-          <span><span class="ss-row-label">Promoter</span><span class="ss-row-value">Robbo &middot; <a href="mailto:tributeofthebeastaus@outlook.com">tributeofthebeastaus&#64;outlook.com</a></span></span>
-        </div>
-      </div>
-      <p class="ss-desc">Full Volume brings the music of Iron Maiden, AC/DC and Led Zeppelin together for a huge tribute triple bill. Tribute of the Beast opens with the twin-guitar harmonies and soaring vocals of Iron Maiden, supported by We Salute You&#39;s high-voltage AC/DC riffs and Out on the Tiles&#39; heavy Led Zeppelin blues and swagger.</p>
-      <div class="ss-actions">
-        <a href="https://tickets.oztix.com.au/outlet/event/be717fd2-b6fe-4e8b-b6ef-cf4b7689024c" target="_blank" rel="noopener noreferrer" class="ss-btn ss-btn-primary">&#x1F3AB; Get Tickets on Oztix &rarr;</a>
-        <a href="mailto:tributeofthebeastaus@outlook.com" class="ss-btn ss-btn-secondary">&#x2709; Contact the Promoter</a>
-      </div>
-    </aside>
-
   </div>
 </section>
 
@@ -1489,9 +1440,7 @@ var AU_PROMOS=[
   ['Soundworks Touring','swdpresents.com','https://www.swdpresents.com']
 ];
 
-var COMMUNITY_SHOWS=[
-  {band:'Tribute of the Beast &mdash; Iron Maiden Tribute',date:'Fri 11 Sep 2026 &middot; Doors 7:00pm',venue:'Vinnies Dive, Gold Coast',desc:'Full Volume tribute triple bill with We Salute You (AC/DC) and Out on the Tiles (Led Zeppelin).',url:'https://tickets.oztix.com.au/outlet/event/be717fd2-b6fe-4e8b-b6ef-cf4b7689024c'}
-];
+var COMMUNITY_SHOWS=[];
 
 function loadTours(){
   if(TOURS_LOADED)return;
